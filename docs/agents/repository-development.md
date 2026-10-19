@@ -1,5 +1,9 @@
 # Developing the framework repository
 
+Follow the repository-wide [`CONTRIBUTING.md`](../../CONTRIBUTING.md) and
+[`CODING_STANDARDS.md`](../../CODING_STANDARDS.md). All packages remain private
+and `UNLICENSED` under the proprietary [`LICENSE.md`](../../LICENSE.md).
+
 ## Locate ownership before editing
 
 Map the request to a package and surface: direct React API, serialized contract, renderer adapter, designer, desktop boundary, tokens, or tooling. Search for the public symbol and catalog ID, then inspect adjacent stories and focused tests. Follow existing local conventions unless the task explicitly changes them.

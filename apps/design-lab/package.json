@@ -1,5 +1,5 @@
 {
-  "name":"@enterprise-ui/design-lab", "version":"0.0.0", "private":true, "type":"module",
+  "name":"@enterprise-ui/design-lab", "version":"0.0.0", "private":true, "license":"UNLICENSED", "type":"module",
   "scripts":{"dev":"vite --host 0.0.0.0", "build":"vite build", "typecheck":"tsc -p tsconfig.json --noEmit"},
   "dependencies":{
     "react":"^19.0.0","react-dom":"^19.0.0",

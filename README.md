@@ -18,11 +18,12 @@
   <img alt="React 19" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=1f2937">
   <img alt="TypeScript 5.9" src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white">
   <img alt="Storybook 10.6" src="https://img.shields.io/badge/Storybook-10.6-FF4785?logo=storybook&logoColor=white">
+  <a href="LICENSE.md"><img alt="License: Proprietary" src="https://img.shields.io/badge/license-proprietary-7A1F1F"></a>
 </p>
 
 Surface combines a broad component system with a versioned JSON design contract, guarded visual editing, and explicit application-owned security boundaries.
 
-The repository is a private, local v1 workspace. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. Package names and versions are provisional, no public license has been selected, and nothing has been published.
+The repository is a private, proprietary v1 workspace. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. Package names and versions are provisional, and nothing has been published.
 
 ## What the framework provides
 
@@ -255,12 +256,18 @@ See the [acceptance matrix](docs/release/ACCEPTANCE-MATRIX.md) and [verification
 
 ## Contributing
 
+Surface is proprietary and does not grant public use, modification, or distribution rights. Authorized collaborators should read the [license](LICENSE.md), [contribution guide](CONTRIBUTING.md), and [coding standards](CODING_STANDARDS.md) before beginning work.
+
 Open changes through a pull request targeting `main`. The pull-request template asks for scope, contract and accessibility impact, documentation updates, and verification evidence. CI runs the repository checks, static Storybook build, and complete Playwright suites whenever a pull request is opened or updated and whenever code is pushed or merged into `main`.
 
 Keep pull requests focused. Update the root README and any affected package or application README before committing so public guidance remains synchronized with the implementation.
 
 Structured issue forms cover bugs, features, components, contract changes, and documentation. Issues move through `status:proposed`, `status:refinement`, `status:ready`, `status:in-progress`, and `status:review`; `status:blocked` records an explicit dependency or decision. Only ready issues are eligible for autonomous implementation, and `agent:hold` is always a hard veto. See the [issue workflow](docs/agents/issues.md) for the complete execution gate and label rules.
 
+## License
+
+Copyright (c) 2026 AlienFish Consulting. All rights reserved. Surface is proprietary software; access to this repository does not grant permission to use, copy, modify, publish, distribute, deploy, or commercialize its contents. See [LICENSE.md](LICENSE.md) for the complete terms and contact the repository maintainers for written permission or commercial licensing.
+
 ## Release status
 
-The implementation and technical acceptance milestones are complete, but this workspace is not a published product. Final repository identity, npm scope and package names, license, coordinated version, packed-package verification, manual assistive-technology checks, remote creation, and publication remain explicit release decisions.
+The implementation and technical acceptance milestones are complete, but this workspace is not a published product. Final npm scope and package names, commercial distribution terms, coordinated version, packed-package verification, manual assistive-technology checks, and publication remain explicit release decisions. The current source remains proprietary under [LICENSE.md](LICENSE.md).

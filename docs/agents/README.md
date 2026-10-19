@@ -18,6 +18,10 @@ Read [`foundation.md`](foundation.md). It defines the system model, source-of-tr
 | Plan or run checks | [`verification.md`](verification.md) | Root package scripts and test configuration |
 | Refine or implement work from a GitHub issue | [`issues.md`](issues.md) | Owning package guide and [`verification.md`](verification.md) |
 
+Repository changes also require the root [`CONTRIBUTING.md`](../../CONTRIBUTING.md)
+and [`CODING_STANDARDS.md`](../../CODING_STANDARDS.md). The proprietary terms in
+[`LICENSE.md`](../../LICENSE.md) apply to all tasks.
+
 ## Context-loading rule
 
 Do not read every document by default. Start from the task, inspect the closest source and tests, and expand only when a boundary or contract is involved. Historical files under `docs/history/` are evidence and should be consulted only for provenance.

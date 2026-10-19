@@ -42,4 +42,4 @@ Before a public release, a human should spot-check VoiceOver/Safari and one Wind
 
 ## Dependency license review
 
-`pnpm licenses list --prod` reports production dependencies under MIT and BSD-3-Clause. The development tree also contains Apache-2.0, BSD-2-Clause, Python-2.0, MPL-2.0 (`axe-core`), CC-BY-4.0 (`caniuse-lite` data), ISC, BlueOak-1.0.0 and 0BSD. No project license is inferred from dependency licenses. Generate final third-party notices only after the user chooses the project license and package contents.
+`pnpm licenses list --prod` reports production dependencies under MIT and BSD-3-Clause. The development tree also contains Apache-2.0, BSD-2-Clause, Python-2.0, MPL-2.0 (`axe-core`), CC-BY-4.0 (`caniuse-lite` data), ISC, BlueOak-1.0.0 and 0BSD. No project license is inferred from dependency licenses. Surface is now proprietary under [`LICENSE.md`](../../LICENSE.md); generate final third-party notices after the authorized package contents and commercial distribution terms are decided.

@@ -2,6 +2,7 @@
   "name": "@enterprise-ui/storybook",
   "version": "0.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "storybook": "pnpm --dir ../.. generate && storybook dev -p 6006 --no-open --disable-telemetry",

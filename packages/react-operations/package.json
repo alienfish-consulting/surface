@@ -1,5 +1,5 @@
 {
-  "name":"@enterprise-ui/react-operations","version":"0.0.0","private":true,"type":"module",
+  "name":"@enterprise-ui/react-operations","version":"0.0.0","private":true,"license":"UNLICENSED","type":"module",
   "sideEffects":["./dist/*.css"],"main":"./dist/index.js","types":"./dist/index.d.ts",
   "exports":{".":{"types":"./dist/index.d.ts","import":"./dist/index.js"},"./styles.css":"./dist/styles.css"},
   "scripts":{"build":"tsc -p tsconfig.json && node ../../tools/copy-package-css.mjs react-operations","typecheck":"tsc -p tsconfig.json --noEmit"},

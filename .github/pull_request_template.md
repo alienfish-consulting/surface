@@ -30,6 +30,7 @@ corepack pnpm ...
 - [ ] Keyboard, focus, semantics, responsive layout, themes, density, high contrast, and forced colors were considered.
 - [ ] Host authorization and side-effect boundaries remain explicit; untrusted inputs still fail closed.
 - [ ] The root README and affected package or application READMEs are accurate.
+- [ ] The change follows `CONTRIBUTING.md`, `CODING_STANDARDS.md`, and the proprietary license; new third-party material has compatible terms.
 - [ ] No credentials, generated build output, publication, or unrelated changes are included.
 
 ## Visual evidence

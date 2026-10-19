@@ -2,7 +2,7 @@
 
 ## Installation model
 
-This workspace is private and unpublished. The examples use temporary workspace package names only; final package identity, license and version remain undecided. A future release should use coordinated versions across the accepted v1 scope.
+This workspace is private, proprietary, and unpublished. The examples use temporary workspace package names only; final package identity, commercial distribution terms, and version remain undecided. Access to the source does not grant permission to use or distribute it; see [`LICENSE.md`](../../LICENSE.md). A future authorized release should use coordinated versions across the accepted v1 scope.
 
 Use narrow imports. Each React family exports JavaScript/types at its package root and CSS at `./styles.css`; tokens export `./theme.css`. `react-renderer` is the complete registered runtime preset and therefore intentionally references every implemented family. Applications needing a smaller direct-React bundle should import a family package instead.
 

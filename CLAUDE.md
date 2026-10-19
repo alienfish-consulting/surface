@@ -6,8 +6,9 @@ These instructions are vendor agnostic. They apply to any coding agent working i
 
 1. Read [`docs/agents/README.md`](docs/agents/README.md).
 2. Read [`docs/agents/foundation.md`](docs/agents/foundation.md).
-3. Follow only the task guide and references selected by the routing table. Do not load the historical milestone reports as operating instructions.
-4. When work originates from a GitHub issue, read [`docs/agents/issues.md`](docs/agents/issues.md) before implementation. Only `status:ready` issues without `agent:hold` are eligible for autonomous execution.
+3. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODING_STANDARDS.md`](CODING_STANDARDS.md) before changing the repository.
+4. Follow only the task guide and references selected by the routing table. Do not load the historical milestone reports as operating instructions.
+5. When work originates from a GitHub issue, read [`docs/agents/issues.md`](docs/agents/issues.md) before implementation. Only `status:ready` issues without `agent:hold` are eligible for autonomous execution.
 
 ## Non-negotiable boundaries
 
@@ -19,6 +20,7 @@ These instructions are vendor agnostic. They apply to any coding agent working i
 - Preserve accessible names, keyboard operation, focus behavior, semantic structure, responsive behavior, theme, density, authored high contrast, and forced-colors support.
 - Import token CSS before family CSS. Reuse semantic tokens and existing `ui-*` conventions instead of introducing a parallel styling system.
 - Do not expose scaffolds, incomplete components, or generated drafts as production exports. Do not hand-edit generated files.
+- Preserve the proprietary licensing boundary. Keep packages private and marked `UNLICENSED`; do not copy, publish, sublicense, relicense, or add third-party material with incompatible terms without explicit written authorization.
 - Keep public APIs compatible unless the task explicitly authorizes a breaking change. Add or update tests and stories with behavior changes.
 - Do not publish, push, create remotes or cloud resources, choose a license/package identity, or perform destructive Git operations unless explicitly requested.
 
@@ -49,6 +51,9 @@ Use these files as design provenance and as input when planning a new or revised
 ## Documentation map
 
 - Current human documentation: [`docs/README.md`](docs/README.md)
+- Contribution workflow: [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- Coding standards: [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
+- Proprietary terms: [`LICENSE.md`](LICENSE.md)
 - Agent routing and workflows: [`docs/agents/README.md`](docs/agents/README.md)
 - Issue lifecycle and autonomous-execution gate: [`docs/agents/issues.md`](docs/agents/issues.md)
 - Current architecture: [`docs/architecture/README.md`](docs/architecture/README.md)

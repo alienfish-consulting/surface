@@ -11,4 +11,7 @@ The documentation is organized by purpose so current guidance is not confused wi
 | [`history/`](history/README.md) | Completed milestone reports and bootstrap source material; evidence, not current instructions |
 | [`catalog-status.md`](catalog-status.md) | Generated inventory status; its path is part of the generator contract |
 
+Repository-wide policies live at the root: [contribution workflow](../CONTRIBUTING.md),
+[coding standards](../CODING_STANDARDS.md), and [proprietary license](../LICENSE.md).
+
 For the actual component API, prefer exported TypeScript types and colocated Storybook stories over narrative documentation. For the declarative surface, prefer the current registry and schemas under `packages/contracts`.
