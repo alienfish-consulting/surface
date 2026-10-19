@@ -201,21 +201,21 @@ ${semantic('dark')}
   }
 
   [data-ui-contrast="high"] {
-    --ui-color-bg-canvas: Canvas;
-    --ui-color-bg-surface: Canvas;
-    --ui-color-bg-raised: Canvas;
-    --ui-color-bg-inset: Canvas;
-    --ui-color-text-primary: CanvasText;
-    --ui-color-text-secondary: CanvasText;
-    --ui-color-text-tertiary: CanvasText;
-    --ui-color-border-default: CanvasText;
-    --ui-color-border-strong: CanvasText;
-    --ui-color-action-primary: Highlight;
-    --ui-color-action-primary-hover: Highlight;
-    --ui-color-action-on-primary: HighlightText;
-    --ui-color-action-selected-bg: Highlight;
-    --ui-color-action-selected-text: HighlightText;
-    --ui-color-focus-ring: Highlight;
+    --ui-color-bg-canvas: #FFFFFF;
+    --ui-color-bg-surface: #FFFFFF;
+    --ui-color-bg-raised: #FFFFFF;
+    --ui-color-bg-inset: #FFFFFF;
+    --ui-color-text-primary: #000000;
+    --ui-color-text-secondary: #000000;
+    --ui-color-text-tertiary: #000000;
+    --ui-color-border-default: #000000;
+    --ui-color-border-strong: #000000;
+    --ui-color-action-primary: #00337A;
+    --ui-color-action-primary-hover: #00285F;
+    --ui-color-action-on-primary: #FFFFFF;
+    --ui-color-action-selected-bg: #00337A;
+    --ui-color-action-selected-text: #FFFFFF;
+    --ui-color-focus-ring: #000000;
   }
 
   :root, [data-ui-density="comfortable"] {
