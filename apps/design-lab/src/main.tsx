@@ -5,6 +5,7 @@ import '../../../packages/react-core/src/styles.css';
 import '../../../packages/react-data/src/styles.css';
 import '../../../packages/react-operations/src/styles.css';
 import '../../../packages/react-ai/src/styles.css';
+import '../../../packages/react-designers/src/styles.css';
 import './styles.css';
 import fixture from '../../../packages/contracts/fixtures/vertical-slice.design.json';
 import {assertDesignDocument,previewProposal} from '@enterprise-ui/contracts';
@@ -85,13 +86,13 @@ function App(){
   <aside className="lab-side"><PropertyInspector document={doc} onPropose={p=>{setProposal(p);setResult('Property change proposed; review the diff and request host approval.');}}/>
     <section className="lab-review" aria-label="Proposal review"><h2>Proposal review</h2>
       {proposal?<><p><strong>{proposal.rationale}</strong></p><code>base revision: {proposal.baseRevision}</code>
-       {error?<p className="lab-fail" role="alert">{error}</p>:<><pre>{JSON.stringify(proposal.operations,null,2)}</pre>
+       {error?<><p className="lab-fail" role="alert">{error}</p><Button label="Discard stale proposal" variant="secondary" onPress={()=>{setProposal(null);setResult('Stale proposal discarded. Document unchanged.');}}/></>:<><pre>{JSON.stringify(proposal.operations,null,2)}</pre>
         <div className="lab-button-row"><Button label="Request host approval" onPress={()=>{
          if(!preview)return;
          if(!allowed){setResult('Host denied the edit. Document unchanged.');addLog('HOST DENIED proposal '+proposal.proposalId);return;}
          if(doc.revision!==proposal.baseRevision){setResult('Stale document revision. Document unchanged.');return;}
          setDoc(preview.candidate);setProposal(null);setResult('Host authorized and committed new document revision.');addLog('HOST COMMITTED revision '+preview.candidate.revision);
-        }}/><Button label="Reject" variant="secondary" onPress={()=>{setProposal(null);setResult('Human rejected proposal. Document unchanged.');}}/></div></>}
+        }}/><Button label="Reject" variant="secondary" onPress={()=>{setProposal(null);setResult('Human rejected proposal. Document unchanged.');}}/><Button label="Simulate concurrent revision" variant="secondary" onPress={()=>{setDoc(current=>({...current,revision:current.revision+1}));setResult('A concurrent host revision made the pending proposal stale.');}}/></div></>}
       </>:<p className="lab-detail">Use the inspector to propose an edit. Only component properties are allowed in this POC.</p>}
       <p className="lab-result" role="status">{result}</p>
     </section>

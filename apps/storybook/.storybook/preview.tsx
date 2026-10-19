@@ -5,6 +5,7 @@ import '../../../packages/react-core/src/styles.css';
 import '../../../packages/react-data/src/styles.css';
 import '../../../packages/react-operations/src/styles.css';
 import '../../../packages/react-ai/src/styles.css';
+import '../../../packages/react-designers/src/styles.css';
 import './preview.css';
 
 const preview: Preview = {

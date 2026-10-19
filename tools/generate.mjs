@@ -19,6 +19,7 @@ const coreContracts=read('packages/contracts/source/core-component-contracts.jso
 const dataContracts=read('packages/contracts/source/data-component-contracts.json');
 const operationsContracts=read('packages/contracts/source/operations-component-contracts.json');
 const aiContracts=read('packages/contracts/source/ai-component-contracts.json');
+const designerContracts=read('packages/contracts/source/designer-component-contracts.json');
 const serializableCoreTypes=['ui.AppShell','ui.Panel','ui.Button','ui.TextField',...coreContracts.components.map(component=>component.type)];
 const coreRegistry={
   registryVersion:coreContracts.registryVersion,
@@ -53,7 +54,7 @@ const operationsRegistry={
 };
 const serializableAiTypes=aiContracts.components.map(component=>component.type);
 const finalContainerTypes=[...allContainerTypes,...serializableAiTypes];
-const registry={
+const aiRegistry={
   registryVersion:aiContracts.registryVersion,
   components:[
     ...operationsRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'
@@ -61,14 +62,21 @@ const registry={
     ...aiContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
   ]
 };
-const generatedContracts=[...coreContracts.components,...dataContracts.components,...operationsContracts.components,...aiContracts.components];
+const serializableDesignerTypes=designerContracts.components.map(component=>component.type);
+const completeContainerTypes=[...finalContainerTypes,...serializableDesignerTypes];
+const registry={registryVersion:designerContracts.registryVersion,components:[
+  ...aiRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'?{...entry,version:'1.6.0',allowedChildren:completeContainerTypes}:entry),
+  ...designerContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
+]};
+const generatedContracts=[...coreContracts.components,...dataContracts.components,...operationsContracts.components,...aiContracts.components,...designerContracts.components];
 for(const contract of generatedContracts){
   output(`packages/contracts/${contract.schemaFile}`,JSON.stringify(contract.propsSchema,null,2)+'\n');
 }
 output('packages/contracts/fixtures/component-registry.v1.2.0.json',JSON.stringify(coreRegistry,null,2)+'\n');
 output('packages/contracts/fixtures/component-registry.v1.3.0.json',JSON.stringify(dataRegistry,null,2)+'\n');
 output('packages/contracts/fixtures/component-registry.v1.4.0.json',JSON.stringify(operationsRegistry,null,2)+'\n');
-output('packages/contracts/fixtures/component-registry.v1.5.0.json',JSON.stringify(registry,null,2)+'\n');
+output('packages/contracts/fixtures/component-registry.v1.5.0.json',JSON.stringify(aiRegistry,null,2)+'\n');
+output('packages/contracts/fixtures/component-registry.v1.6.0.json',JSON.stringify(registry,null,2)+'\n');
 if (new Set(registry.components.map(x=>x.type)).size!==registry.components.length) throw new Error('Duplicate registry entries');
 const supported = new Set(['string','number','integer','boolean']);
 function tsOf(s){
@@ -104,10 +112,10 @@ const componentSchemas=Object.fromEntries(registry.components.map(component=>[
   component.type,
   generatedContracts.find(contract=>contract.type===component.type)?.propsSchema ?? read('packages/contracts/'+component.propsSchema)
 ]));
-const registryDocuments=[registry,operationsRegistry,dataRegistry,coreRegistry,previousRegistry,read('packages/contracts/fixtures/component-registry.v1.0.0.json')];
+const registryDocuments=[registry,aiRegistry,operationsRegistry,dataRegistry,coreRegistry,previousRegistry,read('packages/contracts/fixtures/component-registry.v1.0.0.json')];
 const bundle={registryDocument: registry,
  registryDocuments,
- declarativeExceptions:[...coreContracts.exceptions,...dataContracts.exceptions,...operationsContracts.exceptions,...aiContracts.exceptions],
+ declarativeExceptions:[...coreContracts.exceptions,...dataContracts.exceptions,...operationsContracts.exceptions,...aiContracts.exceptions,...designerContracts.exceptions],
  documentSchema:read('packages/contracts/schemas/design-document.schema.json'),
  registrySchema:read('packages/contracts/schemas/component-registry.schema.json'),
  proposalSchema:read('packages/contracts/schemas/patch-proposal.schema.json'),

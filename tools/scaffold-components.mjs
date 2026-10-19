@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = resolve(repositoryRoot, 'catalog/components.v1.json');
-const runtimeRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.5.0.json');
+const runtimeRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.6.0.json');
 const planningRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.json');
 const legacyRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.0.0.json');
 
@@ -67,7 +67,7 @@ if (catalog.schemaVersion !== '1.0.0' || catalog.catalogStatus !== 'accepted-v1-
   throw new Error('Unsupported or unapproved component catalog');
 }
 if (catalog.components.length !== 198) throw new Error(`Expected 198 catalog units; found ${catalog.components.length}`);
-if (runtimeRegistry.registryVersion !== '1.5.0') throw new Error('The active AI registry must be 1.5.0');
+if (runtimeRegistry.registryVersion !== '1.6.0') throw new Error('The active designer registry must be 1.6.0');
 if (legacyRegistry.registryVersion !== '1.0.0') throw new Error('The preserved legacy registry must remain at 1.0.0');
 
 const componentsById = new Map();

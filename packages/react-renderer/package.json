@@ -23,7 +23,8 @@
     "@enterprise-ui/react-core": "workspace:*",
     "@enterprise-ui/react-data": "workspace:*",
     "@enterprise-ui/react-operations": "workspace:*",
-    "@enterprise-ui/react-ai": "workspace:*"
+    "@enterprise-ui/react-ai": "workspace:*",
+    "@enterprise-ui/react-designers": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

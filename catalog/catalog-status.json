@@ -6,9 +6,9 @@
     "total": 198,
     "byStatus": {
       "planned": 0,
-      "scaffolded": 28,
+      "scaffolded": 0,
       "implemented": 0,
-      "verified": 170,
+      "verified": 198,
       "released": 0
     },
     "byClassification": {
@@ -30,7 +30,7 @@
       ]
     },
     "active": {
-      "version": "1.5.0",
+      "version": "1.6.0",
       "componentIds": [
         "ui.AppShell",
         "ui.Panel",
@@ -195,7 +195,33 @@
         "ui.PromptVersionDiff",
         "ui.RunStatusPanel",
         "ui.RunStepTimeline",
-        "ui.ReasoningSummaryPanel"
+        "ui.ReasoningSummaryPanel",
+        "ui.DesignerShell",
+        "ui.ComponentPalette",
+        "ui.DesignCanvas",
+        "ui.PropertyInspector",
+        "ui.SchemaInspector",
+        "ui.LayersPanel",
+        "ui.OutlineTree",
+        "ui.UndoRedoToolbar",
+        "ui.ResponsivePreview",
+        "ui.BreakpointSwitcher",
+        "ui.PreviewModeToggle",
+        "ui.BindingEditor",
+        "ui.ActionEditor",
+        "ui.FormDesigner",
+        "ui.FormFieldPalette",
+        "ui.DashboardDesigner",
+        "ui.DashboardGrid",
+        "ui.WorkflowDesigner",
+        "ui.WorkflowNodePalette",
+        "ui.WorkflowEdgeEditor",
+        "ui.QueryDesigner",
+        "ui.SchemaDesigner",
+        "ui.VersionHistory",
+        "ui.ConflictResolver",
+        "ui.PatchReviewPanel",
+        "ui.DesignerValidationPanel"
       ]
     },
     "implementedAdapterIds": [
@@ -362,7 +388,33 @@
       "ui.PromptVersionDiff",
       "ui.RunStatusPanel",
       "ui.RunStepTimeline",
-      "ui.ReasoningSummaryPanel"
+      "ui.ReasoningSummaryPanel",
+      "ui.DesignerShell",
+      "ui.ComponentPalette",
+      "ui.DesignCanvas",
+      "ui.PropertyInspector",
+      "ui.SchemaInspector",
+      "ui.LayersPanel",
+      "ui.OutlineTree",
+      "ui.UndoRedoToolbar",
+      "ui.ResponsivePreview",
+      "ui.BreakpointSwitcher",
+      "ui.PreviewModeToggle",
+      "ui.BindingEditor",
+      "ui.ActionEditor",
+      "ui.FormDesigner",
+      "ui.FormFieldPalette",
+      "ui.DashboardDesigner",
+      "ui.DashboardGrid",
+      "ui.WorkflowDesigner",
+      "ui.WorkflowNodePalette",
+      "ui.WorkflowEdgeEditor",
+      "ui.QueryDesigner",
+      "ui.SchemaDesigner",
+      "ui.VersionHistory",
+      "ui.ConflictResolver",
+      "ui.PatchReviewPanel",
+      "ui.DesignerValidationPanel"
     ],
     "note": "Schema-only registry entries remain compatibility fixtures and have no renderer adapter."
   },
@@ -3491,7 +3543,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.ComponentPalette",
         "ui.PropertyInspector"
@@ -3511,7 +3563,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3532,7 +3584,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3553,7 +3605,7 @@
       "package": "react-designers",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3574,7 +3626,7 @@
       "package": "react-designers",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3595,7 +3647,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3616,7 +3668,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3637,7 +3689,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3658,7 +3710,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3679,7 +3731,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3700,7 +3752,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3721,7 +3773,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3742,7 +3794,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3763,7 +3815,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3784,7 +3836,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3805,7 +3857,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DesignerShell"
       ],
@@ -3824,7 +3876,7 @@
       "package": "react-designers",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3845,7 +3897,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DesignerShell"
       ],
@@ -3864,7 +3916,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3885,7 +3937,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DesignerShell"
       ],
@@ -3904,7 +3956,7 @@
       "package": "react-designers",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3925,7 +3977,7 @@
       "package": "react-designers",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -3946,7 +3998,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DesignerShell"
       ],
@@ -3965,7 +4017,7 @@
       "package": "react-designers",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DesignerShell"
       ],
@@ -3984,7 +4036,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -4005,7 +4057,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -4026,7 +4078,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",
@@ -4047,7 +4099,7 @@
       "package": "react-designers",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.TreeView",

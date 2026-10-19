@@ -30,3 +30,29 @@ test('design lab renders the existing POC and exposes local display controls', a
   await agentReview.getByRole('button', { name: 'Deny' }).click();
   await expect(agentReview.getByRole('status')).toHaveText('deny intention sent to host');
 });
+
+test('designer proposals support reject, stale detection, and approved commit', async ({page}) => {
+  await page.goto('/');
+  const proposedValue=page.getByLabel('Proposed value');
+  const review=page.getByRole('region',{name:'Proposal review'});
+
+  await proposedValue.fill('Rejected title');
+  await page.getByRole('button',{name:'Review proposal'}).click();
+  await review.getByRole('button',{name:'Reject',exact:true}).click();
+  await expect(review.getByRole('status')).toHaveText('Human rejected proposal. Document unchanged.');
+  await expect(page.getByText('rev 1',{exact:true})).toBeVisible();
+
+  await proposedValue.fill('Stale title');
+  await page.getByRole('button',{name:'Review proposal'}).click();
+  await review.getByRole('button',{name:'Simulate concurrent revision'}).click();
+  await expect(review.getByRole('alert')).toContainText('revision');
+  await review.getByRole('button',{name:'Discard stale proposal'}).click();
+  await expect(page.getByText('rev 2',{exact:true})).toBeVisible();
+
+  await proposedValue.fill('Approved title');
+  await page.getByRole('button',{name:'Review proposal'}).click();
+  await review.getByRole('button',{name:'Request host approval'}).click();
+  await expect(review.getByRole('status')).toHaveText('Host authorized and committed new document revision.');
+  await expect(page.getByText('rev 3',{exact:true})).toBeVisible();
+  await expect(page.getByRole('banner').first().getByText('Approved title',{exact:true})).toBeVisible();
+});

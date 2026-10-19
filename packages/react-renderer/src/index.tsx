@@ -5,12 +5,13 @@ import {coreAdapters} from './core-adapters.js';
 import {dataAdapters} from './data-adapters.js';
 import {operationsAdapters} from './operations-adapters.js';
 import {aiAdapters} from './ai-adapters.js';
+import {designerAdapters} from './designer-adapters.js';
 import type {Adapter,Host,HostActionRequest} from './core-adapters.js';
 
 export type {HostActionRequest,Host};
 export interface RenderProps {doc:DesignDocument;host:Host}
-export {coreAdapters,dataAdapters,operationsAdapters,aiAdapters};
-export const defaultAdapters:ReadonlyMap<string,Adapter>=new Map([...coreAdapters,...dataAdapters,...operationsAdapters,...aiAdapters]);
+export {coreAdapters,dataAdapters,operationsAdapters,aiAdapters,designerAdapters};
+export const defaultAdapters:ReadonlyMap<string,Adapter>=new Map([...coreAdapters,...dataAdapters,...operationsAdapters,...aiAdapters,...designerAdapters]);
 export function DesignRenderer({doc,host,adapters=defaultAdapters}:{doc:DesignDocument;host:Host;adapters?:ReadonlyMap<string,Adapter>}){
   const validated=assertDesignDocument(doc);
   const render=(node:DesignNode):React.ReactNode=>{

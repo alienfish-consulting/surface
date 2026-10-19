@@ -2,6 +2,8 @@ import * as React from 'react';
 import type {DesignDocument,DesignNode,Proposal} from '@enterprise-ui/contracts';
 import {registry} from '@enterprise-ui/contracts';
 import {Button,TextField} from '@enterprise-ui/react-core';
+export * from './designer-shell.js';
+export * from './specialists.js';
 export function flattenNodes(root:DesignNode):{node:DesignNode;path:string}[]{
  const result:{node:DesignNode;path:string}[]=[];
  const visit=(node:DesignNode,path:string)=>{result.push({node,path});node.children?.forEach((child,i)=>visit(child,`${path}/children/${i}`));};

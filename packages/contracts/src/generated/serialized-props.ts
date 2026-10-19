@@ -837,6 +837,87 @@ export interface ReasoningSummaryPanelSerializedProps {
   "title"?: string;
   "summary": string;
 }
+export interface DesignerShellSerializedProps {
+  "label"?: string;
+}
+export interface ComponentPaletteSerializedProps {
+  "label"?: string;
+  "types"?: Array<string>;
+}
+export interface DesignCanvasSerializedProps {
+  "selectedId"?: string;
+}
+export interface PropertyInspectorSerializedProps {
+}
+export interface SchemaInspectorSerializedProps {
+  "type": string;
+}
+export interface LayersPanelSerializedProps {
+  "selectedId"?: string;
+}
+export interface OutlineTreeSerializedProps {
+  "root": Record<string, unknown>;
+  "selectedId"?: string;
+}
+export interface UndoRedoToolbarSerializedProps {
+  "canUndo": boolean;
+  "canRedo": boolean;
+}
+export interface ResponsivePreviewSerializedProps {
+  "label"?: string;
+  "width"?: number;
+}
+export interface BreakpointSwitcherSerializedProps {
+  "value": "phone" | "tablet" | "desktop";
+}
+export interface PreviewModeToggleSerializedProps {
+  "value": "design" | "preview";
+}
+export interface BindingEditorSerializedProps {
+  "binding"?: Record<string, unknown>;
+}
+export interface ActionEditorSerializedProps {
+  "actionId"?: string;
+  "availableActions": Array<string>;
+}
+export interface FormDesignerSerializedProps {
+}
+export interface FormFieldPaletteSerializedProps {
+  "fields": Array<string>;
+}
+export interface DashboardDesignerSerializedProps {
+}
+export interface DashboardGridSerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface WorkflowDesignerSerializedProps {
+}
+export interface WorkflowNodePaletteSerializedProps {
+  "nodes": Array<string>;
+}
+export interface WorkflowEdgeEditorSerializedProps {
+  "from": string;
+  "to": string;
+  "condition"?: string;
+}
+export interface QueryDesignerSerializedProps {
+}
+export interface SchemaDesignerSerializedProps {
+  "schema": Record<string, unknown>;
+}
+export interface VersionHistorySerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface ConflictResolverSerializedProps {
+  "conflicts"?: Array<Record<string, unknown>>;
+}
+export interface PatchReviewPanelSerializedProps {
+  "proposal": Record<string, unknown>;
+}
+export interface DesignerValidationPanelSerializedProps {
+  "errors": Array<string>;
+  "warnings"?: Array<string>;
+}
 export interface SerializablePropsByComponent {
   "ui.AppShell": AppShellSerializedProps;
   "ui.Panel": PanelSerializedProps;
@@ -1002,5 +1083,31 @@ export interface SerializablePropsByComponent {
   "ui.RunStatusPanel": RunStatusPanelSerializedProps;
   "ui.RunStepTimeline": RunStepTimelineSerializedProps;
   "ui.ReasoningSummaryPanel": ReasoningSummaryPanelSerializedProps;
+  "ui.DesignerShell": DesignerShellSerializedProps;
+  "ui.ComponentPalette": ComponentPaletteSerializedProps;
+  "ui.DesignCanvas": DesignCanvasSerializedProps;
+  "ui.PropertyInspector": PropertyInspectorSerializedProps;
+  "ui.SchemaInspector": SchemaInspectorSerializedProps;
+  "ui.LayersPanel": LayersPanelSerializedProps;
+  "ui.OutlineTree": OutlineTreeSerializedProps;
+  "ui.UndoRedoToolbar": UndoRedoToolbarSerializedProps;
+  "ui.ResponsivePreview": ResponsivePreviewSerializedProps;
+  "ui.BreakpointSwitcher": BreakpointSwitcherSerializedProps;
+  "ui.PreviewModeToggle": PreviewModeToggleSerializedProps;
+  "ui.BindingEditor": BindingEditorSerializedProps;
+  "ui.ActionEditor": ActionEditorSerializedProps;
+  "ui.FormDesigner": FormDesignerSerializedProps;
+  "ui.FormFieldPalette": FormFieldPaletteSerializedProps;
+  "ui.DashboardDesigner": DashboardDesignerSerializedProps;
+  "ui.DashboardGrid": DashboardGridSerializedProps;
+  "ui.WorkflowDesigner": WorkflowDesignerSerializedProps;
+  "ui.WorkflowNodePalette": WorkflowNodePaletteSerializedProps;
+  "ui.WorkflowEdgeEditor": WorkflowEdgeEditorSerializedProps;
+  "ui.QueryDesigner": QueryDesignerSerializedProps;
+  "ui.SchemaDesigner": SchemaDesignerSerializedProps;
+  "ui.VersionHistory": VersionHistorySerializedProps;
+  "ui.ConflictResolver": ConflictResolverSerializedProps;
+  "ui.PatchReviewPanel": PatchReviewPanelSerializedProps;
+  "ui.DesignerValidationPanel": DesignerValidationPanelSerializedProps;
 }
 export type SerializableComponentType = keyof SerializablePropsByComponent;

@@ -36,8 +36,8 @@ test('pointer decoder rejects prototype properties and uses own keys',()=>{
  expect(readPointer({a:3},'/__proto__')).toBeUndefined();
 });
 test('active registry validates core and data contracts and preserves explicit JSX-only exceptions',()=>{
- expect(registryVersion).toBe('1.5.0');
- expect(declarativeExceptions.map(item=>item.type)).toEqual(['ui.KeyboardShortcut','ui.ToastViewport','ui.GridColumn','ui.ChartLegend','ui.ChartTooltip','ui.TopologyEdge']);
+ expect(registryVersion).toBe('1.6.0');
+ expect(declarativeExceptions.map(item=>item.type)).toEqual(['ui.KeyboardShortcut','ui.ToastViewport','ui.GridColumn','ui.ChartLegend','ui.ChartTooltip','ui.TopologyEdge','ui.SelectionOutline','ui.ResizeHandles']);
  const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'core-contract',revision:0,kind:'form',themeId:'default',density:'comfortable',dataSources:[],actionIds:['form.change'],root:{id:'page',type:'ui.PageLayout',props:{},children:[{id:'field',type:'ui.Select',props:{label:'Environment',options:[{value:'prod',label:'Production'}]},intents:{onChange:{actionId:'form.change'}}}]}};
  expect(validateDocument(document)).toEqual({ok:true,document});
  const invalid=structuredClone(document);invalid.root.children![0]!.props.unknown=true;

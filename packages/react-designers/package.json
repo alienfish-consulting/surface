@@ -12,15 +12,20 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./styles.css": "./dist/styles.css"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node ../../tools/copy-package-css.mjs react-designers",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
     "@enterprise-ui/contracts": "workspace:*",
-    "@enterprise-ui/react-core": "workspace:*"
+    "@enterprise-ui/react-core": "workspace:*",
+    "@enterprise-ui/react-data": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "10.6.2"
   },
   "peerDependencies": {
     "react": "^19.0.0"
