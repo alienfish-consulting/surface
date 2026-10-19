@@ -1,0 +1,3750 @@
+{
+  "schemaVersion": "1.0.0",
+  "catalogVersion": "1.0.0",
+  "catalogSourceSha256": "e5a099f281b7858c2a812af4ec652e44d7b556f748a193fc3a92a879314d79ee",
+  "summary": {
+    "total": 198,
+    "byStatus": {
+      "planned": 0,
+      "scaffolded": 193,
+      "implemented": 5,
+      "verified": 0,
+      "released": 0
+    },
+    "byClassification": {
+      "public-component": 159,
+      "feature/workstream": 21,
+      "compositional-subcomponent": 13,
+      "internal-primitive": 5
+    }
+  },
+  "registryCompatibility": {
+    "preserved": {
+      "version": "1.0.0",
+      "componentIds": [
+        "ui.AppShell",
+        "ui.Panel",
+        "ui.KpiCard",
+        "ui.DataGrid",
+        "ui.ActivityFeed"
+      ]
+    },
+    "active": {
+      "version": "1.1.0",
+      "componentIds": [
+        "ui.AppShell",
+        "ui.Panel",
+        "ui.KpiCard",
+        "ui.DataGrid",
+        "ui.ActivityFeed",
+        "ui.Button",
+        "ui.TextField"
+      ]
+    },
+    "implementedAdapterIds": [
+      "ui.AppShell",
+      "ui.Panel",
+      "ui.Button",
+      "ui.TextField",
+      "ui.KpiCard"
+    ],
+    "note": "Schema-only registry entries remain compatibility fixtures and have no renderer adapter."
+  },
+  "components": [
+    {
+      "id": "ui.AppShell",
+      "name": "AppShell",
+      "package": "react-core",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "implemented",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/AppShell/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/AppShell/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/AppShell/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/AppShell/test.plan.md"
+      },
+      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationPackage": "react-core"
+    },
+    {
+      "id": "ui.PageLayout",
+      "name": "PageLayout",
+      "package": "react-core",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/PageLayout/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/PageLayout/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/PageLayout/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/PageLayout/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AppHeader",
+      "name": "AppHeader",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/AppHeader/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/AppHeader/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/AppHeader/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/AppHeader/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Sidebar",
+      "name": "Sidebar",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Sidebar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Sidebar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Sidebar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Sidebar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.NavigationRail",
+      "name": "NavigationRail",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/NavigationRail/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/NavigationRail/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/NavigationRail/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/NavigationRail/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Breadcrumbs",
+      "name": "Breadcrumbs",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Breadcrumbs/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Breadcrumbs/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Breadcrumbs/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Breadcrumbs/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Panel",
+      "name": "Panel",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "implemented",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Panel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Panel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Panel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Panel/test.plan.md"
+      },
+      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationPackage": "react-core"
+    },
+    {
+      "id": "ui.Card",
+      "name": "Card",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Card/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Card/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Card/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Card/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Surface",
+      "name": "Surface",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Surface/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Surface/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Surface/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Surface/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Stack",
+      "name": "Stack",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Stack/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Stack/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Stack/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Stack/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Inline",
+      "name": "Inline",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Inline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Inline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Inline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Inline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Grid",
+      "name": "Grid",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Grid/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Grid/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Grid/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Grid/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SplitPane",
+      "name": "SplitPane",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.ResizablePanel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/SplitPane/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/SplitPane/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/SplitPane/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/SplitPane/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DockWorkspace",
+      "name": "DockWorkspace",
+      "package": "react-core",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/DockWorkspace/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/DockWorkspace/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/DockWorkspace/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/DockWorkspace/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ResizablePanel",
+      "name": "ResizablePanel",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ResizablePanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ResizablePanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ResizablePanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ResizablePanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Toolbar",
+      "name": "Toolbar",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Toolbar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Toolbar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Toolbar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Toolbar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Divider",
+      "name": "Divider",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Divider/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Divider/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Divider/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Divider/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ScrollArea",
+      "name": "ScrollArea",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ScrollArea/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ScrollArea/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ScrollArea/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ScrollArea/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.VirtualList",
+      "name": "VirtualList",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/VirtualList/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/VirtualList/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/VirtualList/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/VirtualList/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.EmptyState",
+      "name": "EmptyState",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/EmptyState/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/EmptyState/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/EmptyState/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/EmptyState/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Text",
+      "name": "Text",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Text/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Text/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Text/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Text/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Heading",
+      "name": "Heading",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Heading/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Heading/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Heading/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Heading/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Label",
+      "name": "Label",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Label/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Label/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Label/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Label/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Link",
+      "name": "Link",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Link/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Link/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Link/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Link/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Code",
+      "name": "Code",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Code/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Code/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Code/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Code/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Badge",
+      "name": "Badge",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Badge/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Badge/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Badge/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Badge/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Avatar",
+      "name": "Avatar",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Avatar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Avatar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Avatar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Avatar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Icon",
+      "name": "Icon",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Icon/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Icon/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Icon/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Icon/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Tooltip",
+      "name": "Tooltip",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Tooltip/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Tooltip/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Tooltip/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Tooltip/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TruncateText",
+      "name": "TruncateText",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/TruncateText/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/TruncateText/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/TruncateText/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/TruncateText/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.KeyboardShortcut",
+      "name": "KeyboardShortcut",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/KeyboardShortcut/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/KeyboardShortcut/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/KeyboardShortcut/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/KeyboardShortcut/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DataValue",
+      "name": "DataValue",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/DataValue/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/DataValue/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/DataValue/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/DataValue/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Button",
+      "name": "Button",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "implemented",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Button/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Button/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Button/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Button/test.plan.md"
+      },
+      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationPackage": "react-core"
+    },
+    {
+      "id": "ui.IconButton",
+      "name": "IconButton",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/IconButton/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/IconButton/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/IconButton/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/IconButton/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ToggleButton",
+      "name": "ToggleButton",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ToggleButton/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ToggleButton/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ToggleButton/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ToggleButton/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ButtonGroup",
+      "name": "ButtonGroup",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ButtonGroup/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ButtonGroup/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ButtonGroup/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ButtonGroup/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TextField",
+      "name": "TextField",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "implemented",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/TextField/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/TextField/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/TextField/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/TextField/test.plan.md"
+      },
+      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationPackage": "react-core"
+    },
+    {
+      "id": "ui.TextArea",
+      "name": "TextArea",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/TextArea/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/TextArea/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/TextArea/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/TextArea/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PasswordField",
+      "name": "PasswordField",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/PasswordField/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/PasswordField/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/PasswordField/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/PasswordField/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.NumberField",
+      "name": "NumberField",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/NumberField/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/NumberField/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/NumberField/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/NumberField/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SearchField",
+      "name": "SearchField",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/SearchField/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/SearchField/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/SearchField/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/SearchField/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Select",
+      "name": "Select",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Select/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Select/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Select/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Select/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.MultiSelect",
+      "name": "MultiSelect",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/MultiSelect/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/MultiSelect/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/MultiSelect/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/MultiSelect/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ComboBox",
+      "name": "ComboBox",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.TextField"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ComboBox/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ComboBox/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ComboBox/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ComboBox/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Autocomplete",
+      "name": "Autocomplete",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Autocomplete/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Autocomplete/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Autocomplete/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Autocomplete/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Checkbox",
+      "name": "Checkbox",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Checkbox/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Checkbox/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Checkbox/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Checkbox/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.CheckboxGroup",
+      "name": "CheckboxGroup",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/CheckboxGroup/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/CheckboxGroup/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/CheckboxGroup/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/CheckboxGroup/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.RadioGroup",
+      "name": "RadioGroup",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/RadioGroup/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/RadioGroup/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/RadioGroup/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/RadioGroup/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Switch",
+      "name": "Switch",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Switch/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Switch/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Switch/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Switch/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Slider",
+      "name": "Slider",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Slider/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Slider/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Slider/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Slider/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.RangeSlider",
+      "name": "RangeSlider",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/RangeSlider/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/RangeSlider/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/RangeSlider/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/RangeSlider/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DatePicker",
+      "name": "DatePicker",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/DatePicker/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/DatePicker/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/DatePicker/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/DatePicker/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DateRangePicker",
+      "name": "DateRangePicker",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DatePicker"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/DateRangePicker/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/DateRangePicker/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/DateRangePicker/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/DateRangePicker/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TimePicker",
+      "name": "TimePicker",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/TimePicker/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/TimePicker/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/TimePicker/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/TimePicker/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ColorPicker",
+      "name": "ColorPicker",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ColorPicker/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ColorPicker/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ColorPicker/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ColorPicker/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FileInput",
+      "name": "FileInput",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/FileInput/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/FileInput/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/FileInput/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/FileInput/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FormField",
+      "name": "FormField",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/FormField/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/FormField/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/FormField/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/FormField/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FieldSet",
+      "name": "FieldSet",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/FieldSet/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/FieldSet/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/FieldSet/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/FieldSet/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ValidationMessage",
+      "name": "ValidationMessage",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ValidationMessage/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ValidationMessage/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ValidationMessage/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ValidationMessage/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.InputGroup",
+      "name": "InputGroup",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/InputGroup/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/InputGroup/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/InputGroup/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/InputGroup/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SegmentedControl",
+      "name": "SegmentedControl",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/SegmentedControl/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/SegmentedControl/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/SegmentedControl/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/SegmentedControl/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TagInput",
+      "name": "TagInput",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/TagInput/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/TagInput/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/TagInput/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/TagInput/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.OtpField",
+      "name": "OtpField",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/OtpField/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/OtpField/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/OtpField/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/OtpField/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Dialog",
+      "name": "Dialog",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Dialog/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Dialog/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Dialog/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Dialog/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AlertDialog",
+      "name": "AlertDialog",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/AlertDialog/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/AlertDialog/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/AlertDialog/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/AlertDialog/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Drawer",
+      "name": "Drawer",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Drawer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Drawer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Drawer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Drawer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Popover",
+      "name": "Popover",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Popover/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Popover/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Popover/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Popover/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Menu",
+      "name": "Menu",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Menu/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Menu/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Menu/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Menu/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ContextMenu",
+      "name": "ContextMenu",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ContextMenu/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ContextMenu/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ContextMenu/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ContextMenu/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DropdownMenu",
+      "name": "DropdownMenu",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/DropdownMenu/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/DropdownMenu/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/DropdownMenu/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/DropdownMenu/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.CommandMenu",
+      "name": "CommandMenu",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Dialog"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/CommandMenu/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/CommandMenu/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/CommandMenu/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/CommandMenu/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.HoverCard",
+      "name": "HoverCard",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/HoverCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/HoverCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/HoverCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/HoverCard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Toast",
+      "name": "Toast",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Toast/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Toast/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Toast/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Toast/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ToastViewport",
+      "name": "ToastViewport",
+      "package": "react-core",
+      "classification": "internal-primitive",
+      "exportPolicy": "not-public",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/ToastViewport/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/ToastViewport/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/ToastViewport/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/ToastViewport/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.NotificationCenter",
+      "name": "NotificationCenter",
+      "package": "react-core",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/NotificationCenter/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/NotificationCenter/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/NotificationCenter/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/NotificationCenter/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Banner",
+      "name": "Banner",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Banner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Banner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Banner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Banner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Progress",
+      "name": "Progress",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Progress/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Progress/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Progress/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Progress/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Spinner",
+      "name": "Spinner",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Spinner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Spinner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Spinner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Spinner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Skeleton",
+      "name": "Skeleton",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Skeleton/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Skeleton/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Skeleton/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Skeleton/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Tabs",
+      "name": "Tabs",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Tabs/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Tabs/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Tabs/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Tabs/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Accordion",
+      "name": "Accordion",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Accordion/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Accordion/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Accordion/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Accordion/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TreeView",
+      "name": "TreeView",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/TreeView/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/TreeView/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/TreeView/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/TreeView/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Pagination",
+      "name": "Pagination",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Pagination/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Pagination/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Pagination/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Pagination/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Stepper",
+      "name": "Stepper",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/Stepper/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/Stepper/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/Stepper/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/Stepper/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.StatusIndicator",
+      "name": "StatusIndicator",
+      "package": "react-core",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-core/StatusIndicator/component.plan.md",
+        "schema.plan.json": "scaffolds/react-core/StatusIndicator/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-core/StatusIndicator/stories.plan.json",
+        "test.plan.md": "scaffolds/react-core/StatusIndicator/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DataGrid",
+      "name": "DataGrid",
+      "package": "react-data",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.ScrollArea"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/DataGrid/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/DataGrid/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/DataGrid/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/DataGrid/test.plan.md"
+      },
+      "implementationEvidence": "schema-only compatibility fixture; no runtime adapter",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.GridColumn",
+      "name": "GridColumn",
+      "package": "react-data",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/GridColumn/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/GridColumn/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/GridColumn/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/GridColumn/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.GridCellEditor",
+      "name": "GridCellEditor",
+      "package": "react-data",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/GridCellEditor/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/GridCellEditor/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/GridCellEditor/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/GridCellEditor/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.GridToolbar",
+      "name": "GridToolbar",
+      "package": "react-data",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/GridToolbar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/GridToolbar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/GridToolbar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/GridToolbar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ColumnChooser",
+      "name": "ColumnChooser",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/ColumnChooser/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/ColumnChooser/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/ColumnChooser/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/ColumnChooser/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FilterBuilder",
+      "name": "FilterBuilder",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/FilterBuilder/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/FilterBuilder/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/FilterBuilder/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/FilterBuilder/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SortBuilder",
+      "name": "SortBuilder",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/SortBuilder/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/SortBuilder/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/SortBuilder/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/SortBuilder/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.GroupPanel",
+      "name": "GroupPanel",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/GroupPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/GroupPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/GroupPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/GroupPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TreeGrid",
+      "name": "TreeGrid",
+      "package": "react-data",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DataGrid"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/TreeGrid/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/TreeGrid/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/TreeGrid/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/TreeGrid/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PivotTable",
+      "name": "PivotTable",
+      "package": "react-data",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DataGrid"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/PivotTable/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/PivotTable/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/PivotTable/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/PivotTable/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PivotFieldWell",
+      "name": "PivotFieldWell",
+      "package": "react-data",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/PivotFieldWell/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/PivotFieldWell/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/PivotFieldWell/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/PivotFieldWell/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DataTable",
+      "name": "DataTable",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/DataTable/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/DataTable/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/DataTable/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/DataTable/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DataList",
+      "name": "DataList",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/DataList/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/DataList/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/DataList/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/DataList/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SavedViewSelector",
+      "name": "SavedViewSelector",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/SavedViewSelector/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/SavedViewSelector/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/SavedViewSelector/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/SavedViewSelector/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Chart",
+      "name": "Chart",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/Chart/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/Chart/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/Chart/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/Chart/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ChartLegend",
+      "name": "ChartLegend",
+      "package": "react-data",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/ChartLegend/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/ChartLegend/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/ChartLegend/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/ChartLegend/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ChartTooltip",
+      "name": "ChartTooltip",
+      "package": "react-data",
+      "classification": "internal-primitive",
+      "exportPolicy": "not-public",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/ChartTooltip/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/ChartTooltip/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/ChartTooltip/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/ChartTooltip/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Sparkline",
+      "name": "Sparkline",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/Sparkline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/Sparkline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/Sparkline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/Sparkline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.KpiCard",
+      "name": "KpiCard",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "implemented",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/KpiCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/KpiCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/KpiCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/KpiCard/test.plan.md"
+      },
+      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationPackage": "react-core (temporary POC location; catalog target remains react-data)"
+    },
+    {
+      "id": "ui.StatGroup",
+      "name": "StatGroup",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/StatGroup/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/StatGroup/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/StatGroup/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/StatGroup/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FacetedFilter",
+      "name": "FacetedFilter",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/FacetedFilter/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/FacetedFilter/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/FacetedFilter/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/FacetedFilter/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.QueryBuilder",
+      "name": "QueryBuilder",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/QueryBuilder/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/QueryBuilder/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/QueryBuilder/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/QueryBuilder/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Calendar",
+      "name": "Calendar",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/Calendar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/Calendar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/Calendar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/Calendar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Scheduler",
+      "name": "Scheduler",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/Scheduler/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/Scheduler/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/Scheduler/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/Scheduler/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Timeline",
+      "name": "Timeline",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/Timeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/Timeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/Timeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/Timeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.GanttChart",
+      "name": "GanttChart",
+      "package": "react-data",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/GanttChart/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/GanttChart/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/GanttChart/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/GanttChart/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.GanttTaskEditor",
+      "name": "GanttTaskEditor",
+      "package": "react-data",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/GanttTaskEditor/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/GanttTaskEditor/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/GanttTaskEditor/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/GanttTaskEditor/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.Heatmap",
+      "name": "Heatmap",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/Heatmap/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/Heatmap/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/Heatmap/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/Heatmap/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DataInspector",
+      "name": "DataInspector",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/DataInspector/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/DataInspector/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/DataInspector/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/DataInspector/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DiffViewer",
+      "name": "DiffViewer",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/DiffViewer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/DiffViewer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/DiffViewer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/DiffViewer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.JsonViewer",
+      "name": "JsonViewer",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/JsonViewer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/JsonViewer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/JsonViewer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/JsonViewer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.CodeViewer",
+      "name": "CodeViewer",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/CodeViewer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/CodeViewer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/CodeViewer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/CodeViewer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FileTree",
+      "name": "FileTree",
+      "package": "react-data",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-data/FileTree/component.plan.md",
+        "schema.plan.json": "scaffolds/react-data/FileTree/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-data/FileTree/stories.plan.json",
+        "test.plan.md": "scaffolds/react-data/FileTree/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.KanbanBoard",
+      "name": "KanbanBoard",
+      "package": "react-operations",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.TaskCard"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/KanbanBoard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/KanbanBoard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/KanbanBoard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/KanbanBoard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.KanbanLane",
+      "name": "KanbanLane",
+      "package": "react-operations",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/KanbanLane/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/KanbanLane/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/KanbanLane/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/KanbanLane/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TaskCard",
+      "name": "TaskCard",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/TaskCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/TaskCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/TaskCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/TaskCard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ApprovalCard",
+      "name": "ApprovalCard",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/ApprovalCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/ApprovalCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/ApprovalCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/ApprovalCard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ApprovalQueue",
+      "name": "ApprovalQueue",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.ApprovalCard"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/ApprovalQueue/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/ApprovalQueue/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/ApprovalQueue/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/ApprovalQueue/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ActivityFeed",
+      "name": "ActivityFeed",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/ActivityFeed/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/ActivityFeed/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/ActivityFeed/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/ActivityFeed/test.plan.md"
+      },
+      "implementationEvidence": "schema-only compatibility fixture; no runtime adapter",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AuditTrail",
+      "name": "AuditTrail",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/AuditTrail/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/AuditTrail/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/AuditTrail/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/AuditTrail/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DeploymentPipeline",
+      "name": "DeploymentPipeline",
+      "package": "react-operations",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/DeploymentPipeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/DeploymentPipeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/DeploymentPipeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/DeploymentPipeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DeploymentStage",
+      "name": "DeploymentStage",
+      "package": "react-operations",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/DeploymentStage/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/DeploymentStage/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/DeploymentStage/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/DeploymentStage/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DeploymentTimeline",
+      "name": "DeploymentTimeline",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/DeploymentTimeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/DeploymentTimeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/DeploymentTimeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/DeploymentTimeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.LogViewer",
+      "name": "LogViewer",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.ScrollArea"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/LogViewer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/LogViewer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/LogViewer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/LogViewer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.EventStream",
+      "name": "EventStream",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/EventStream/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/EventStream/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/EventStream/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/EventStream/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.EventFilterBar",
+      "name": "EventFilterBar",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/EventFilterBar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/EventFilterBar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/EventFilterBar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/EventFilterBar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.InfrastructureTopology",
+      "name": "InfrastructureTopology",
+      "package": "react-operations",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/InfrastructureTopology/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/InfrastructureTopology/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/InfrastructureTopology/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/InfrastructureTopology/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TopologyNode",
+      "name": "TopologyNode",
+      "package": "react-operations",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/TopologyNode/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/TopologyNode/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/TopologyNode/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/TopologyNode/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TopologyEdge",
+      "name": "TopologyEdge",
+      "package": "react-operations",
+      "classification": "internal-primitive",
+      "exportPolicy": "not-public",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/TopologyEdge/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/TopologyEdge/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/TopologyEdge/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/TopologyEdge/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ServiceHealthGrid",
+      "name": "ServiceHealthGrid",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/ServiceHealthGrid/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/ServiceHealthGrid/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/ServiceHealthGrid/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/ServiceHealthGrid/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.StatusPagePanel",
+      "name": "StatusPagePanel",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/StatusPagePanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/StatusPagePanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/StatusPagePanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/StatusPagePanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.IncidentTimeline",
+      "name": "IncidentTimeline",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/IncidentTimeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/IncidentTimeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/IncidentTimeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/IncidentTimeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.IncidentSummary",
+      "name": "IncidentSummary",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/IncidentSummary/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/IncidentSummary/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/IncidentSummary/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/IncidentSummary/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AlertList",
+      "name": "AlertList",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/AlertList/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/AlertList/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/AlertList/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/AlertList/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AlertDetails",
+      "name": "AlertDetails",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/AlertDetails/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/AlertDetails/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/AlertDetails/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/AlertDetails/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.RunbookPanel",
+      "name": "RunbookPanel",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/RunbookPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/RunbookPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/RunbookPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/RunbookPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.MetricTrendPanel",
+      "name": "MetricTrendPanel",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/MetricTrendPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/MetricTrendPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/MetricTrendPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/MetricTrendPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ResourceTree",
+      "name": "ResourceTree",
+      "package": "react-operations",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.StatusIndicator"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-operations/ResourceTree/component.plan.md",
+        "schema.plan.json": "scaffolds/react-operations/ResourceTree/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-operations/ResourceTree/stories.plan.json",
+        "test.plan.md": "scaffolds/react-operations/ResourceTree/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ChatWorkspace",
+      "name": "ChatWorkspace",
+      "package": "react-ai",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.MessageThread",
+        "ui.MessageComposer"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ChatWorkspace/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ChatWorkspace/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ChatWorkspace/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ChatWorkspace/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ConversationList",
+      "name": "ConversationList",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ConversationList/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ConversationList/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ConversationList/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ConversationList/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.MessageThread",
+      "name": "MessageThread",
+      "package": "react-ai",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.ChatMessage"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/MessageThread/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/MessageThread/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/MessageThread/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/MessageThread/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ChatMessage",
+      "name": "ChatMessage",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ChatMessage/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ChatMessage/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ChatMessage/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ChatMessage/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.MessageComposer",
+      "name": "MessageComposer",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/MessageComposer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/MessageComposer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/MessageComposer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/MessageComposer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.StreamingText",
+      "name": "StreamingText",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/StreamingText/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/StreamingText/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/StreamingText/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/StreamingText/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AttachmentTray",
+      "name": "AttachmentTray",
+      "package": "react-ai",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/AttachmentTray/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/AttachmentTray/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/AttachmentTray/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/AttachmentTray/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.CitationList",
+      "name": "CitationList",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/CitationList/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/CitationList/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/CitationList/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/CitationList/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ToolCallCard",
+      "name": "ToolCallCard",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ToolCallCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ToolCallCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ToolCallCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ToolCallCard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ToolResultViewer",
+      "name": "ToolResultViewer",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ToolResultViewer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ToolResultViewer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ToolResultViewer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ToolResultViewer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ToolExecutionTimeline",
+      "name": "ToolExecutionTimeline",
+      "package": "react-ai",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ToolExecutionTimeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ToolExecutionTimeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ToolExecutionTimeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ToolExecutionTimeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AgentRoster",
+      "name": "AgentRoster",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/AgentRoster/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/AgentRoster/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/AgentRoster/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/AgentRoster/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AgentActivityFeed",
+      "name": "AgentActivityFeed",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/AgentActivityFeed/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/AgentActivityFeed/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/AgentActivityFeed/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/AgentActivityFeed/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.AgentTaskCard",
+      "name": "AgentTaskCard",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/AgentTaskCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/AgentTaskCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/AgentTaskCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/AgentTaskCard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.MultiAgentTimeline",
+      "name": "MultiAgentTimeline",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/MultiAgentTimeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/MultiAgentTimeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/MultiAgentTimeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/MultiAgentTimeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ApprovalRequest",
+      "name": "ApprovalRequest",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ApprovalRequest/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ApprovalRequest/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ApprovalRequest/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ApprovalRequest/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ApprovalReview",
+      "name": "ApprovalReview",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ApprovalReview/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ApprovalReview/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ApprovalReview/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ApprovalReview/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ArtifactViewer",
+      "name": "ArtifactViewer",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ArtifactViewer/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ArtifactViewer/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ArtifactViewer/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ArtifactViewer/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ArtifactCard",
+      "name": "ArtifactCard",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ArtifactCard/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ArtifactCard/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ArtifactCard/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ArtifactCard/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ContextInspector",
+      "name": "ContextInspector",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ContextInspector/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ContextInspector/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ContextInspector/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ContextInspector/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.TokenUsageMeter",
+      "name": "TokenUsageMeter",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/TokenUsageMeter/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/TokenUsageMeter/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/TokenUsageMeter/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/TokenUsageMeter/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ModelSelector",
+      "name": "ModelSelector",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ModelSelector/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ModelSelector/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ModelSelector/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ModelSelector/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PromptTemplateEditor",
+      "name": "PromptTemplateEditor",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/PromptTemplateEditor/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/PromptTemplateEditor/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/PromptTemplateEditor/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/PromptTemplateEditor/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PromptVersionDiff",
+      "name": "PromptVersionDiff",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/PromptVersionDiff/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/PromptVersionDiff/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/PromptVersionDiff/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/PromptVersionDiff/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.RunStatusPanel",
+      "name": "RunStatusPanel",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/RunStatusPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/RunStatusPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/RunStatusPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/RunStatusPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.RunStepTimeline",
+      "name": "RunStepTimeline",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/RunStepTimeline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/RunStepTimeline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/RunStepTimeline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/RunStepTimeline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ReasoningSummaryPanel",
+      "name": "ReasoningSummaryPanel",
+      "package": "react-ai",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.Button"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-ai/ReasoningSummaryPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-ai/ReasoningSummaryPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-ai/ReasoningSummaryPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-ai/ReasoningSummaryPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DesignerShell",
+      "name": "DesignerShell",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.ComponentPalette",
+        "ui.PropertyInspector"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/DesignerShell/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/DesignerShell/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/DesignerShell/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/DesignerShell/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ComponentPalette",
+      "name": "ComponentPalette",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/ComponentPalette/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/ComponentPalette/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/ComponentPalette/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/ComponentPalette/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DesignCanvas",
+      "name": "DesignCanvas",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/DesignCanvas/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/DesignCanvas/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/DesignCanvas/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/DesignCanvas/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SelectionOutline",
+      "name": "SelectionOutline",
+      "package": "react-designers",
+      "classification": "internal-primitive",
+      "exportPolicy": "not-public",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/SelectionOutline/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/SelectionOutline/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/SelectionOutline/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/SelectionOutline/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ResizeHandles",
+      "name": "ResizeHandles",
+      "package": "react-designers",
+      "classification": "internal-primitive",
+      "exportPolicy": "not-public",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/ResizeHandles/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/ResizeHandles/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/ResizeHandles/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/ResizeHandles/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PropertyInspector",
+      "name": "PropertyInspector",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/PropertyInspector/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/PropertyInspector/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/PropertyInspector/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/PropertyInspector/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SchemaInspector",
+      "name": "SchemaInspector",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/SchemaInspector/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/SchemaInspector/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/SchemaInspector/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/SchemaInspector/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.LayersPanel",
+      "name": "LayersPanel",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/LayersPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/LayersPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/LayersPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/LayersPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.OutlineTree",
+      "name": "OutlineTree",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/OutlineTree/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/OutlineTree/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/OutlineTree/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/OutlineTree/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.UndoRedoToolbar",
+      "name": "UndoRedoToolbar",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/UndoRedoToolbar/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/UndoRedoToolbar/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/UndoRedoToolbar/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/UndoRedoToolbar/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ResponsivePreview",
+      "name": "ResponsivePreview",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/ResponsivePreview/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/ResponsivePreview/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/ResponsivePreview/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/ResponsivePreview/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.BreakpointSwitcher",
+      "name": "BreakpointSwitcher",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/BreakpointSwitcher/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/BreakpointSwitcher/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/BreakpointSwitcher/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/BreakpointSwitcher/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PreviewModeToggle",
+      "name": "PreviewModeToggle",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/PreviewModeToggle/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/PreviewModeToggle/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/PreviewModeToggle/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/PreviewModeToggle/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.BindingEditor",
+      "name": "BindingEditor",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/BindingEditor/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/BindingEditor/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/BindingEditor/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/BindingEditor/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ActionEditor",
+      "name": "ActionEditor",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/ActionEditor/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/ActionEditor/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/ActionEditor/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/ActionEditor/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FormDesigner",
+      "name": "FormDesigner",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DesignerShell"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/FormDesigner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/FormDesigner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/FormDesigner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/FormDesigner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.FormFieldPalette",
+      "name": "FormFieldPalette",
+      "package": "react-designers",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/FormFieldPalette/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/FormFieldPalette/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/FormFieldPalette/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/FormFieldPalette/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DashboardDesigner",
+      "name": "DashboardDesigner",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DesignerShell"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/DashboardDesigner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/DashboardDesigner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/DashboardDesigner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/DashboardDesigner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DashboardGrid",
+      "name": "DashboardGrid",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/DashboardGrid/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/DashboardGrid/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/DashboardGrid/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/DashboardGrid/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.WorkflowDesigner",
+      "name": "WorkflowDesigner",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DesignerShell"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/WorkflowDesigner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/WorkflowDesigner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/WorkflowDesigner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/WorkflowDesigner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.WorkflowNodePalette",
+      "name": "WorkflowNodePalette",
+      "package": "react-designers",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/WorkflowNodePalette/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/WorkflowNodePalette/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/WorkflowNodePalette/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/WorkflowNodePalette/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.WorkflowEdgeEditor",
+      "name": "WorkflowEdgeEditor",
+      "package": "react-designers",
+      "classification": "compositional-subcomponent",
+      "exportPolicy": "parent-owned-or-namespaced",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/WorkflowEdgeEditor/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/WorkflowEdgeEditor/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/WorkflowEdgeEditor/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/WorkflowEdgeEditor/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.QueryDesigner",
+      "name": "QueryDesigner",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DesignerShell"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/QueryDesigner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/QueryDesigner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/QueryDesigner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/QueryDesigner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.SchemaDesigner",
+      "name": "SchemaDesigner",
+      "package": "react-designers",
+      "classification": "feature/workstream",
+      "exportPolicy": "top-level-export-subject-to-api-review",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.DesignerShell"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/SchemaDesigner/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/SchemaDesigner/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/SchemaDesigner/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/SchemaDesigner/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.VersionHistory",
+      "name": "VersionHistory",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/VersionHistory/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/VersionHistory/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/VersionHistory/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/VersionHistory/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.ConflictResolver",
+      "name": "ConflictResolver",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/ConflictResolver/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/ConflictResolver/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/ConflictResolver/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/ConflictResolver/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.PatchReviewPanel",
+      "name": "PatchReviewPanel",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/PatchReviewPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/PatchReviewPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/PatchReviewPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/PatchReviewPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    },
+    {
+      "id": "ui.DesignerValidationPanel",
+      "name": "DesignerValidationPanel",
+      "package": "react-designers",
+      "classification": "public-component",
+      "exportPolicy": "named-export-after-implementation",
+      "status": "scaffolded",
+      "dependencies": [
+        "ui.Panel",
+        "ui.TreeView",
+        "ui.SplitPane"
+      ],
+      "artifacts": {
+        "component.plan.md": "scaffolds/react-designers/DesignerValidationPanel/component.plan.md",
+        "schema.plan.json": "scaffolds/react-designers/DesignerValidationPanel/schema.plan.json",
+        "stories.plan.json": "scaffolds/react-designers/DesignerValidationPanel/stories.plan.json",
+        "test.plan.md": "scaffolds/react-designers/DesignerValidationPanel/test.plan.md"
+      },
+      "implementationEvidence": "none",
+      "implementationPackage": null
+    }
+  ]
+}

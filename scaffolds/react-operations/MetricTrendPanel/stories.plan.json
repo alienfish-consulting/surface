@@ -1,0 +1,19 @@
+{
+  "componentId": "ui.MetricTrendPanel",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "streaming-or-refreshing",
+    "disconnected-or-stale"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}

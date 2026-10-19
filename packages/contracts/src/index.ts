@@ -3,6 +3,11 @@ import type { ErrorObject, ValidateFunction } from 'ajv';
 import { applyPatch, type Operation } from 'fast-json-patch';
 import {registryDocument,legacyRegistryDocument,documentSchema,registrySchema,proposalSchema,appShellSchema,panelSchema,kpiCardSchema,dataGridSchema,activityFeedSchema,buttonSchema,textFieldSchema} from './generated/schema-bundle.js';
 export type * from './generated/serialized-props.js';
+export {
+  implementedComponentTypes,
+  isImplementedComponentType,
+  type ImplementedComponentType,
+} from './generated/catalog-status.js';
 
 export type Binding = { sourceId: string; pointer: string };
 export type NamedIntent = { actionId: string };

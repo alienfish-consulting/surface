@@ -1,0 +1,19 @@
+{
+  "componentId": "ui.KpiCard",
+  "status": "implemented-story-present",
+  "scenarios": [
+    "default",
+    "empty",
+    "narrow-or-dense"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Track the existing real story; do not infer production verification."
+}

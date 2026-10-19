@@ -1,6 +1,6 @@
 # Enterprise UI · Schema-first local workspace
 
-**Status:** Private local implementation workspace. M1 setup is under review; it is not production-ready, not an npm release, and has no GitHub remote.
+**Status:** Private local implementation workspace. M1 is committed; M2 catalog scaffolding and its approved checks are complete but not committed. This is not production-ready, not an npm release, and has no GitHub remote.
 
 This is the first implementation slice of the approved AI-first React enterprise design-system direction. It preserves the October 18, 2026 design snapshot and ADRs, not a new visual design exercise.
 
@@ -13,6 +13,7 @@ This is the first implementation slice of the approved AI-first React enterprise
 - Validator rejects unknown components, illegal parent-child combinations, invalid props, unknown data sources/actions, dangerous binding keys, duplicates, excessive node count and version mismatch.
 - Property inspector proposes guarded JSON Patch (`test`, `add`, `replace`, `remove`), creates a non-authoritative preview, then hands host authorization/commit to the consumer.
 - A browser-only design lab simulates allowed/denied actions, approval/denial of document edits, changes revision only after simulated host accept; no real network, auth or privileged operations.
+- The accepted 198-unit catalog has explicit classification, export policy, dependency, lifecycle, and artifact tracking. Its 193 non-implemented units have planning scaffolds only; they are not public exports, runtime registrations, or Storybook stories.
 
 ## Local commands
 
@@ -37,6 +38,16 @@ The opt-in browser smoke remains separate from root `check`:
 corepack pnpm test:e2e:smoke
 ```
 
+Catalog scaffolding is dry-run by default and refuses to overwrite differing files:
+
+```bash
+corepack pnpm scaffold:components
+corepack pnpm scaffold:components -- --component ui.AppHeader
+corepack pnpm check:catalog
+```
+
+Use `--write` only during an authorized implementation milestone. The focused mode creates type, schema, and story drafts under `scaffolds/`; it never edits production package source or runtime registration.
+
 Playwright browser installation is a separate resource action and is not performed by dependency installation.
 
 The workspace is pinned to Node 24 and pnpm 10.18.0. The M1 lockfile records the resolved local toolchain. Typechecking, builds, tests, and browser rendering remain milestone-gated and must not be inferred from installation alone.
@@ -51,6 +62,8 @@ The workspace is pinned to Node 24 and pnpm 10.18.0. The M1 lockfile records the
 - `apps/design-lab` — functional React/Vite host fixture and reviewer UI.
 - `apps/storybook` — private React/Vite Storybook for the five implemented POC components.
 - `tests/e2e/smoke` — one opt-in Chromium design-lab smoke path.
+- `catalog` — accepted tracking inventory and generated lifecycle/compatibility ledger.
+- `scaffolds` — non-runtime contract, schema, story, and test plans for accepted units.
 - `docs/architecture`, `docs/design-baseline` — copied source-of-truth decisions and release scope.
 
 ## Explicit limitations and next steps
@@ -59,8 +72,8 @@ The workspace is pinned to Node 24 and pnpm 10.18.0. The M1 lockfile records the
 - The original mockup colors/dimensions remain provisional pending real accessibility/contrast checks.
 - Only property-level JSON Patch is implemented. Structural edits and migrations are explicitly deferred, not silently accepted.
 - Host authorization is simulated; the demo is **not** an authorization or persistence security boundary.
-- Original design-token CSS is retained as the source artifact, not yet regenerated semantically from the JSON token graph; a full DTCG transpiler is outstanding.
-- Storybook, browser E2E/Playwright, Electron consumer checks, advanced accessibility tests and responsive screenshots belong to the next engineering increment.
+- Original design-token CSS remains as a baseline specimen; generated runtime CSS is derived from the DTCG JSON token graph.
+- Storybook and the single Chromium smoke harness exist. Electron consumer checks, advanced accessibility tests, and broader responsive/browser coverage remain deferred.
 - The independent project name, npm scope, public license and remote GitHub repository remain undecided. The temporary `@enterprise-ui/*` scope is not an asserted ownership claim.
 - No packages may be published until the complete v1 catalog and release gates specified in `docs/design-baseline/RELEASE-SCOPE.md` are satisfied.
 

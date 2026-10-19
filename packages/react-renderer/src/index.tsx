@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {assertDesignDocument,readPointer,registry} from '@enterprise-ui/contracts';
+import {assertDesignDocument,isImplementedComponentType,readPointer,registry} from '@enterprise-ui/contracts';
 import type {DesignDocument,DesignNode,SerializablePropsByComponent} from '@enterprise-ui/contracts';
 import {AppShell,Panel,Button,TextField,KpiCard} from '@enterprise-ui/react-core';
 
@@ -35,6 +35,7 @@ export function DesignRenderer({doc,host,adapters=coreAdapters}:{doc:DesignDocum
   const render=(node:DesignNode):React.ReactNode=>{
     const entry=registry.get(node.type);
     if(!entry) throw Error('Not in component registry: '+node.type);
+    if(!isImplementedComponentType(node.type)) throw Error('Cataloged but not implemented: '+node.type);
     const adapter=adapters.get(node.type);
     if(!adapter) throw Error('Registered but not implemented in this slice: '+node.type);
     const props={...node.props};

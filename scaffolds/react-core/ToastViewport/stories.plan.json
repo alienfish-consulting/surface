@@ -1,0 +1,19 @@
+{
+  "componentId": "ui.ToastViewport",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "open-or-active",
+    "focus-management"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}

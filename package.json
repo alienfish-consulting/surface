@@ -10,6 +10,8 @@
   "scripts": {
     "generate": "node tools/generate.mjs",
     "check:generated": "node tools/generate.mjs --check",
+    "scaffold:components": "node tools/scaffold-components.mjs",
+    "check:catalog": "node tools/scaffold-components.mjs --check",
     "validate": "node tools/validate.mjs",
     "build": "pnpm generate && nx run-many -t build",
     "typecheck": "nx run-many -t typecheck",

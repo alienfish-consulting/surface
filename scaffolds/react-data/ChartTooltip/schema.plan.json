@@ -1,0 +1,15 @@
+{
+  "schemaPlanVersion": "1.0.0",
+  "componentId": "ui.ChartTooltip",
+  "status": "proposal-only",
+  "serializable": "required-or-documented-exception",
+  "canonicalDocumentSchemaVersion": "1.0.0",
+  "activeRegistryVersion": "1.1.0",
+  "preservedRegistryVersion": "1.0.0",
+  "props": {},
+  "slots": [],
+  "actions": [],
+  "bindings": [],
+  "accessibilityRules": [],
+  "note": "Not a runtime schema. Do not add it to the registry until reviewed, implemented, versioned, and validated."
+}

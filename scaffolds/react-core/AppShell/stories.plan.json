@@ -1,0 +1,20 @@
+{
+  "componentId": "ui.AppShell",
+  "status": "implemented-story-present",
+  "scenarios": [
+    "default",
+    "compact",
+    "dark",
+    "narrow-layout"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Track the existing real story; do not infer production verification."
+}

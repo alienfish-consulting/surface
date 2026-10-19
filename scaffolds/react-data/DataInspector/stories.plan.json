@@ -1,0 +1,19 @@
+{
+  "componentId": "ui.DataInspector",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "long-data",
+    "invalid-data"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}

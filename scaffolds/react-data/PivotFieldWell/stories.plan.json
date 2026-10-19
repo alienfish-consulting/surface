@@ -1,0 +1,20 @@
+{
+  "componentId": "ui.PivotFieldWell",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "empty",
+    "loading",
+    "keyboard-or-editing"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}

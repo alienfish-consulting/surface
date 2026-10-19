@@ -1,0 +1,20 @@
+{
+  "componentId": "ui.Slider",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "disabled",
+    "invalid-or-help",
+    "keyboard-focused"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}

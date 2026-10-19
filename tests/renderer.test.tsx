@@ -12,3 +12,12 @@ test('renders same versioned fixture from registry',()=>{
 test('supports direct JSX on same components',()=>{
  expect(renderToStaticMarkup(<Button label="Direct JSX"/>)).toContain('Direct JSX');
 });
+test('fails closed for schema-only catalog entries without runtime adapters',()=>{
+ const schemaOnly=structuredClone(assertDesignDocument(fixture));
+ const node=schemaOnly.root.children![0]!.children![0]!;
+ node.type='ui.DataGrid';
+ node.props={title:'Customers',columns:[{key:'name',label:'Name'}]};
+ delete node.bindings;
+ expect(()=>renderToStaticMarkup(<DesignRenderer doc={schemaOnly} host={{data:{},requestAction:()=>{}}}/>))
+  .toThrow('Cataloged but not implemented: ui.DataGrid');
+});

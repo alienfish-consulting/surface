@@ -1,0 +1,19 @@
+{
+  "componentId": "ui.DataValue",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "long-content",
+    "dark"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}

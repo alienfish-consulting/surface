@@ -1,0 +1,20 @@
+{
+  "componentId": "ui.ConflictResolver",
+  "status": "proposal-only",
+  "scenarios": [
+    "default",
+    "editing",
+    "preview",
+    "conflict"
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "densities": [
+    "comfortable",
+    "compact"
+  ],
+  "note": "Do not generate a fake rendering story. Add stories only when working component source exists."
+}
