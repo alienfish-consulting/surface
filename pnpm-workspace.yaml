@@ -5,3 +5,8 @@ packages:
 onlyBuiltDependencies:
   - esbuild
   - nx
+
+# Nx 23.3.0 pins undici 7.29.0; retain the patched transitive release until
+# Nx carries 7.29.1 or newer directly.
+overrides:
+  undici: 7.29.1
