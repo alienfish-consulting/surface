@@ -35,11 +35,17 @@ test('pointer decoder rejects prototype properties and uses own keys',()=>{
  expect(readPointer({a:{value:2}},'/a/value')).toBe(2);
  expect(readPointer({a:3},'/__proto__')).toBeUndefined();
 });
-test('foundational registry validates new core contracts and preserves explicit JSX-only exceptions',()=>{
- expect(registryVersion).toBe('1.2.0');
- expect(declarativeExceptions.map(item=>item.type)).toEqual(['ui.KeyboardShortcut','ui.ToastViewport']);
+test('active registry validates core and data contracts and preserves explicit JSX-only exceptions',()=>{
+ expect(registryVersion).toBe('1.3.0');
+ expect(declarativeExceptions.map(item=>item.type)).toEqual(['ui.KeyboardShortcut','ui.ToastViewport','ui.GridColumn','ui.ChartLegend','ui.ChartTooltip']);
  const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'core-contract',revision:0,kind:'form',themeId:'default',density:'comfortable',dataSources:[],actionIds:['form.change'],root:{id:'page',type:'ui.PageLayout',props:{},children:[{id:'field',type:'ui.Select',props:{label:'Environment',options:[{value:'prod',label:'Production'}]},intents:{onChange:{actionId:'form.change'}}}]}};
  expect(validateDocument(document)).toEqual({ok:true,document});
  const invalid=structuredClone(document);invalid.root.children![0]!.props.unknown=true;
+ expect(validateDocument(invalid).ok).toBe(false);
+});
+test('data registry validates a serialized grid and rejects undeclared data props',()=>{
+ const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'data-contract',revision:0,kind:'dashboard',themeId:'default',density:'compact',dataSources:['accounts'],actionIds:['grid.activate'],root:{id:'grid',type:'ui.DataGrid',props:{title:'Customers',columns:[{key:'name',label:'Name',sortable:true}]},bindings:{rows:{sourceId:'accounts',pointer:''}},intents:{onRowActivate:{actionId:'grid.activate'}}}};
+ expect(validateDocument(document)).toEqual({ok:true,document});
+ const invalid=structuredClone(document);invalid.root.props.renderCell='arbitrary-code';
  expect(validateDocument(invalid).ok).toBe(false);
 });

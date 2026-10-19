@@ -2,7 +2,7 @@
 
 Private component-development application for the implemented Enterprise UI catalog.
 
-M1 documents only the five existing POC components: `AppShell`, `Panel`, `Button`, `TextField`, and `KpiCard`. Planned catalog entries must not receive stories until they have meaningful implementations.
+Stories document only working implementations. The M3 core catalog and M4 data catalog use focused individual or grouped stories; proposed later-milestone entries remain excluded until they have meaningful implementations.
 
 The toolbar exposes light, dark, high-contrast inspection, compact density, and comfortable density. The high-contrast option is an implementation inspection mode, not a WCAG certification. Forced-colors and assistive-technology verification remain later approved work.
 

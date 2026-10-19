@@ -98,6 +98,4 @@ export const coreAdapters:ReadonlyMap<string,Adapter>=new Map<string,Adapter>([
   adapt('ui.Pagination',(p,_c,n,h)=><Core.Pagination page={p.page} pageCount={p.pageCount} label={p.label} siblingCount={p.siblingCount} onPageChange={value=>action(n,h,'onPageChange',{value})}/>),
   adapt('ui.Stepper',p=><Core.Stepper steps={p.steps} orientation={p.orientation}/>),
   adapt('ui.StatusIndicator',p=><Core.StatusIndicator status={p.status} label={p.label} pulse={p.pulse}/>),
-
-  adapt('ui.KpiCard',p=><Core.KpiCard label={p.label} value={typeof p.value==='number'||typeof p.value==='string'?p.value:null} format={p.format} currency={p.currency??'USD'}/>),
 ]);

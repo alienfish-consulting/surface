@@ -12,4 +12,13 @@ test('design lab renders the existing POC and exposes local display controls', a
 
   await page.getByLabel('Density').selectOption('compact');
   await expect(page.locator('[data-ui-density="compact"]')).toBeVisible();
+
+  const grid = page.getByRole('region', { name: 'Customer accounts' });
+  await expect(grid.getByRole('table')).toBeVisible();
+  await expect(grid.getByText('Acme Manufacturing')).toBeVisible();
+  await grid.getByRole('button', { name: 'Customer' }).click();
+  await expect(grid.getByRole('columnheader', { name: 'Customer' })).toHaveAttribute('aria-sort', 'descending');
+  await page.getByLabel('Filter customers').fill('globex');
+  await expect(grid.getByText('Globex')).toBeVisible();
+  await expect(grid.getByText('Acme Manufacturing')).toHaveCount(0);
 });

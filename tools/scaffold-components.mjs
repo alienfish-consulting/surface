@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = resolve(repositoryRoot, 'catalog/components.v1.json');
-const runtimeRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.2.0.json');
+const runtimeRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.3.0.json');
 const planningRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.json');
 const legacyRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.0.0.json');
 
@@ -67,7 +67,7 @@ if (catalog.schemaVersion !== '1.0.0' || catalog.catalogStatus !== 'accepted-v1-
   throw new Error('Unsupported or unapproved component catalog');
 }
 if (catalog.components.length !== 198) throw new Error(`Expected 198 catalog units; found ${catalog.components.length}`);
-if (runtimeRegistry.registryVersion !== '1.2.0') throw new Error('The active foundational registry must be 1.2.0');
+if (runtimeRegistry.registryVersion !== '1.3.0') throw new Error('The active data registry must be 1.3.0');
 if (legacyRegistry.registryVersion !== '1.0.0') throw new Error('The preserved legacy registry must remain at 1.0.0');
 
 const componentsById = new Map();
@@ -322,8 +322,8 @@ ${packageRows}
 - Registry \`1.0.0\` remains preserved with ${legacyTypes.size} entries.
 - Active foundational registry \`${runtimeRegistry.registryVersion}\` contains ${runtimeTypes.size} schema entries; prior registry fixtures remain preserved.
 - Renderer adapters exist for the registered lifecycle-implemented or verified units: ${list(renderableIds)}.
-- \`ui.DataGrid\` and \`ui.ActivityFeed\` remain schema-only compatibility entries and fail closed at the renderer boundary.
-- \`ui.KpiCard\` remains temporarily implemented in \`react-core\`; its accepted target boundary is \`react-data\`. M2 does not move it.
+- \`ui.ActivityFeed\` remains the schema-only compatibility entry and fails closed at the renderer boundary.
+- \`ui.DataGrid\`, \`ui.KpiCard\`, and the accepted M4 serialized data subset are implemented by \`react-data\`; documented JSX-only exceptions remain outside the registry.
 
 No scaffold is a public export, a runtime registration, a Storybook story, or evidence of implementation.
 `;

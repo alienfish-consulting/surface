@@ -484,6 +484,153 @@ export interface StatusIndicatorSerializedProps {
   "label": string;
   "pulse"?: boolean;
 }
+export interface GridCellEditorSerializedProps {
+  "label": string;
+  "value"?: string | number;
+  "type"?: "text" | "number";
+}
+export interface GridToolbarSerializedProps {
+  "label"?: string;
+  "query"?: string;
+}
+export interface ColumnChooserSerializedProps {
+  "label"?: string;
+  "columns": Array<{ "key": string; "label": string; "visible": boolean }>;
+}
+export interface FilterBuilderSerializedProps {
+  "label"?: string;
+  "fields": Array<{ "value": string; "label": string; "operators"?: Array<string> }>;
+  "value"?: Array<{ "id": string; "field": string; "operator": "equals" | "contains" | "startsWith" | "greaterThan" | "lessThan"; "value": string }>;
+}
+export interface SortBuilderSerializedProps {
+  "fields": Array<{ "value": string; "label": string; "operators"?: Array<string> }>;
+  "value"?: Array<{ "field": string; "direction": "ascending" | "descending" }>;
+}
+export interface GroupPanelSerializedProps {
+  "fields": Array<{ "key": string; "label": string }>;
+  "groupedKeys"?: Array<string>;
+}
+export interface TreeGridSerializedProps {
+  "title": string;
+  "columns": Array<{ "key": string; "label": string; "width"?: number | string; "sortable"?: boolean; "editable"?: boolean; "align"?: "start" | "center" | "end" }>;
+  "rows"?: Array<Record<string, unknown>>;
+  "defaultExpandedIds"?: Array<string>;
+  "presentation"?: "auto" | "table" | "recordList";
+}
+export interface PivotTableSerializedProps {
+  "title": string;
+  "rowLabels": Array<string>;
+  "columnLabels": Array<string>;
+  "values"?: Array<{ "row": string; "column": string; "value": number }>;
+}
+export interface PivotFieldWellSerializedProps {
+  "rows": Array<string>;
+  "columns": Array<string>;
+  "values": Array<string>;
+}
+export interface DataTableSerializedProps {
+  "title": string;
+  "columns": Array<{ "key": string; "label": string; "width"?: number | string; "sortable"?: boolean; "editable"?: boolean; "align"?: "start" | "center" | "end" }>;
+  "rows"?: Array<Record<string, unknown>>;
+  "emptyText"?: string;
+}
+export interface DataListSerializedProps {
+  "label": string;
+  "items"?: Array<Record<string, unknown>>;
+  "primaryKey": string;
+  "secondaryKey"?: string;
+}
+export interface SavedViewSelectorSerializedProps {
+  "label"?: string;
+  "views": Array<{ "id": string; "label": string; "description"?: string }>;
+  "value"?: string;
+}
+export interface ChartSerializedProps {
+  "title": string;
+  "data"?: Array<{ "x": string; "y": number; "series"?: string }>;
+  "type"?: "bar" | "line" | "area";
+  "height"?: number;
+  "valueLabel"?: string;
+  "emptyText"?: string;
+}
+export interface SparklineSerializedProps {
+  "label": string;
+  "values"?: Array<number>;
+  "width"?: number;
+  "height"?: number;
+  "tone"?: "neutral" | "success" | "danger";
+}
+export interface StatGroupSerializedProps {
+  "label"?: string;
+  "items": Array<{ "id": string; "label": string; "value": string | number | boolean | null; "description"?: string }>;
+}
+export interface FacetedFilterSerializedProps {
+  "facets": Array<{ "id": string; "label": string; "values"?: Array<{ "value": string; "label": string; "count"?: number }> }>;
+  "value"?: Record<string, Array<string>>;
+}
+export interface QueryBuilderSerializedProps {
+  "fields": Array<{ "value": string; "label": string; "operators"?: Array<string> }>;
+  "value"?: Array<{ "id": string; "field": string; "operator": string; "value": string }>;
+  "conjunction"?: "and" | "or";
+}
+export interface CalendarSerializedProps {
+  "label"?: string;
+  "month": string;
+  "events"?: Array<{ "id": string; "title": string; "start": string; "end"?: string; "color"?: string; "resourceId"?: string }>;
+}
+export interface SchedulerSerializedProps {
+  "label"?: string;
+  "resources": Array<{ "id": string; "label": string }>;
+  "events"?: Array<{ "id": string; "title": string; "start": string; "end"?: string; "color"?: string; "resourceId"?: string }>;
+}
+export interface TimelineSerializedProps {
+  "label"?: string;
+  "items"?: Array<{ "id": string; "title": string; "time": string; "description"?: string; "tone"?: "neutral" | "success" | "warning" | "danger" }>;
+}
+export interface GanttChartSerializedProps {
+  "label"?: string;
+  "tasks"?: Array<{ "id": string; "label": string; "start": number; "duration": number; "progress"?: number; "dependencies"?: Array<string> }>;
+  "range": number;
+}
+export interface GanttTaskEditorSerializedProps {
+  "task": { "id": string; "label": string; "start": number; "duration": number; "progress"?: number; "dependencies"?: Array<string> };
+}
+export interface HeatmapSerializedProps {
+  "label": string;
+  "rows": Array<string>;
+  "columns": Array<string>;
+  "cells"?: Array<{ "row": string; "column": string; "value": number }>;
+}
+export interface DataInspectorSerializedProps {
+  "label"?: string;
+  "value": Record<string, unknown> | unknown[] | string | number | boolean | null;
+  "path"?: string;
+}
+export interface DiffViewerSerializedProps {
+  "label"?: string;
+  "before": string;
+  "after": string;
+  "mode"?: "unified" | "split";
+}
+export interface JsonViewerSerializedProps {
+  "label"?: string;
+  "value": Record<string, unknown> | unknown[] | string | number | boolean | null;
+  "defaultExpandedDepth"?: number;
+  "copyLabel"?: string;
+}
+export interface CodeViewerSerializedProps {
+  "label": string;
+  "code": string;
+  "language"?: string;
+  "lineNumbers"?: boolean;
+  "highlightLines"?: Array<number>;
+}
+export interface FileTreeSerializedProps {
+  "label"?: string;
+  "nodes": Array<unknown>;
+  "selectedId"?: string;
+  "defaultExpandedIds"?: Array<string>;
+}
 export interface SerializablePropsByComponent {
   "ui.AppShell": AppShellSerializedProps;
   "ui.Panel": PanelSerializedProps;
@@ -571,5 +718,33 @@ export interface SerializablePropsByComponent {
   "ui.Pagination": PaginationSerializedProps;
   "ui.Stepper": StepperSerializedProps;
   "ui.StatusIndicator": StatusIndicatorSerializedProps;
+  "ui.GridCellEditor": GridCellEditorSerializedProps;
+  "ui.GridToolbar": GridToolbarSerializedProps;
+  "ui.ColumnChooser": ColumnChooserSerializedProps;
+  "ui.FilterBuilder": FilterBuilderSerializedProps;
+  "ui.SortBuilder": SortBuilderSerializedProps;
+  "ui.GroupPanel": GroupPanelSerializedProps;
+  "ui.TreeGrid": TreeGridSerializedProps;
+  "ui.PivotTable": PivotTableSerializedProps;
+  "ui.PivotFieldWell": PivotFieldWellSerializedProps;
+  "ui.DataTable": DataTableSerializedProps;
+  "ui.DataList": DataListSerializedProps;
+  "ui.SavedViewSelector": SavedViewSelectorSerializedProps;
+  "ui.Chart": ChartSerializedProps;
+  "ui.Sparkline": SparklineSerializedProps;
+  "ui.StatGroup": StatGroupSerializedProps;
+  "ui.FacetedFilter": FacetedFilterSerializedProps;
+  "ui.QueryBuilder": QueryBuilderSerializedProps;
+  "ui.Calendar": CalendarSerializedProps;
+  "ui.Scheduler": SchedulerSerializedProps;
+  "ui.Timeline": TimelineSerializedProps;
+  "ui.GanttChart": GanttChartSerializedProps;
+  "ui.GanttTaskEditor": GanttTaskEditorSerializedProps;
+  "ui.Heatmap": HeatmapSerializedProps;
+  "ui.DataInspector": DataInspectorSerializedProps;
+  "ui.DiffViewer": DiffViewerSerializedProps;
+  "ui.JsonViewer": JsonViewerSerializedProps;
+  "ui.CodeViewer": CodeViewerSerializedProps;
+  "ui.FileTree": FileTreeSerializedProps;
 }
 export type SerializableComponentType = keyof SerializablePropsByComponent;

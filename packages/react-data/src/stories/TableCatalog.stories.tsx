@@ -1,0 +1,14 @@
+import type {Meta,StoryObj} from '@storybook/react-vite';
+import * as React from 'react';
+import {Button,Stack} from '@enterprise-ui/react-core';
+import {ColumnChooser,DataGrid,DataList,DataTable,FilterBuilder,GridCellEditor,GridToolbar,GroupPanel,PivotFieldWell,PivotTable,SavedViewSelector,SortBuilder,TreeGrid} from '../index.js';
+import type {FilterRule} from '../index.js';
+
+const meta={title:'Data/Tables',component:DataGrid,parameters:{layout:'padded'}} satisfies Meta<typeof DataGrid>;
+export default meta;type Story=StoryObj;
+const columns=[{key:'name',label:'Customer',sortable:true},{key:'region',label:'Region',sortable:true},{key:'revenue',label:'Revenue',align:'end' as const,format:(value:unknown)=>Number(value).toLocaleString(undefined,{style:'currency',currency:'USD'})}];
+const rows=[{id:'a',name:'Aperture Labs',region:'North',revenue:128000},{id:'b',name:'Beacon Foods',region:'West',revenue:96500},{id:'c',name:'Cascade Supply',region:'East',revenue:142300}];
+export const GridAndToolbar:Story={render:()=>{const [query,setQuery]=React.useState('');const [selected,setSelected]=React.useState<React.Key[]>([]);return <Stack><GridToolbar query={query} onQueryChange={setQuery}><Button label="Export" variant="secondary"/></GridToolbar><DataGrid title="Customers" columns={columns} rows={rows.filter(row=>row.name.toLowerCase().includes(query.toLowerCase()))} selectable selectedKeys={selected} onSelectionChange={setSelected}/></Stack>}};
+export const Builders:Story={render:()=>{const [filters,setFilters]=React.useState<FilterRule[]>([{id:'one',field:'region',operator:'equals',value:'West'}]);const fields=[{value:'name',label:'Customer'},{value:'region',label:'Region'}];return <Stack><ColumnChooser columns={columns.map(column=>({key:column.key,label:column.label,visible:true}))}/><FilterBuilder fields={fields} value={filters} onChange={setFilters}/><SortBuilder fields={fields} value={[{field:'name',direction:'ascending'}]}/><GroupPanel fields={columns}/><GridCellEditor label="Revenue" value={128000} type="number" onCommit={()=>{}}/></Stack>}};
+export const TreeAndPivot:Story={render:()=> <Stack><TreeGrid title="Accounts" columns={columns.slice(0,2)} defaultExpandedIds={['root']} rows={[{id:'root',name:'Enterprise',region:'',children:rows.map(row=>({...row,id:String(row.id)}))}]}/><PivotFieldWell rows={['Region']} columns={['Quarter']} values={['Revenue']}/><PivotTable title="Revenue by region" rowLabels={['North','West']} columnLabels={['Q1','Q2']} values={[{row:'North',column:'Q1',value:32},{row:'North',column:'Q2',value:41},{row:'West',column:'Q1',value:28}]}/></Stack>};
+export const AlternatePresentations:Story={render:()=> <Stack><DataTable title="Compact table" columns={columns} rows={rows}/><DataList label="Customer list" items={rows} primaryKey="name" secondaryKey="region"/><SavedViewSelector views={[{id:'all',label:'All customers'},{id:'west',label:'Western region'}]} value="all" onSave={()=>{}}/></Stack>};

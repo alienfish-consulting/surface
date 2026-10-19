@@ -2,12 +2,14 @@ import * as React from 'react';
 import {assertDesignDocument,isImplementedComponentType,readPointer,registry} from '@enterprise-ui/contracts';
 import type {DesignDocument,DesignNode} from '@enterprise-ui/contracts';
 import {coreAdapters} from './core-adapters.js';
+import {dataAdapters} from './data-adapters.js';
 import type {Adapter,Host,HostActionRequest} from './core-adapters.js';
 
 export type {HostActionRequest,Host};
 export interface RenderProps {doc:DesignDocument;host:Host}
-export {coreAdapters};
-export function DesignRenderer({doc,host,adapters=coreAdapters}:{doc:DesignDocument;host:Host;adapters?:ReadonlyMap<string,Adapter>}){
+export {coreAdapters,dataAdapters};
+export const defaultAdapters:ReadonlyMap<string,Adapter>=new Map([...coreAdapters,...dataAdapters]);
+export function DesignRenderer({doc,host,adapters=defaultAdapters}:{doc:DesignDocument;host:Host;adapters?:ReadonlyMap<string,Adapter>}){
   const validated=assertDesignDocument(doc);
   const render=(node:DesignNode):React.ReactNode=>{
     const entry=registry.get(node.type);

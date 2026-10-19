@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "width": {
+      "type": "number"
+    },
+    "height": {
+      "type": "number"
+    },
+    "tone": {
+      "enum": [
+        "neutral",
+        "success",
+        "danger"
+      ]
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "additionalProperties": false
+}

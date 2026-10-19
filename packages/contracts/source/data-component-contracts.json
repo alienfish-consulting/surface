@@ -1,0 +1,1840 @@
+{
+  "contractSourceVersion": "1.0.0",
+  "registryVersion": "1.3.0",
+  "exceptions": [
+    {
+      "type": "ui.GridColumn",
+      "reason": "Typed JSX configuration object consumed by grid components; it is serialized inside grid column arrays rather than as an independent document node."
+    },
+    {
+      "type": "ui.ChartLegend",
+      "reason": "Compositional chart helper whose items are derived from the owning chart series; standalone persisted placement is not meaningful."
+    },
+    {
+      "type": "ui.ChartTooltip",
+      "reason": "Ephemeral pointer/focus presentation derived from the owning chart datum; it is not stable persisted document state."
+    }
+  ],
+  "components": [
+    {
+      "type": "ui.GridCellEditor",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/grid-cell-editor.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "type": {
+            "enum": [
+              "text",
+              "number"
+            ]
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onCommit",
+        "onCancel"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.GridToolbar",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/grid-toolbar.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.DataGrid",
+        "ui.GridCellEditor",
+        "ui.GridToolbar",
+        "ui.ColumnChooser",
+        "ui.FilterBuilder",
+        "ui.SortBuilder",
+        "ui.GroupPanel",
+        "ui.TreeGrid",
+        "ui.PivotTable",
+        "ui.PivotFieldWell",
+        "ui.DataTable",
+        "ui.DataList",
+        "ui.SavedViewSelector",
+        "ui.Chart",
+        "ui.Sparkline",
+        "ui.KpiCard",
+        "ui.StatGroup",
+        "ui.FacetedFilter",
+        "ui.QueryBuilder",
+        "ui.Calendar",
+        "ui.Scheduler",
+        "ui.Timeline",
+        "ui.GanttChart",
+        "ui.GanttTaskEditor",
+        "ui.Heatmap",
+        "ui.DataInspector",
+        "ui.DiffViewer",
+        "ui.JsonViewer",
+        "ui.CodeViewer",
+        "ui.FileTree"
+      ],
+      "bindings": [
+        "query"
+      ],
+      "events": [
+        "onQueryChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ColumnChooser",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/column-chooser.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "visible": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "key",
+                "label",
+                "visible"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "columns"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "columns"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.FilterBuilder",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/filter-builder.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "operators": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "field": {
+                  "type": "string"
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "contains",
+                    "startsWith",
+                    "greaterThan",
+                    "lessThan"
+                  ]
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "field",
+                "operator",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "fields"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.SortBuilder",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/sort-builder.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "operators": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "direction": {
+                  "enum": [
+                    "ascending",
+                    "descending"
+                  ]
+                }
+              },
+              "required": [
+                "field",
+                "direction"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "fields"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.GroupPanel",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/group-panel.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "key",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "groupedKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "fields"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "groupedKeys"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.TreeGrid",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/tree-grid.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "width": {
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "sortable": {
+                  "type": "boolean"
+                },
+                "editable": {
+                  "type": "boolean"
+                },
+                "align": {
+                  "enum": [
+                    "start",
+                    "center",
+                    "end"
+                  ]
+                }
+              },
+              "required": [
+                "key",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "defaultExpandedIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "presentation": {
+            "enum": [
+              "auto",
+              "table",
+              "recordList"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "columns"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "rows"
+      ],
+      "events": [
+        "onRowActivate",
+        "onSelectionChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "record-list"
+    },
+    {
+      "type": "ui.PivotTable",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/pivot-table.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "rowLabels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "columnLabels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row": {
+                  "type": "string"
+                },
+                "column": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "row",
+                "column",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "title",
+          "rowLabels",
+          "columnLabels"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "values"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.PivotFieldWell",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/pivot-field-well.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "rows",
+          "columns",
+          "values"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onRemove"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DataTable",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/data-table.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "width": {
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "sortable": {
+                  "type": "boolean"
+                },
+                "editable": {
+                  "type": "boolean"
+                },
+                "align": {
+                  "enum": [
+                    "start",
+                    "center",
+                    "end"
+                  ]
+                }
+              },
+              "required": [
+                "key",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "emptyText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "columns"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "rows"
+      ],
+      "events": [
+        "onRowActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "record-list"
+    },
+    {
+      "type": "ui.DataList",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/data-list.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "primaryKey": {
+            "type": "string"
+          },
+          "secondaryKey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "primaryKey"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "record-list"
+    },
+    {
+      "type": "ui.SavedViewSelector",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "schemaFile": "schemas/components/saved-view-selector.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "views": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "views"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange",
+        "onSave"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Chart",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/chart.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "string"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "series": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "x",
+                "y"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "type": {
+            "enum": [
+              "bar",
+              "line",
+              "area"
+            ]
+          },
+          "height": {
+            "type": "number",
+            "minimum": 80
+          },
+          "valueLabel": {
+            "type": "string"
+          },
+          "emptyText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "data"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Sparkline",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/sparkline.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "tone": {
+            "enum": [
+              "neutral",
+              "success",
+              "danger"
+            ]
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "values"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.StatGroup",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/stat-group.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.FacetedFilter",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/faceted-filter.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "facets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "count": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "label"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "value": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "facets"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.QueryBuilder",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/query-builder.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "operators": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "field": {
+                  "type": "string"
+                },
+                "operator": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "field",
+                "operator",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "conjunction": {
+            "enum": [
+              "and",
+              "or"
+            ]
+          }
+        },
+        "required": [
+          "fields"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange",
+        "onConjunctionChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Calendar",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/calendar.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "month": {
+            "type": "string",
+            "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])$"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "string"
+                },
+                "end": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                },
+                "resourceId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "start"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "month"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "events"
+      ],
+      "events": [
+        "onEventActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Scheduler",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/scheduler.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "string"
+                },
+                "end": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                },
+                "resourceId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "start"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "resources"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "events"
+      ],
+      "events": [
+        "onEventActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Timeline",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/timeline.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "time": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "tone": {
+                  "enum": [
+                    "neutral",
+                    "success",
+                    "warning",
+                    "danger"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "time"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.GanttChart",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/gantt-chart.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "number"
+                },
+                "duration": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "progress": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "dependencies": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "start",
+                "duration"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "range": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "range"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "tasks"
+      ],
+      "events": [
+        "onTaskActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.GanttTaskEditor",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/gantt-task-editor.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "start": {
+                "type": "number"
+              },
+              "duration": {
+                "type": "number",
+                "minimum": 0
+              },
+              "progress": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "dependencies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "start",
+              "duration"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "task"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "task"
+      ],
+      "events": [
+        "onChange",
+        "onDelete"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Heatmap",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "schemaFile": "schemas/components/heatmap.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cells": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row": {
+                  "type": "string"
+                },
+                "column": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "row",
+                "column",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "label",
+          "rows",
+          "columns"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "cells"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DataInspector",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "schemaFile": "schemas/components/data-inspector.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "object",
+              "array",
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value",
+        "path"
+      ],
+      "events": [
+        "onPathChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DiffViewer",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "schemaFile": "schemas/components/diff-viewer.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "before": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "unified",
+              "split"
+            ]
+          }
+        },
+        "required": [
+          "before",
+          "after"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "before",
+        "after"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.JsonViewer",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "schemaFile": "schemas/components/json-viewer.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "object",
+              "array",
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "defaultExpandedDepth": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "copyLabel": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.CodeViewer",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "schemaFile": "schemas/components/code-viewer.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "lineNumbers": {
+            "type": "boolean"
+          },
+          "highlightLines": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "required": [
+          "label",
+          "code"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "code"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.FileTree",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "schemaFile": "schemas/components/file-tree.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/fileNode"
+            }
+          },
+          "selectedId": {
+            "type": "string"
+          },
+          "defaultExpandedIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "nodes"
+        ],
+        "additionalProperties": false,
+        "$defs": {
+          "fileNode": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "file",
+                  "folder"
+                ]
+              },
+              "status": {
+                "type": "string"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/fileNode"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "kind"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "nodes",
+        "selectedId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container"
+    }
+  ]
+}

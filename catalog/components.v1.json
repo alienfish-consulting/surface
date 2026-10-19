@@ -2816,7 +2816,7 @@
       "sourceState": "schema-only-unimplemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -2833,8 +2833,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "schema-only compatibility fixture; no runtime adapter",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -2852,7 +2852,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required-or-documented-exception",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -2869,8 +2869,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -2888,7 +2888,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -2905,8 +2905,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -2924,7 +2924,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -2941,8 +2941,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -2960,7 +2960,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -2977,8 +2977,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -2996,7 +2996,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3013,8 +3013,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3032,7 +3032,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3049,8 +3049,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3068,7 +3068,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3085,8 +3085,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3104,7 +3104,7 @@
       "sourceState": "not-implemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3121,8 +3121,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3140,7 +3140,7 @@
       "sourceState": "not-implemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3157,8 +3157,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3176,7 +3176,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3193,8 +3193,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3212,7 +3212,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3229,8 +3229,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3248,7 +3248,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3265,8 +3265,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3284,7 +3284,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
@@ -3301,8 +3301,8 @@
         "loading",
         "keyboard-or-editing"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3320,7 +3320,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3336,8 +3336,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3355,7 +3355,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required-or-documented-exception",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3371,8 +3371,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3390,7 +3390,7 @@
       "sourceState": "not-implemented",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required-or-documented-exception",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3406,8 +3406,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3425,7 +3425,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3441,8 +3441,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3460,7 +3460,7 @@
       "sourceState": "poc-implemented-unverified-production",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "implemented",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3476,8 +3476,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
-      "implementationPackage": "react-core (temporary POC location; catalog target remains react-data)",
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3495,7 +3495,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3511,8 +3511,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3530,7 +3530,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3546,8 +3546,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3565,7 +3565,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3581,8 +3581,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3600,7 +3600,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3616,8 +3616,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3635,7 +3635,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3651,8 +3651,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3670,7 +3670,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3686,8 +3686,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3705,7 +3705,7 @@
       "sourceState": "not-implemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3721,8 +3721,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3740,7 +3740,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3756,8 +3756,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3775,7 +3775,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
@@ -3791,8 +3791,8 @@
         "empty",
         "narrow-or-dense"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3810,7 +3810,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
@@ -3826,8 +3826,8 @@
         "long-data",
         "invalid-data"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3845,7 +3845,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
@@ -3861,8 +3861,8 @@
         "long-data",
         "invalid-data"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3880,7 +3880,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
@@ -3896,8 +3896,8 @@
         "long-data",
         "invalid-data"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3915,7 +3915,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
@@ -3931,8 +3931,8 @@
         "long-data",
         "invalid-data"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -3950,7 +3950,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
@@ -3966,8 +3966,8 @@
         "long-data",
         "invalid-data"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",

@@ -13,14 +13,19 @@ test('renders same versioned fixture from registry',()=>{
 test('supports direct JSX on same components',()=>{
  expect(renderToStaticMarkup(<Button label="Direct JSX"/>)).toContain('Direct JSX');
 });
-test('fails closed for schema-only catalog entries without runtime adapters',()=>{
+test('fails closed for the remaining schema-only compatibility entry',()=>{
  const schemaOnly=structuredClone(assertDesignDocument(fixture));
  const node=schemaOnly.root.children![0]!.children![0]!;
- node.type='ui.DataGrid';
- node.props={title:'Customers',columns:[{key:'name',label:'Name'}]};
+ node.type='ui.ActivityFeed';
+ node.props={title:'Activity'};
  delete node.bindings;
  expect(()=>renderToStaticMarkup(<DesignRenderer doc={schemaOnly} host={{data:{},requestAction:()=>{}}}/>))
-  .toThrow('Cataloged but not implemented: ui.DataGrid');
+  .toThrow('Cataloged but not implemented: ui.ActivityFeed');
+});
+test('renders the serialized data subset with semantic table output',()=>{
+ const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'data-render',revision:0,kind:'dashboard',themeId:'default',density:'comfortable',dataSources:['accounts'],actionIds:['grid.activate'],root:{id:'grid',type:'ui.DataGrid',props:{title:'Customers',columns:[{key:'name',label:'Name'}]},bindings:{rows:{sourceId:'accounts',pointer:''}},intents:{onRowActivate:{actionId:'grid.activate'}}}};
+ const html=renderToStaticMarkup(<DesignRenderer doc={document} host={{data:{accounts:[{id:'1',name:'Acme'}]},requestAction:()=>{}}}/>);
+ expect(html).toContain('<table>');expect(html).toContain('<caption>Customers</caption>');expect(html).toContain('Acme');
 });
 test('renders the foundational serialized subset and emits only named host intentions',()=>{
  const requests:unknown[]=[];

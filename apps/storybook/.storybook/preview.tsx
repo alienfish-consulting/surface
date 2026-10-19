@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react-vite';
 import React from 'react';
 import '../../../packages/tokens/dist/theme.css';
 import '../../../packages/react-core/src/styles.css';
+import '../../../packages/react-data/src/styles.css';
 import './preview.css';
 
 const preview: Preview = {
@@ -49,7 +50,7 @@ const preview: Preview = {
   parameters: {
     controls: { expanded: true },
     layout: 'fullscreen',
-    options: { storySort: { order: ['Core'] } },
+    options: { storySort: { order: ['Core','Data'] } },
     a11y: { test: 'todo' },
   },
 };

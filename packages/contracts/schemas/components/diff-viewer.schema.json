@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "before": {
+      "type": "string"
+    },
+    "after": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "unified",
+        "split"
+      ]
+    }
+  },
+  "required": [
+    "before",
+    "after"
+  ],
+  "additionalProperties": false
+}

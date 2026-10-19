@@ -1,7 +1,7 @@
 import Ajv2020 from 'ajv/dist/2020.js';
 import type { ErrorObject, ValidateFunction } from 'ajv';
 import { applyPatch, type Operation } from 'fast-json-patch';
-import {registryDocument,previousRegistryDocument,legacyRegistryDocument,declarativeExceptions,documentSchema,registrySchema,proposalSchema,componentSchemas} from './generated/schema-bundle.js';
+import {registryDocument,registryDocuments,declarativeExceptions,documentSchema,registrySchema,proposalSchema,componentSchemas} from './generated/schema-bundle.js';
 export type * from './generated/serialized-props.js';
 export {
   implementedComponentTypes,
@@ -36,14 +36,15 @@ export interface RegistryEntry {
   states: readonly string[]; responsive: string;
 }
 export const registryVersion = registryDocument.registryVersion;
-export const previousRegistryVersion = previousRegistryDocument.registryVersion;
-export const legacyRegistryVersion = legacyRegistryDocument.registryVersion;
+export const previousRegistryVersion = registryDocuments[1].registryVersion;
+export const legacyRegistryVersion = (registryDocuments[registryDocuments.length-1] as {registryVersion:string}).registryVersion;
 export {declarativeExceptions};
 export const registry: ReadonlyMap<string, RegistryEntry> = new Map<string, RegistryEntry>(
   registryDocument.components.map((entry) => [entry.type, entry])
 );
-const previousRegistry: ReadonlyMap<string,RegistryEntry> = new Map(previousRegistryDocument.components.map(entry=>[entry.type,entry]));
-const legacyRegistry: ReadonlyMap<string,RegistryEntry> = new Map(legacyRegistryDocument.components.map(entry=>[entry.type,entry]));
+const registriesByVersion:ReadonlyMap<string,ReadonlyMap<string,RegistryEntry>>=new Map(registryDocuments.map(document=>[
+  document.registryVersion,new Map<string,RegistryEntry>(document.components.map(entry=>[entry.type,entry]))
+]));
 const ajv = new Ajv2020({ allErrors:true, strict:false });
 ajv.addFormat('date',/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/);
 const documentValidator = ajv.compile(documentSchema);
@@ -52,9 +53,10 @@ const proposalValidator = ajv.compile(proposalSchema);
 const validators: ReadonlyMap<string, ValidateFunction> = new Map(
   Object.entries(componentSchemas).map(([type,schema])=>[type,ajv.compile(schema)])
 );
-if(!registryValidator(registryDocument)) throw Error('Invalid component registry: '+JSON.stringify(registryValidator.errors));
-if(!registryValidator(previousRegistryDocument)) throw Error('Invalid previous registry: '+JSON.stringify(registryValidator.errors));
-if(!registryValidator(legacyRegistryDocument)) throw Error('Invalid legacy registry: '+JSON.stringify(registryValidator.errors));
+for(const document of registryDocuments){
+  const version:string=document.registryVersion;
+  if(!registryValidator(document))throw Error(`Invalid component registry ${version}: `+JSON.stringify(registryValidator.errors));
+}
 
 const formatErrors = (errors?: ErrorObject[]|null) => (errors??[]).map(e=>`${e.instancePath||'/'} ${e.message??'invalid'}`);
 const forbiddenKeys = new Set(['__proto__','constructor','prototype']);
@@ -81,7 +83,7 @@ export function validateDocument(input: unknown): {ok:true;document:DesignDocume
   if(!documentValidator(input)) return {ok:false,errors:formatErrors(documentValidator.errors)};
   const doc=input as DesignDocument;
   const errors:string[]=[];
-  const activeRegistry = doc.registryVersion===registryVersion ? registry : doc.registryVersion===previousRegistryVersion ? previousRegistry : doc.registryVersion===legacyRegistryVersion ? legacyRegistry : undefined;
+  const activeRegistry=registriesByVersion.get(doc.registryVersion);
   if(!activeRegistry) errors.push(`Unsupported registryVersion: ${doc.registryVersion}`);
   if(doc.dataSources.some(source=>forbiddenKeys.has(source))) errors.push('Forbidden data source identifier');
   const seen=new Set<string>();let total=0;

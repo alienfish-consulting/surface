@@ -2,6 +2,7 @@ import * as React from 'react';
 import {createRoot} from 'react-dom/client';
 import '@enterprise-ui/tokens/theme.css';
 import '../../../packages/react-core/src/styles.css';
+import '../../../packages/react-data/src/styles.css';
 import './styles.css';
 import fixture from '../../../packages/contracts/fixtures/vertical-slice.design.json';
 import {assertDesignDocument,previewProposal} from '@enterprise-ui/contracts';
@@ -9,9 +10,13 @@ import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
 import {DesignRenderer} from '@enterprise-ui/react-renderer';
 import type {Host,HostActionRequest} from '@enterprise-ui/react-renderer';
 import {PropertyInspector} from '@enterprise-ui/react-designers';
-import {AppShell,Panel,Button,KpiCard,ComboBox,Dialog,DockWorkspace} from '@enterprise-ui/react-core';
+import {AppShell,Panel,Button,ComboBox,Dialog,DockWorkspace} from '@enterprise-ui/react-core';
+import {DataGrid,KpiCard} from '@enterprise-ui/react-data';
+import type {GridColumnDefinition} from '@enterprise-ui/react-data';
 
 const initial=assertDesignDocument(fixture);
+const customerColumns:GridColumnDefinition[]=[{key:'name',label:'Customer',sortable:true},{key:'region',label:'Region'},{key:'revenue',label:'Revenue',align:'end'}];
+const customerRows=[{id:'acme',name:'Acme Manufacturing',region:'North America',revenue:'$184,200'},{id:'globex',name:'Globex',region:'Europe',revenue:'$121,800'},{id:'initech',name:'Initech',region:'North America',revenue:'$98,400'}];
 function App(){
  const [doc,setDoc]=React.useState<DesignDocument>(initial);
  const [proposal,setProposal]=React.useState<Proposal|null>(null);
@@ -22,6 +27,8 @@ function App(){
  const [hostData,setHostData]=React.useState<Record<string,unknown>>({metrics:{activeCustomers:1284,revenue:98340},form:{query:''}});
  const [log,setLog]=React.useState<string[]>(['Host fixture initialized; no backend required.']);
  const [result,setResult]=React.useState('No pending proposal.');
+ const [gridQuery,setGridQuery]=React.useState('');
+ const [gridSort,setGridSort]=React.useState<{key:string;direction:'ascending'|'descending'}>({key:'name',direction:'ascending'});
  const addLog=(message:string)=>setLog(prev=>[message,...prev].slice(0,8));
  const host:Host={data:hostData,requestAction:({actionId,nodeId,event,payload}:HostActionRequest)=>{
    if(!allowed){addLog(`DENIED by host: ${actionId} from ${nodeId}`);return;}
@@ -51,6 +58,11 @@ function App(){
        <p>No deployment is performed by this local specimen.</p>
       </Dialog>
       <DockWorkspace label="Workspace layout" main={<p>Main editor</p>} start={<p>Explorer</p>} end={<p>Inspector</p>} bottom={<p>Output</p>}/>
+     </section>
+     <section aria-label="Advanced data specimen">
+      <h2>Advanced data specimen</h2>
+      <label>Filter customers <input value={gridQuery} onChange={event=>setGridQuery(event.currentTarget.value)}/></label>
+      <DataGrid title="Customer accounts" columns={customerColumns} rows={customerRows.filter(row=>row.name.toLowerCase().includes(gridQuery.toLowerCase()))} sort={gridSort} onSortChange={setGridSort}/>
      </section>
     </div>
   </div>

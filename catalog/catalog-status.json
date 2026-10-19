@@ -6,9 +6,9 @@
     "total": 198,
     "byStatus": {
       "planned": 0,
-      "scaffolded": 112,
-      "implemented": 1,
-      "verified": 85,
+      "scaffolded": 80,
+      "implemented": 0,
+      "verified": 118,
       "released": 0
     },
     "byClassification": {
@@ -30,7 +30,7 @@
       ]
     },
     "active": {
-      "version": "1.2.0",
+      "version": "1.3.0",
       "componentIds": [
         "ui.AppShell",
         "ui.Panel",
@@ -117,7 +117,35 @@
         "ui.TreeView",
         "ui.Pagination",
         "ui.Stepper",
-        "ui.StatusIndicator"
+        "ui.StatusIndicator",
+        "ui.GridCellEditor",
+        "ui.GridToolbar",
+        "ui.ColumnChooser",
+        "ui.FilterBuilder",
+        "ui.SortBuilder",
+        "ui.GroupPanel",
+        "ui.TreeGrid",
+        "ui.PivotTable",
+        "ui.PivotFieldWell",
+        "ui.DataTable",
+        "ui.DataList",
+        "ui.SavedViewSelector",
+        "ui.Chart",
+        "ui.Sparkline",
+        "ui.StatGroup",
+        "ui.FacetedFilter",
+        "ui.QueryBuilder",
+        "ui.Calendar",
+        "ui.Scheduler",
+        "ui.Timeline",
+        "ui.GanttChart",
+        "ui.GanttTaskEditor",
+        "ui.Heatmap",
+        "ui.DataInspector",
+        "ui.DiffViewer",
+        "ui.JsonViewer",
+        "ui.CodeViewer",
+        "ui.FileTree"
       ]
     },
     "implementedAdapterIds": [
@@ -204,7 +232,36 @@
       "ui.Pagination",
       "ui.Stepper",
       "ui.StatusIndicator",
-      "ui.KpiCard"
+      "ui.DataGrid",
+      "ui.GridCellEditor",
+      "ui.GridToolbar",
+      "ui.ColumnChooser",
+      "ui.FilterBuilder",
+      "ui.SortBuilder",
+      "ui.GroupPanel",
+      "ui.TreeGrid",
+      "ui.PivotTable",
+      "ui.PivotFieldWell",
+      "ui.DataTable",
+      "ui.DataList",
+      "ui.SavedViewSelector",
+      "ui.Chart",
+      "ui.Sparkline",
+      "ui.KpiCard",
+      "ui.StatGroup",
+      "ui.FacetedFilter",
+      "ui.QueryBuilder",
+      "ui.Calendar",
+      "ui.Scheduler",
+      "ui.Timeline",
+      "ui.GanttChart",
+      "ui.GanttTaskEditor",
+      "ui.Heatmap",
+      "ui.DataInspector",
+      "ui.DiffViewer",
+      "ui.JsonViewer",
+      "ui.CodeViewer",
+      "ui.FileTree"
     ],
     "note": "Schema-only registry entries remain compatibility fixtures and have no renderer adapter."
   },
@@ -1670,7 +1727,7 @@
       "package": "react-data",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.ScrollArea"
       ],
@@ -1680,8 +1737,8 @@
         "stories.plan.json": "scaffolds/react-data/DataGrid/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/DataGrid/test.plan.md"
       },
-      "implementationEvidence": "schema-only compatibility fixture; no runtime adapter",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.GridColumn",
@@ -1689,7 +1746,7 @@
       "package": "react-data",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1699,8 +1756,8 @@
         "stories.plan.json": "scaffolds/react-data/GridColumn/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/GridColumn/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.GridCellEditor",
@@ -1708,7 +1765,7 @@
       "package": "react-data",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1718,8 +1775,8 @@
         "stories.plan.json": "scaffolds/react-data/GridCellEditor/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/GridCellEditor/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.GridToolbar",
@@ -1727,7 +1784,7 @@
       "package": "react-data",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1737,8 +1794,8 @@
         "stories.plan.json": "scaffolds/react-data/GridToolbar/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/GridToolbar/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.ColumnChooser",
@@ -1746,7 +1803,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1756,8 +1813,8 @@
         "stories.plan.json": "scaffolds/react-data/ColumnChooser/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/ColumnChooser/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.FilterBuilder",
@@ -1765,7 +1822,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1775,8 +1832,8 @@
         "stories.plan.json": "scaffolds/react-data/FilterBuilder/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/FilterBuilder/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.SortBuilder",
@@ -1784,7 +1841,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1794,8 +1851,8 @@
         "stories.plan.json": "scaffolds/react-data/SortBuilder/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/SortBuilder/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.GroupPanel",
@@ -1803,7 +1860,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1813,8 +1870,8 @@
         "stories.plan.json": "scaffolds/react-data/GroupPanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/GroupPanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.TreeGrid",
@@ -1822,7 +1879,7 @@
       "package": "react-data",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DataGrid"
       ],
@@ -1832,8 +1889,8 @@
         "stories.plan.json": "scaffolds/react-data/TreeGrid/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/TreeGrid/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.PivotTable",
@@ -1841,7 +1898,7 @@
       "package": "react-data",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DataGrid"
       ],
@@ -1851,8 +1908,8 @@
         "stories.plan.json": "scaffolds/react-data/PivotTable/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/PivotTable/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.PivotFieldWell",
@@ -1860,7 +1917,7 @@
       "package": "react-data",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1870,8 +1927,8 @@
         "stories.plan.json": "scaffolds/react-data/PivotFieldWell/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/PivotFieldWell/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.DataTable",
@@ -1879,7 +1936,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1889,8 +1946,8 @@
         "stories.plan.json": "scaffolds/react-data/DataTable/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/DataTable/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.DataList",
@@ -1898,7 +1955,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1908,8 +1965,8 @@
         "stories.plan.json": "scaffolds/react-data/DataList/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/DataList/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.SavedViewSelector",
@@ -1917,7 +1974,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1927,8 +1984,8 @@
         "stories.plan.json": "scaffolds/react-data/SavedViewSelector/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/SavedViewSelector/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.Chart",
@@ -1936,7 +1993,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1946,8 +2003,8 @@
         "stories.plan.json": "scaffolds/react-data/Chart/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/Chart/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.ChartLegend",
@@ -1955,7 +2012,7 @@
       "package": "react-data",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1965,8 +2022,8 @@
         "stories.plan.json": "scaffolds/react-data/ChartLegend/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/ChartLegend/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.ChartTooltip",
@@ -1974,7 +2031,7 @@
       "package": "react-data",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -1984,8 +2041,8 @@
         "stories.plan.json": "scaffolds/react-data/ChartTooltip/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/ChartTooltip/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.Sparkline",
@@ -1993,7 +2050,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2003,8 +2060,8 @@
         "stories.plan.json": "scaffolds/react-data/Sparkline/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/Sparkline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.KpiCard",
@@ -2012,7 +2069,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "implemented",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2022,8 +2079,8 @@
         "stories.plan.json": "scaffolds/react-data/KpiCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/KpiCard/test.plan.md"
       },
-      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
-      "implementationPackage": "react-core (temporary POC location; catalog target remains react-data)"
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.StatGroup",
@@ -2031,7 +2088,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2041,8 +2098,8 @@
         "stories.plan.json": "scaffolds/react-data/StatGroup/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/StatGroup/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.FacetedFilter",
@@ -2050,7 +2107,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2060,8 +2117,8 @@
         "stories.plan.json": "scaffolds/react-data/FacetedFilter/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/FacetedFilter/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.QueryBuilder",
@@ -2069,7 +2126,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2079,8 +2136,8 @@
         "stories.plan.json": "scaffolds/react-data/QueryBuilder/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/QueryBuilder/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.Calendar",
@@ -2088,7 +2145,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2098,8 +2155,8 @@
         "stories.plan.json": "scaffolds/react-data/Calendar/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/Calendar/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.Scheduler",
@@ -2107,7 +2164,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2117,8 +2174,8 @@
         "stories.plan.json": "scaffolds/react-data/Scheduler/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/Scheduler/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.Timeline",
@@ -2126,7 +2183,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2136,8 +2193,8 @@
         "stories.plan.json": "scaffolds/react-data/Timeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/Timeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.GanttChart",
@@ -2145,7 +2202,7 @@
       "package": "react-data",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2155,8 +2212,8 @@
         "stories.plan.json": "scaffolds/react-data/GanttChart/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/GanttChart/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.GanttTaskEditor",
@@ -2164,7 +2221,7 @@
       "package": "react-data",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2174,8 +2231,8 @@
         "stories.plan.json": "scaffolds/react-data/GanttTaskEditor/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/GanttTaskEditor/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.Heatmap",
@@ -2183,7 +2240,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2193,8 +2250,8 @@
         "stories.plan.json": "scaffolds/react-data/Heatmap/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/Heatmap/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.DataInspector",
@@ -2202,7 +2259,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2212,8 +2269,8 @@
         "stories.plan.json": "scaffolds/react-data/DataInspector/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/DataInspector/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.DiffViewer",
@@ -2221,7 +2278,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2231,8 +2288,8 @@
         "stories.plan.json": "scaffolds/react-data/DiffViewer/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/DiffViewer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.JsonViewer",
@@ -2240,7 +2297,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2250,8 +2307,8 @@
         "stories.plan.json": "scaffolds/react-data/JsonViewer/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/JsonViewer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.CodeViewer",
@@ -2259,7 +2316,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2269,8 +2326,8 @@
         "stories.plan.json": "scaffolds/react-data/CodeViewer/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/CodeViewer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.FileTree",
@@ -2278,7 +2335,7 @@
       "package": "react-data",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel"
       ],
@@ -2288,8 +2345,8 @@
         "stories.plan.json": "scaffolds/react-data/FileTree/stories.plan.json",
         "test.plan.md": "scaffolds/react-data/FileTree/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-data source, grouped Storybook stories, registry 1.3.0 contract and renderer adapter where required, and M4 scoped verification",
+      "implementationPackage": "react-data"
     },
     {
       "id": "ui.KanbanBoard",

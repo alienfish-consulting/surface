@@ -16,8 +16,9 @@ const output=(file,content)=>{
 };
 const previousRegistry=read('packages/contracts/fixtures/component-registry.json');
 const coreContracts=read('packages/contracts/source/core-component-contracts.json');
+const dataContracts=read('packages/contracts/source/data-component-contracts.json');
 const serializableCoreTypes=['ui.AppShell','ui.Panel','ui.Button','ui.TextField',...coreContracts.components.map(component=>component.type)];
-const registry={
+const coreRegistry={
   registryVersion:coreContracts.registryVersion,
   components:[
     ...previousRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'
@@ -26,21 +27,37 @@ const registry={
     ...coreContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
   ]
 };
-for(const contract of coreContracts.components){
+const serializableDataTypes=['ui.DataGrid','ui.KpiCard',...dataContracts.components.map(component=>component.type)];
+const activeContainerTypes=[...serializableCoreTypes,...serializableDataTypes];
+const registry={
+  registryVersion:dataContracts.registryVersion,
+  components:[
+    ...coreRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'
+      ? {...entry,version:'1.3.0',allowedChildren:activeContainerTypes}
+      : entry.type==='ui.DataGrid'||entry.type==='ui.KpiCard'?{...entry,version:'1.3.0'}:entry),
+    ...dataContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
+  ]
+};
+const generatedContracts=[...coreContracts.components,...dataContracts.components];
+for(const contract of generatedContracts){
   output(`packages/contracts/${contract.schemaFile}`,JSON.stringify(contract.propsSchema,null,2)+'\n');
 }
-output('packages/contracts/fixtures/component-registry.v1.2.0.json',JSON.stringify(registry,null,2)+'\n');
+output('packages/contracts/fixtures/component-registry.v1.2.0.json',JSON.stringify(coreRegistry,null,2)+'\n');
+output('packages/contracts/fixtures/component-registry.v1.3.0.json',JSON.stringify(registry,null,2)+'\n');
 if (new Set(registry.components.map(x=>x.type)).size!==registry.components.length) throw new Error('Duplicate registry entries');
 const supported = new Set(['string','number','integer','boolean']);
 function tsOf(s){
+  if (Object.keys(s).length===0) return 'unknown';
   if (s.$ref) return 'unknown';
   if (s.oneOf) return s.oneOf.map(tsOf).join(' | ');
   if (s.enum) return s.enum.map(x=>JSON.stringify(x)).join(' | ');
   if (s.const!==undefined) return JSON.stringify(s.const);
   if (Array.isArray(s.type)) return s.type.map(type=>type==='null'?'null':tsOf({...s,type})).join(' | ');
   if (s.type && supported.has(s.type)) return s.type==='integer'?'number':s.type;
-  if (s.type==='array'&&s.items) return `Array<${tsOf(s.items)}>`;
+  if (s.type==='array') return s.items?`Array<${tsOf(s.items)}>`:'unknown[]';
   if (s.type==='object' && s.properties) return `{ ${Object.entries(s.properties).map(([k,v])=>`${JSON.stringify(k)}${s.required?.includes(k)?'':'?'}: ${tsOf(v)}`).join('; ')} }`;
+  if (s.type==='object' && s.additionalProperties) return `Record<string, ${s.additionalProperties===true?'unknown':tsOf(s.additionalProperties)}>`;
+  if (s.type==='object') return 'Record<string, unknown>';
   throw new Error('Unsupported generated type; review schema generator for '+JSON.stringify(s));
 }
 let out='// GENERATED from canonical JSON Schemas and component registry. DO NOT EDIT.\n';
@@ -60,18 +77,18 @@ out+='export type SerializableComponentType = keyof SerializablePropsByComponent
 output('packages/contracts/src/generated/serialized-props.ts',out);
 const componentSchemas=Object.fromEntries(registry.components.map(component=>[
   component.type,
-  coreContracts.components.find(contract=>contract.type===component.type)?.propsSchema ?? read('packages/contracts/'+component.propsSchema)
+  generatedContracts.find(contract=>contract.type===component.type)?.propsSchema ?? read('packages/contracts/'+component.propsSchema)
 ]));
+const registryDocuments=[registry,coreRegistry,previousRegistry,read('packages/contracts/fixtures/component-registry.v1.0.0.json')];
 const bundle={registryDocument: registry,
- previousRegistryDocument:previousRegistry,
- legacyRegistryDocument:read('packages/contracts/fixtures/component-registry.v1.0.0.json'),
- declarativeExceptions:coreContracts.exceptions,
+ registryDocuments,
+ declarativeExceptions:[...coreContracts.exceptions,...dataContracts.exceptions],
  documentSchema:read('packages/contracts/schemas/design-document.schema.json'),
  registrySchema:read('packages/contracts/schemas/component-registry.schema.json'),
  proposalSchema:read('packages/contracts/schemas/patch-proposal.schema.json'),
  componentSchemas};
 output('packages/contracts/src/generated/schema-bundle.ts',
-  '// GENERATED — source of truth: schemas/, versioned registry fixtures, and source/core-component-contracts.json.\n'+
+  '// GENERATED — source of truth: schemas/, versioned registry fixtures, and source component contracts.\n'+
   Object.entries(bundle).map(([name,value])=>`export const ${name} = ${JSON.stringify(value)} as const;\n`).join(''));
 
 const tokens=read('packages/tokens/source/design-tokens.json');
