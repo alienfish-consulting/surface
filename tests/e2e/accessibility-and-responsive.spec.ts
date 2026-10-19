@@ -28,6 +28,14 @@ test('narrow layout avoids page-level horizontal overflow and retains keyboard f
   expect(overflow).toBeLessThanOrEqual(1);
   await page.keyboard.press('Tab');
   await expect(page.locator(':focus')).toBeVisible();
+  const menu=page.getByRole('button',{name:'Open navigation'});
+  await menu.focus();
+  await expect(menu).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(menu).toHaveAttribute('aria-expanded','true');
+  await expect(page.getByRole('complementary',{name:'Application sidebar'})).toHaveClass(/lab-sidebar-open/);
+  await page.getByRole('button',{name:'Overview',exact:true}).click();
+  await expect(menu).toHaveAttribute('aria-expanded','false');
 });
 
 test('forced-colors mode keeps controls visible and focusable',async({page,browserName})=>{

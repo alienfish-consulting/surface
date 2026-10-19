@@ -56,7 +56,7 @@ These approaches share the same component implementations and visual language. D
 | [`packages/react-designers`](packages/react-designers/README.md) | Form, dashboard, workflow, query, and schema design surfaces |
 | [`packages/react-renderer`](packages/react-renderer/README.md) | Explicit adapters from validated design documents to React |
 | [`packages/electron-bridge`](packages/electron-bridge/README.md) | Optional typed desktop-capability boundary and browser fallback |
-| `apps/design-lab` | Integrated development application and browser-test target |
+| [`apps/design-lab`](apps/design-lab/README.md) | Single-page operations dashboard, integrated framework workbench, and browser-test target |
 | `apps/storybook` | Component stories and visual state inspection |
 | `catalog` | Accepted component inventory and generated lifecycle status |
 | `scaffolds` | Planning and acceptance records for catalog units; not production source |
@@ -72,7 +72,7 @@ corepack pnpm install
 corepack pnpm dev
 ```
 
-The Design Lab is available at `http://localhost:5173`.
+The Design Lab is available at `http://localhost:5173`. It presents Surface in a realistic single-page operations dashboard with responsive side navigation, business metrics, customer data, live service state, governed approvals, and an embedded schema-first design workbench.
 
 To browse component families and states:
 
