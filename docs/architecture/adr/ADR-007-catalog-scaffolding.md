@@ -1,6 +1,6 @@
 # ADR-007: Catalog scaffolding and implementation status
 
-**Status:** Proposed for M2 approval  
+**Status:** Accepted and implemented
 **Date:** 2026-10-18
 
 ## Context

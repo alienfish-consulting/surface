@@ -1,41 +1,53 @@
-# Enterprise UI — mandatory IDE agent operating instructions
+# Agent instructions
 
-**Read `HANDOFF.md` first, then `docs/01-baseline-and-decisions.md`, `docs/02-target-repository.md`, `docs/03-execution-milestones.md`, `docs/06-approval-and-test-protocol.md`, and the component catalog.** These rules govern all agents and subagents working on this project, including coding, planning, terminal and review agents. Copy this file to the local project root before any implementation work and retain it in the resulting repository.
+These instructions are vendor agnostic. They apply to any coding agent working in this repository and to delegated work.
 
-## Scope and starting conditions
+## Start here
 
-- Greenfield **local** React design-system repository; **no GitHub remote exists**. Do not invent a remote, org, project name, npm scope, domain or license.
-- `seed/enterprise-ui-poc/` is the demonstrated local proof of concept. **Use and evolve its source**, not a rewrite from zero. It is a reference seed, not proof of production quality.
-- `assets/approved-design-snapshot/` is authoritative for product requirements and visual references. `reference/architecture-v0.1/` contains implementation recommendations, some provisional.
-- `catalog/components.v1.proposed.json` enumerates **198 proposed implementation units** extrapolated from approved capability groups. This catalog is a **proposal**; user approval at M0 determines its exact contents. Many entries are subcomponents rather than public exports.
+1. Read [`docs/agents/README.md`](docs/agents/README.md).
+2. Read [`docs/agents/foundation.md`](docs/agents/foundation.md).
+3. Follow only the task guide and references selected by the routing table. Do not load the historical milestone reports as operating instructions.
 
-## Stop-and-ask authority rule (absolute)
+## Non-negotiable boundaries
 
-**At each milestone, STOP and give the human an explicit gate report.** It must specify files changed, completed/incomplete work, material architectural decisions, exceptions, and the **exact test commands proposed**, including affected packages and what each test demonstrates. Do not execute a new milestone's tests unless the human explicitly approves the specific test plan. If already approved, run only that plan; no opportunistic extra sweeps. Show actual results, failures and unverified items. **Never commit until the human explicitly approves the commit after seeing test results or explicitly waives tests.** Approval to implement, approval to test and approval to commit are **three separate permissions**. An approval does not carry to later milestones.
+- Treat `packages/contracts` and the component registry as the authority for persisted UI. Never create a second persisted format for a web app, desktop app, visual designer, or agent.
+- Persist data, named bindings, and named action intentions only. Never place executable JavaScript, React nodes, arbitrary HTML, Electron channels, credentials, or host permissions in a design document.
+- Components emit intentions. The consuming application owns authorization, side effects, persistence, networking, model or tool execution, and privileged desktop behavior.
+- Validate untrusted design documents before rendering. Renderer registrations are explicit and allowlisted; unknown component types fail closed.
+- Keep browser-capable packages free of Electron and Node runtime imports. Desktop access crosses a narrow, validated preload boundary and is authorized again in the main process.
+- Preserve accessible names, keyboard operation, focus behavior, semantic structure, responsive behavior, theme, density, authored high contrast, and forced-colors support.
+- Import token CSS before family CSS. Reuse semantic tokens and existing `ui-*` conventions instead of introducing a parallel styling system.
+- Do not expose scaffolds, incomplete components, or generated drafts as production exports. Do not hand-edit generated files.
+- Keep public APIs compatible unless the task explicitly authorizes a breaking change. Add or update tests and stories with behavior changes.
+- Do not publish, push, create remotes or cloud resources, choose a license/package identity, or perform destructive Git operations unless explicitly requested.
 
-- Never run `git commit`, amend, rebase, reset --hard, force-push, push, publish or create a remote unless explicitly instructed. No automated commits, release hooks, or git-writing automation.
-- Do not make cloud resources, GitHub repository, npm packages, licensing or publishing decisions for the user.
-- No automatic `pnpm check`/all-suite at early stages; no tests hidden in scaffolding generators, postinstall, precommit or build hooks. Show scripts before running them if they transitively invoke tests.
-- If changes need an exceptional irreversible or significant dependency action, pause and seek approval.
-- Keep edits only within the local workspace. No remote or user external-account actions are authorized.
+## Repository mechanics
 
-## Implementation policy
+- Package manager: pnpm through Corepack. Runtime baseline: Node 24; see `package.json` for the authoritative ranges and versions.
+- Use narrow package imports. React is a peer dependency of library packages.
+- Before editing, inspect the owning package, its public index, nearby stories, focused tests, and registry/schema entries.
+- Canonical generated outputs are produced by `tools/generate.mjs` and `tools/scaffold-components.mjs`. Edit their source inputs, regenerate, and run drift checks.
+- Prefer the smallest relevant verification first; use the full `pnpm check` only for broad or cross-package changes. See [`docs/agents/verification.md`](docs/agents/verification.md).
+- Preserve unrelated working-tree changes. Report what was changed, what was verified, and what remains unverified.
 
-- Build **styled** accessible React components with browser/Electron parity. React, TypeScript, pnpm, Nx, Vite, Storybook React/Vite, Playwright Test are the selected baseline, not a mandate to pull a large testing stack immediately.
-- Canonical serialized UI documents use JSON Schema 2020-12, registered named actions/bindings, guarded RFC 6902 JSON Patch, deterministic validation and versioning. JSX may offer richer nonserializable APIs, but cannot introduce competing persisted designer schemas.
-- React components emit intentions; **applications own permissions, persistence, host execution, networking and Electron privilege**. No arbitrary JavaScript execution from JSON.
-- Preserve light/dark/high-contrast, compact/comfortable and responsive visual direction. Images are design references, not raster assets to bundle into runtime components.
-- Do not generate new mockups unless the human asks. Do not substitute screenshot-perfect raster renderings for real components.
-- A scaffold is **not an implemented component**. Never label TODOs as done, register unfinished implementations, publish them through public package exports, or create tests that merely assert a placeholder renders.
-- Build per-component contracts, typed states, story coverage and relevant tests **as implemented**, not 198 premature behavioral suites.
-- Favor dependencies with known maintenance and accessible behavior; record a narrow decision for expensive engines (grid, chart, topology, drag/drop, code editor). Avoid speculative complexity.
-- Keep third-party major versions compatible; lock dependencies when the setup is approved and installations are performed.
-- The first npm release is **coordinated and complete** across accepted v1 scope; no partial npm release.
+## Scaffolds are plans, not production code
 
-## Required gate message
+`scaffolds/` contains catalog-derived planning and acceptance metadata for all 198 tracked units. A component directory can contain:
 
-Follow `docs/06-approval-and-test-protocol.md`. End every milestone report with:
+- `component.plan.md` — intended API, behavior, accessibility, and implementation notes.
+- `schema.plan.json` — proposed serializable contract.
+- `stories.plan.json` — expected Storybook scenarios and states.
+- `test.plan.md` — expected verification coverage.
 
-> **STOP — awaiting approval.** Proposed test commands: `...`. Please approve, edit, or waive this exact test plan. After tests, I will show results and request separate permission to commit. I will not proceed to the next milestone or commit without your direction.
+Use these files as design provenance and as input when planning a new or revised implementation. Never import them from an application, add them to package exports, register them with the renderer, or treat their presence as implementation evidence. Production code lives under `packages/`; lifecycle status is owned by `catalog/components.v1.json`.
 
-When approved tests finish, again STOP and ask for separate **commit authorization**. If user declines, leave working tree uncommitted, provide clear status and await next instruction.
+`tools/scaffold-components.mjs` manages scaffold and catalog-derived artifacts. Its default focused mode is a preview. Use `corepack pnpm check:catalog` for read-only drift verification. Use `corepack pnpm scaffold:components -- --component ui.ComponentName` to preview one unit, and add `--write` only when intentionally creating missing planning artifacts. The tool must not promote drafts into production source.
+
+## Documentation map
+
+- Current human documentation: [`docs/README.md`](docs/README.md)
+- Agent routing and workflows: [`docs/agents/README.md`](docs/agents/README.md)
+- Current architecture: [`docs/architecture/README.md`](docs/architecture/README.md)
+- Consumer integration: [`docs/guides/consumer-guide.md`](docs/guides/consumer-guide.md)
+- Release state: [`docs/release/README.md`](docs/release/README.md)
+- Bootstrap and milestone evidence (historical only): [`docs/history/README.md`](docs/history/README.md)

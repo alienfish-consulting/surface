@@ -1,5 +1,5 @@
 # ADR-003 — Component packages, renderer and host boundaries
-**Status:** Proposed · **Date:** 2026-10-18
+**Status:** Accepted and implemented · **Date:** 2026-10-18
 
 ## Decision
 Split the architecture into independent `tokens`, framework-neutral `contracts`, `react-core`, specialized React packages, a thin pluggable `react-renderer`, `react-designers`, and optional `electron-bridge`. A registry descriptor identifies a component, but code comes from a **host-supplied allowlisted registration**, never imported by a JSON document. Use adapter injection for data-source, action-intent, localization, theme and runtime-state resolution.

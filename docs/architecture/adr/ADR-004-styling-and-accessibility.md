@@ -1,5 +1,7 @@
 # ADR-004 — Styling and accessibility implementation
-**Status:** Proposed · **Date:** 2026-10-18
+**Status:** Partially superseded by the v1 implementation · **Date:** 2026-10-18
+
+The plain-CSS, token, accessibility, and browser/Electron parity decisions were implemented. The v1 packages use bounded native/platform semantics rather than taking a React Aria runtime dependency.
 
 ## Decision
 Use plain CSS with scoped tokens and cascade layers, styled enterprise components, Inter/IBM Plex Mono with consumer-configurable loading, and accessible React Aria Components/hooks for appropriate primitive behaviors. React Aria provides unstyled accessible behaviors, not the public design-system visual identity; we supply styles and tested APIs. Keep a small stable public CSS customization surface via variables, parts/classes, and state attributes. Browser and Electron share the same visual implementation.

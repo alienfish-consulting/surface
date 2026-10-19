@@ -1,88 +1,73 @@
-# Recommended implementation architecture
+# Implemented architecture
 
-## Architectural principle
+## System principle
 
-**One versioned serialized design contract; multiple authoring and rendering interfaces.** A visual designer, an agent proposal, and a direct JSON author all target the same validated design document and registry. React JSX is a richer imperative authoring interface over the same styled components, not a second persisted design-document format.
+The framework has one versioned, JSON Schema 2020-12 design contract and several authoring interfaces. Direct React APIs may provide richer callbacks, React nodes, and composition. Persisted documents contain only validated data, registered bindings, named action intentions, and registered child nodes.
 
-React APIs are allowed capabilities (functions, children, render props) that cannot be serialized. Only the explicitly registered **serializable subset** must conform to the canonical per-component JSON Schema. The runtime's adapter transforms validated serialized props/bindings/intent definitions into React props without evaluating arbitrary JavaScript.
+The same document contract is used by runtime rendering, visual designers, and guarded agent proposals. There is no designer-only or desktop-only persistence model.
 
-## Proposed source tree
+## Workspace
 
 ```text
 apps/
-  storybook/                 # Isolated component states, docs and interaction checks
-  design-lab/                # Developer-only schema renderer + visual edit proof
+  design-lab/          integrated browser consumer and E2E target
+  storybook/           package story discovery and visual inspection
 packages/
-  tokens/                    # DTCG JSON authoring -> generated, scoped CSS vars
-  contracts/                 # JSON schemas, registry descriptors, generated TS types
-  react-core/                # Styled accessible controls/layout/overlays
-  react-data/                # DataGrid, TreeGrid, pivot, query tools, KPIs, charts
-  react-operations/          # Incidents, deployments, topology, events, workflows
-  react-ai/                  # Conversation, tool execution, approvals, artifacts
-  react-renderer/            # Registry component adapter + safe document rendering
-  react-designers/           # Forms, dashboards, workflows, schema/canvas designers
-  electron-bridge/           # Optional safe typed host adapter, never required by web
-  react-all/                 # Optional tree-shake-aware convenience preset
-packages-internal/           # Private tooling; no npm publication
-  schema-codegen/            # Schema type/registry/metadata generation + drift checks
-  test-fixtures/             # Shared state, schema and accessibility specimens
-docs/
-  adr/
-  specs/
-  release/
+  tokens/              authored token sources and generated theme CSS
+  contracts/           schemas, registries, validation, types, proposals
+  react-core/          foundational React components
+  react-data/          data and analytics components
+  react-operations/    operational workflow components
+  react-ai/            agent and conversation components
+  react-designers/     shared-contract visual editors
+  react-renderer/      explicit serialized-node adapters
+  electron-bridge/     transport-neutral desktop request contract
+catalog/               accepted unit inventory and generated status
+scaffolds/             non-production planning artifacts
+tests/                 contract, package, component, browser, and release checks
 ```
 
-`packages` contains publishable projects; `packages-internal` and `apps` are private. Names are temporary; final npm scope and repository name are deferred. Do not scaffold unused packages with fake implementations—register projects only when there is a real deliverable.
+The workspace uses pnpm for package linking and Nx for its project task graph. Vite builds the Design Lab, Storybook uses its React/Vite integration, Vitest covers logic and rendered output, and Playwright covers browser behavior.
 
 ## Dependency direction
 
 ```text
- tokens -----------> react-core ---------> react-data / react-operations / react-ai
-                        |                         |
-                        +-------------------------+ (domain-specific composition)
-                        |
- contracts -----------> react-renderer <---- explicit registered implementations
-       |                     |
-       +---------------------+----------> react-designers
-
- electron-bridge: optional host adapter, separately imported
- react-all: optional convenience preset that registers public React families
+tokens ───────────────┐
+contracts ────────────┼─> React families ─> react-renderer
+                      │          └─────────> react-designers
+contracts ────────────└─> electron-bridge
 ```
 
-The diagram indicates allowed dependence, not mandatory imports. `contracts` must not import React, DOM, Electron, visual editors, AI SDKs, network clients, or app state managers. `react-core` must not import the renderer, visual designers or Electron. Domain packages should depend on `react-core`, `tokens`, and relevant *types* from `contracts` as needed; they must not depend on each other by default. `react-renderer` is a thin registry-driven host interface: resolve component implementations through explicit registrations, not an unconditional import of every package. The optional `react-all` preset assembles registrations for convenience. Visual designers consume the renderer and contracts; no designer-specific persisted schema fork.
+- `contracts` does not import React, DOM, Electron, or a service SDK.
+- `react-core` is foundational. Specialized families build on core without circular package relationships.
+- `react-renderer` composes explicit adapters for implemented, allowlisted types.
+- `react-designers` edits the shared contract through previewed proposals.
+- `electron-bridge` contains no Electron import. The consuming desktop host owns preload, IPC, and native effects.
 
-## Execution flow
+## Runtime trust model
 
-1. Agent or visual editor produces a `DesignDocument` change proposal (not executable code).
-2. Parse and bounds-check; validate JSON Schema Draft 2020-12 against the exact document schema and pinned registry snapshot.
-3. Check node identity, accepted component versions, props, slots, bindings, actions and host-provided capabilities; reject unsafe/unknown constructs.
-4. Diff and render preview against fixtures; present user decision as an **intent**.
-5. Consuming application independently authorizes, checks current revision, optionally persists, and returns an authoritative result.
-6. Runtime renderer maps only registered components and binding/action IDs to host adapters; refuses unknown entries. UI cannot confer privilege.
+External JSON is validated for schema, exact registry version, node count/depth, IDs, props, child relationships, binding declarations, and named intentions before rendering. Unknown or unimplemented component types fail closed.
 
-No implicit eval, dynamic JS from JSON, transport, direct service credentials, app-owned cache, persistent records, or privileged Electron operations in the design-system runtime.
+Bindings resolve from application-supplied data. Component events become `HostActionRequest` values; the application independently authorizes and performs any effect. Valid syntax and a declared action ID do not imply permission.
 
-## Styling architecture
+Guarded proposals target a document ID and base revision. The current patch surface is deliberately restricted to registered component property paths. A preview creates a validated candidate; only the host can authorize and persist a new authoritative revision.
 
-- DTCG token JSON as authoring source; generated CSS vars are public runtime contract.
-- Vanilla CSS cascade layers and documented stable `.ui-*` hooks; no required Tailwind or runtime CSS-in-JS.
-- `[data-ui-theme]` and `[data-ui-density]` provide scoped themes/densities; portal containers inherit or deliberately receive theme state.
-- Component CSS consumes semantic tokens; consumers may override supported vars without deep selector hacks.
-- Use native SVG symbols/components, tree-shaken icons and CSS (not required PNG/JPG assets).
-- High-contrast and forced-color themes must be tested against actual rendered behavior, not inferred from screenshot palettes.
+## Styling and accessibility
 
-## APIs and boundaries
+Token source files generate semantic CSS custom properties. Family CSS consumes those properties and supports light/dark themes, comfortable/compact density, authored high contrast, and operating-system forced colors. Browser and Electron renderers share the same React/CSS implementation.
 
-- React 19 as the initial tested peer major; library package avoids bundling React or ReactDOM.
-- Strict TypeScript; named stable exports, package `exports`, ESM plus typings; tree-shakeable CSS asset exports.
-- `onPress` or domain-specific UI callback normalizes presentation intents, while host action references remain named `actionId` values in schema.
-- Controlled/uncontrolled props when meaningful; forwarded ref support; composition/slots; accessibility and localization as first-class requirements.
-- Browser core stays free of Node/Electron dependencies. Electron bridge uses typed host adapter interfaces; consumers implement secure preload/IPC in their app.
+Components prefer native semantics and bounded, auditable implementations. Accessibility is a behavioral requirement: keyboard operation, focus management, meaningful names and states, responsive containment, and assistive-technology review accompany visual styling.
 
-## Quality gates
+## Specialized engines
 
-- Typecheck, lint, schema validation, schema-to-type generation drift, unit tests, component interactions, Playwright end-to-end tests and responsive checks.
-- Storybook coverage for light/dark/high-contrast, compact/comfortable, loading/error/reconnecting/stale and key interactions; accessibility testing via axe plus manual keyboard/screen reader testing for high-complexity widgets.
-- Reconnection and event ordering are host-adapter fixtures; UI does not fabricate terminal outcomes.
-- Test Browser + Electron consumption; separate consumer-repository installation remains *manual release policy*, not CI dependency.
-- Only release together when entire agreed v1 scope satisfies criteria; fixed/lockstep published package versioning recommended at v1.
+V1 deliberately uses bounded platform table, SVG, form, and disclosure implementations rather than embedding large grid, chart, editor, diagram, or drag-and-drop engines. Public and serialized contracts stay engine neutral. ADR-008 records capacity boundaries and triggers for reconsidering an engine behind the existing package APIs.
+
+## Desktop boundary
+
+The optional bridge validates a small request envelope, enforces a renderer-side capability allowlist, and returns structured results. It is defense in depth, not the security authority. A consuming Electron application must expose a narrow context-isolated preload API, map fixed actions to fixed main-process handlers, validate again, and enforce current user/application permissions.
+
+## Generation and compatibility
+
+Authored token/contract/catalog sources generate CSS, registry bundles, serialized types, and tracking views. Drift checks ensure committed outputs match their inputs. Documents pin versions exactly; compatibility is explicit through retained registry fixtures or deterministic migrations, never silent schema loosening.
+
+All accepted catalog units are tracked in `catalog/components.v1.json`. Some are subcomponents or direct-React exceptions rather than standalone public/declarative exports. `scaffolds/` remains outside production source and cannot establish implementation status.

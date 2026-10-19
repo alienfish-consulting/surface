@@ -1,5 +1,5 @@
 # ADR-001 — Workspace and build orchestration
-**Status:** Proposed · **Date:** 2026-10-18
+**Status:** Accepted and implemented · **Date:** 2026-10-18
 
 ## Decision
 Adopt a **pnpm workspace** for package linking/catalog versions plus **Nx (minimal)** for task DAG, affected builds, caching and eventual fixed-group releases. Build publishable packages with a library build pipeline compatible with ESM, generated `.d.ts` files and explicit package exports. Use the current Node LTS line (**Node 24 as of 2026-10-18**) for repo tooling; upgrade as new releases reach LTS and dependencies qualify. Pin reproducible package-manager and tool versions when bootstrapping.

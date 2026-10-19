@@ -1,5 +1,5 @@
 # ADR-005 — Specialized UI engines behind package boundaries
-**Status:** Proposed · **Date:** 2026-10-18
+**Status:** Superseded by [ADR-008](ADR-008-data-engines.md) · **Date:** 2026-10-18
 
 ## Decision
 Adopt TanStack Table + TanStack Virtual as the **initial candidate engines** for advanced grid row/column models and virtualization, with our own styled renderers, keyboard grid/focus/edit behavior, responsive transformations and stable row IDs. TanStack Table does not itself include virtualization; TanStack Virtual handles viewport indices/measurements. Do not mistake either for a complete accessible enterprise DataGrid.

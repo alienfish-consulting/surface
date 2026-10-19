@@ -1,6 +1,6 @@
-# ADR-0002: bounded data engines for v1
+# ADR-008: bounded data engines for v1
 
-Status: accepted for M4 implementation
+**Status:** Accepted and implemented · **Date:** 2026-10-18
 
 ## Context
 

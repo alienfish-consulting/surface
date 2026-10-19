@@ -1,5 +1,5 @@
 # ADR-006 — Verification and coordinated publication
-**Status:** Proposed · **Date:** 2026-10-18
+**Status:** Accepted and implemented · **Date:** 2026-10-18
 
 ## Decision
 Use Storybook with React/Vite for rendered stories, Vitest for units/interactions, axe-assisted a11y testing plus manual WCAG checks, and Playwright for browser responsive/keyboard/e2e smoke. Validate Electron host integration using a separate smoke fixture, without requiring Electron inside the main library build.

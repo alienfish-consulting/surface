@@ -1,5 +1,5 @@
 # ADR-002 — Schema-first serialized contract and generated types
-**Status:** Proposed · **Date:** 2026-10-18
+**Status:** Accepted and implemented · **Date:** 2026-10-18
 
 ## Decision
 The **canonical persisted UI format is JSON Schema Draft 2020-12**, supported by declarative registry descriptors. Hand-authored schema files and registry metadata are the contract sources. Generate TypeScript types, typed adapter signatures, and registry data/docs from those canonical sources, and fail CI on drift. Pick and validate a compatible TypeScript codegen tool during the first vertical slice; do not assume any generator handles all Draft 2020-12 features unmodified.
