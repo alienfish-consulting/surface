@@ -1,0 +1,22 @@
+{
+  "name": "@enterprise-ui/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "pnpm --dir ../.. generate && storybook dev -p 6006 --no-open --disable-telemetry",
+    "build-storybook": "pnpm --dir ../.. generate && storybook build --disable-telemetry",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@enterprise-ui/react-core": "workspace:*",
+    "@enterprise-ui/tokens": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "10.6.2",
+    "@storybook/react-vite": "10.6.2",
+    "storybook": "10.6.2"
+  }
+}

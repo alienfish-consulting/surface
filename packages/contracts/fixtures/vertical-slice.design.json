@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "1.1.0",
+  "id": "design-lab-demo",
+  "revision": 1,
+  "kind": "dashboard",
+  "themeId": "enterprise-default",
+  "density": "comfortable",
+  "dataSources": [
+    "metrics",
+    "form"
+  ],
+  "actionIds": [
+    "customers.open",
+    "form.search"
+  ],
+  "root": {
+    "id": "application",
+    "type": "ui.AppShell",
+    "props": {
+      "title": "Enterprise UI Design Lab"
+    },
+    "children": [
+      {
+        "id": "workbench",
+        "type": "ui.Panel",
+        "props": {
+          "title": "Operations overview"
+        },
+        "children": [
+          {
+            "id": "active-customers",
+            "type": "ui.KpiCard",
+            "props": {
+              "label": "Active customers",
+              "format": "integer"
+            },
+            "bindings": {
+              "value": {
+                "sourceId": "metrics",
+                "pointer": "/activeCustomers"
+              }
+            }
+          },
+          {
+            "id": "revenue",
+            "type": "ui.KpiCard",
+            "props": {
+              "label": "Revenue",
+              "format": "currency",
+              "currency": "USD"
+            },
+            "bindings": {
+              "value": {
+                "sourceId": "metrics",
+                "pointer": "/revenue"
+              }
+            }
+          },
+          {
+            "id": "search",
+            "type": "ui.TextField",
+            "props": {
+              "label": "Customer search",
+              "placeholder": "Search customers",
+              "description": "Changes are handled by the host."
+            },
+            "bindings": {
+              "value": {
+                "sourceId": "form",
+                "pointer": "/query"
+              }
+            },
+            "intents": {
+              "onChange": {
+                "actionId": "form.search"
+              }
+            }
+          },
+          {
+            "id": "open",
+            "type": "ui.Button",
+            "props": {
+              "label": "Open customers",
+              "variant": "primary"
+            },
+            "intents": {
+              "onPress": {
+                "actionId": "customers.open"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

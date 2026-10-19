@@ -1,0 +1,26 @@
+html, body, #storybook-root {
+  min-height: 100%;
+  margin: 0;
+}
+
+.story-canvas {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: var(--ui-size-page-gutter);
+  color: var(--ui-color-text-primary);
+  background: var(--ui-color-bg-canvas);
+  font-family: var(--ui-font-body);
+}
+
+.story-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-space-3);
+  align-items: flex-start;
+}
+
+.story-column {
+  display: grid;
+  gap: var(--ui-space-4);
+  max-width: 520px;
+}

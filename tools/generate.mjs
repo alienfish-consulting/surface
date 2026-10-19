@@ -1,0 +1,178 @@
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
+import {dirname,resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const read = (path) => JSON.parse(readFileSync(resolve(root,path),'utf8'));
+const isCheck=process.argv.includes('--check');
+let drift=false;
+const output=(file,content)=>{
+  const dest=resolve(root,file);
+  if (isCheck) {
+    if (!existsSync(dest) || readFileSync(dest,'utf8')!==content) {console.error('Generated drift:',file);drift=true;}
+    return;
+  }
+  mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,content);
+  console.log('generated:',file);
+};
+const registry=read('packages/contracts/fixtures/component-registry.json');
+if (new Set(registry.components.map(x=>x.type)).size!==registry.components.length) throw new Error('Duplicate registry entries');
+const supported = new Set(['string','number','integer','boolean']);
+function tsOf(s){
+  if (s.enum) return s.enum.map(x=>JSON.stringify(x)).join(' | ');
+  if (s.const!==undefined) return JSON.stringify(s.const);
+  if (s.type && supported.has(s.type)) return s.type==='integer'?'number':s.type;
+  if (s.type==='array'&&s.items) return `Array<${tsOf(s.items)}>`;
+  if (s.type==='object' && s.properties) return `{ ${Object.entries(s.properties).map(([k,v])=>`${JSON.stringify(k)}${s.required?.includes(k)?'':'?'}: ${tsOf(v)}`).join('; ')} }`;
+  throw new Error('Unsupported generated type; review schema generator for '+JSON.stringify(s));
+}
+let out='// GENERATED from canonical JSON Schemas and component registry. DO NOT EDIT.\n';
+const index={};
+for(const comp of registry.components){
+ const schema=read('packages/contracts/'+comp.propsSchema);
+ if(schema.type!=='object'||schema.additionalProperties!==false||!schema.properties)throw new Error('Unsupported root props schema: '+comp.type);
+ const name=comp.type.slice(3)+'SerializedProps';
+ out += `export interface ${name} {\n`;
+ for(const [key,val] of Object.entries(schema.properties)) out += `  ${JSON.stringify(key)}${schema.required?.includes(key)?'':'?'}: ${tsOf(val)};\n`;
+ out+='}\n'; index[comp.type]=name;
+}
+out+='export interface SerializablePropsByComponent {\n';
+for(const [k,v] of Object.entries(index))out+=`  ${JSON.stringify(k)}: ${v};\n`;
+out+='}\n';
+out+='export type SerializableComponentType = keyof SerializablePropsByComponent;\n';
+output('packages/contracts/src/generated/serialized-props.ts',out);
+const bundle={registryDocument: registry,
+ legacyRegistryDocument:read('packages/contracts/fixtures/component-registry.v1.0.0.json'),
+ documentSchema:read('packages/contracts/schemas/design-document.schema.json'),
+ registrySchema:read('packages/contracts/schemas/component-registry.schema.json'),
+ proposalSchema:read('packages/contracts/schemas/patch-proposal.schema.json'),
+ appShellSchema:read('packages/contracts/schemas/components/app-shell.schema.json'),
+ panelSchema:read('packages/contracts/schemas/components/panel.schema.json'),
+ kpiCardSchema:read('packages/contracts/schemas/components/kpi-card.schema.json'),
+ dataGridSchema:read('packages/contracts/schemas/components/data-grid.schema.json'),
+ activityFeedSchema:read('packages/contracts/schemas/components/activity-feed.schema.json'),
+ buttonSchema:read('packages/contracts/schemas/components/button.schema.json'),
+ textFieldSchema:read('packages/contracts/schemas/components/text-field.schema.json')};
+output('packages/contracts/src/generated/schema-bundle.ts',
+  '// GENERATED — source of truth: schemas/ and fixtures/component-registry.json.\n'+
+  Object.entries(bundle).map(([name,value])=>`export const ${name} = ${JSON.stringify(value)} as const;\n`).join(''));
+
+const tokens=read('packages/tokens/source/design-tokens.json');
+const tokenAt=(path)=>path.split('.').reduce((value,key)=>value?.[key],tokens);
+const resolveTokenValue=(value,seen=[])=>{
+  if(typeof value==='string'){
+    const match=value.match(/^\{([^}]+)\}$/);
+    if(!match)return value;
+    const path=match[1];
+    if(seen.includes(path))throw new Error('Circular token alias: '+[...seen,path].join(' -> '));
+    const token=tokenAt(path);
+    if(!token || !Object.hasOwn(token,'$value'))throw new Error('Unknown token alias: '+path);
+    return resolveTokenValue(token.$value,[...seen,path]);
+  }
+  return value;
+};
+const cssValue=(path)=>{
+  const token=tokenAt(path);
+  if(!token || !Object.hasOwn(token,'$value'))throw new Error('Missing token: '+path);
+  const value=resolveTokenValue(token.$value,[path]);
+  if(token.$type==='shadow'){
+    if(!value || typeof value!=='object' || Array.isArray(value))throw new Error('Invalid shadow token: '+path);
+    return `${value.offsetX} ${value.offsetY} ${value.blur} ${value.spread} ${value.color}`;
+  }
+  if(Array.isArray(value))return value.map(item=>JSON.stringify(item)).join(', ');
+  if(['string','number'].includes(typeof value))return String(value);
+  throw new Error('Unsupported CSS token value: '+path);
+};
+const vars=(entries,indent='    ')=>entries.map(([name,path])=>`${indent}--ui-${name}: ${cssValue(path)};`).join('\n');
+const foundation=[
+  ...Object.keys(tokens.foundation.space).map(key=>[`space-${key}`,`foundation.space.${key}`]),
+  ...Object.keys(tokens.foundation.radius).map(key=>[`radius-${key}`,`foundation.radius.${key}`]),
+  ...Object.keys(tokens.foundation.typography.size).map(key=>[`font-size-${key}`,`foundation.typography.size.${key}`]),
+  ['font-body','foundation.typography.family.body'],
+  ['font-mono','foundation.typography.family.mono'],
+  ...Object.keys(tokens.foundation.typography.lineHeight).map(key=>[`line-height-${key}`,`foundation.typography.lineHeight.${key}`]),
+  ...Object.keys(tokens.foundation.motion.duration).map(key=>[`motion-${key}`,`foundation.motion.duration.${key}`]),
+  ...Object.keys(tokens.foundation.shadow).map(key=>[`shadow-${key}`,`foundation.shadow.${key}`]),
+  ...Object.keys(tokens.foundation.layer).map(key=>[`z-${key}`,`foundation.layer.${key}`]),
+];
+const colorPaths=[
+  ['color-bg-canvas','color.background.canvas'], ['color-bg-surface','color.background.surface'],
+  ['color-bg-raised','color.background.raised'], ['color-bg-inset','color.background.inset'],
+  ['color-text-primary','color.text.primary'], ['color-text-secondary','color.text.secondary'],
+  ['color-text-tertiary','color.text.tertiary'], ['color-border-default','color.border.default'],
+  ['color-border-strong','color.border.strong'], ['color-action-primary','color.action.primary'],
+  ['color-action-primary-hover','color.action.primaryHover'], ['color-action-on-primary','color.action.onPrimary'],
+  ['color-action-selected-bg','color.action.selectedBackground'], ['color-action-selected-text','color.action.selectedText'],
+  ['color-focus-ring','color.focus.ring'],
+  ...['success','warning','danger','info'].flatMap(status=>['background','border','text'].map(role=>[
+    `color-status-${status}-${role==='background'?'bg':role}`,
+    `color.status.${status}.${role}`
+  ]))
+];
+const semantic=(theme)=>vars(colorPaths.map(([name,path])=>[name,`semantic.${theme}.${path}`]));
+const density=(name)=>vars([
+  ['size-control',`foundation.density.${name}.control`], ['size-toolbar',`foundation.density.${name}.toolbar`],
+  ['size-table-row',`foundation.density.${name}.tableRow`], ['size-nav-item',`foundation.density.${name}.navigationItem`],
+  ['size-tab',`foundation.density.${name}.tab`], ['size-page-gutter',`foundation.density.${name}.pageGutter`]
+]);
+const theme=`/* GENERATED from packages/tokens/source/design-tokens.json. DO NOT EDIT. */
+@layer ui.tokens, ui.components, ui.utilities;
+
+@layer ui.tokens {
+  :root {
+${vars(foundation)}
+  }
+
+  :root, [data-ui-theme="light"] {
+    color-scheme: light;
+${semantic('light')}
+  }
+
+  [data-ui-theme="dark"] {
+    color-scheme: dark;
+${semantic('dark')}
+  }
+
+  [data-ui-contrast="high"] {
+    --ui-color-bg-canvas: Canvas;
+    --ui-color-bg-surface: Canvas;
+    --ui-color-bg-raised: Canvas;
+    --ui-color-bg-inset: Canvas;
+    --ui-color-text-primary: CanvasText;
+    --ui-color-text-secondary: CanvasText;
+    --ui-color-text-tertiary: CanvasText;
+    --ui-color-border-default: CanvasText;
+    --ui-color-border-strong: CanvasText;
+    --ui-color-action-primary: Highlight;
+    --ui-color-action-primary-hover: Highlight;
+    --ui-color-action-on-primary: HighlightText;
+    --ui-color-action-selected-bg: Highlight;
+    --ui-color-action-selected-text: HighlightText;
+    --ui-color-focus-ring: Highlight;
+  }
+
+  :root, [data-ui-density="comfortable"] {
+${density('comfortable')}
+  }
+
+  [data-ui-density="compact"] {
+${density('compact')}
+  }
+
+  @media (pointer: coarse) {
+    :root, [data-ui-density="comfortable"], [data-ui-density="compact"] {
+      --ui-size-control: ${cssValue('foundation.density.touch.interactiveTarget')};
+      --ui-size-table-row: ${cssValue('foundation.density.touch.tableRow')};
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --ui-motion-fast: 0ms;
+      --ui-motion-normal: 0ms;
+      --ui-motion-slow: 0ms;
+    }
+  }
+}
+`;
+output('packages/tokens/dist/theme.css',theme);
+if(drift)process.exitCode=1;

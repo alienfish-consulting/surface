@@ -1,0 +1,136 @@
+{
+  "registryVersion": "1.1.0",
+  "components": [
+    {
+      "type": "ui.AppShell",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Outer application layout and workspace hierarchy",
+      "propsSchema": "schemas/components/app-shell.schema.json",
+      "allowedChildren": [
+        "ui.Panel"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "adaptive-panel"
+    },
+    {
+      "type": "ui.Panel",
+      "version": "1.1.0",
+      "package": "ui-react",
+      "purpose": "Surface region with accessible heading",
+      "propsSchema": "schemas/components/panel.schema.json",
+      "allowedChildren": [
+        "ui.Panel",
+        "ui.KpiCard",
+        "ui.Button",
+        "ui.TextField",
+        "ui.DataGrid",
+        "ui.ActivityFeed"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "stack"
+    },
+    {
+      "type": "ui.KpiCard",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Summary metric with trend and formatting",
+      "propsSchema": "schemas/components/kpi-card.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "value",
+        "trend"
+      ],
+      "events": [],
+      "states": [
+        "data",
+        "freshness"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DataGrid",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible sortable tabular and record-list data",
+      "propsSchema": "schemas/components/data-grid.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "rows"
+      ],
+      "events": [
+        "onRowActivate"
+      ],
+      "states": [
+        "interaction",
+        "data",
+        "freshness",
+        "editing"
+      ],
+      "responsive": "record-list"
+    },
+    {
+      "type": "ui.ActivityFeed",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Chronological events with live tail support",
+      "propsSchema": "schemas/components/activity-feed.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "events"
+      ],
+      "events": [
+        "onEventActivate"
+      ],
+      "states": [
+        "data",
+        "connectivity",
+        "freshness"
+      ],
+      "responsive": "stack"
+    },
+    {
+      "type": "ui.Button",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Styled user-action control with named intent",
+      "propsSchema": "schemas/components/button.schema.json",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onPress"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.TextField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Accessible text editing with host-owned change intent",
+      "propsSchema": "schemas/components/text-field.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    }
+  ]
+}

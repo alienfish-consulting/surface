@@ -1,0 +1,40 @@
+{
+  "name": "enterprise-ui-poc",
+  "version": "0.0.0-private",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.18.0",
+  "engines": {
+    "node": ">=24 <27"
+  },
+  "scripts": {
+    "generate": "node tools/generate.mjs",
+    "check:generated": "node tools/generate.mjs --check",
+    "validate": "node tools/validate.mjs",
+    "build": "pnpm generate && nx run-many -t build",
+    "typecheck": "nx run-many -t typecheck",
+    "test": "vitest run",
+    "dev": "pnpm generate && node tools/copy-core-css.mjs && pnpm --filter @enterprise-ui/design-lab dev",
+    "storybook": "pnpm --filter @enterprise-ui/storybook storybook",
+    "build:storybook": "pnpm --filter @enterprise-ui/storybook build-storybook",
+    "test:e2e:smoke": "playwright test tests/e2e/smoke/design-lab.spec.ts --project=chromium --workers=1",
+    "check": "pnpm check:generated && pnpm validate && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "ajv": "^8.17.1",
+    "nx": "^22.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  },
+  "nx": {
+    "includedScripts": []
+  }
+}

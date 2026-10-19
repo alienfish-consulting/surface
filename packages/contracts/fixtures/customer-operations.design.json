@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "1.0.0",
+  "id": "customer-operations",
+  "revision": 7,
+  "kind": "dashboard",
+  "themeId": "customer-default",
+  "density": "compact",
+  "dataSources": [
+    "customerMetrics",
+    "customerRecords",
+    "customerActivity"
+  ],
+  "actionIds": [
+    "customers.open",
+    "activity.open"
+  ],
+  "root": {
+    "id": "application",
+    "type": "ui.AppShell",
+    "props": {
+      "title": "Customer Operations"
+    },
+    "children": [
+      {
+        "id": "overview",
+        "type": "ui.Panel",
+        "props": {
+          "title": "Overview"
+        },
+        "children": [
+          {
+            "id": "customer-total",
+            "type": "ui.KpiCard",
+            "props": {
+              "label": "Active customers",
+              "format": "integer"
+            },
+            "bindings": {
+              "value": {
+                "sourceId": "customerMetrics",
+                "pointer": "/activeCustomers"
+              }
+            }
+          },
+          {
+            "id": "customer-grid",
+            "type": "ui.DataGrid",
+            "props": {
+              "title": "Customers",
+              "presentation": "auto",
+              "selectable": true,
+              "columns": [
+                {
+                  "key": "name",
+                  "label": "Name",
+                  "sortable": true
+                },
+                {
+                  "key": "status",
+                  "label": "Status",
+                  "sortable": true
+                },
+                {
+                  "key": "revenue",
+                  "label": "Revenue"
+                }
+              ]
+            },
+            "bindings": {
+              "rows": {
+                "sourceId": "customerRecords",
+                "pointer": "/rows"
+              }
+            },
+            "intents": {
+              "onRowActivate": {
+                "actionId": "customers.open"
+              }
+            }
+          },
+          {
+            "id": "customer-activity",
+            "type": "ui.ActivityFeed",
+            "props": {
+              "title": "Recent activity",
+              "showTimestamps": true
+            },
+            "bindings": {
+              "events": {
+                "sourceId": "customerActivity",
+                "pointer": "/events"
+              }
+            },
+            "intents": {
+              "onEventActivate": {
+                "actionId": "activity.open"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

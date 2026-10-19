@@ -1,0 +1,10 @@
+{
+ "extends":"../../tsconfig.base.json", "compilerOptions":{
+  "noEmit":true,"paths":{
+    "@enterprise-ui/contracts":["../../packages/contracts/src/index.ts"],
+    "@enterprise-ui/react-core":["../../packages/react-core/src/index.tsx"],
+    "@enterprise-ui/react-renderer":["../../packages/react-renderer/src/index.tsx"],
+    "@enterprise-ui/react-designers":["../../packages/react-designers/src/index.tsx"]
+  }
+ }, "include":["src/**/*","vite.config.ts"]
+}
