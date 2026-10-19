@@ -16,6 +16,10 @@ Load tokens before component-family CSS. Scope visual modes on an application or
 
 Supported inspection dimensions are light, dark, high contrast (`data-ui-contrast="high"`), compact, comfortable, responsive containers and operating-system forced colors. Consumers must propagate the attributes to detached portal roots.
 
+Use the [Surface design language](../design-language/README.md) for application
+hierarchy, composition, state presentation, responsive behavior, and content
+guidance. The token stylesheet remains authoritative for exact runtime values.
+
 ## Direct React and serialized rendering
 
 Direct React APIs may accept callbacks, slots and React nodes. Persisted documents use only the registered serializable subset in `@enterprise-ui/contracts`. Validate documents before rendering and treat component callbacks as intentions; application code independently authorizes all side effects.

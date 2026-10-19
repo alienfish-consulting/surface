@@ -61,7 +61,7 @@ These approaches share the same component implementations and visual language. D
 | `catalog` | Accepted component inventory and generated lifecycle status |
 | `scaffolds` | Planning and acceptance records for catalog units; not production source |
 | `tests` | Contract, component, package, Electron-boundary, browser, and release checks |
-| `docs` | Architecture, integration guides, release state, and historical delivery records |
+| `docs` | Design language, architecture, integration guides, release state, and historical delivery records |
 
 ## Getting started
 
@@ -248,6 +248,7 @@ See the [acceptance matrix](docs/release/ACCEPTANCE-MATRIX.md) and [verification
 ## Documentation
 
 - [Documentation index](docs/README.md)
+- [Surface design language](docs/design-language/README.md)
 - [Architecture](docs/architecture/README.md)
 - [Consumer guide](docs/guides/consumer-guide.md)
 - [Electron integration](docs/guides/electron-integration.md)

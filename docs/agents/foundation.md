@@ -45,6 +45,10 @@ The central rule is: **one versioned serialized design contract, multiple author
 
 Every interface must remain usable with keyboard-only input and meaningful semantics. Preserve focus entry/exit, focus return for overlays, visible focus, accessible names and errors, reduced-motion preferences, responsive containment, and useful empty/loading/error/stale/disabled states.
 
+Use the [Surface design language](../design-language/README.md) for visual hierarchy,
+composition, state presentation, responsive transformations, and content rules.
+Exact values and runtime property names still come from the token package.
+
 Visual modes are scoped by `data-ui-theme="light|dark"`, `data-ui-density="comfortable|compact"`, and optional `data-ui-contrast="high"`. Detached portal roots must receive the same attributes. Operating-system forced colors are an additional mode, not a substitute for authored high contrast.
 
 ## Working method

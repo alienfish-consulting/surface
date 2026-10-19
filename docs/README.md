@@ -4,6 +4,7 @@ The documentation is organized by purpose so current guidance is not confused wi
 
 | Area | Use it for |
 | --- | --- |
+| [`design-language/`](design-language/README.md) | Visual, interaction, composition, state, and responsive rules for Surface applications |
 | [`agents/`](agents/README.md) | Progressive instructions for coding agents building applications or changing this repository |
 | [`guides/`](guides/consumer-guide.md) | Human-facing web and Electron consumption guides |
 | [`architecture/`](architecture/README.md) | Current system boundaries, dependency direction, and decision records |
