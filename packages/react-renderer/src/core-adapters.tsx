@@ -1,0 +1,103 @@
+import * as React from 'react';
+import type {DesignNode,SerializableComponentType,SerializablePropsByComponent} from '@enterprise-ui/contracts';
+import * as Core from '@enterprise-ui/react-core';
+
+export type HostActionRequest = {actionId:string;nodeId:string;event:string;payload?:unknown};
+export type Host = {data:Record<string,unknown>;requestAction:(request:HostActionRequest)=>void|Promise<void>};
+type Props=Record<string,unknown>;
+export type Adapter=(props:Props,children:React.ReactNode,node:DesignNode,host:Host)=>React.ReactNode;
+const adapt=<K extends SerializableComponentType>(type:K,render:(props:SerializablePropsByComponent[K]&Props,children:React.ReactNode,node:DesignNode,host:Host)=>React.ReactNode):[string,Adapter]=>[type,render as unknown as Adapter];
+const action=(node:DesignNode,host:Host,event:string,payload?:unknown)=>{const actionId=node.intents?.[event]?.actionId;if(actionId)void host.requestAction({actionId,nodeId:node.id,event,payload})};
+const childArray=(children:React.ReactNode)=>React.Children.toArray(children);
+const textButton=(label:string,onClick?:()=>void)=><button type="button" onClick={onClick}>{label}</button>;
+
+export const coreAdapters:ReadonlyMap<string,Adapter>=new Map<string,Adapter>([
+  adapt('ui.AppShell',(p,children)=><Core.AppShell title={p.title}>{children}</Core.AppShell>),
+  adapt('ui.PageLayout',(_p,children)=><Core.PageLayout>{children}</Core.PageLayout>),
+  adapt('ui.AppHeader',(p,children)=><Core.AppHeader title={p.title}>{children}</Core.AppHeader>),
+  adapt('ui.Sidebar',(p,children)=><Core.Sidebar label={p.label}>{children}</Core.Sidebar>),
+  adapt('ui.NavigationRail',(p,_c,n,h)=><Core.NavigationRail label={p.label} items={p.items} activeId={p.activeId} onSelect={id=>action(n,h,'onSelect',{id})}/>),
+  adapt('ui.Breadcrumbs',(p,_c,n,h)=><Core.Breadcrumbs label={p.label} items={p.items.map((item,index)=>({...item,onSelect:()=>action(n,h,'onSelect',{index})}))}/>),
+  adapt('ui.Panel',(p,children)=><Core.Panel title={p.title} collapsible={p.collapsible===true}>{children}</Core.Panel>),
+  adapt('ui.Card',(p,children)=><Core.Card title={p.title} footer={p.footer}>{children}</Core.Card>),
+  adapt('ui.Surface',(p,children)=><Core.Surface elevation={p.elevation}>{children}</Core.Surface>),
+  adapt('ui.Stack',(p,children)=><Core.Stack gap={p.gap} align={p.align}>{children}</Core.Stack>),
+  adapt('ui.Inline',(p,children)=><Core.Inline gap={p.gap} align={p.align} wrap={p.wrap}>{children}</Core.Inline>),
+  adapt('ui.Grid',(p,children)=><Core.Grid columns={p.columns} gap={p.gap} minColumnWidth={p.minColumnWidth}>{children}</Core.Grid>),
+  adapt('ui.SplitPane',(p,children)=>{const items=childArray(children);return <Core.SplitPane label={p.label} start={items[0]??null} end={items[1]??null} defaultPercent={p.defaultPercent} minPercent={p.minPercent} maxPercent={p.maxPercent}/>}),
+  adapt('ui.DockWorkspace',(p,children)=>{const items=childArray(children);return <Core.DockWorkspace label={p.label} main={items[0]??null} start={items[1]} end={items[2]} bottom={items[3]}/>}),
+  adapt('ui.ResizablePanel',(p,children,n,h)=><Core.ResizablePanel label={p.label} size={p.size} defaultSize={p.defaultSize} minSize={p.minSize} maxSize={p.maxSize} onSizeChange={value=>action(n,h,'onSizeChange',{value})}>{children}</Core.ResizablePanel>),
+  adapt('ui.Toolbar',(p,children)=><Core.Toolbar label={p.label}>{children}</Core.Toolbar>),
+  adapt('ui.Divider',p=><Core.Divider orientation={p.orientation}/>),
+  adapt('ui.ScrollArea',(p,children)=><Core.ScrollArea label={p.label} maxHeight={p.maxHeight}>{children}</Core.ScrollArea>),
+  adapt('ui.VirtualList',p=><Core.VirtualList label={p.label} items={p.items} height={p.height} rowHeight={p.rowHeight} overscan={p.overscan} renderItem={item=>item}/>),
+  adapt('ui.EmptyState',(p,_c,n,h)=><Core.EmptyState title={p.title} description={p.description} icon={p.icon} action={p.actionLabel?textButton(p.actionLabel,()=>action(n,h,'onAction')):undefined}/>),
+
+  adapt('ui.Text',p=><Core.Text as={p.as} tone={p.tone}>{p.text}</Core.Text>),
+  adapt('ui.Heading',p=><Core.Heading level={p.level as 1|2|3|4|5|6|undefined}>{p.text}</Core.Heading>),
+  adapt('ui.Label',p=><Core.Label htmlFor={p.forId} required={p.required}>{p.text}</Core.Label>),
+  adapt('ui.Link',(p,_c,n,h)=><Core.Link href={p.href} external={p.external} onClick={()=>action(n,h,'onPress')}>{p.label}</Core.Link>),
+  adapt('ui.Code',p=><Core.Code block={p.block}>{p.code}</Core.Code>),
+  adapt('ui.Badge',p=><Core.Badge tone={p.tone}>{p.label}</Core.Badge>),
+  adapt('ui.Avatar',p=><Core.Avatar name={p.name} src={p.src} size={p.size}/>),
+  adapt('ui.Icon',p=><Core.Icon data-icon={p.name} label={p.label} decorative={p.decorative}/>),
+  adapt('ui.Tooltip',p=><Core.Tooltip content={p.content} placement={p.placement}>{textButton(p.triggerLabel)}</Core.Tooltip>),
+  adapt('ui.TruncateText',p=><Core.TruncateText text={p.text} lines={p.lines as 1|2|3|undefined}/>),
+  adapt('ui.DataValue',p=><Core.DataValue value={p.value} emptyText={p.emptyText} format={p.format}/>),
+
+  adapt('ui.Button',(p,_c,n,h)=><Core.Button label={p.label} variant={p.variant??'primary'} disabled={p.disabled===true} onPress={()=>action(n,h,'onPress')}/>),
+  adapt('ui.IconButton',(p,_c,n,h)=><Core.IconButton label={p.label} icon={<span aria-hidden="true">{p.icon}</span>} variant={p.variant} disabled={p.disabled} onClick={()=>action(n,h,'onPress')}/>),
+  adapt('ui.ToggleButton',(p,_c,n,h)=><Core.ToggleButton pressed={p.pressed} disabled={p.disabled} onPressedChange={value=>action(n,h,'onPressedChange',{value})}>{p.label}</Core.ToggleButton>),
+  adapt('ui.ButtonGroup',(p,children)=><Core.ButtonGroup label={p.label} orientation={p.orientation}>{children}</Core.ButtonGroup>),
+  adapt('ui.TextField',(p,_c,n,h)=><Core.TextField label={p.label} placeholder={p.placeholder} value={p.value} description={p.description} required={p.required===true} error={p.error} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.TextArea',(p,_c,n,h)=><Core.TextArea label={p.label} value={p.value} placeholder={p.placeholder} description={p.description} error={p.error} required={p.required} disabled={p.disabled} rows={p.rows} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.PasswordField',(p,_c,n,h)=><Core.PasswordField label={p.label} value={p.value} placeholder={p.placeholder} description={p.description} error={p.error} required={p.required} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.NumberField',(p,_c,n,h)=><Core.NumberField label={p.label} value={p.value} min={p.min} max={p.max} step={p.step} description={p.description} error={p.error} required={p.required} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.SearchField',(p,_c,n,h)=><form onSubmit={event=>{event.preventDefault();action(n,h,'onSubmit',{value:p.value})}}><Core.SearchField label={p.label} value={p.value} placeholder={p.placeholder} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/></form>),
+  adapt('ui.Select',(p,_c,n,h)=><Core.Select label={p.label} value={p.value} options={p.options} placeholder={p.placeholder} description={p.description} error={p.error} required={p.required} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.MultiSelect',(p,_c,n,h)=><Core.MultiSelect label={p.label} value={p.value} options={p.options} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.ComboBox',(p,_c,n,h)=><Core.ComboBox label={p.label} value={p.value} options={p.options} placeholder={p.placeholder} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.Autocomplete',(p,_c,n,h)=><Core.Autocomplete label={p.label} value={p.value} options={p.options} placeholder={p.placeholder} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.Checkbox',(p,_c,n,h)=><Core.Checkbox label={p.label} checked={p.checked} disabled={p.disabled} onCheckedChange={value=>action(n,h,'onCheckedChange',{value})}/>),
+  adapt('ui.CheckboxGroup',(p,_c,n,h)=><Core.CheckboxGroup legend={p.label} value={p.value} options={p.options} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.RadioGroup',(p,_c,n,h)=><Core.RadioGroup legend={p.label} value={p.value} options={p.options} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.Switch',(p,_c,n,h)=><Core.Switch label={p.label} checked={p.checked} disabled={p.disabled} onCheckedChange={value=>action(n,h,'onCheckedChange',{value})}/>),
+  adapt('ui.Slider',(p,_c,n,h)=><Core.Slider label={p.label} value={p.value} min={p.min} max={p.max} step={p.step} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.RangeSlider',(p,_c,n,h)=><Core.RangeSlider label={p.label} value={p.value as [number,number]|undefined} min={p.min} max={p.max} step={p.step} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.DatePicker',(p,_c,n,h)=><Core.DatePicker label={p.label} value={p.value} min={p.min} max={p.max} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.DateRangePicker',(p,_c,n,h)=><Core.DateRangePicker legend={p.label} value={p.value as [string,string]|undefined} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.TimePicker',(p,_c,n,h)=><Core.TimePicker label={p.label} value={p.value} min={p.min} max={p.max} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.ColorPicker',(p,_c,n,h)=><Core.ColorPicker label={p.label} value={p.value} description={p.description} error={p.error} disabled={p.disabled} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.FileInput',(p,_c,n,h)=><Core.FileInput label={p.label} accept={p.accept} multiple={p.multiple} description={p.description} error={p.error} disabled={p.disabled} onFilesChange={files=>action(n,h,'onChange',{files:files.map(file=>({name:file.name,size:file.size,type:file.type}))})}/>),
+  adapt('ui.FormField',(p,children,n)=><Core.FormField label={p.label} controlId={`${n.id}-control`} description={p.description} error={p.error} required={p.required}>{children}</Core.FormField>),
+  adapt('ui.FieldSet',(p,children)=><Core.FieldSet legend={p.legend} description={p.description} disabled={p.disabled}>{children}</Core.FieldSet>),
+  adapt('ui.ValidationMessage',p=><Core.ValidationMessage tone={p.tone as 'error'|'warning'|'success'|undefined}>{p.message}</Core.ValidationMessage>),
+  adapt('ui.InputGroup',(p,children)=><Core.InputGroup label={p.label}>{children}</Core.InputGroup>),
+  adapt('ui.SegmentedControl',(p,_c,n,h)=><Core.SegmentedControl label={p.label} value={p.value} options={p.options} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.TagInput',(p,_c,n,h)=><Core.TagInput label={p.label} value={p.value} placeholder={p.placeholder} description={p.description} error={p.error} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.OtpField',(p,_c,n,h)=><Core.OtpField label={p.label} value={p.value} length={p.length} description={p.description} error={p.error} inputMode={p.inputMode} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+
+  adapt('ui.Dialog',(p,children,n,h)=><Core.Dialog open={p.open} title={p.title} description={p.description} onOpenChange={value=>action(n,h,'onOpenChange',{value})}>{children}</Core.Dialog>),
+  adapt('ui.AlertDialog',(p,children,n,h)=><Core.AlertDialog open={p.open} title={p.title} description={p.description} confirmLabel={p.confirmLabel} cancelLabel={p.cancelLabel} danger={p.danger} onOpenChange={value=>action(n,h,'onOpenChange',{value})} onConfirm={()=>action(n,h,'onConfirm')}>{children}</Core.AlertDialog>),
+  adapt('ui.Drawer',(p,children,n,h)=><Core.Drawer open={p.open} title={p.title} side={p.side} onOpenChange={value=>action(n,h,'onOpenChange',{value})}>{children}</Core.Drawer>),
+  adapt('ui.Popover',(p,children,n,h)=><Core.Popover label={p.label} trigger={textButton(p.triggerLabel)} open={p.open} onOpenChange={value=>action(n,h,'onOpenChange',{value})}>{children}</Core.Popover>),
+  adapt('ui.Menu',(p,_c,n,h)=><Core.Menu label={p.label} items={p.items} onSelect={id=>action(n,h,'onSelect',{id})}/>),
+  adapt('ui.ContextMenu',(p,_c,n,h)=><Core.ContextMenu label={p.label} items={p.items} onSelect={id=>action(n,h,'onSelect',{id})}>{p.targetLabel}</Core.ContextMenu>),
+  adapt('ui.DropdownMenu',(p,_c,n,h)=><Core.DropdownMenu label={p.label} triggerLabel={p.triggerLabel} items={p.items} onSelect={id=>action(n,h,'onSelect',{id})}/>),
+  adapt('ui.CommandMenu',(p,_c,n,h)=><Core.CommandMenu open={p.open} title={p.title} items={p.items} onOpenChange={value=>action(n,h,'onOpenChange',{value})} onSelect={id=>action(n,h,'onSelect',{id})}/>),
+  adapt('ui.HoverCard',p=><Core.HoverCard trigger={textButton(p.triggerLabel)}>{p.content}</Core.HoverCard>),
+  adapt('ui.Toast',(p,_c,n,h)=><Core.Toast title={p.title} description={p.description} tone={p.tone} onDismiss={()=>action(n,h,'onDismiss')}/>),
+  adapt('ui.NotificationCenter',(p,_c,n,h)=><Core.NotificationCenter title={p.title} items={p.items} onSelect={id=>action(n,h,'onSelect',{id})} onMarkAllRead={()=>action(n,h,'onMarkAllRead')}/>),
+  adapt('ui.Banner',(p,_c,n,h)=><Core.Banner title={p.title} tone={p.tone} onDismiss={()=>action(n,h,'onDismiss')}>{p.message}</Core.Banner>),
+  adapt('ui.Progress',p=><Core.Progress label={p.label} value={p.value} max={p.max} showValue={p.showValue}/>),
+  adapt('ui.Spinner',p=><Core.Spinner label={p.label} size={p.size}/>),
+  adapt('ui.Skeleton',p=><Core.Skeleton width={p.width} height={p.height} label={p.label}/>),
+  adapt('ui.Tabs',(p,_c,n,h)=><Core.Tabs label={p.label} items={p.items} value={p.value} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.Accordion',(p,_c,n,h)=><Core.Accordion items={p.items} multiple={p.multiple} value={p.value} onValueChange={value=>action(n,h,'onChange',{value})}/>),
+  adapt('ui.TreeView',(p,_c,n,h)=><Core.TreeView label={p.label} nodes={p.nodes as Core.TreeNode[]} selectedId={p.selectedId} defaultExpandedIds={p.defaultExpandedIds} onSelect={id=>action(n,h,'onSelect',{id})}/>),
+  adapt('ui.Pagination',(p,_c,n,h)=><Core.Pagination page={p.page} pageCount={p.pageCount} label={p.label} siblingCount={p.siblingCount} onPageChange={value=>action(n,h,'onPageChange',{value})}/>),
+  adapt('ui.Stepper',p=><Core.Stepper steps={p.steps} orientation={p.orientation}/>),
+  adapt('ui.StatusIndicator',p=><Core.StatusIndicator status={p.status} label={p.label} pulse={p.pulse}/>),
+
+  adapt('ui.KpiCard',p=><Core.KpiCard label={p.label} value={typeof p.value==='number'||typeof p.value==='string'?p.value:null} format={p.format} currency={p.currency??'USD'}/>),
+]);

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "min": {
+      "type": "string"
+    },
+    "max": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "disabled": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "additionalProperties": false
+}

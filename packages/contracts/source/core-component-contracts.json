@@ -1,0 +1,5359 @@
+{
+  "contractSourceVersion": "1.0.0",
+  "registryVersion": "1.2.0",
+  "exceptions": [
+    {
+      "type": "ui.KeyboardShortcut",
+      "reason": "Inline semantic helper whose key sequence belongs to its owning component; standalone document nodes would not preserve useful composition context."
+    },
+    {
+      "type": "ui.ToastViewport",
+      "reason": "Application-level live-region host owned by the runtime; persisted documents declare Toast content, not viewport infrastructure."
+    }
+  ],
+  "components": [
+    {
+      "type": "ui.PageLayout",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/page-layout.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.AppHeader",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/app-header.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Sidebar",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/sidebar.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.NavigationRail",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/navigation-rail.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "activeId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "activeId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Breadcrumbs",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/breadcrumbs.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Card",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/card.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "footer": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Surface",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/surface.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "elevation": {
+            "enum": [
+              "flat",
+              "raised",
+              "overlay"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Stack",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/stack.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "gap": {
+            "enum": [
+              "xs",
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "align": {
+            "enum": [
+              "stretch",
+              "flex-start",
+              "center",
+              "flex-end",
+              "baseline"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Inline",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/inline.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "gap": {
+            "enum": [
+              "xs",
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "align": {
+            "enum": [
+              "stretch",
+              "flex-start",
+              "center",
+              "flex-end",
+              "baseline"
+            ]
+          },
+          "wrap": {
+            "type": "boolean"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Grid",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/grid.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "columns": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "gap": {
+            "enum": [
+              "xs",
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "minColumnWidth": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.SplitPane",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/split-pane.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "defaultPercent": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "minPercent": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "maxPercent": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DockWorkspace",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/dock-workspace.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ResizablePanel",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/resizable-panel.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          },
+          "defaultSize": {
+            "type": "number"
+          },
+          "minSize": {
+            "type": "number"
+          },
+          "maxSize": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "size"
+      ],
+      "events": [
+        "onSizeChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Toolbar",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/toolbar.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Divider",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/divider.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "orientation": {
+            "enum": [
+              "horizontal",
+              "vertical"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ScrollArea",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/scroll-area.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "maxHeight": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.VirtualList",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/virtual-list.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "height": {
+            "type": "number",
+            "minimum": 1
+          },
+          "rowHeight": {
+            "type": "number",
+            "minimum": 1
+          },
+          "overscan": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "label",
+          "items",
+          "height",
+          "rowHeight"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.EmptyState",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "schemaFile": "schemas/components/empty-state.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "actionLabel": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onAction"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Text",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/text.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "as": {
+            "enum": [
+              "span",
+              "p",
+              "div"
+            ]
+          },
+          "tone": {
+            "enum": [
+              "primary",
+              "secondary",
+              "tertiary"
+            ]
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Heading",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/heading.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Label",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/label.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "forId": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Link",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/link.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          },
+          "external": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "href"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onPress"
+      ],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Code",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/code.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "block": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Badge",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/badge.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "tone": {
+            "enum": [
+              "neutral",
+              "info",
+              "success",
+              "warning",
+              "danger"
+            ]
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Avatar",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/avatar.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "src": {
+            "type": "string"
+          },
+          "size": {
+            "enum": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Icon",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/icon.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "decorative": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Tooltip",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/tooltip.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "triggerLabel": {
+            "type": "string"
+          },
+          "placement": {
+            "enum": [
+              "top",
+              "right",
+              "bottom",
+              "left"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "triggerLabel"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.TruncateText",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/truncate-text.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "lines": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.DataValue",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "schemaFile": "schemas/components/data-value.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "emptyText": {
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "text",
+              "number",
+              "date",
+              "json"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.IconButton",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/icon-button.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "variant": {
+            "enum": [
+              "primary",
+              "secondary",
+              "ghost"
+            ]
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "icon"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onPress"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ToggleButton",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/toggle-button.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "pressed": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "pressed"
+      ],
+      "events": [
+        "onPressedChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ButtonGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/button-group.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "orientation": {
+            "enum": [
+              "horizontal",
+              "vertical"
+            ]
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.TextArea",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/text-area.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "rows": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.PasswordField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/password-field.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.NumberField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/number-field.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "step": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.SearchField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/search-field.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange",
+        "onSubmit"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Select",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/select.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.MultiSelect",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/multi-select.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ComboBox",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/combo-box.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Autocomplete",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/autocomplete.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Checkbox",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/checkbox.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "checked": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "checked"
+      ],
+      "events": [
+        "onCheckedChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.CheckboxGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/checkbox-group.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.RadioGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/radio-group.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Switch",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/switch.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "checked": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "checked"
+      ],
+      "events": [
+        "onCheckedChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Slider",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/slider.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "step": {
+            "type": "number"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.RangeSlider",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/range-slider.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "step": {
+            "type": "number"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DatePicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/date-picker.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "format": "date"
+          },
+          "min": {
+            "type": "string",
+            "format": "date"
+          },
+          "max": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DateRangePicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/date-range-picker.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.TimePicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/time-picker.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "min": {
+            "type": "string"
+          },
+          "max": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ColorPicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/color-picker.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.FileInput",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/file-input.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "accept": {
+            "type": "string"
+          },
+          "multiple": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.FormField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/form-field.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.FieldSet",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/field-set.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "legend": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "legend"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.ValidationMessage",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/validation-message.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "tone": {
+            "enum": [
+              "error",
+              "warning",
+              "success",
+              "info"
+            ]
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.InputGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/input-group.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.SegmentedControl",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/segmented-control.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "options"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.TagInput",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/tag-input.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.OtpField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "schemaFile": "schemas/components/otp-field.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "length": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "description": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "inputMode": {
+            "enum": [
+              "numeric",
+              "text"
+            ]
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.Dialog",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/dialog.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "open": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.AlertDialog",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/alert-dialog.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "open": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "confirmLabel": {
+            "type": "string"
+          },
+          "cancelLabel": {
+            "type": "string"
+          },
+          "danger": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "title",
+          "confirmLabel"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange",
+        "onConfirm"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Drawer",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/drawer.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "open": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "side": {
+            "enum": [
+              "start",
+              "end",
+              "bottom"
+            ]
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Popover",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/popover.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "triggerLabel": {
+            "type": "string"
+          },
+          "open": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "triggerLabel"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Menu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/menu.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                },
+                "danger": {
+                  "type": "boolean"
+                },
+                "shortcut": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "label",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.ContextMenu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/context-menu.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "targetLabel": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                },
+                "danger": {
+                  "type": "boolean"
+                },
+                "shortcut": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "label",
+          "targetLabel",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.DropdownMenu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/dropdown-menu.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "triggerLabel": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                },
+                "danger": {
+                  "type": "boolean"
+                },
+                "shortcut": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "label",
+          "triggerLabel",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.CommandMenu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/command-menu.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "open": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                },
+                "danger": {
+                  "type": "boolean"
+                },
+                "shortcut": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange",
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.HoverCard",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/hover-card.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "triggerLabel": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "triggerLabel",
+          "content"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Toast",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/toast.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tone": {
+            "enum": [
+              "info",
+              "success",
+              "warning",
+              "danger"
+            ]
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onDismiss"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.NotificationCenter",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/notification-center.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "read": {
+                  "type": "boolean"
+                },
+                "time": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "title"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onSelect",
+        "onMarkAllRead"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Banner",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/banner.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "tone": {
+            "enum": [
+              "info",
+              "success",
+              "warning",
+              "danger"
+            ]
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onDismiss"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Progress",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/progress.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "showValue": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Spinner",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/spinner.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "size": {
+            "enum": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Skeleton",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/skeleton.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "width": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "height": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Tabs",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/tabs.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "content"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Accordion",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/accordion.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "disabled": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "content"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "multiple": {
+            "type": "boolean"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.TreeView",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/tree-view.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/treeNode"
+            }
+          },
+          "selectedId": {
+            "type": "string"
+          },
+          "defaultExpandedIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "label",
+          "nodes"
+        ],
+        "additionalProperties": false,
+        "$defs": {
+          "treeNode": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "disabled": {
+                "type": "boolean"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/treeNode"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "nodes",
+        "selectedId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Pagination",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/pagination.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "pageCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "label": {
+            "type": "string"
+          },
+          "siblingCount": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "page",
+          "pageCount"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "page",
+        "pageCount"
+      ],
+      "events": [
+        "onPageChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.Stepper",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/stepper.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "complete",
+                    "current",
+                    "upcoming",
+                    "error"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "orientation": {
+            "enum": [
+              "horizontal",
+              "vertical"
+            ]
+          }
+        },
+        "required": [
+          "steps"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [
+        "steps"
+      ],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    },
+    {
+      "type": "ui.StatusIndicator",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "schemaFile": "schemas/components/status-indicator.schema.json",
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "neutral",
+              "info",
+              "success",
+              "warning",
+              "danger"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "pulse": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "gap": {
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    "align": {
+      "enum": [
+        "stretch",
+        "flex-start",
+        "center",
+        "flex-end",
+        "baseline"
+      ]
+    },
+    "wrap": {
+      "type": "boolean"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

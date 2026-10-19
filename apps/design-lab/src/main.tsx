@@ -9,7 +9,7 @@ import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
 import {DesignRenderer} from '@enterprise-ui/react-renderer';
 import type {Host,HostActionRequest} from '@enterprise-ui/react-renderer';
 import {PropertyInspector} from '@enterprise-ui/react-designers';
-import {AppShell,Panel,Button,KpiCard} from '@enterprise-ui/react-core';
+import {AppShell,Panel,Button,KpiCard,ComboBox,Dialog,DockWorkspace} from '@enterprise-ui/react-core';
 
 const initial=assertDesignDocument(fixture);
 function App(){
@@ -18,6 +18,7 @@ function App(){
  const [theme,setTheme]=React.useState<'light'|'dark'>('light');
  const [density,setDensity]=React.useState<'comfortable'|'compact'>('comfortable');
  const [allowed,setAllowed]=React.useState(true);
+ const [dialogOpen,setDialogOpen]=React.useState(false);
  const [hostData,setHostData]=React.useState<Record<string,unknown>>({metrics:{activeCustomers:1284,revenue:98340},form:{query:''}});
  const [log,setLog]=React.useState<string[]>(['Host fixture initialized; no backend required.']);
  const [result,setResult]=React.useState('No pending proposal.');
@@ -42,6 +43,15 @@ function App(){
     <DesignRenderer doc={doc} host={host}/>
     <div className="lab-direct"><p className="lab-kicker">DIRECT JSX CONSUMPTION · SAME COMPONENTS</p>
      <AppShell title="Direct React composition"><Panel title="Example JSX panel"><KpiCard label="Static JSX KPI" value={42} format="integer"/><Button label="JSX action" variant="secondary" onPress={()=>addLog('Host fixture handled direct JSX action')}/></Panel></AppShell>
+     <section aria-label="Foundational interaction specimen">
+      <h2>Foundational interaction specimen</h2>
+      <ComboBox label="Environment" options={[{value:'production',label:'Production'},{value:'staging',label:'Staging'}]} placeholder="Choose an environment"/>
+      <Button label="Open focus dialog" onPress={()=>setDialogOpen(true)}/>
+      <Dialog open={dialogOpen} title="Confirm deployment" description="Focus moves into this dialog and Escape returns control to the host state." onOpenChange={setDialogOpen} footer={<Button label="Done" onPress={()=>setDialogOpen(false)}/>}>
+       <p>No deployment is performed by this local specimen.</p>
+      </Dialog>
+      <DockWorkspace label="Workspace layout" main={<p>Main editor</p>} start={<p>Explorer</p>} end={<p>Inspector</p>} bottom={<p>Output</p>}/>
+     </section>
     </div>
   </div>
   <aside className="lab-side"><PropertyInspector document={doc} onPropose={p=>{setProposal(p);setResult('Property change proposed; review the diff and request host approval.');}}/>

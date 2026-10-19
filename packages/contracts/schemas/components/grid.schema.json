@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "columns": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "gap": {
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    "minColumnWidth": {
+      "type": "string"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

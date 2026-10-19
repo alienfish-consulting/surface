@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "complete",
+              "current",
+              "upcoming",
+              "error"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "orientation": {
+      "enum": [
+        "horizontal",
+        "vertical"
+      ]
+    }
+  },
+  "required": [
+    "steps"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "tone": {
+      "enum": [
+        "error",
+        "warning",
+        "success",
+        "info"
+      ]
+    }
+  },
+  "required": [
+    "message"
+  ],
+  "additionalProperties": false
+}

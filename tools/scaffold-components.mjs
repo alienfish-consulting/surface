@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = resolve(repositoryRoot, 'catalog/components.v1.json');
-const runtimeRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.json');
+const runtimeRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.2.0.json');
+const planningRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.json');
 const legacyRegistryPath = resolve(repositoryRoot, 'packages/contracts/fixtures/component-registry.v1.0.0.json');
 
 const args = process.argv.slice(2).filter((argument) => argument !== '--');
@@ -19,14 +20,15 @@ const valueAfter = (flag) => {
 
 const writeMode = hasFlag('--write');
 const checkMode = hasFlag('--check');
-if (writeMode && checkMode) throw new Error('Choose either --write or --check');
+const syncTrackingMode = hasFlag('--sync-tracking');
+if ([writeMode,checkMode,syncTrackingMode].filter(Boolean).length>1) throw new Error('Choose one of --write, --check, or --sync-tracking');
 const componentArgument = valueAfter('--component');
 const outputArgument = valueAfter('--output');
 const outputRoot = outputArgument
   ? resolve(process.cwd(), outputArgument)
   : repositoryRoot;
 
-const knownFlags = new Set(['--write', '--check', '--component', '--output']);
+const knownFlags = new Set(['--write', '--check', '--sync-tracking', '--component', '--output']);
 for (let index = 0; index < args.length; index += 1) {
   const argument = args[index];
   if (!knownFlags.has(argument)) throw new Error(`Unknown argument: ${argument}`);
@@ -36,6 +38,7 @@ for (let index = 0; index < args.length; index += 1) {
 const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'));
 const catalog = readJson(catalogPath);
 const runtimeRegistry = readJson(runtimeRegistryPath);
+const planningRegistry = readJson(planningRegistryPath);
 const legacyRegistry = readJson(legacyRegistryPath);
 
 const classifications = new Set([
@@ -64,7 +67,7 @@ if (catalog.schemaVersion !== '1.0.0' || catalog.catalogStatus !== 'accepted-v1-
   throw new Error('Unsupported or unapproved component catalog');
 }
 if (catalog.components.length !== 198) throw new Error(`Expected 198 catalog units; found ${catalog.components.length}`);
-if (runtimeRegistry.registryVersion !== '1.1.0') throw new Error('The active POC registry must remain at 1.1.0');
+if (runtimeRegistry.registryVersion !== '1.2.0') throw new Error('The active foundational registry must be 1.2.0');
 if (legacyRegistry.registryVersion !== '1.0.0') throw new Error('The preserved legacy registry must remain at 1.0.0');
 
 const componentsById = new Map();
@@ -104,25 +107,36 @@ const visit = (componentId, path = []) => {
 for (const component of catalog.components) visit(component.id);
 
 const runtimeTypes = new Set(runtimeRegistry.components.map((entry) => entry.type));
+const planningTypes = new Set(planningRegistry.components.map((entry) => entry.type));
 const legacyTypes = new Set(legacyRegistry.components.map((entry) => entry.type));
+const runtimeStatuses = new Set(['implemented','verified','released']);
 const implementedIds = catalog.components
-  .filter((component) => component.lifecycleState === 'implemented')
+  .filter((component) => runtimeStatuses.has(component.lifecycleState))
   .map((component) => component.id);
+const renderableIds=implementedIds.filter(type=>runtimeTypes.has(type));
 for (const type of [...runtimeTypes, ...legacyTypes]) {
   if (!componentsById.has(type)) throw new Error(`Registry type is absent from accepted catalog: ${type}`);
 }
 for (const type of implementedIds) {
-  if (!runtimeTypes.has(type)) throw new Error(`Implemented component is absent from active registry: ${type}`);
+  const component=componentsById.get(type);
+  if (!runtimeTypes.has(type)&&component.declarativeRequirement!=='required-or-documented-exception')
+    throw new Error(`Implemented component is absent from active registry without a documented exception: ${type}`);
 }
 
 const selectedComponents = componentArgument
   ? [componentsById.get(componentArgument.startsWith('ui.') ? componentArgument : `ui.${componentArgument}`)]
   : catalog.components;
 if (selectedComponents.some((component) => !component)) throw new Error(`Unknown component: ${componentArgument}`);
+if(syncTrackingMode&&(componentArgument||outputArgument))throw new Error('--sync-tracking updates only repository tracking outputs and cannot be combined with --component or --output');
 
 const json = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const list = (values) => values.length ? values.map((value) => `\`${value}\``).join(', ') : 'None';
-const statusLabel = (component) => component.lifecycleState === 'implemented'
+const scaffoldSnapshotState = (component) => component.sourceState === 'poc-implemented-unverified-production' ? 'implemented' : 'scaffolded';
+const scaffoldSnapshotEvidence=(component)=>scaffoldSnapshotState(component)==='implemented'
+  ? 'POC source, M1 Storybook story, and M1 scoped verification'
+  : component.sourceState==='schema-only-unimplemented'?'schema-only compatibility fixture; no runtime adapter':'none';
+const scaffoldSnapshotPackage=(component)=>scaffoldSnapshotState(component)==='implemented'?(component.id==='ui.KpiCard'?'react-core (temporary POC location; catalog target remains react-data)':'react-core'):null;
+const statusLabel = (component) => scaffoldSnapshotState(component) === 'implemented'
   ? 'IMPLEMENTED POC; PRODUCTION VERIFICATION PENDING'
   : 'NOT IMPLEMENTED';
 
@@ -132,12 +146,12 @@ const componentPlan = (component) => `# ${component.id} — contract tracking pl
 - Target package: \`${component.package}\`; family: \`${component.family}\`
 - Classification: \`${component.classification}\`
 - Export policy: \`${component.exportPolicy}\`
-- Lifecycle status: \`${component.lifecycleState}\`
+- Lifecycle status: \`${scaffoldSnapshotState(component)}\`
 - Implementation milestone: \`${component.implementationMilestone}\`
 - Complexity: \`${component.complexity}\`
 - Declarative requirement: \`${component.declarativeRequirement}\`
-- Current evidence: ${component.implementationEvidence}
-- Current implementation package: ${component.implementationPackage ? `\`${component.implementationPackage}\`` : 'None'}
+- Current evidence: ${scaffoldSnapshotEvidence(component)}
+- Current implementation package: ${scaffoldSnapshotPackage(component) ? `\`${scaffoldSnapshotPackage(component)}\`` : 'None'}
 - Baseline design references: ${list(component.visualReferenceFiles)}
 - Candidate dependencies: ${list(component.candidateDependencies)}
 - Acceptance focus: ${component.acceptanceFocus}
@@ -150,7 +164,7 @@ const componentPlan = (component) => `# ${component.id} — contract tracking pl
 - Risk-targeted tests: propose only when real behavior exists; do not generate placeholder tests
 - Release blockers: API review, implementation evidence, scoped verification, and release approval
 
-${component.lifecycleState === 'implemented'
+${scaffoldSnapshotState(component) === 'implemented'
   ? '**Existing POC implementation only. This scaffold does not broaden its API, package exports, or production-readiness claim.**'
   : '**NOT a functional component. Do not export, register, or publish it until implementation and gate approval.**'}
 `;
@@ -158,30 +172,30 @@ ${component.lifecycleState === 'implemented'
 const schemaPlan = (component) => json({
   schemaPlanVersion: '1.0.0',
   componentId: component.id,
-  status: runtimeTypes.has(component.id)
-    ? component.lifecycleState === 'implemented' ? 'runtime-schema-with-implemented-adapter' : 'compatibility-schema-only-unimplemented'
+  status: planningTypes.has(component.id)
+    ? scaffoldSnapshotState(component) === 'implemented' ? 'runtime-schema-with-implemented-adapter' : 'compatibility-schema-only-unimplemented'
     : 'proposal-only',
   serializable: component.declarativeRequirement === 'required' ? 'required-pending-contract' : 'required-or-documented-exception',
   canonicalDocumentSchemaVersion: '1.0.0',
-  activeRegistryVersion: '1.1.0',
+  activeRegistryVersion: scaffoldSnapshotState(component) === 'implemented' ? '1.1.0' : '1.1.0',
   preservedRegistryVersion: '1.0.0',
   props: {},
   slots: [],
   actions: [],
   bindings: [],
   accessibilityRules: [],
-  note: runtimeTypes.has(component.id)
+  note: planningTypes.has(component.id)
     ? 'Existing registry compatibility is preserved. Do not expand or migrate it from this planning artifact.'
     : 'Not a runtime schema. Do not add it to the registry until reviewed, implemented, versioned, and validated.',
 });
 
 const storiesPlan = (component) => json({
   componentId: component.id,
-  status: component.lifecycleState === 'implemented' ? 'implemented-story-present' : 'proposal-only',
+  status: scaffoldSnapshotState(component) === 'implemented' ? 'implemented-story-present' : 'proposal-only',
   scenarios: component.suggestedStoryScenarios,
   themes: ['light', 'dark', 'high-contrast'],
   densities: ['comfortable', 'compact'],
-  note: component.lifecycleState === 'implemented'
+  note: scaffoldSnapshotState(component) === 'implemented'
     ? 'Track the existing real story; do not infer production verification.'
     : 'Do not generate a fake rendering story. Add stories only when working component source exists.',
 });
@@ -251,7 +265,7 @@ if (!componentArgument) {
     registryCompatibility: {
       preserved: { version: legacyRegistry.registryVersion, componentIds: [...legacyTypes] },
       active: { version: runtimeRegistry.registryVersion, componentIds: [...runtimeTypes] },
-      implementedAdapterIds: catalog.components.filter((item) => item.lifecycleState === 'implemented').map((item) => item.id),
+      implementedAdapterIds: renderableIds,
       note: 'Schema-only registry entries remain compatibility fixtures and have no renderer adapter.',
     },
     components: catalog.components.map((component) => ({
@@ -306,8 +320,8 @@ ${packageRows}
 ## Runtime and compatibility boundary
 
 - Registry \`1.0.0\` remains preserved with ${legacyTypes.size} entries.
-- Active POC registry \`1.1.0\` remains preserved with ${runtimeTypes.size} schema entries.
-- Renderer adapters remain limited to the five implemented POC units: ${list(catalog.components.filter((item) => item.lifecycleState === 'implemented').map((item) => item.id))}.
+- Active foundational registry \`${runtimeRegistry.registryVersion}\` contains ${runtimeTypes.size} schema entries; prior registry fixtures remain preserved.
+- Renderer adapters exist for the registered lifecycle-implemented or verified units: ${list(renderableIds)}.
 - \`ui.DataGrid\` and \`ui.ActivityFeed\` remain schema-only compatibility entries and fail closed at the renderer boundary.
 - \`ui.KpiCard\` remains temporarily implemented in \`react-core\`; its accepted target boundary is \`react-data\`. M2 does not move it.
 
@@ -319,6 +333,7 @@ No scaffold is a public export, a runtime registration, a Storybook story, or ev
 const conflicts = [];
 const missing = [];
 const unchanged = [];
+const trackingPaths=new Set(['catalog/catalog-status.json','packages/contracts/src/generated/catalog-status.ts','docs/catalog-status.md']);
 for (const [path, content] of expectedFiles) {
   const destination = resolve(outputRoot, path);
   if (!destination.startsWith(`${outputRoot}/`) && destination !== outputRoot) throw new Error(`Unsafe output path: ${destination}`);
@@ -327,7 +342,14 @@ for (const [path, content] of expectedFiles) {
   else conflicts.push(path);
 }
 
-if (conflicts.length) {
+if(syncTrackingMode){
+  for(const path of trackingPaths){
+    const destination=resolve(repositoryRoot,path);
+    mkdirSync(dirname(destination),{recursive:true});
+    writeFileSync(destination,expectedFiles.get(path));
+  }
+  console.log(`Tracking sync complete: ${trackingPaths.size} generated files updated; scaffold plans untouched`);
+} else if (conflicts.length) {
   console.error(`Refusing to overwrite ${conflicts.length} differing file(s):`);
   for (const path of conflicts) console.error(`  ${path}`);
   process.exitCode = 1;

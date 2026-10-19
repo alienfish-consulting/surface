@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "status": {
+      "enum": [
+        "neutral",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "pulse": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "status",
+    "label"
+  ],
+  "additionalProperties": false
+}

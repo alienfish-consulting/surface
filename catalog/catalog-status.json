@@ -6,9 +6,9 @@
     "total": 198,
     "byStatus": {
       "planned": 0,
-      "scaffolded": 193,
-      "implemented": 5,
-      "verified": 0,
+      "scaffolded": 112,
+      "implemented": 1,
+      "verified": 85,
       "released": 0
     },
     "byClassification": {
@@ -30,7 +30,7 @@
       ]
     },
     "active": {
-      "version": "1.1.0",
+      "version": "1.2.0",
       "componentIds": [
         "ui.AppShell",
         "ui.Panel",
@@ -38,14 +38,172 @@
         "ui.DataGrid",
         "ui.ActivityFeed",
         "ui.Button",
-        "ui.TextField"
+        "ui.TextField",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
       ]
     },
     "implementedAdapterIds": [
       "ui.AppShell",
+      "ui.PageLayout",
+      "ui.AppHeader",
+      "ui.Sidebar",
+      "ui.NavigationRail",
+      "ui.Breadcrumbs",
       "ui.Panel",
+      "ui.Card",
+      "ui.Surface",
+      "ui.Stack",
+      "ui.Inline",
+      "ui.Grid",
+      "ui.SplitPane",
+      "ui.DockWorkspace",
+      "ui.ResizablePanel",
+      "ui.Toolbar",
+      "ui.Divider",
+      "ui.ScrollArea",
+      "ui.VirtualList",
+      "ui.EmptyState",
+      "ui.Text",
+      "ui.Heading",
+      "ui.Label",
+      "ui.Link",
+      "ui.Code",
+      "ui.Badge",
+      "ui.Avatar",
+      "ui.Icon",
+      "ui.Tooltip",
+      "ui.TruncateText",
+      "ui.DataValue",
       "ui.Button",
+      "ui.IconButton",
+      "ui.ToggleButton",
+      "ui.ButtonGroup",
       "ui.TextField",
+      "ui.TextArea",
+      "ui.PasswordField",
+      "ui.NumberField",
+      "ui.SearchField",
+      "ui.Select",
+      "ui.MultiSelect",
+      "ui.ComboBox",
+      "ui.Autocomplete",
+      "ui.Checkbox",
+      "ui.CheckboxGroup",
+      "ui.RadioGroup",
+      "ui.Switch",
+      "ui.Slider",
+      "ui.RangeSlider",
+      "ui.DatePicker",
+      "ui.DateRangePicker",
+      "ui.TimePicker",
+      "ui.ColorPicker",
+      "ui.FileInput",
+      "ui.FormField",
+      "ui.FieldSet",
+      "ui.ValidationMessage",
+      "ui.InputGroup",
+      "ui.SegmentedControl",
+      "ui.TagInput",
+      "ui.OtpField",
+      "ui.Dialog",
+      "ui.AlertDialog",
+      "ui.Drawer",
+      "ui.Popover",
+      "ui.Menu",
+      "ui.ContextMenu",
+      "ui.DropdownMenu",
+      "ui.CommandMenu",
+      "ui.HoverCard",
+      "ui.Toast",
+      "ui.NotificationCenter",
+      "ui.Banner",
+      "ui.Progress",
+      "ui.Spinner",
+      "ui.Skeleton",
+      "ui.Tabs",
+      "ui.Accordion",
+      "ui.TreeView",
+      "ui.Pagination",
+      "ui.Stepper",
+      "ui.StatusIndicator",
       "ui.KpiCard"
     ],
     "note": "Schema-only registry entries remain compatibility fixtures and have no renderer adapter."
@@ -57,7 +215,7 @@
       "package": "react-core",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "implemented",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/AppShell/component.plan.md",
@@ -65,7 +223,7 @@
         "stories.plan.json": "scaffolds/react-core/AppShell/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/AppShell/test.plan.md"
       },
-      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
       "implementationPackage": "react-core"
     },
     {
@@ -74,7 +232,7 @@
       "package": "react-core",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/PageLayout/component.plan.md",
@@ -82,8 +240,8 @@
         "stories.plan.json": "scaffolds/react-core/PageLayout/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/PageLayout/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.AppHeader",
@@ -91,7 +249,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/AppHeader/component.plan.md",
@@ -99,8 +257,8 @@
         "stories.plan.json": "scaffolds/react-core/AppHeader/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/AppHeader/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Sidebar",
@@ -108,7 +266,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Sidebar/component.plan.md",
@@ -116,8 +274,8 @@
         "stories.plan.json": "scaffolds/react-core/Sidebar/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Sidebar/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.NavigationRail",
@@ -125,7 +283,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/NavigationRail/component.plan.md",
@@ -133,8 +291,8 @@
         "stories.plan.json": "scaffolds/react-core/NavigationRail/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/NavigationRail/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Breadcrumbs",
@@ -142,7 +300,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Breadcrumbs/component.plan.md",
@@ -150,8 +308,8 @@
         "stories.plan.json": "scaffolds/react-core/Breadcrumbs/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Breadcrumbs/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Panel",
@@ -159,7 +317,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "implemented",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Panel/component.plan.md",
@@ -167,7 +325,7 @@
         "stories.plan.json": "scaffolds/react-core/Panel/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Panel/test.plan.md"
       },
-      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
       "implementationPackage": "react-core"
     },
     {
@@ -176,7 +334,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Card/component.plan.md",
@@ -184,8 +342,8 @@
         "stories.plan.json": "scaffolds/react-core/Card/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Card/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Surface",
@@ -193,7 +351,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Surface/component.plan.md",
@@ -201,8 +359,8 @@
         "stories.plan.json": "scaffolds/react-core/Surface/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Surface/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Stack",
@@ -210,7 +368,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Stack/component.plan.md",
@@ -218,8 +376,8 @@
         "stories.plan.json": "scaffolds/react-core/Stack/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Stack/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Inline",
@@ -227,7 +385,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Inline/component.plan.md",
@@ -235,8 +393,8 @@
         "stories.plan.json": "scaffolds/react-core/Inline/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Inline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Grid",
@@ -244,7 +402,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Grid/component.plan.md",
@@ -252,8 +410,8 @@
         "stories.plan.json": "scaffolds/react-core/Grid/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Grid/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.SplitPane",
@@ -261,7 +419,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.ResizablePanel"
       ],
@@ -271,8 +429,8 @@
         "stories.plan.json": "scaffolds/react-core/SplitPane/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/SplitPane/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.DockWorkspace",
@@ -280,7 +438,7 @@
       "package": "react-core",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.SplitPane"
       ],
@@ -290,8 +448,8 @@
         "stories.plan.json": "scaffolds/react-core/DockWorkspace/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/DockWorkspace/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ResizablePanel",
@@ -299,7 +457,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ResizablePanel/component.plan.md",
@@ -307,8 +465,8 @@
         "stories.plan.json": "scaffolds/react-core/ResizablePanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ResizablePanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Toolbar",
@@ -316,7 +474,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Toolbar/component.plan.md",
@@ -324,8 +482,8 @@
         "stories.plan.json": "scaffolds/react-core/Toolbar/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Toolbar/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Divider",
@@ -333,7 +491,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Divider/component.plan.md",
@@ -341,8 +499,8 @@
         "stories.plan.json": "scaffolds/react-core/Divider/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Divider/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ScrollArea",
@@ -350,7 +508,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ScrollArea/component.plan.md",
@@ -358,8 +516,8 @@
         "stories.plan.json": "scaffolds/react-core/ScrollArea/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ScrollArea/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.VirtualList",
@@ -367,7 +525,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/VirtualList/component.plan.md",
@@ -375,8 +533,8 @@
         "stories.plan.json": "scaffolds/react-core/VirtualList/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/VirtualList/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.EmptyState",
@@ -384,7 +542,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/EmptyState/component.plan.md",
@@ -392,8 +550,8 @@
         "stories.plan.json": "scaffolds/react-core/EmptyState/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/EmptyState/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Text",
@@ -401,7 +559,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Text/component.plan.md",
@@ -409,8 +567,8 @@
         "stories.plan.json": "scaffolds/react-core/Text/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Text/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Heading",
@@ -418,7 +576,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Heading/component.plan.md",
@@ -426,8 +584,8 @@
         "stories.plan.json": "scaffolds/react-core/Heading/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Heading/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Label",
@@ -435,7 +593,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Label/component.plan.md",
@@ -443,8 +601,8 @@
         "stories.plan.json": "scaffolds/react-core/Label/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Label/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Link",
@@ -452,7 +610,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Link/component.plan.md",
@@ -460,8 +618,8 @@
         "stories.plan.json": "scaffolds/react-core/Link/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Link/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Code",
@@ -469,7 +627,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Code/component.plan.md",
@@ -477,8 +635,8 @@
         "stories.plan.json": "scaffolds/react-core/Code/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Code/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Badge",
@@ -486,7 +644,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Badge/component.plan.md",
@@ -494,8 +652,8 @@
         "stories.plan.json": "scaffolds/react-core/Badge/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Badge/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Avatar",
@@ -503,7 +661,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Avatar/component.plan.md",
@@ -511,8 +669,8 @@
         "stories.plan.json": "scaffolds/react-core/Avatar/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Avatar/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Icon",
@@ -520,7 +678,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Icon/component.plan.md",
@@ -528,8 +686,8 @@
         "stories.plan.json": "scaffolds/react-core/Icon/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Icon/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Tooltip",
@@ -537,7 +695,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Tooltip/component.plan.md",
@@ -545,8 +703,8 @@
         "stories.plan.json": "scaffolds/react-core/Tooltip/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Tooltip/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.TruncateText",
@@ -554,7 +712,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/TruncateText/component.plan.md",
@@ -562,8 +720,8 @@
         "stories.plan.json": "scaffolds/react-core/TruncateText/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/TruncateText/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.KeyboardShortcut",
@@ -571,7 +729,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/KeyboardShortcut/component.plan.md",
@@ -579,8 +737,8 @@
         "stories.plan.json": "scaffolds/react-core/KeyboardShortcut/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/KeyboardShortcut/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.DataValue",
@@ -588,7 +746,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/DataValue/component.plan.md",
@@ -596,8 +754,8 @@
         "stories.plan.json": "scaffolds/react-core/DataValue/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/DataValue/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Button",
@@ -605,7 +763,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "implemented",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Button/component.plan.md",
@@ -613,7 +771,7 @@
         "stories.plan.json": "scaffolds/react-core/Button/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Button/test.plan.md"
       },
-      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
       "implementationPackage": "react-core"
     },
     {
@@ -622,7 +780,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/IconButton/component.plan.md",
@@ -630,8 +788,8 @@
         "stories.plan.json": "scaffolds/react-core/IconButton/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/IconButton/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ToggleButton",
@@ -639,7 +797,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ToggleButton/component.plan.md",
@@ -647,8 +805,8 @@
         "stories.plan.json": "scaffolds/react-core/ToggleButton/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ToggleButton/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ButtonGroup",
@@ -656,7 +814,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ButtonGroup/component.plan.md",
@@ -664,8 +822,8 @@
         "stories.plan.json": "scaffolds/react-core/ButtonGroup/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ButtonGroup/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.TextField",
@@ -673,7 +831,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "implemented",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/TextField/component.plan.md",
@@ -681,7 +839,7 @@
         "stories.plan.json": "scaffolds/react-core/TextField/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/TextField/test.plan.md"
       },
-      "implementationEvidence": "POC source, M1 Storybook story, and M1 scoped verification",
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
       "implementationPackage": "react-core"
     },
     {
@@ -690,7 +848,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/TextArea/component.plan.md",
@@ -698,8 +856,8 @@
         "stories.plan.json": "scaffolds/react-core/TextArea/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/TextArea/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.PasswordField",
@@ -707,7 +865,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/PasswordField/component.plan.md",
@@ -715,8 +873,8 @@
         "stories.plan.json": "scaffolds/react-core/PasswordField/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/PasswordField/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.NumberField",
@@ -724,7 +882,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/NumberField/component.plan.md",
@@ -732,8 +890,8 @@
         "stories.plan.json": "scaffolds/react-core/NumberField/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/NumberField/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.SearchField",
@@ -741,7 +899,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/SearchField/component.plan.md",
@@ -749,8 +907,8 @@
         "stories.plan.json": "scaffolds/react-core/SearchField/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/SearchField/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Select",
@@ -758,7 +916,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Select/component.plan.md",
@@ -766,8 +924,8 @@
         "stories.plan.json": "scaffolds/react-core/Select/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Select/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.MultiSelect",
@@ -775,7 +933,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/MultiSelect/component.plan.md",
@@ -783,8 +941,8 @@
         "stories.plan.json": "scaffolds/react-core/MultiSelect/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/MultiSelect/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ComboBox",
@@ -792,7 +950,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.TextField"
       ],
@@ -802,8 +960,8 @@
         "stories.plan.json": "scaffolds/react-core/ComboBox/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ComboBox/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Autocomplete",
@@ -811,7 +969,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Autocomplete/component.plan.md",
@@ -819,8 +977,8 @@
         "stories.plan.json": "scaffolds/react-core/Autocomplete/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Autocomplete/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Checkbox",
@@ -828,7 +986,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Checkbox/component.plan.md",
@@ -836,8 +994,8 @@
         "stories.plan.json": "scaffolds/react-core/Checkbox/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Checkbox/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.CheckboxGroup",
@@ -845,7 +1003,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/CheckboxGroup/component.plan.md",
@@ -853,8 +1011,8 @@
         "stories.plan.json": "scaffolds/react-core/CheckboxGroup/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/CheckboxGroup/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.RadioGroup",
@@ -862,7 +1020,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/RadioGroup/component.plan.md",
@@ -870,8 +1028,8 @@
         "stories.plan.json": "scaffolds/react-core/RadioGroup/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/RadioGroup/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Switch",
@@ -879,7 +1037,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Switch/component.plan.md",
@@ -887,8 +1045,8 @@
         "stories.plan.json": "scaffolds/react-core/Switch/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Switch/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Slider",
@@ -896,7 +1054,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Slider/component.plan.md",
@@ -904,8 +1062,8 @@
         "stories.plan.json": "scaffolds/react-core/Slider/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Slider/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.RangeSlider",
@@ -913,7 +1071,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/RangeSlider/component.plan.md",
@@ -921,8 +1079,8 @@
         "stories.plan.json": "scaffolds/react-core/RangeSlider/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/RangeSlider/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.DatePicker",
@@ -930,7 +1088,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/DatePicker/component.plan.md",
@@ -938,8 +1096,8 @@
         "stories.plan.json": "scaffolds/react-core/DatePicker/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/DatePicker/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.DateRangePicker",
@@ -947,7 +1105,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.DatePicker"
       ],
@@ -957,8 +1115,8 @@
         "stories.plan.json": "scaffolds/react-core/DateRangePicker/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/DateRangePicker/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.TimePicker",
@@ -966,7 +1124,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/TimePicker/component.plan.md",
@@ -974,8 +1132,8 @@
         "stories.plan.json": "scaffolds/react-core/TimePicker/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/TimePicker/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ColorPicker",
@@ -983,7 +1141,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ColorPicker/component.plan.md",
@@ -991,8 +1149,8 @@
         "stories.plan.json": "scaffolds/react-core/ColorPicker/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ColorPicker/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.FileInput",
@@ -1000,7 +1158,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/FileInput/component.plan.md",
@@ -1008,8 +1166,8 @@
         "stories.plan.json": "scaffolds/react-core/FileInput/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/FileInput/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.FormField",
@@ -1017,7 +1175,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/FormField/component.plan.md",
@@ -1025,8 +1183,8 @@
         "stories.plan.json": "scaffolds/react-core/FormField/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/FormField/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.FieldSet",
@@ -1034,7 +1192,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/FieldSet/component.plan.md",
@@ -1042,8 +1200,8 @@
         "stories.plan.json": "scaffolds/react-core/FieldSet/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/FieldSet/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ValidationMessage",
@@ -1051,7 +1209,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ValidationMessage/component.plan.md",
@@ -1059,8 +1217,8 @@
         "stories.plan.json": "scaffolds/react-core/ValidationMessage/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ValidationMessage/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.InputGroup",
@@ -1068,7 +1226,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/InputGroup/component.plan.md",
@@ -1076,8 +1234,8 @@
         "stories.plan.json": "scaffolds/react-core/InputGroup/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/InputGroup/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.SegmentedControl",
@@ -1085,7 +1243,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/SegmentedControl/component.plan.md",
@@ -1093,8 +1251,8 @@
         "stories.plan.json": "scaffolds/react-core/SegmentedControl/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/SegmentedControl/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.TagInput",
@@ -1102,7 +1260,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/TagInput/component.plan.md",
@@ -1110,8 +1268,8 @@
         "stories.plan.json": "scaffolds/react-core/TagInput/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/TagInput/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.OtpField",
@@ -1119,7 +1277,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/OtpField/component.plan.md",
@@ -1127,8 +1285,8 @@
         "stories.plan.json": "scaffolds/react-core/OtpField/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/OtpField/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Dialog",
@@ -1136,7 +1294,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Dialog/component.plan.md",
@@ -1144,8 +1302,8 @@
         "stories.plan.json": "scaffolds/react-core/Dialog/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Dialog/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.AlertDialog",
@@ -1153,7 +1311,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/AlertDialog/component.plan.md",
@@ -1161,8 +1319,8 @@
         "stories.plan.json": "scaffolds/react-core/AlertDialog/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/AlertDialog/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Drawer",
@@ -1170,7 +1328,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Drawer/component.plan.md",
@@ -1178,8 +1336,8 @@
         "stories.plan.json": "scaffolds/react-core/Drawer/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Drawer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Popover",
@@ -1187,7 +1345,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Popover/component.plan.md",
@@ -1195,8 +1353,8 @@
         "stories.plan.json": "scaffolds/react-core/Popover/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Popover/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Menu",
@@ -1204,7 +1362,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Menu/component.plan.md",
@@ -1212,8 +1370,8 @@
         "stories.plan.json": "scaffolds/react-core/Menu/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Menu/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ContextMenu",
@@ -1221,7 +1379,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ContextMenu/component.plan.md",
@@ -1229,8 +1387,8 @@
         "stories.plan.json": "scaffolds/react-core/ContextMenu/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ContextMenu/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.DropdownMenu",
@@ -1238,7 +1396,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/DropdownMenu/component.plan.md",
@@ -1246,8 +1404,8 @@
         "stories.plan.json": "scaffolds/react-core/DropdownMenu/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/DropdownMenu/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.CommandMenu",
@@ -1255,7 +1413,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Dialog"
       ],
@@ -1265,8 +1423,8 @@
         "stories.plan.json": "scaffolds/react-core/CommandMenu/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/CommandMenu/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.HoverCard",
@@ -1274,7 +1432,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/HoverCard/component.plan.md",
@@ -1282,8 +1440,8 @@
         "stories.plan.json": "scaffolds/react-core/HoverCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/HoverCard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Toast",
@@ -1291,7 +1449,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Toast/component.plan.md",
@@ -1299,8 +1457,8 @@
         "stories.plan.json": "scaffolds/react-core/Toast/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Toast/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.ToastViewport",
@@ -1308,7 +1466,7 @@
       "package": "react-core",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/ToastViewport/component.plan.md",
@@ -1316,8 +1474,8 @@
         "stories.plan.json": "scaffolds/react-core/ToastViewport/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/ToastViewport/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.NotificationCenter",
@@ -1325,7 +1483,7 @@
       "package": "react-core",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/NotificationCenter/component.plan.md",
@@ -1333,8 +1491,8 @@
         "stories.plan.json": "scaffolds/react-core/NotificationCenter/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/NotificationCenter/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Banner",
@@ -1342,7 +1500,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Banner/component.plan.md",
@@ -1350,8 +1508,8 @@
         "stories.plan.json": "scaffolds/react-core/Banner/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Banner/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Progress",
@@ -1359,7 +1517,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Progress/component.plan.md",
@@ -1367,8 +1525,8 @@
         "stories.plan.json": "scaffolds/react-core/Progress/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Progress/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Spinner",
@@ -1376,7 +1534,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Spinner/component.plan.md",
@@ -1384,8 +1542,8 @@
         "stories.plan.json": "scaffolds/react-core/Spinner/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Spinner/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Skeleton",
@@ -1393,7 +1551,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Skeleton/component.plan.md",
@@ -1401,8 +1559,8 @@
         "stories.plan.json": "scaffolds/react-core/Skeleton/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Skeleton/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Tabs",
@@ -1410,7 +1568,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Tabs/component.plan.md",
@@ -1418,8 +1576,8 @@
         "stories.plan.json": "scaffolds/react-core/Tabs/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Tabs/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Accordion",
@@ -1427,7 +1585,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Accordion/component.plan.md",
@@ -1435,8 +1593,8 @@
         "stories.plan.json": "scaffolds/react-core/Accordion/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Accordion/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.TreeView",
@@ -1444,7 +1602,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/TreeView/component.plan.md",
@@ -1452,8 +1610,8 @@
         "stories.plan.json": "scaffolds/react-core/TreeView/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/TreeView/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Pagination",
@@ -1461,7 +1619,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Pagination/component.plan.md",
@@ -1469,8 +1627,8 @@
         "stories.plan.json": "scaffolds/react-core/Pagination/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Pagination/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.Stepper",
@@ -1478,7 +1636,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/Stepper/component.plan.md",
@@ -1486,8 +1644,8 @@
         "stories.plan.json": "scaffolds/react-core/Stepper/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/Stepper/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.StatusIndicator",
@@ -1495,7 +1653,7 @@
       "package": "react-core",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [],
       "artifacts": {
         "component.plan.md": "scaffolds/react-core/StatusIndicator/component.plan.md",
@@ -1503,8 +1661,8 @@
         "stories.plan.json": "scaffolds/react-core/StatusIndicator/stories.plan.json",
         "test.plan.md": "scaffolds/react-core/StatusIndicator/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "packages/react-core source, grouped Storybook stories, registry 1.2.0 schema and renderer adapter",
+      "implementationPackage": "react-core"
     },
     {
       "id": "ui.DataGrid",

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "length": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "description": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "disabled": {
+      "type": "boolean"
+    },
+    "inputMode": {
+      "enum": [
+        "numeric",
+        "text"
+      ]
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "additionalProperties": false
+}

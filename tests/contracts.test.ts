@@ -1,6 +1,6 @@
 import {test,expect} from 'vitest';
-import {assertDesignDocument,validateDocument,previewProposal,readPointer} from '@enterprise-ui/contracts';
-import type {Proposal} from '@enterprise-ui/contracts';
+import {assertDesignDocument,declarativeExceptions,registryVersion,validateDocument,previewProposal,readPointer} from '@enterprise-ui/contracts';
+import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
 import fixture from '../packages/contracts/fixtures/vertical-slice.design.json';
 import legacyFixture from '../packages/contracts/fixtures/customer-operations.design.json';
 const source=assertDesignDocument(fixture);
@@ -34,4 +34,12 @@ test('stale, unsafe, and invalid changes fail closed',()=>{
 test('pointer decoder rejects prototype properties and uses own keys',()=>{
  expect(readPointer({a:{value:2}},'/a/value')).toBe(2);
  expect(readPointer({a:3},'/__proto__')).toBeUndefined();
+});
+test('foundational registry validates new core contracts and preserves explicit JSX-only exceptions',()=>{
+ expect(registryVersion).toBe('1.2.0');
+ expect(declarativeExceptions.map(item=>item.type)).toEqual(['ui.KeyboardShortcut','ui.ToastViewport']);
+ const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'core-contract',revision:0,kind:'form',themeId:'default',density:'comfortable',dataSources:[],actionIds:['form.change'],root:{id:'page',type:'ui.PageLayout',props:{},children:[{id:'field',type:'ui.Select',props:{label:'Environment',options:[{value:'prod',label:'Production'}]},intents:{onChange:{actionId:'form.change'}}}]}};
+ expect(validateDocument(document)).toEqual({ok:true,document});
+ const invalid=structuredClone(document);invalid.root.children![0]!.props.unknown=true;
+ expect(validateDocument(invalid).ok).toBe(false);
 });

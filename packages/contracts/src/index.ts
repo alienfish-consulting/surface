@@ -1,7 +1,7 @@
 import Ajv2020 from 'ajv/dist/2020.js';
 import type { ErrorObject, ValidateFunction } from 'ajv';
 import { applyPatch, type Operation } from 'fast-json-patch';
-import {registryDocument,legacyRegistryDocument,documentSchema,registrySchema,proposalSchema,appShellSchema,panelSchema,kpiCardSchema,dataGridSchema,activityFeedSchema,buttonSchema,textFieldSchema} from './generated/schema-bundle.js';
+import {registryDocument,previousRegistryDocument,legacyRegistryDocument,declarativeExceptions,documentSchema,registrySchema,proposalSchema,componentSchemas} from './generated/schema-bundle.js';
 export type * from './generated/serialized-props.js';
 export {
   implementedComponentTypes,
@@ -36,22 +36,24 @@ export interface RegistryEntry {
   states: readonly string[]; responsive: string;
 }
 export const registryVersion = registryDocument.registryVersion;
+export const previousRegistryVersion = previousRegistryDocument.registryVersion;
 export const legacyRegistryVersion = legacyRegistryDocument.registryVersion;
+export {declarativeExceptions};
 export const registry: ReadonlyMap<string, RegistryEntry> = new Map<string, RegistryEntry>(
   registryDocument.components.map((entry) => [entry.type, entry])
 );
+const previousRegistry: ReadonlyMap<string,RegistryEntry> = new Map(previousRegistryDocument.components.map(entry=>[entry.type,entry]));
 const legacyRegistry: ReadonlyMap<string,RegistryEntry> = new Map(legacyRegistryDocument.components.map(entry=>[entry.type,entry]));
 const ajv = new Ajv2020({ allErrors:true, strict:false });
+ajv.addFormat('date',/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/);
 const documentValidator = ajv.compile(documentSchema);
 const registryValidator = ajv.compile(registrySchema);
 const proposalValidator = ajv.compile(proposalSchema);
-const validators: ReadonlyMap<string, ValidateFunction> = new Map([
-  ['ui.AppShell', ajv.compile(appShellSchema)], ['ui.Panel',ajv.compile(panelSchema)],
-  ['ui.KpiCard',ajv.compile(kpiCardSchema)], ['ui.DataGrid',ajv.compile(dataGridSchema)],
-  ['ui.ActivityFeed',ajv.compile(activityFeedSchema)],['ui.Button',ajv.compile(buttonSchema)],
-  ['ui.TextField',ajv.compile(textFieldSchema)]
-]);
+const validators: ReadonlyMap<string, ValidateFunction> = new Map(
+  Object.entries(componentSchemas).map(([type,schema])=>[type,ajv.compile(schema)])
+);
 if(!registryValidator(registryDocument)) throw Error('Invalid component registry: '+JSON.stringify(registryValidator.errors));
+if(!registryValidator(previousRegistryDocument)) throw Error('Invalid previous registry: '+JSON.stringify(registryValidator.errors));
 if(!registryValidator(legacyRegistryDocument)) throw Error('Invalid legacy registry: '+JSON.stringify(registryValidator.errors));
 
 const formatErrors = (errors?: ErrorObject[]|null) => (errors??[]).map(e=>`${e.instancePath||'/'} ${e.message??'invalid'}`);
@@ -79,7 +81,7 @@ export function validateDocument(input: unknown): {ok:true;document:DesignDocume
   if(!documentValidator(input)) return {ok:false,errors:formatErrors(documentValidator.errors)};
   const doc=input as DesignDocument;
   const errors:string[]=[];
-  const activeRegistry = doc.registryVersion===registryVersion ? registry : doc.registryVersion===legacyRegistryVersion ? legacyRegistry : undefined;
+  const activeRegistry = doc.registryVersion===registryVersion ? registry : doc.registryVersion===previousRegistryVersion ? previousRegistry : doc.registryVersion===legacyRegistryVersion ? legacyRegistry : undefined;
   if(!activeRegistry) errors.push(`Unsupported registryVersion: ${doc.registryVersion}`);
   if(doc.dataSources.some(source=>forbiddenKeys.has(source))) errors.push('Forbidden data source identifier');
   const seen=new Set<string>();let total=0;

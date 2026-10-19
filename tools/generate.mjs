@@ -14,12 +14,30 @@ const output=(file,content)=>{
   mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,content);
   console.log('generated:',file);
 };
-const registry=read('packages/contracts/fixtures/component-registry.json');
+const previousRegistry=read('packages/contracts/fixtures/component-registry.json');
+const coreContracts=read('packages/contracts/source/core-component-contracts.json');
+const serializableCoreTypes=['ui.AppShell','ui.Panel','ui.Button','ui.TextField',...coreContracts.components.map(component=>component.type)];
+const registry={
+  registryVersion:coreContracts.registryVersion,
+  components:[
+    ...previousRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'
+      ? {...entry,version:'1.2.0',allowedChildren:serializableCoreTypes}
+      : entry),
+    ...coreContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
+  ]
+};
+for(const contract of coreContracts.components){
+  output(`packages/contracts/${contract.schemaFile}`,JSON.stringify(contract.propsSchema,null,2)+'\n');
+}
+output('packages/contracts/fixtures/component-registry.v1.2.0.json',JSON.stringify(registry,null,2)+'\n');
 if (new Set(registry.components.map(x=>x.type)).size!==registry.components.length) throw new Error('Duplicate registry entries');
 const supported = new Set(['string','number','integer','boolean']);
 function tsOf(s){
+  if (s.$ref) return 'unknown';
+  if (s.oneOf) return s.oneOf.map(tsOf).join(' | ');
   if (s.enum) return s.enum.map(x=>JSON.stringify(x)).join(' | ');
   if (s.const!==undefined) return JSON.stringify(s.const);
+  if (Array.isArray(s.type)) return s.type.map(type=>type==='null'?'null':tsOf({...s,type})).join(' | ');
   if (s.type && supported.has(s.type)) return s.type==='integer'?'number':s.type;
   if (s.type==='array'&&s.items) return `Array<${tsOf(s.items)}>`;
   if (s.type==='object' && s.properties) return `{ ${Object.entries(s.properties).map(([k,v])=>`${JSON.stringify(k)}${s.required?.includes(k)?'':'?'}: ${tsOf(v)}`).join('; ')} }`;
@@ -40,20 +58,20 @@ for(const [k,v] of Object.entries(index))out+=`  ${JSON.stringify(k)}: ${v};\n`;
 out+='}\n';
 out+='export type SerializableComponentType = keyof SerializablePropsByComponent;\n';
 output('packages/contracts/src/generated/serialized-props.ts',out);
+const componentSchemas=Object.fromEntries(registry.components.map(component=>[
+  component.type,
+  coreContracts.components.find(contract=>contract.type===component.type)?.propsSchema ?? read('packages/contracts/'+component.propsSchema)
+]));
 const bundle={registryDocument: registry,
+ previousRegistryDocument:previousRegistry,
  legacyRegistryDocument:read('packages/contracts/fixtures/component-registry.v1.0.0.json'),
+ declarativeExceptions:coreContracts.exceptions,
  documentSchema:read('packages/contracts/schemas/design-document.schema.json'),
  registrySchema:read('packages/contracts/schemas/component-registry.schema.json'),
  proposalSchema:read('packages/contracts/schemas/patch-proposal.schema.json'),
- appShellSchema:read('packages/contracts/schemas/components/app-shell.schema.json'),
- panelSchema:read('packages/contracts/schemas/components/panel.schema.json'),
- kpiCardSchema:read('packages/contracts/schemas/components/kpi-card.schema.json'),
- dataGridSchema:read('packages/contracts/schemas/components/data-grid.schema.json'),
- activityFeedSchema:read('packages/contracts/schemas/components/activity-feed.schema.json'),
- buttonSchema:read('packages/contracts/schemas/components/button.schema.json'),
- textFieldSchema:read('packages/contracts/schemas/components/text-field.schema.json')};
+ componentSchemas};
 output('packages/contracts/src/generated/schema-bundle.ts',
-  '// GENERATED — source of truth: schemas/ and fixtures/component-registry.json.\n'+
+  '// GENERATED — source of truth: schemas/, versioned registry fixtures, and source/core-component-contracts.json.\n'+
   Object.entries(bundle).map(([name,value])=>`export const ${name} = ${JSON.stringify(value)} as const;\n`).join(''));
 
 const tokens=read('packages/tokens/source/design-tokens.json');

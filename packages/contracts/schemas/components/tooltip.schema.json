@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "triggerLabel": {
+      "type": "string"
+    },
+    "placement": {
+      "enum": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ]
+    }
+  },
+  "required": [
+    "content",
+    "triggerLabel"
+  ],
+  "additionalProperties": false
+}
