@@ -197,11 +197,12 @@ Planning can begin in `scaffolds/`, but reviewed changes are implemented in the 
 | `corepack pnpm generate` | Regenerate token and contract outputs |
 | `corepack pnpm check:generated` | Check generated outputs for drift without rewriting them |
 | `corepack pnpm check:catalog` | Verify the catalog, lifecycle views, and all scaffold artifacts |
+| `corepack pnpm check:stories` | Verify every catalog unit has Storybook coverage or a documented nonvisual exclusion |
 | `corepack pnpm typecheck` | Type-check all workspace projects |
 | `corepack pnpm test` | Run the Vitest suites |
 | `corepack pnpm test:e2e:smoke` | Run the focused Chromium Design Lab smoke test |
 | `corepack pnpm build` | Generate artifacts and build workspace projects |
-| `corepack pnpm check` | Run generated drift, schema validation, type checks, tests, and builds |
+| `corepack pnpm check` | Run generated, catalog, and story coverage checks plus schema validation, type checks, tests, and builds |
 
 The complete Playwright suite is available through `corepack pnpm exec playwright test` and uses Chromium, Firefox, and WebKit. Its browser binaries are installed separately.
 
@@ -212,7 +213,7 @@ The v1 acceptance surface includes:
 - Generated schema, token, registry, and catalog drift checks
 - Package type declarations, ESM exports, and workspace builds
 - Focused component, contract, renderer, proposal, and desktop-boundary tests
-- Storybook coverage across component families and visual modes
+- Storybook coverage for every catalog unit, either directly, through a parent, or through a documented nonvisual exclusion
 - Browser accessibility, keyboard, responsive, and forced-colors checks
 - Chromium, Firefox, and WebKit integration flows
 - Bounded large-data and event-stream behavior

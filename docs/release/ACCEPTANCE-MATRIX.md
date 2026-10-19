@@ -8,7 +8,7 @@ This is the release-readiness ledger, not publication authorization.
 | Serializable coverage | registry 1.6.0; 190 schemas and renderer adapters | ready |
 | JSX-only exceptions | 8 named exceptions in the generated contract bundle | ready |
 | Component behavior | focused Vitest suites for contracts, core renderer, data, operations, AI, designers and desktop boundary | ready |
-| Component states/docs | 16 Storybook files covering core, data, operations, AI and designer families | ready |
+| Component states/docs | 20 Storybook files; automated ledger accounts for all 198 units with 196 rendered and 2 documented nonvisual definitions | ready |
 | Themes/density | Storybook globals plus automated light/comfortable and dark/compact axe scans | ready |
 | High contrast/forced colors | authored high-contrast axe scan in three engines; Chromium forced-colors focus smoke | ready |
 | Responsive behavior | 390 × 844 overflow/focus smoke in Chromium, Firefox and WebKit | ready |
@@ -27,12 +27,12 @@ This is the release-readiness ledger, not publication authorization.
 | Family | Catalog units | Story groups | Contract/runtime evidence |
 | --- | ---: | --- | --- |
 | Core | 85 | layout, display, forms, overlays and focused POC stories | schemas, core adapters, renderer/core tests |
-| Data | 33 | tables, visualizations and inspectors | schemas, data adapters, bounded-grid/visualization tests |
-| Operations | 25 | workflow and control-plane catalogs | schemas, operations adapters, stream/approval/topology tests |
-| AI | 27 | conversation and agent catalogs | schemas, AI adapters, approval/safe-output tests |
-| Designers | 28 | shared-shell and specialist catalog | 26 schemas/adapters, 2 JSX exceptions, proposal/history tests |
+| Data | 33 | tables, visualizations, primitives and inspectors | schemas, data adapters, bounded-grid/visualization tests |
+| Operations | 25 | workflow, control-plane, event and incident catalogs | schemas, operations adapters, stream/approval/topology tests |
+| AI | 27 | conversation, agent and execution-detail catalogs | schemas, AI adapters, approval/safe-output tests |
+| Designers | 28 | shared-shell and specialist catalogs | 26 schemas/adapters, 2 JSX exceptions, proposal/history tests |
 
-Grouped stories intentionally demonstrate coherent parent/subcomponent behavior. They are not inflated into 198 near-identical placeholder stories.
+Grouped stories intentionally demonstrate coherent parent/subcomponent behavior. They are not inflated into 198 near-identical placeholder stories. `pnpm check:stories` resolves parent-to-subcomponent rendering and checks the two intentional nonvisual definition components recorded in `catalog/storybook-exclusions.json`.
 
 ## Manual assistive-technology plan
 

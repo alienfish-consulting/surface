@@ -12,6 +12,7 @@
     "check:generated": "node tools/generate.mjs --check",
     "scaffold:components": "node tools/scaffold-components.mjs",
     "check:catalog": "node tools/scaffold-components.mjs --check",
+    "check:stories": "node tools/check-story-coverage.mjs",
     "validate": "node tools/validate.mjs",
     "build": "pnpm generate && nx run-many -t build",
     "typecheck": "nx run-many -t typecheck",
@@ -20,7 +21,7 @@
     "storybook": "pnpm --filter @enterprise-ui/storybook storybook",
     "build:storybook": "pnpm --filter @enterprise-ui/storybook build-storybook",
     "test:e2e:smoke": "playwright test tests/e2e/smoke/design-lab.spec.ts --project=chromium --workers=1",
-    "check": "pnpm check:generated && pnpm validate && pnpm typecheck && pnpm test && pnpm build"
+    "check": "pnpm check:generated && pnpm check:catalog && pnpm check:stories && pnpm validate && pnpm typecheck && pnpm test && pnpm build"
   },
   "devDependencies": {
     "axe-core": "4.14.0",

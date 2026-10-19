@@ -11,9 +11,10 @@ corepack pnpm --filter @enterprise-ui/react-core typecheck
 # One or more Vitest files
 corepack pnpm exec vitest run tests/contracts.test.ts tests/renderer.test.tsx
 
-# Generator and catalog drift
+# Generator drift, catalog integrity, and Storybook coverage
 corepack pnpm check:generated
 corepack pnpm check:catalog
+corepack pnpm check:stories
 
 # Browser smoke (starts the Design Lab through Playwright configuration)
 corepack pnpm test:e2e:smoke
@@ -27,7 +28,7 @@ Select the actual owning package and tests. Do not use a passing typecheck as ev
 ## Broad checks
 
 ```bash
-# Generated drift, schema validation, all typechecks, Vitest, and workspace builds
+# Generated/catalog/story drift, schema validation, all typechecks, Vitest, and workspace builds
 corepack pnpm check
 
 # Static Storybook integration
@@ -44,7 +45,7 @@ The full browser suite requires installed Playwright browsers. Installing browse
 | Change | Minimum useful evidence |
 | --- | --- |
 | Documentation only | Link/path scan and manual content review |
-| Component props/logic | Owning typecheck and focused Vitest |
+| Component props/logic | Owning typecheck, focused Vitest, and Storybook coverage check |
 | Component CSS | Owning build/typecheck, story review, relevant browser check |
 | Focus, keyboard, responsive, forced-colors behavior | Relevant Playwright spec in affected engines |
 | Schema, registry, bindings, proposals | Generation drift, validation, contracts and renderer tests |

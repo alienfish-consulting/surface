@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "exclusions": [
+    {
+      "id": "ui.GridColumn",
+      "reason": "Nonvisual compatibility definition; DataGrid receives column definition objects and GridColumn intentionally renders null."
+    },
+    {
+      "id": "ui.TopologyEdge",
+      "reason": "Nonvisual compatibility definition; InfrastructureTopology receives edge definition objects and TopologyEdge intentionally renders null."
+    }
+  ]
+}
