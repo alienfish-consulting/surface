@@ -1,0 +1,74 @@
+name: Bug report
+description: Report reproducible incorrect behavior in a package, application, or tool
+title: "[Bug]: "
+labels: ["type:bug", "status:proposed"]
+body:
+  - type: markdown
+    attributes:
+      value: Search existing issues first. Do not include credentials, private data, or unsafe reproduction material.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Choose the primary owning area. Maintainers will apply the matching area label during refinement.
+      options:
+        - Tokens and visual foundation
+        - Contracts, schemas, or registry
+        - React core
+        - React data
+        - React operations
+        - React AI
+        - React designers
+        - Declarative renderer
+        - Electron bridge
+        - Design Lab or Storybook
+        - Tooling, CI, or documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: What happened, and what user or developer impact did it have?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide deterministic steps, inputs, and the smallest relevant example.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe the observable correct outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Environment and evidence
+      description: Browser, Electron, Node, package version, logs, screenshots, or related links. Omit secrets.
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List verifiable completion conditions, including regression coverage and documentation where applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Agent execution constraints
+      description: Identify prohibited changes, required human decisions, security boundaries, or dependencies. Write “None known” when applicable.
+    validations:
+      required: true

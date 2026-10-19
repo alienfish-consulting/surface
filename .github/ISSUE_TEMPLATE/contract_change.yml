@@ -1,0 +1,56 @@
+name: Contract change proposal
+description: Propose a schema, registry, binding, intention, renderer, or proposal-format change
+title: "[Contract]: "
+labels: ["type:contract", "status:proposed"]
+body:
+  - type: markdown
+    attributes:
+      value: Contract changes affect persisted UI and require explicit compatibility, migration, validation, and fail-closed behavior.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Contract problem
+      description: Identify the current schema, registry entry, binding, intention, adapter, or proposal limitation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed contract change
+      description: Describe the JSON-safe shape and affected public or generated surfaces.
+    validations:
+      required: true
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and migration
+      description: Address registry/schema versions, existing documents, adapters, fixtures, rollback, and breaking-change handling.
+    validations:
+      required: true
+
+  - type: textarea
+    id: trust
+    attributes:
+      label: Trust and authorization boundaries
+      description: Explain validation, limits, untrusted input behavior, named intentions, and host authorization implications.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include generator inputs/outputs, negative tests, fixtures, renderer behavior, documentation, and drift checks.
+    validations:
+      required: true
+
+  - type: textarea
+    id: human_decisions
+    attributes:
+      label: Required human decisions
+      description: List unresolved compatibility or product decisions. Write “None” only when the proposal is fully bounded.
+    validations:
+      required: true

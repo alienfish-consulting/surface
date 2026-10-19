@@ -1,0 +1,43 @@
+[
+  {"name":"accessibility","color":"F143AB","description":"Barrier affecting people with disabilities"},
+  {"name":"agent:hold","color":"CC0000","description":"Hard veto: agents must never autonomously execute this issue"},
+  {"name":"documentation","color":"0075CA","description":"Documentation impact or improvement"},
+  {"name":"duplicate","color":"CFD3D7","description":"This issue or pull request already exists"},
+  {"name":"good first issue","color":"7057FF","description":"Good for newcomers"},
+  {"name":"help wanted","color":"008672","description":"Extra attention is needed"},
+  {"name":"invalid","color":"E4E669","description":"This issue is not actionable as described"},
+  {"name":"question","color":"D876E3","description":"Further information is requested"},
+  {"name":"wontfix","color":"FFFFFF","description":"This will not be worked on"},
+
+  {"name":"priority:p0","color":"B60205","description":"Critical highest priority"},
+  {"name":"priority:p1","color":"FBCA04","description":"High priority"},
+  {"name":"priority:p2","color":"C5DEF5","description":"Normal priority"},
+  {"name":"priority:p3","color":"D4C5F9","description":"Low priority or exploratory"},
+
+  {"name":"status:blocked","color":"D93F0B","description":"Blocked on a dependency or decision"},
+  {"name":"status:in-progress","color":"1D76DB","description":"Implementation is in progress"},
+  {"name":"status:proposed","color":"EDEDED","description":"New proposal awaiting refinement"},
+  {"name":"status:ready","color":"0E8A16","description":"Refined and eligible for autonomous execution unless held"},
+  {"name":"status:refinement","color":"FBCA04","description":"Being refined into executable scope"},
+  {"name":"status:review","color":"BFD4F2","description":"Awaiting review and validation"},
+
+  {"name":"type:bug","color":"D73A4A","description":"Reproducible incorrect behavior"},
+  {"name":"type:component","color":"8250DF","description":"New or materially changed component surface"},
+  {"name":"type:contract","color":"5319E7","description":"Schema, registry, binding, intention, renderer, or proposal change"},
+  {"name":"type:documentation","color":"0075CA","description":"Documentation or example improvement"},
+  {"name":"type:feature","color":"0E8A16","description":"Framework, application, or infrastructure capability"},
+  {"name":"type:tooling","color":"1D76DB","description":"Build, test, generator, CI, or repository tooling"},
+
+  {"name":"area:tokens","color":"BFDADC","description":"Design tokens, themes, density, contrast, or visual foundation"},
+  {"name":"area:contracts","color":"BFDADC","description":"Schemas, registries, bindings, intentions, or proposals"},
+  {"name":"area:react-core","color":"BFDADC","description":"Foundational React components"},
+  {"name":"area:react-data","color":"BFDADC","description":"Data components and visualization"},
+  {"name":"area:react-operations","color":"BFDADC","description":"Operational workflows and control-plane components"},
+  {"name":"area:react-ai","color":"BFDADC","description":"Provider-neutral AI and agent components"},
+  {"name":"area:react-designers","color":"BFDADC","description":"Visual authoring and proposal review surfaces"},
+  {"name":"area:react-renderer","color":"BFDADC","description":"Declarative React renderer and adapters"},
+  {"name":"area:electron","color":"BFDADC","description":"Electron integration and desktop boundary"},
+  {"name":"area:apps","color":"BFDADC","description":"Design Lab or Storybook applications"},
+  {"name":"area:tooling","color":"BFDADC","description":"Build, tests, generators, CI, or repository automation"},
+  {"name":"area:docs","color":"BFDADC","description":"Human or agent documentation"}
+]

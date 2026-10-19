@@ -1,6 +1,6 @@
-# Enterprise UI Storybook
+# Surface Storybook
 
-Private component-development application for the implemented Enterprise UI catalog.
+Private component-development application for the implemented Surface catalog.
 
 Stories document the implemented 198-unit v1 catalog through focused individual and grouped family scenarios. Grouped stories cover related subcomponents without pretending each internal or parent-owned unit is an independent product surface. `pnpm check:stories` verifies that every catalog unit is rendered directly, rendered through a parent, or named in the documented nonvisual exclusion ledger.
 

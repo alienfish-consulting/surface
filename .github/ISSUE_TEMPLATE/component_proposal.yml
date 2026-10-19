@@ -1,0 +1,69 @@
+name: Component proposal
+description: Propose a new component or a material change to an existing component family
+title: "[Component]: "
+labels: ["type:component", "status:proposed"]
+body:
+  - type: markdown
+    attributes:
+      value: Check the catalog, existing package exports, grouped stories, and scaffolds before proposing a new component.
+
+  - type: input
+    id: component
+    attributes:
+      label: Component name or catalog ID
+      description: Use the existing public name or a proposed stable `ui.*` identifier.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: family
+    attributes:
+      label: Owning family
+      options:
+        - react-core
+        - react-data
+        - react-operations
+        - react-ai
+        - react-designers
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: User need and use cases
+      description: Describe the workflows this component supports and why current compositions are insufficient.
+    validations:
+      required: true
+
+  - type: textarea
+    id: contract
+    attributes:
+      label: API and contract surface
+      description: Describe direct React props, serialized props, bindings, named intentions, child relationships, and JSX-only exceptions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: experience
+    attributes:
+      label: Experience requirements
+      description: Cover keyboard, focus, semantics, responsive behavior, themes, density, contrast, and empty/loading/error/disabled states.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include implementation, exports, schemas/registry/adapters where applicable, stories, tests, and documentation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Agent execution constraints
+      description: Identify required design decisions, prohibited dependencies, compatibility constraints, or human review points.
+    validations:
+      required: true

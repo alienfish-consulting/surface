@@ -1,12 +1,32 @@
-# Enterprise UI
+<table align="center">
+  <tr>
+    <td align="center" bgcolor="#0B1220">
+      <img src="docs/assets/AlienFishLogo/alienfish-logo-animation-master.svg" alt="AlienFish Consulting" width="180">
+    </td>
+  </tr>
+</table>
 
-Enterprise UI is a schema-first React design framework for building dense, accessible business applications in the browser and in Electron. It combines a broad component system with a versioned JSON design contract, guarded visual editing, and explicit application-owned security boundaries.
+<h1 align="center">AlienFish Surface&trade;</h1>
+
+<p align="center">
+  A schema-first React design framework for dense, accessible browser and Electron applications.
+</p>
+
+<p align="center">
+  <a href="https://github.com/alienfish-consulting/surface/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/alienfish-consulting/surface/actions/workflows/ci.yml/badge.svg?branch=main"></a>
+  <img alt="Node.js 24" src="https://img.shields.io/badge/Node.js-24-339933?logo=nodedotjs&logoColor=white">
+  <img alt="React 19" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=1f2937">
+  <img alt="TypeScript 5.9" src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white">
+  <img alt="Storybook 10.6" src="https://img.shields.io/badge/Storybook-10.6-FF4785?logo=storybook&logoColor=white">
+</p>
+
+Surface combines a broad component system with a versioned JSON design contract, guarded visual editing, and explicit application-owned security boundaries.
 
 The repository is a private, local v1 workspace. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. Package names and versions are provisional, no public license has been selected, and nothing has been published.
 
 ## What the framework provides
 
-Enterprise UI supports three complementary ways to build an interface:
+Surface supports three complementary ways to build an interface:
 
 1. **Direct React composition** for ordinary application code, callbacks, React nodes, and application-specific layouts.
 2. **Declarative rendering** for interfaces that need to be stored, exchanged, visually edited, validated, or proposed as data.
@@ -26,15 +46,15 @@ These approaches share the same component implementations and visual language. D
 
 | Path | Purpose |
 | --- | --- |
-| `packages/tokens` | Source design tokens and generated theme CSS |
-| `packages/contracts` | JSON schemas, component registries, validation, bindings, named actions, and guarded proposals |
-| `packages/react-core` | Layout, display, navigation, controls, forms, feedback, and overlays |
-| `packages/react-data` | Tables, grids, charts, schedules, timelines, queries, and inspectors |
-| `packages/react-operations` | Workflows, deployments, logs, events, topology, service health, and incidents |
-| `packages/react-ai` | Conversations, agents, tools, approvals, artifacts, and run states |
-| `packages/react-designers` | Form, dashboard, workflow, query, and schema design surfaces |
-| `packages/react-renderer` | Explicit adapters from validated design documents to React |
-| `packages/electron-bridge` | Optional typed desktop-capability boundary and browser fallback |
+| [`packages/tokens`](packages/tokens/README.md) | Source design tokens and generated theme CSS |
+| [`packages/contracts`](packages/contracts/README.md) | JSON schemas, component registries, validation, bindings, named actions, and guarded proposals |
+| [`packages/react-core`](packages/react-core/README.md) | Layout, display, navigation, controls, forms, feedback, and overlays |
+| [`packages/react-data`](packages/react-data/README.md) | Tables, grids, charts, schedules, timelines, queries, and inspectors |
+| [`packages/react-operations`](packages/react-operations/README.md) | Workflows, deployments, logs, events, topology, service health, and incidents |
+| [`packages/react-ai`](packages/react-ai/README.md) | Conversations, agents, tools, approvals, artifacts, and run states |
+| [`packages/react-designers`](packages/react-designers/README.md) | Form, dashboard, workflow, query, and schema design surfaces |
+| [`packages/react-renderer`](packages/react-renderer/README.md) | Explicit adapters from validated design documents to React |
+| [`packages/electron-bridge`](packages/electron-bridge/README.md) | Optional typed desktop-capability boundary and browser fallback |
 | `apps/design-lab` | Integrated development application and browser-test target |
 | `apps/storybook` | Component stories and visual state inspection |
 | `catalog` | Accepted component inventory and generated lifecycle status |
@@ -232,6 +252,14 @@ See the [acceptance matrix](docs/release/ACCEPTANCE-MATRIX.md) and [verification
 - [Electron integration](docs/guides/electron-integration.md)
 - [Release preparation](docs/release/README.md)
 - [Historical delivery records](docs/history/README.md)
+
+## Contributing
+
+Open changes through a pull request targeting `main`. The pull-request template asks for scope, contract and accessibility impact, documentation updates, and verification evidence. CI runs the repository checks, static Storybook build, and complete Playwright suites whenever a pull request is opened or updated and whenever code is pushed or merged into `main`.
+
+Keep pull requests focused. Update the root README and any affected package or application README before committing so public guidance remains synchronized with the implementation.
+
+Structured issue forms cover bugs, features, components, contract changes, and documentation. Issues move through `status:proposed`, `status:refinement`, `status:ready`, `status:in-progress`, and `status:review`; `status:blocked` records an explicit dependency or decision. Only ready issues are eligible for autonomous implementation, and `agent:hold` is always a hard veto. See the [issue workflow](docs/agents/issues.md) for the complete execution gate and label rules.
 
 ## Release status
 

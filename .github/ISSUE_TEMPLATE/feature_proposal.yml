@@ -1,0 +1,61 @@
+name: Feature proposal
+description: Propose framework, tooling, application, or infrastructure functionality
+title: "[Feature]: "
+labels: ["type:feature", "status:proposed"]
+body:
+  - type: markdown
+    attributes:
+      value: Describe the desired outcome before prescribing an implementation. Search existing proposals first.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and audience
+      description: Who needs this, what are they trying to accomplish, and why is the current framework insufficient?
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Proposed outcome
+      description: Describe observable behavior, public API expectations, and what is explicitly out of scope.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Primary surface
+      options:
+        - Direct React API
+        - Declarative contract and renderer
+        - Visual designers
+        - Browser application integration
+        - Electron application integration
+        - Repository tooling or CI
+        - Documentation or examples
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Boundaries and risks
+      description: Address compatibility, security, authorization, accessibility, dependencies, bundle impact, and migration concerns.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List testable completion conditions, required stories/tests, and README or guide updates.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Link related issues, standards, designs, stories, or primary technical sources.

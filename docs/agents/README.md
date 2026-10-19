@@ -16,6 +16,7 @@ Read [`foundation.md`](foundation.md). It defines the system model, source-of-tr
 | Choose a package/component or locate examples | [`component-selection.md`](component-selection.md) | Owning stories and exported source types |
 | Work with JSON documents, the renderer, designers, bindings, or proposals | [`declarative-ui.md`](declarative-ui.md) | `packages/contracts/schemas/` and focused tests |
 | Plan or run checks | [`verification.md`](verification.md) | Root package scripts and test configuration |
+| Refine or implement work from a GitHub issue | [`issues.md`](issues.md) | Owning package guide and [`verification.md`](verification.md) |
 
 ## Context-loading rule
 

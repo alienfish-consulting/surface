@@ -1,0 +1,44 @@
+name: Documentation improvement
+description: Report missing, inaccurate, or hard-to-use repository or consumer guidance
+title: "[Docs]: "
+labels: ["type:documentation", "status:proposed", "documentation"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Link the README, guide, package, example, or section that needs attention.
+    validations:
+      required: true
+
+  - type: textarea
+    id: audience
+    attributes:
+      label: Audience and task
+      description: Who is using the documentation, and what are they trying to accomplish?
+    validations:
+      required: true
+
+  - type: textarea
+    id: gap
+    attributes:
+      label: Current gap
+      description: What is missing, inaccurate, ambiguous, inaccessible, or costly to discover?
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the corrected guidance, examples, navigation, or progressive disclosure.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include link checks, related README updates, factual source verification, and any example validation.
+    validations:
+      required: true
