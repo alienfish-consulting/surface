@@ -2,7 +2,7 @@
 
 Semantic design tokens shared by every Surface package. The package owns theme, density, contrast, spacing, typography, color, elevation, motion, and layout variables; it does not contain React components.
 
-This package is private and version `0.0.0` while repository identity and publication policy remain undecided.
+This package is private, proprietary, unpublished, and version `0.0.0` while final package identity and commercial distribution terms remain undecided.
 
 ## Usage
 
@@ -29,7 +29,7 @@ Detached portal roots must receive the same attributes. Operating-system forced 
 
 ## Source and generation
 
-Edit `source/design-tokens.json` or the relevant authoring source. `dist/theme.css` is generated and must not be edited directly.
+Edit `source/design-tokens.json` or the relevant authoring source. `dist/theme.css` is generated and must not be edited directly. It is the only tracked file under `dist/` so a clean clone can verify generated drift before running a build; all other build output remains ignored.
 
 ```bash
 corepack pnpm generate

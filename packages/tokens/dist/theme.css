@@ -1,0 +1,157 @@
+/* GENERATED from packages/tokens/source/design-tokens.json. DO NOT EDIT. */
+@layer ui.tokens, ui.components, ui.utilities;
+
+@layer ui.tokens {
+  :root {
+    --ui-space-0: 0px;
+    --ui-space-1: 4px;
+    --ui-space-2: 8px;
+    --ui-space-3: 12px;
+    --ui-space-4: 16px;
+    --ui-space-5: 20px;
+    --ui-space-6: 24px;
+    --ui-space-8: 32px;
+    --ui-space-10: 40px;
+    --ui-space-12: 48px;
+    --ui-space-16: 64px;
+    --ui-radius-none: 0px;
+    --ui-radius-sm: 4px;
+    --ui-radius-md: 6px;
+    --ui-radius-lg: 8px;
+    --ui-radius-xl: 12px;
+    --ui-font-size-xs: 12px;
+    --ui-font-size-sm: 13px;
+    --ui-font-size-body: 14px;
+    --ui-font-size-md: 16px;
+    --ui-font-size-lg: 18px;
+    --ui-font-size-xl: 20px;
+    --ui-font-size-heading: 24px;
+    --ui-font-body: Inter, system-ui, sans-serif;
+    --ui-font-mono: IBM Plex Mono, ui-monospace, monospace;
+    --ui-line-height-dense: 1.35;
+    --ui-line-height-body: 1.5;
+    --ui-line-height-heading: 1.25;
+    --ui-motion-fast: 120ms;
+    --ui-motion-normal: 180ms;
+    --ui-motion-slow: 240ms;
+    --ui-shadow-raised: 0px 2px 8px 0px #0F172A14;
+    --ui-shadow-overlay: 0px 10px 28px 0px #0F172A24;
+    --ui-z-dropdown: 100;
+    --ui-z-popover: 200;
+    --ui-z-dialog: 300;
+    --ui-z-toast: 400;
+  }
+
+  :root, [data-ui-theme="light"] {
+    color-scheme: light;
+    --ui-color-bg-canvas: #F8FAFC;
+    --ui-color-bg-surface: #FFFFFF;
+    --ui-color-bg-raised: #FFFFFF;
+    --ui-color-bg-inset: #F1F5F9;
+    --ui-color-text-primary: #0F172A;
+    --ui-color-text-secondary: #475569;
+    --ui-color-text-tertiary: #64748B;
+    --ui-color-border-default: #E2E8F0;
+    --ui-color-border-strong: #CBD5E1;
+    --ui-color-action-primary: #2563EB;
+    --ui-color-action-primary-hover: #1D4ED8;
+    --ui-color-action-on-primary: #FFFFFF;
+    --ui-color-action-selected-bg: #DBEAFE;
+    --ui-color-action-selected-text: #1E40AF;
+    --ui-color-focus-ring: #2563EB;
+    --ui-color-status-success-bg: #F0FDF4;
+    --ui-color-status-success-border: #BBF7D0;
+    --ui-color-status-success-text: #166534;
+    --ui-color-status-warning-bg: #FFFBEB;
+    --ui-color-status-warning-border: #FDE68A;
+    --ui-color-status-warning-text: #92400E;
+    --ui-color-status-danger-bg: #FEF2F2;
+    --ui-color-status-danger-border: #FECACA;
+    --ui-color-status-danger-text: #991B1B;
+    --ui-color-status-info-bg: #F0F9FF;
+    --ui-color-status-info-border: #BAE6FD;
+    --ui-color-status-info-text: #075985;
+  }
+
+  [data-ui-theme="dark"] {
+    color-scheme: dark;
+    --ui-color-bg-canvas: #0B1220;
+    --ui-color-bg-surface: #111827;
+    --ui-color-bg-raised: #1E293B;
+    --ui-color-bg-inset: #0B1220;
+    --ui-color-text-primary: #F1F5F9;
+    --ui-color-text-secondary: #CBD5E1;
+    --ui-color-text-tertiary: #94A3B8;
+    --ui-color-border-default: #334155;
+    --ui-color-border-strong: #64748B;
+    --ui-color-action-primary: #60A5FA;
+    --ui-color-action-primary-hover: #93C5FD;
+    --ui-color-action-on-primary: #0B1220;
+    --ui-color-action-selected-bg: #1E293B;
+    --ui-color-action-selected-text: #93C5FD;
+    --ui-color-focus-ring: #93C5FD;
+    --ui-color-status-success-bg: #052E16;
+    --ui-color-status-success-border: #166534;
+    --ui-color-status-success-text: #86EFAC;
+    --ui-color-status-warning-bg: #451A03;
+    --ui-color-status-warning-border: #92400E;
+    --ui-color-status-warning-text: #FCD34D;
+    --ui-color-status-danger-bg: #450A0A;
+    --ui-color-status-danger-border: #991B1B;
+    --ui-color-status-danger-text: #FCA5A5;
+    --ui-color-status-info-bg: #082F49;
+    --ui-color-status-info-border: #075985;
+    --ui-color-status-info-text: #7DD3FC;
+  }
+
+  [data-ui-contrast="high"] {
+    --ui-color-bg-canvas: #FFFFFF;
+    --ui-color-bg-surface: #FFFFFF;
+    --ui-color-bg-raised: #FFFFFF;
+    --ui-color-bg-inset: #FFFFFF;
+    --ui-color-text-primary: #000000;
+    --ui-color-text-secondary: #000000;
+    --ui-color-text-tertiary: #000000;
+    --ui-color-border-default: #000000;
+    --ui-color-border-strong: #000000;
+    --ui-color-action-primary: #00337A;
+    --ui-color-action-primary-hover: #00285F;
+    --ui-color-action-on-primary: #FFFFFF;
+    --ui-color-action-selected-bg: #00337A;
+    --ui-color-action-selected-text: #FFFFFF;
+    --ui-color-focus-ring: #000000;
+  }
+
+  :root, [data-ui-density="comfortable"] {
+    --ui-size-control: 36px;
+    --ui-size-toolbar: 48px;
+    --ui-size-table-row: 44px;
+    --ui-size-nav-item: 40px;
+    --ui-size-tab: 40px;
+    --ui-size-page-gutter: 24px;
+  }
+
+  [data-ui-density="compact"] {
+    --ui-size-control: 28px;
+    --ui-size-toolbar: 40px;
+    --ui-size-table-row: 32px;
+    --ui-size-nav-item: 32px;
+    --ui-size-tab: 32px;
+    --ui-size-page-gutter: 16px;
+  }
+
+  @media (pointer: coarse) {
+    :root, [data-ui-density="comfortable"], [data-ui-density="compact"] {
+      --ui-size-control: 44px;
+      --ui-size-table-row: 48px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --ui-motion-fast: 0ms;
+      --ui-motion-normal: 0ms;
+      --ui-motion-slow: 0ms;
+    }
+  }
+}

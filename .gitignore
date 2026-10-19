@@ -1,5 +1,8 @@
 node_modules/
 dist/
+!packages/tokens/dist/
+packages/tokens/dist/*
+!packages/tokens/dist/theme.css
 .nx/
 .vite/
 coverage/
