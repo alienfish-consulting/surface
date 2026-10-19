@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type {Binding,DesignDocument,DesignNode,Proposal} from '@enterprise-ui/contracts';
+import type {Binding,DesignDocument,DesignNode} from '@enterprise-ui/contracts';
 import {implementedComponentTypes,registry} from '@enterprise-ui/contracts';
 import {Badge,Button,ButtonGroup,EmptyState,Inline,Select,Stack,TextField,TreeView} from '@enterprise-ui/react-core';
 export function DesignerShell({label='Visual designer',palette,canvas,inspector,toolbar}:{label?:string;palette?:React.ReactNode;canvas:React.ReactNode;inspector?:React.ReactNode;toolbar?:React.ReactNode}){return <section aria-label={label} className="ui-designer-shell">{toolbar&&<header>{toolbar}</header>}<aside>{palette}</aside><main>{canvas}</main><aside>{inspector}</aside></section>}
@@ -18,8 +18,3 @@ export function BreakpointSwitcher({value,onChange}:{value:'phone'|'tablet'|'des
 export function PreviewModeToggle({value,onChange}:{value:'design'|'preview';onChange?:(value:'design'|'preview')=>void}){return <ButtonGroup label="Preview mode"><Button label="Design" variant={value==='design'?'primary':'ghost'} onPress={()=>onChange?.('design')}/><Button label="Preview" variant={value==='preview'?'primary':'ghost'} onPress={()=>onChange?.('preview')}/></ButtonGroup>}
 export function BindingEditor({binding,onChange}:{binding?:Binding;onChange?:(binding:Binding)=>void}){return <Stack><TextField label="Data source" value={binding?.sourceId??''} onValueChange={sourceId=>onChange?.({sourceId,pointer:binding?.pointer??''})}/><TextField label="JSON pointer" value={binding?.pointer??''} onValueChange={pointer=>onChange?.({sourceId:binding?.sourceId??'',pointer})}/></Stack>}
 export function ActionEditor({actionId='',availableActions,onChange}:{actionId?:string;availableActions:readonly string[];onChange?:(actionId:string)=>void}){return <Select label="Named action" value={actionId} options={availableActions.map(value=>({value,label:value}))} onValueChange={onChange}/>}
-export interface HistoryState {past:DesignDocument[];present:DesignDocument;future:DesignDocument[]}
-export const pushHistory=(state:HistoryState,next:DesignDocument):HistoryState=>({past:[...state.past,state.present],present:next,future:[]});
-export const undoHistory=(state:HistoryState):HistoryState=>state.past.length?{past:state.past.slice(0,-1),present:state.past.at(-1)!,future:[state.present,...state.future]}:state;
-export const redoHistory=(state:HistoryState):HistoryState=>state.future.length?{past:[...state.past,state.present],present:state.future[0]!,future:state.future.slice(1)}:state;
-export const proposalForProperty=(document:DesignDocument,nodePath:string,key:string,value:unknown):Proposal=>({proposalId:`designer-${document.revision}`,documentId:document.id,schemaVersion:document.schemaVersion,registryVersion:document.registryVersion,baseRevision:document.revision,rationale:`Change ${key}`,operations:[{op:'test',path:'/revision',value:document.revision},{op:'replace',path:`${nodePath}/props/${key.replaceAll('~','~0').replaceAll('/','~1')}`,value}]});

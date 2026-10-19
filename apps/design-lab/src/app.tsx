@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {createRoot} from 'react-dom/client';
 import '@enterprise-ui/tokens/theme.css';
 import '../../../packages/react-core/src/styles.css';
 import '../../../packages/react-data/src/styles.css';
@@ -24,7 +23,7 @@ const initial=assertDesignDocument(fixture);
 const desktopBridge=createBrowserBridge();
 const customerColumns:GridColumnDefinition[]=[{key:'name',label:'Customer',sortable:true},{key:'region',label:'Region'},{key:'revenue',label:'Revenue',align:'end'}];
 const customerRows=[{id:'acme',name:'Acme Manufacturing',region:'North America',revenue:'$184,200'},{id:'globex',name:'Globex',region:'Europe',revenue:'$121,800'},{id:'initech',name:'Initech',region:'North America',revenue:'$98,400'}];
-function App(){
+export default function App(){
  const [doc,setDoc]=React.useState<DesignDocument>(initial);
  const [proposal,setProposal]=React.useState<Proposal|null>(null);
  const [theme,setTheme]=React.useState<'light'|'dark'>('light');
@@ -103,4 +102,3 @@ function App(){
   </aside></div>
  </div>;
 }
-createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);

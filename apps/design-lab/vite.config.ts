@@ -7,8 +7,8 @@ export default defineConfig({
  resolve:{alias:{
   '@enterprise-ui/contracts':src('../../packages/contracts/src/index.ts'),
   '@enterprise-ui/react-core':src('../../packages/react-core/src/index.tsx'),
-  '@enterprise-ui/react-renderer':src('../../packages/react-renderer/src/index.tsx'),
-  '@enterprise-ui/react-designers':src('../../packages/react-designers/src/index.tsx')
+  '@enterprise-ui/react-renderer':src('../../packages/react-renderer/src/index.ts'),
+  '@enterprise-ui/react-designers':src('../../packages/react-designers/src/index.ts')
  }},
  server:{port:5173},
 });
