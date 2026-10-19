@@ -21,4 +21,9 @@ test('design lab renders the existing POC and exposes local display controls', a
   await page.getByLabel('Filter customers').fill('globex');
   await expect(grid.getByText('Globex')).toBeVisible();
   await expect(grid.getByText('Acme Manufacturing')).toHaveCount(0);
+
+  const operations = page.getByRole('region', { name: 'Operations specimen' });
+  await expect(operations.getByText('reconnecting')).toBeVisible();
+  await operations.getByRole('button', { name: 'Deny' }).click();
+  await expect(operations.getByRole('status').last()).toHaveText('deny requested for revision 4');
 });

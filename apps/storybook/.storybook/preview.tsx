@@ -3,6 +3,7 @@ import React from 'react';
 import '../../../packages/tokens/dist/theme.css';
 import '../../../packages/react-core/src/styles.css';
 import '../../../packages/react-data/src/styles.css';
+import '../../../packages/react-operations/src/styles.css';
 import './preview.css';
 
 const preview: Preview = {

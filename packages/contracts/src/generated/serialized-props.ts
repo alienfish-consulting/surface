@@ -631,6 +631,102 @@ export interface FileTreeSerializedProps {
   "selectedId"?: string;
   "defaultExpandedIds"?: Array<string>;
 }
+export interface KanbanBoardSerializedProps {
+  "label"?: string;
+  "lanes": Array<Record<string, unknown>>;
+}
+export interface KanbanLaneSerializedProps {
+  "lane": Record<string, unknown>;
+}
+export interface TaskCardSerializedProps {
+  "task": Record<string, unknown>;
+}
+export interface ApprovalCardSerializedProps {
+  "approval": Record<string, unknown>;
+}
+export interface ApprovalQueueSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface AuditTrailSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface DeploymentPipelineSerializedProps {
+  "label"?: string;
+  "stages": Array<Record<string, unknown>>;
+}
+export interface DeploymentStageSerializedProps {
+  "stage": Record<string, unknown>;
+}
+export interface DeploymentTimelineSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface LogViewerSerializedProps {
+  "label"?: string;
+  "lines"?: Array<Record<string, unknown>>;
+  "connection"?: "loading" | "live" | "stale" | "reconnecting" | "failed";
+  "follow"?: boolean;
+}
+export interface EventStreamSerializedProps {
+  "label"?: string;
+  "lines"?: Array<Record<string, unknown>>;
+  "connection"?: "loading" | "live" | "stale" | "reconnecting" | "failed";
+  "follow"?: boolean;
+}
+export interface EventFilterBarSerializedProps {
+  "query"?: string;
+  "severity"?: string;
+}
+export interface InfrastructureTopologySerializedProps {
+  "label"?: string;
+  "nodes": Array<Record<string, unknown>>;
+  "edges": Array<Record<string, unknown>>;
+}
+export interface TopologyNodeSerializedProps {
+  "node": Record<string, unknown>;
+}
+export interface ServiceHealthGridSerializedProps {
+  "label"?: string;
+  "services": Array<Record<string, unknown>>;
+}
+export interface StatusPagePanelSerializedProps {
+  "title": string;
+  "status": "operational" | "degraded" | "outage";
+  "message"?: string;
+  "updatedAt"?: string;
+}
+export interface IncidentTimelineSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface IncidentSummarySerializedProps {
+  "incident": Record<string, unknown>;
+}
+export interface AlertListSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface AlertDetailsSerializedProps {
+  "alert": Record<string, unknown>;
+}
+export interface RunbookPanelSerializedProps {
+  "title": string;
+  "steps": Array<string>;
+  "currentStep"?: number;
+}
+export interface MetricTrendPanelSerializedProps {
+  "title": string;
+  "value": string | number;
+  "values"?: Array<number>;
+  "tone"?: "neutral" | "success" | "danger";
+}
+export interface ResourceTreeSerializedProps {
+  "label"?: string;
+  "nodes"?: Array<Record<string, unknown>>;
+  "selectedId"?: string;
+}
 export interface SerializablePropsByComponent {
   "ui.AppShell": AppShellSerializedProps;
   "ui.Panel": PanelSerializedProps;
@@ -746,5 +842,28 @@ export interface SerializablePropsByComponent {
   "ui.JsonViewer": JsonViewerSerializedProps;
   "ui.CodeViewer": CodeViewerSerializedProps;
   "ui.FileTree": FileTreeSerializedProps;
+  "ui.KanbanBoard": KanbanBoardSerializedProps;
+  "ui.KanbanLane": KanbanLaneSerializedProps;
+  "ui.TaskCard": TaskCardSerializedProps;
+  "ui.ApprovalCard": ApprovalCardSerializedProps;
+  "ui.ApprovalQueue": ApprovalQueueSerializedProps;
+  "ui.AuditTrail": AuditTrailSerializedProps;
+  "ui.DeploymentPipeline": DeploymentPipelineSerializedProps;
+  "ui.DeploymentStage": DeploymentStageSerializedProps;
+  "ui.DeploymentTimeline": DeploymentTimelineSerializedProps;
+  "ui.LogViewer": LogViewerSerializedProps;
+  "ui.EventStream": EventStreamSerializedProps;
+  "ui.EventFilterBar": EventFilterBarSerializedProps;
+  "ui.InfrastructureTopology": InfrastructureTopologySerializedProps;
+  "ui.TopologyNode": TopologyNodeSerializedProps;
+  "ui.ServiceHealthGrid": ServiceHealthGridSerializedProps;
+  "ui.StatusPagePanel": StatusPagePanelSerializedProps;
+  "ui.IncidentTimeline": IncidentTimelineSerializedProps;
+  "ui.IncidentSummary": IncidentSummarySerializedProps;
+  "ui.AlertList": AlertListSerializedProps;
+  "ui.AlertDetails": AlertDetailsSerializedProps;
+  "ui.RunbookPanel": RunbookPanelSerializedProps;
+  "ui.MetricTrendPanel": MetricTrendPanelSerializedProps;
+  "ui.ResourceTree": ResourceTreeSerializedProps;
 }
 export type SerializableComponentType = keyof SerializablePropsByComponent;

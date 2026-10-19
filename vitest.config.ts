@@ -5,5 +5,6 @@ export default defineConfig({test:{include:['tests/**/*.test.ts','tests/**/*.tes
  '@enterprise-ui/contracts':src('./packages/contracts/src/index.ts'),
  '@enterprise-ui/react-core':src('./packages/react-core/src/index.tsx'),
  '@enterprise-ui/react-data':src('./packages/react-data/src/index.tsx'),
+ '@enterprise-ui/react-operations':src('./packages/react-operations/src/index.tsx'),
  '@enterprise-ui/react-renderer':src('./packages/react-renderer/src/index.tsx')
 }}});

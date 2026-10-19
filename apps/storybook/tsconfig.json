@@ -4,5 +4,5 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": [".storybook/**/*.ts", ".storybook/**/*.tsx", "../../packages/react-core/src/**/*.stories.tsx", "../../packages/react-data/src/**/*.stories.tsx"]
+  "include": [".storybook/**/*.ts", ".storybook/**/*.tsx", "../../packages/react-core/src/**/*.stories.tsx", "../../packages/react-data/src/**/*.stories.tsx", "../../packages/react-operations/src/**/*.stories.tsx"]
 }

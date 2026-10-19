@@ -21,7 +21,8 @@
   "dependencies": {
     "@enterprise-ui/contracts": "workspace:*",
     "@enterprise-ui/react-core": "workspace:*",
-    "@enterprise-ui/react-data": "workspace:*"
+    "@enterprise-ui/react-data": "workspace:*",
+    "@enterprise-ui/react-operations": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

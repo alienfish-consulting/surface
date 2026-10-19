@@ -11,6 +11,7 @@
   "dependencies": {
     "@enterprise-ui/react-core": "workspace:*",
     "@enterprise-ui/react-data": "workspace:*",
+    "@enterprise-ui/react-operations": "workspace:*",
     "@enterprise-ui/tokens": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

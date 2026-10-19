@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import '@enterprise-ui/tokens/theme.css';
 import '../../../packages/react-core/src/styles.css';
 import '../../../packages/react-data/src/styles.css';
+import '../../../packages/react-operations/src/styles.css';
 import './styles.css';
 import fixture from '../../../packages/contracts/fixtures/vertical-slice.design.json';
 import {assertDesignDocument,previewProposal} from '@enterprise-ui/contracts';
@@ -13,6 +14,7 @@ import {PropertyInspector} from '@enterprise-ui/react-designers';
 import {AppShell,Panel,Button,ComboBox,Dialog,DockWorkspace} from '@enterprise-ui/react-core';
 import {DataGrid,KpiCard} from '@enterprise-ui/react-data';
 import type {GridColumnDefinition} from '@enterprise-ui/react-data';
+import {ActivityFeed,ApprovalCard} from '@enterprise-ui/react-operations';
 
 const initial=assertDesignDocument(fixture);
 const customerColumns:GridColumnDefinition[]=[{key:'name',label:'Customer',sortable:true},{key:'region',label:'Region'},{key:'revenue',label:'Revenue',align:'end'}];
@@ -29,6 +31,7 @@ function App(){
  const [result,setResult]=React.useState('No pending proposal.');
  const [gridQuery,setGridQuery]=React.useState('');
  const [gridSort,setGridSort]=React.useState<{key:string;direction:'ascending'|'descending'}>({key:'name',direction:'ascending'});
+ const [approvalResult,setApprovalResult]=React.useState('Pending host decision');
  const addLog=(message:string)=>setLog(prev=>[message,...prev].slice(0,8));
  const host:Host={data:hostData,requestAction:({actionId,nodeId,event,payload}:HostActionRequest)=>{
    if(!allowed){addLog(`DENIED by host: ${actionId} from ${nodeId}`);return;}
@@ -63,6 +66,12 @@ function App(){
       <h2>Advanced data specimen</h2>
       <label>Filter customers <input value={gridQuery} onChange={event=>setGridQuery(event.currentTarget.value)}/></label>
       <DataGrid title="Customer accounts" columns={customerColumns} rows={customerRows.filter(row=>row.name.toLowerCase().includes(gridQuery.toLowerCase()))} sort={gridSort} onSortChange={setGridSort}/>
+     </section>
+     <section aria-label="Operations specimen">
+      <h2>Operations specimen</h2>
+      <ActivityFeed title="Deployment activity" connection="reconnecting" items={[{id:'2',sequence:2,timestamp:'10:02',message:'Retry scheduled',tone:'warning'},{id:'1',sequence:1,timestamp:'10:01',message:'Connection interrupted'}]}/>
+      <ApprovalCard approval={{id:'deploy-42',title:'Resume production rollout',description:'Host authorization is required.',requester:'Release manager',status:'pending',revision:4}} onDecision={(_id,decision,revision)=>setApprovalResult(`${decision} requested for revision ${revision}`)}/>
+      <p role="status">{approvalResult}</p>
      </section>
     </div>
   </div>

@@ -3985,7 +3985,7 @@
       "sourceState": "not-implemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4000,8 +4000,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4019,7 +4019,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4035,8 +4035,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4054,7 +4054,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4070,8 +4070,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4089,7 +4089,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4105,8 +4105,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4124,7 +4124,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4139,8 +4139,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4158,7 +4158,7 @@
       "sourceState": "schema-only-unimplemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4174,8 +4174,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "schema-only compatibility fixture; no runtime adapter",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4193,7 +4193,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Typed intentions, keyboard interactions, host-owned persistence and reviewable state transitions.",
@@ -4209,8 +4209,8 @@
         "pending",
         "rejected-or-disabled"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4228,7 +4228,7 @@
       "sourceState": "not-implemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4245,8 +4245,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4264,7 +4264,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4281,8 +4281,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4300,7 +4300,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4317,8 +4317,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4336,7 +4336,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4352,8 +4352,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4371,7 +4371,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4388,8 +4388,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4407,7 +4407,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4424,8 +4424,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4443,7 +4443,7 @@
       "sourceState": "not-implemented",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "high",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4460,8 +4460,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4479,7 +4479,7 @@
       "sourceState": "not-implemented",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4496,8 +4496,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4515,7 +4515,7 @@
       "sourceState": "not-implemented",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required-or-documented-exception",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4532,8 +4532,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4551,7 +4551,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4568,8 +4568,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4587,7 +4587,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4604,8 +4604,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4623,7 +4623,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4640,8 +4640,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4659,7 +4659,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4676,8 +4676,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4695,7 +4695,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4712,8 +4712,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4731,7 +4731,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4748,8 +4748,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4767,7 +4767,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4784,8 +4784,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4803,7 +4803,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4820,8 +4820,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",
@@ -4839,7 +4839,7 @@
       "sourceState": "not-implemented",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "lifecycleState": "scaffolded",
+      "lifecycleState": "verified",
       "complexity": "medium",
       "declarativeRequirement": "required",
       "acceptanceFocus": "Event ordering, reconnect/stale distinction, readable live updates and authorized host actions.",
@@ -4856,8 +4856,8 @@
         "streaming-or-refreshing",
         "disconnected-or-stale"
       ],
-      "implementationEvidence": "none",
-      "implementationPackage": null,
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations",
       "scaffoldArtifacts": [
         "component.plan.md",
         "schema.plan.json",

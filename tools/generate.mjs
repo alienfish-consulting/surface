@@ -17,6 +17,7 @@ const output=(file,content)=>{
 const previousRegistry=read('packages/contracts/fixtures/component-registry.json');
 const coreContracts=read('packages/contracts/source/core-component-contracts.json');
 const dataContracts=read('packages/contracts/source/data-component-contracts.json');
+const operationsContracts=read('packages/contracts/source/operations-component-contracts.json');
 const serializableCoreTypes=['ui.AppShell','ui.Panel','ui.Button','ui.TextField',...coreContracts.components.map(component=>component.type)];
 const coreRegistry={
   registryVersion:coreContracts.registryVersion,
@@ -29,7 +30,7 @@ const coreRegistry={
 };
 const serializableDataTypes=['ui.DataGrid','ui.KpiCard',...dataContracts.components.map(component=>component.type)];
 const activeContainerTypes=[...serializableCoreTypes,...serializableDataTypes];
-const registry={
+const dataRegistry={
   registryVersion:dataContracts.registryVersion,
   components:[
     ...coreRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'
@@ -38,12 +39,24 @@ const registry={
     ...dataContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
   ]
 };
-const generatedContracts=[...coreContracts.components,...dataContracts.components];
+const serializableOperationTypes=['ui.ActivityFeed',...operationsContracts.components.map(component=>component.type)];
+const allContainerTypes=[...activeContainerTypes,...serializableOperationTypes];
+const registry={
+  registryVersion:operationsContracts.registryVersion,
+  components:[
+    ...dataRegistry.components.map(entry=>entry.type==='ui.AppShell'||entry.type==='ui.Panel'
+      ? {...entry,version:'1.4.0',allowedChildren:allContainerTypes}
+      : entry.type==='ui.ActivityFeed'?{...entry,version:'1.4.0'}:entry),
+    ...operationsContracts.components.map(({schemaFile,propsSchema,...entry})=>({...entry,propsSchema:schemaFile}))
+  ]
+};
+const generatedContracts=[...coreContracts.components,...dataContracts.components,...operationsContracts.components];
 for(const contract of generatedContracts){
   output(`packages/contracts/${contract.schemaFile}`,JSON.stringify(contract.propsSchema,null,2)+'\n');
 }
 output('packages/contracts/fixtures/component-registry.v1.2.0.json',JSON.stringify(coreRegistry,null,2)+'\n');
-output('packages/contracts/fixtures/component-registry.v1.3.0.json',JSON.stringify(registry,null,2)+'\n');
+output('packages/contracts/fixtures/component-registry.v1.3.0.json',JSON.stringify(dataRegistry,null,2)+'\n');
+output('packages/contracts/fixtures/component-registry.v1.4.0.json',JSON.stringify(registry,null,2)+'\n');
 if (new Set(registry.components.map(x=>x.type)).size!==registry.components.length) throw new Error('Duplicate registry entries');
 const supported = new Set(['string','number','integer','boolean']);
 function tsOf(s){
@@ -79,10 +92,10 @@ const componentSchemas=Object.fromEntries(registry.components.map(component=>[
   component.type,
   generatedContracts.find(contract=>contract.type===component.type)?.propsSchema ?? read('packages/contracts/'+component.propsSchema)
 ]));
-const registryDocuments=[registry,coreRegistry,previousRegistry,read('packages/contracts/fixtures/component-registry.v1.0.0.json')];
+const registryDocuments=[registry,dataRegistry,coreRegistry,previousRegistry,read('packages/contracts/fixtures/component-registry.v1.0.0.json')];
 const bundle={registryDocument: registry,
  registryDocuments,
- declarativeExceptions:[...coreContracts.exceptions,...dataContracts.exceptions],
+ declarativeExceptions:[...coreContracts.exceptions,...dataContracts.exceptions,...operationsContracts.exceptions],
  documentSchema:read('packages/contracts/schemas/design-document.schema.json'),
  registrySchema:read('packages/contracts/schemas/component-registry.schema.json'),
  proposalSchema:read('packages/contracts/schemas/patch-proposal.schema.json'),

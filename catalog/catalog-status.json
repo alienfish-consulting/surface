@@ -6,9 +6,9 @@
     "total": 198,
     "byStatus": {
       "planned": 0,
-      "scaffolded": 80,
+      "scaffolded": 55,
       "implemented": 0,
-      "verified": 118,
+      "verified": 143,
       "released": 0
     },
     "byClassification": {
@@ -30,7 +30,7 @@
       ]
     },
     "active": {
-      "version": "1.3.0",
+      "version": "1.4.0",
       "componentIds": [
         "ui.AppShell",
         "ui.Panel",
@@ -145,7 +145,30 @@
         "ui.DiffViewer",
         "ui.JsonViewer",
         "ui.CodeViewer",
-        "ui.FileTree"
+        "ui.FileTree",
+        "ui.KanbanBoard",
+        "ui.KanbanLane",
+        "ui.TaskCard",
+        "ui.ApprovalCard",
+        "ui.ApprovalQueue",
+        "ui.AuditTrail",
+        "ui.DeploymentPipeline",
+        "ui.DeploymentStage",
+        "ui.DeploymentTimeline",
+        "ui.LogViewer",
+        "ui.EventStream",
+        "ui.EventFilterBar",
+        "ui.InfrastructureTopology",
+        "ui.TopologyNode",
+        "ui.ServiceHealthGrid",
+        "ui.StatusPagePanel",
+        "ui.IncidentTimeline",
+        "ui.IncidentSummary",
+        "ui.AlertList",
+        "ui.AlertDetails",
+        "ui.RunbookPanel",
+        "ui.MetricTrendPanel",
+        "ui.ResourceTree"
       ]
     },
     "implementedAdapterIds": [
@@ -261,7 +284,31 @@
       "ui.DiffViewer",
       "ui.JsonViewer",
       "ui.CodeViewer",
-      "ui.FileTree"
+      "ui.FileTree",
+      "ui.KanbanBoard",
+      "ui.KanbanLane",
+      "ui.TaskCard",
+      "ui.ApprovalCard",
+      "ui.ApprovalQueue",
+      "ui.ActivityFeed",
+      "ui.AuditTrail",
+      "ui.DeploymentPipeline",
+      "ui.DeploymentStage",
+      "ui.DeploymentTimeline",
+      "ui.LogViewer",
+      "ui.EventStream",
+      "ui.EventFilterBar",
+      "ui.InfrastructureTopology",
+      "ui.TopologyNode",
+      "ui.ServiceHealthGrid",
+      "ui.StatusPagePanel",
+      "ui.IncidentTimeline",
+      "ui.IncidentSummary",
+      "ui.AlertList",
+      "ui.AlertDetails",
+      "ui.RunbookPanel",
+      "ui.MetricTrendPanel",
+      "ui.ResourceTree"
     ],
     "note": "Schema-only registry entries remain compatibility fixtures and have no renderer adapter."
   },
@@ -2354,7 +2401,7 @@
       "package": "react-operations",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.TaskCard"
       ],
@@ -2364,8 +2411,8 @@
         "stories.plan.json": "scaffolds/react-operations/KanbanBoard/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/KanbanBoard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.KanbanLane",
@@ -2373,7 +2420,7 @@
       "package": "react-operations",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2384,8 +2431,8 @@
         "stories.plan.json": "scaffolds/react-operations/KanbanLane/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/KanbanLane/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.TaskCard",
@@ -2393,7 +2440,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2404,8 +2451,8 @@
         "stories.plan.json": "scaffolds/react-operations/TaskCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/TaskCard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.ApprovalCard",
@@ -2413,7 +2460,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2424,8 +2471,8 @@
         "stories.plan.json": "scaffolds/react-operations/ApprovalCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/ApprovalCard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.ApprovalQueue",
@@ -2433,7 +2480,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.ApprovalCard"
       ],
@@ -2443,8 +2490,8 @@
         "stories.plan.json": "scaffolds/react-operations/ApprovalQueue/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/ApprovalQueue/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.ActivityFeed",
@@ -2452,7 +2499,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2463,8 +2510,8 @@
         "stories.plan.json": "scaffolds/react-operations/ActivityFeed/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/ActivityFeed/test.plan.md"
       },
-      "implementationEvidence": "schema-only compatibility fixture; no runtime adapter",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.AuditTrail",
@@ -2472,7 +2519,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2483,8 +2530,8 @@
         "stories.plan.json": "scaffolds/react-operations/AuditTrail/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/AuditTrail/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.DeploymentPipeline",
@@ -2492,7 +2539,7 @@
       "package": "react-operations",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2503,8 +2550,8 @@
         "stories.plan.json": "scaffolds/react-operations/DeploymentPipeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/DeploymentPipeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.DeploymentStage",
@@ -2512,7 +2559,7 @@
       "package": "react-operations",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2523,8 +2570,8 @@
         "stories.plan.json": "scaffolds/react-operations/DeploymentStage/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/DeploymentStage/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.DeploymentTimeline",
@@ -2532,7 +2579,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2543,8 +2590,8 @@
         "stories.plan.json": "scaffolds/react-operations/DeploymentTimeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/DeploymentTimeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.LogViewer",
@@ -2552,7 +2599,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.ScrollArea"
       ],
@@ -2562,8 +2609,8 @@
         "stories.plan.json": "scaffolds/react-operations/LogViewer/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/LogViewer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.EventStream",
@@ -2571,7 +2618,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2582,8 +2629,8 @@
         "stories.plan.json": "scaffolds/react-operations/EventStream/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/EventStream/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.EventFilterBar",
@@ -2591,7 +2638,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2602,8 +2649,8 @@
         "stories.plan.json": "scaffolds/react-operations/EventFilterBar/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/EventFilterBar/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.InfrastructureTopology",
@@ -2611,7 +2658,7 @@
       "package": "react-operations",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2622,8 +2669,8 @@
         "stories.plan.json": "scaffolds/react-operations/InfrastructureTopology/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/InfrastructureTopology/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.TopologyNode",
@@ -2631,7 +2678,7 @@
       "package": "react-operations",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2642,8 +2689,8 @@
         "stories.plan.json": "scaffolds/react-operations/TopologyNode/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/TopologyNode/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.TopologyEdge",
@@ -2651,7 +2698,7 @@
       "package": "react-operations",
       "classification": "internal-primitive",
       "exportPolicy": "not-public",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2662,8 +2709,8 @@
         "stories.plan.json": "scaffolds/react-operations/TopologyEdge/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/TopologyEdge/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.ServiceHealthGrid",
@@ -2671,7 +2718,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2682,8 +2729,8 @@
         "stories.plan.json": "scaffolds/react-operations/ServiceHealthGrid/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/ServiceHealthGrid/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.StatusPagePanel",
@@ -2691,7 +2738,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2702,8 +2749,8 @@
         "stories.plan.json": "scaffolds/react-operations/StatusPagePanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/StatusPagePanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.IncidentTimeline",
@@ -2711,7 +2758,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2722,8 +2769,8 @@
         "stories.plan.json": "scaffolds/react-operations/IncidentTimeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/IncidentTimeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.IncidentSummary",
@@ -2731,7 +2778,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2742,8 +2789,8 @@
         "stories.plan.json": "scaffolds/react-operations/IncidentSummary/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/IncidentSummary/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.AlertList",
@@ -2751,7 +2798,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2762,8 +2809,8 @@
         "stories.plan.json": "scaffolds/react-operations/AlertList/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/AlertList/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.AlertDetails",
@@ -2771,7 +2818,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2782,8 +2829,8 @@
         "stories.plan.json": "scaffolds/react-operations/AlertDetails/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/AlertDetails/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.RunbookPanel",
@@ -2791,7 +2838,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2802,8 +2849,8 @@
         "stories.plan.json": "scaffolds/react-operations/RunbookPanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/RunbookPanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.MetricTrendPanel",
@@ -2811,7 +2858,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2822,8 +2869,8 @@
         "stories.plan.json": "scaffolds/react-operations/MetricTrendPanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/MetricTrendPanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.ResourceTree",
@@ -2831,7 +2878,7 @@
       "package": "react-operations",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.StatusIndicator"
@@ -2842,8 +2889,8 @@
         "stories.plan.json": "scaffolds/react-operations/ResourceTree/stories.plan.json",
         "test.plan.md": "scaffolds/react-operations/ResourceTree/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-operations source, grouped Storybook stories, registry 1.4.0 contract and renderer adapter where required, and M5 scoped verification",
+      "implementationPackage": "react-operations"
     },
     {
       "id": "ui.ChatWorkspace",

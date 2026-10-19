@@ -1,0 +1,4477 @@
+{
+  "registryVersion": "1.4.0",
+  "components": [
+    {
+      "type": "ui.AppShell",
+      "version": "1.4.0",
+      "package": "ui-react",
+      "purpose": "Outer application layout and workspace hierarchy",
+      "propsSchema": "schemas/components/app-shell.schema.json",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.Panel",
+        "ui.Button",
+        "ui.TextField",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator",
+        "ui.DataGrid",
+        "ui.KpiCard",
+        "ui.GridCellEditor",
+        "ui.GridToolbar",
+        "ui.ColumnChooser",
+        "ui.FilterBuilder",
+        "ui.SortBuilder",
+        "ui.GroupPanel",
+        "ui.TreeGrid",
+        "ui.PivotTable",
+        "ui.PivotFieldWell",
+        "ui.DataTable",
+        "ui.DataList",
+        "ui.SavedViewSelector",
+        "ui.Chart",
+        "ui.Sparkline",
+        "ui.StatGroup",
+        "ui.FacetedFilter",
+        "ui.QueryBuilder",
+        "ui.Calendar",
+        "ui.Scheduler",
+        "ui.Timeline",
+        "ui.GanttChart",
+        "ui.GanttTaskEditor",
+        "ui.Heatmap",
+        "ui.DataInspector",
+        "ui.DiffViewer",
+        "ui.JsonViewer",
+        "ui.CodeViewer",
+        "ui.FileTree",
+        "ui.ActivityFeed",
+        "ui.KanbanBoard",
+        "ui.KanbanLane",
+        "ui.TaskCard",
+        "ui.ApprovalCard",
+        "ui.ApprovalQueue",
+        "ui.AuditTrail",
+        "ui.DeploymentPipeline",
+        "ui.DeploymentStage",
+        "ui.DeploymentTimeline",
+        "ui.LogViewer",
+        "ui.EventStream",
+        "ui.EventFilterBar",
+        "ui.InfrastructureTopology",
+        "ui.TopologyNode",
+        "ui.ServiceHealthGrid",
+        "ui.StatusPagePanel",
+        "ui.IncidentTimeline",
+        "ui.IncidentSummary",
+        "ui.AlertList",
+        "ui.AlertDetails",
+        "ui.RunbookPanel",
+        "ui.MetricTrendPanel",
+        "ui.ResourceTree"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "adaptive-panel"
+    },
+    {
+      "type": "ui.Panel",
+      "version": "1.4.0",
+      "package": "ui-react",
+      "purpose": "Surface region with accessible heading",
+      "propsSchema": "schemas/components/panel.schema.json",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.Panel",
+        "ui.Button",
+        "ui.TextField",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator",
+        "ui.DataGrid",
+        "ui.KpiCard",
+        "ui.GridCellEditor",
+        "ui.GridToolbar",
+        "ui.ColumnChooser",
+        "ui.FilterBuilder",
+        "ui.SortBuilder",
+        "ui.GroupPanel",
+        "ui.TreeGrid",
+        "ui.PivotTable",
+        "ui.PivotFieldWell",
+        "ui.DataTable",
+        "ui.DataList",
+        "ui.SavedViewSelector",
+        "ui.Chart",
+        "ui.Sparkline",
+        "ui.StatGroup",
+        "ui.FacetedFilter",
+        "ui.QueryBuilder",
+        "ui.Calendar",
+        "ui.Scheduler",
+        "ui.Timeline",
+        "ui.GanttChart",
+        "ui.GanttTaskEditor",
+        "ui.Heatmap",
+        "ui.DataInspector",
+        "ui.DiffViewer",
+        "ui.JsonViewer",
+        "ui.CodeViewer",
+        "ui.FileTree",
+        "ui.ActivityFeed",
+        "ui.KanbanBoard",
+        "ui.KanbanLane",
+        "ui.TaskCard",
+        "ui.ApprovalCard",
+        "ui.ApprovalQueue",
+        "ui.AuditTrail",
+        "ui.DeploymentPipeline",
+        "ui.DeploymentStage",
+        "ui.DeploymentTimeline",
+        "ui.LogViewer",
+        "ui.EventStream",
+        "ui.EventFilterBar",
+        "ui.InfrastructureTopology",
+        "ui.TopologyNode",
+        "ui.ServiceHealthGrid",
+        "ui.StatusPagePanel",
+        "ui.IncidentTimeline",
+        "ui.IncidentSummary",
+        "ui.AlertList",
+        "ui.AlertDetails",
+        "ui.RunbookPanel",
+        "ui.MetricTrendPanel",
+        "ui.ResourceTree"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "stack"
+    },
+    {
+      "type": "ui.KpiCard",
+      "version": "1.3.0",
+      "package": "ui-data",
+      "purpose": "Summary metric with trend and formatting",
+      "propsSchema": "schemas/components/kpi-card.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "value",
+        "trend"
+      ],
+      "events": [],
+      "states": [
+        "data",
+        "freshness"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.DataGrid",
+      "version": "1.3.0",
+      "package": "ui-data",
+      "purpose": "Accessible sortable tabular and record-list data",
+      "propsSchema": "schemas/components/data-grid.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "rows"
+      ],
+      "events": [
+        "onRowActivate"
+      ],
+      "states": [
+        "interaction",
+        "data",
+        "freshness",
+        "editing"
+      ],
+      "responsive": "record-list"
+    },
+    {
+      "type": "ui.ActivityFeed",
+      "version": "1.4.0",
+      "package": "ui-operations",
+      "purpose": "Chronological events with live tail support",
+      "propsSchema": "schemas/components/activity-feed.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "events"
+      ],
+      "events": [
+        "onEventActivate"
+      ],
+      "states": [
+        "data",
+        "connectivity",
+        "freshness"
+      ],
+      "responsive": "stack"
+    },
+    {
+      "type": "ui.Button",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Styled user-action control with named intent",
+      "propsSchema": "schemas/components/button.schema.json",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onPress"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.TextField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Accessible text editing with host-owned change intent",
+      "propsSchema": "schemas/components/text-field.schema.json",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container"
+    },
+    {
+      "type": "ui.PageLayout",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/page-layout.schema.json"
+    },
+    {
+      "type": "ui.AppHeader",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/app-header.schema.json"
+    },
+    {
+      "type": "ui.Sidebar",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/sidebar.schema.json"
+    },
+    {
+      "type": "ui.NavigationRail",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [],
+      "bindings": [
+        "activeId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/navigation-rail.schema.json"
+    },
+    {
+      "type": "ui.Breadcrumbs",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/breadcrumbs.schema.json"
+    },
+    {
+      "type": "ui.Card",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/card.schema.json"
+    },
+    {
+      "type": "ui.Surface",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/surface.schema.json"
+    },
+    {
+      "type": "ui.Stack",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/stack.schema.json"
+    },
+    {
+      "type": "ui.Inline",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/inline.schema.json"
+    },
+    {
+      "type": "ui.Grid",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/grid.schema.json"
+    },
+    {
+      "type": "ui.SplitPane",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/split-pane.schema.json"
+    },
+    {
+      "type": "ui.DockWorkspace",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/dock-workspace.schema.json"
+    },
+    {
+      "type": "ui.ResizablePanel",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "size"
+      ],
+      "events": [
+        "onSizeChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/resizable-panel.schema.json"
+    },
+    {
+      "type": "ui.Toolbar",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/toolbar.schema.json"
+    },
+    {
+      "type": "ui.Divider",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/divider.schema.json"
+    },
+    {
+      "type": "ui.ScrollArea",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/scroll-area.schema.json"
+    },
+    {
+      "type": "ui.VirtualList",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/virtual-list.schema.json"
+    },
+    {
+      "type": "ui.EmptyState",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic layout, navigation, resize and keyboard-safe workspaces; responsive adaptation.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onAction"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/empty-state.schema.json"
+    },
+    {
+      "type": "ui.Text",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/text.schema.json"
+    },
+    {
+      "type": "ui.Heading",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/heading.schema.json"
+    },
+    {
+      "type": "ui.Label",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/label.schema.json"
+    },
+    {
+      "type": "ui.Link",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onPress"
+      ],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/link.schema.json"
+    },
+    {
+      "type": "ui.Code",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/code.schema.json"
+    },
+    {
+      "type": "ui.Badge",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/badge.schema.json"
+    },
+    {
+      "type": "ui.Avatar",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/avatar.schema.json"
+    },
+    {
+      "type": "ui.Icon",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/icon.schema.json"
+    },
+    {
+      "type": "ui.Tooltip",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/tooltip.schema.json"
+    },
+    {
+      "type": "ui.TruncateText",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/truncate-text.schema.json"
+    },
+    {
+      "type": "ui.DataValue",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Semantic accessible text, visual status, readable truncation and roles.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [],
+      "states": [
+        "data"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/data-value.schema.json"
+    },
+    {
+      "type": "ui.IconButton",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onPress"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/icon-button.schema.json"
+    },
+    {
+      "type": "ui.ToggleButton",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "pressed"
+      ],
+      "events": [
+        "onPressedChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/toggle-button.schema.json"
+    },
+    {
+      "type": "ui.ButtonGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/button-group.schema.json"
+    },
+    {
+      "type": "ui.TextArea",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/text-area.schema.json"
+    },
+    {
+      "type": "ui.PasswordField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/password-field.schema.json"
+    },
+    {
+      "type": "ui.NumberField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/number-field.schema.json"
+    },
+    {
+      "type": "ui.SearchField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange",
+        "onSubmit"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/search-field.schema.json"
+    },
+    {
+      "type": "ui.Select",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/select.schema.json"
+    },
+    {
+      "type": "ui.MultiSelect",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/multi-select.schema.json"
+    },
+    {
+      "type": "ui.ComboBox",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/combo-box.schema.json"
+    },
+    {
+      "type": "ui.Autocomplete",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/autocomplete.schema.json"
+    },
+    {
+      "type": "ui.Checkbox",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "checked"
+      ],
+      "events": [
+        "onCheckedChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/checkbox.schema.json"
+    },
+    {
+      "type": "ui.CheckboxGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/checkbox-group.schema.json"
+    },
+    {
+      "type": "ui.RadioGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/radio-group.schema.json"
+    },
+    {
+      "type": "ui.Switch",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "checked"
+      ],
+      "events": [
+        "onCheckedChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/switch.schema.json"
+    },
+    {
+      "type": "ui.Slider",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/slider.schema.json"
+    },
+    {
+      "type": "ui.RangeSlider",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/range-slider.schema.json"
+    },
+    {
+      "type": "ui.DatePicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/date-picker.schema.json"
+    },
+    {
+      "type": "ui.DateRangePicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/date-range-picker.schema.json"
+    },
+    {
+      "type": "ui.TimePicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/time-picker.schema.json"
+    },
+    {
+      "type": "ui.ColorPicker",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/color-picker.schema.json"
+    },
+    {
+      "type": "ui.FileInput",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/file-input.schema.json"
+    },
+    {
+      "type": "ui.FormField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/form-field.schema.json"
+    },
+    {
+      "type": "ui.FieldSet",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/field-set.schema.json"
+    },
+    {
+      "type": "ui.ValidationMessage",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/validation-message.schema.json"
+    },
+    {
+      "type": "ui.InputGroup",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/input-group.schema.json"
+    },
+    {
+      "type": "ui.SegmentedControl",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/segmented-control.schema.json"
+    },
+    {
+      "type": "ui.TagInput",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/tag-input.schema.json"
+    },
+    {
+      "type": "ui.OtpField",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Label, description, validation, focus, controlled/uncontrolled and correct form semantics.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "validation"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/otp-field.schema.json"
+    },
+    {
+      "type": "ui.Dialog",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/dialog.schema.json"
+    },
+    {
+      "type": "ui.AlertDialog",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange",
+        "onConfirm"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/alert-dialog.schema.json"
+    },
+    {
+      "type": "ui.Drawer",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/drawer.schema.json"
+    },
+    {
+      "type": "ui.Popover",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [
+        "ui.AppShell",
+        "ui.PageLayout",
+        "ui.AppHeader",
+        "ui.Sidebar",
+        "ui.NavigationRail",
+        "ui.Breadcrumbs",
+        "ui.Panel",
+        "ui.Card",
+        "ui.Surface",
+        "ui.Stack",
+        "ui.Inline",
+        "ui.Grid",
+        "ui.SplitPane",
+        "ui.DockWorkspace",
+        "ui.ResizablePanel",
+        "ui.Toolbar",
+        "ui.Divider",
+        "ui.ScrollArea",
+        "ui.VirtualList",
+        "ui.EmptyState",
+        "ui.Text",
+        "ui.Heading",
+        "ui.Label",
+        "ui.Link",
+        "ui.Code",
+        "ui.Badge",
+        "ui.Avatar",
+        "ui.Icon",
+        "ui.Tooltip",
+        "ui.TruncateText",
+        "ui.DataValue",
+        "ui.Button",
+        "ui.IconButton",
+        "ui.ToggleButton",
+        "ui.ButtonGroup",
+        "ui.TextField",
+        "ui.TextArea",
+        "ui.PasswordField",
+        "ui.NumberField",
+        "ui.SearchField",
+        "ui.Select",
+        "ui.MultiSelect",
+        "ui.ComboBox",
+        "ui.Autocomplete",
+        "ui.Checkbox",
+        "ui.CheckboxGroup",
+        "ui.RadioGroup",
+        "ui.Switch",
+        "ui.Slider",
+        "ui.RangeSlider",
+        "ui.DatePicker",
+        "ui.DateRangePicker",
+        "ui.TimePicker",
+        "ui.ColorPicker",
+        "ui.FileInput",
+        "ui.FormField",
+        "ui.FieldSet",
+        "ui.ValidationMessage",
+        "ui.InputGroup",
+        "ui.SegmentedControl",
+        "ui.TagInput",
+        "ui.OtpField",
+        "ui.Dialog",
+        "ui.AlertDialog",
+        "ui.Drawer",
+        "ui.Popover",
+        "ui.Menu",
+        "ui.ContextMenu",
+        "ui.DropdownMenu",
+        "ui.CommandMenu",
+        "ui.HoverCard",
+        "ui.Toast",
+        "ui.NotificationCenter",
+        "ui.Banner",
+        "ui.Progress",
+        "ui.Spinner",
+        "ui.Skeleton",
+        "ui.Tabs",
+        "ui.Accordion",
+        "ui.TreeView",
+        "ui.Pagination",
+        "ui.Stepper",
+        "ui.StatusIndicator"
+      ],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/popover.schema.json"
+    },
+    {
+      "type": "ui.Menu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/menu.schema.json"
+    },
+    {
+      "type": "ui.ContextMenu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/context-menu.schema.json"
+    },
+    {
+      "type": "ui.DropdownMenu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/dropdown-menu.schema.json"
+    },
+    {
+      "type": "ui.CommandMenu",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "open"
+      ],
+      "events": [
+        "onOpenChange",
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/command-menu.schema.json"
+    },
+    {
+      "type": "ui.HoverCard",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/hover-card.schema.json"
+    },
+    {
+      "type": "ui.Toast",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onDismiss"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/toast.schema.json"
+    },
+    {
+      "type": "ui.NotificationCenter",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onSelect",
+        "onMarkAllRead"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/notification-center.schema.json"
+    },
+    {
+      "type": "ui.Banner",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onDismiss"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/banner.schema.json"
+    },
+    {
+      "type": "ui.Progress",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/progress.schema.json"
+    },
+    {
+      "type": "ui.Spinner",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/spinner.schema.json"
+    },
+    {
+      "type": "ui.Skeleton",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/skeleton.schema.json"
+    },
+    {
+      "type": "ui.Tabs",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/tabs.schema.json"
+    },
+    {
+      "type": "ui.Accordion",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/accordion.schema.json"
+    },
+    {
+      "type": "ui.TreeView",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "nodes",
+        "selectedId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/tree-view.schema.json"
+    },
+    {
+      "type": "ui.Pagination",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "page",
+        "pageCount"
+      ],
+      "events": [
+        "onPageChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/pagination.schema.json"
+    },
+    {
+      "type": "ui.Stepper",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [
+        "steps"
+      ],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/stepper.schema.json"
+    },
+    {
+      "type": "ui.StatusIndicator",
+      "version": "1.0.0",
+      "package": "ui-react",
+      "purpose": "Focus and layering, portal theme propagation, esc dismissal and live-region behavior.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "none",
+      "propsSchema": "schemas/components/status-indicator.schema.json"
+    },
+    {
+      "type": "ui.GridCellEditor",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onCommit",
+        "onCancel"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/grid-cell-editor.schema.json"
+    },
+    {
+      "type": "ui.GridToolbar",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [
+        "ui.DataGrid",
+        "ui.GridCellEditor",
+        "ui.GridToolbar",
+        "ui.ColumnChooser",
+        "ui.FilterBuilder",
+        "ui.SortBuilder",
+        "ui.GroupPanel",
+        "ui.TreeGrid",
+        "ui.PivotTable",
+        "ui.PivotFieldWell",
+        "ui.DataTable",
+        "ui.DataList",
+        "ui.SavedViewSelector",
+        "ui.Chart",
+        "ui.Sparkline",
+        "ui.KpiCard",
+        "ui.StatGroup",
+        "ui.FacetedFilter",
+        "ui.QueryBuilder",
+        "ui.Calendar",
+        "ui.Scheduler",
+        "ui.Timeline",
+        "ui.GanttChart",
+        "ui.GanttTaskEditor",
+        "ui.Heatmap",
+        "ui.DataInspector",
+        "ui.DiffViewer",
+        "ui.JsonViewer",
+        "ui.CodeViewer",
+        "ui.FileTree"
+      ],
+      "bindings": [
+        "query"
+      ],
+      "events": [
+        "onQueryChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/grid-toolbar.schema.json"
+    },
+    {
+      "type": "ui.ColumnChooser",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "columns"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/column-chooser.schema.json"
+    },
+    {
+      "type": "ui.FilterBuilder",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/filter-builder.schema.json"
+    },
+    {
+      "type": "ui.SortBuilder",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/sort-builder.schema.json"
+    },
+    {
+      "type": "ui.GroupPanel",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "groupedKeys"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/group-panel.schema.json"
+    },
+    {
+      "type": "ui.TreeGrid",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "rows"
+      ],
+      "events": [
+        "onRowActivate",
+        "onSelectionChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "record-list",
+      "propsSchema": "schemas/components/tree-grid.schema.json"
+    },
+    {
+      "type": "ui.PivotTable",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "values"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/pivot-table.schema.json"
+    },
+    {
+      "type": "ui.PivotFieldWell",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [],
+      "events": [
+        "onRemove"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/pivot-field-well.schema.json"
+    },
+    {
+      "type": "ui.DataTable",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "rows"
+      ],
+      "events": [
+        "onRowActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "record-list",
+      "propsSchema": "schemas/components/data-table.schema.json"
+    },
+    {
+      "type": "ui.DataList",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "record-list",
+      "propsSchema": "schemas/components/data-list.schema.json"
+    },
+    {
+      "type": "ui.SavedViewSelector",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Accessible data semantics, keyboard navigation, sorting/filtering/editing and large datasets where relevant.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange",
+        "onSave"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/saved-view-selector.schema.json"
+    },
+    {
+      "type": "ui.Chart",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "data"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/chart.schema.json"
+    },
+    {
+      "type": "ui.Sparkline",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "values"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/sparkline.schema.json"
+    },
+    {
+      "type": "ui.StatGroup",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/stat-group.schema.json"
+    },
+    {
+      "type": "ui.FacetedFilter",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/faceted-filter.schema.json"
+    },
+    {
+      "type": "ui.QueryBuilder",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [
+        "onChange",
+        "onConjunctionChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/query-builder.schema.json"
+    },
+    {
+      "type": "ui.Calendar",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "events"
+      ],
+      "events": [
+        "onEventActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/calendar.schema.json"
+    },
+    {
+      "type": "ui.Scheduler",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "events"
+      ],
+      "events": [
+        "onEventActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/scheduler.schema.json"
+    },
+    {
+      "type": "ui.Timeline",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/timeline.schema.json"
+    },
+    {
+      "type": "ui.GanttChart",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "tasks"
+      ],
+      "events": [
+        "onTaskActivate"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/gantt-chart.schema.json"
+    },
+    {
+      "type": "ui.GanttTaskEditor",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "task"
+      ],
+      "events": [
+        "onChange",
+        "onDelete"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/gantt-task-editor.schema.json"
+    },
+    {
+      "type": "ui.Heatmap",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Useful accessible textual alternatives, time-zone semantics, data refresh and presentation states.",
+      "allowedChildren": [],
+      "bindings": [
+        "cells"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/heatmap.schema.json"
+    },
+    {
+      "type": "ui.DataInspector",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "allowedChildren": [],
+      "bindings": [
+        "value",
+        "path"
+      ],
+      "events": [
+        "onPathChange"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/data-inspector.schema.json"
+    },
+    {
+      "type": "ui.DiffViewer",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "allowedChildren": [],
+      "bindings": [
+        "before",
+        "after"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/diff-viewer.schema.json"
+    },
+    {
+      "type": "ui.JsonViewer",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "allowedChildren": [],
+      "bindings": [
+        "value"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/json-viewer.schema.json"
+    },
+    {
+      "type": "ui.CodeViewer",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "allowedChildren": [],
+      "bindings": [
+        "code"
+      ],
+      "events": [],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/code-viewer.schema.json"
+    },
+    {
+      "type": "ui.FileTree",
+      "version": "1.0.0",
+      "package": "ui-data",
+      "purpose": "Safe rendering of untrusted content, overflow/navigation and inspectable structured data.",
+      "allowedChildren": [],
+      "bindings": [
+        "nodes",
+        "selectedId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "interaction",
+        "data"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/file-tree.schema.json"
+    },
+    {
+      "type": "ui.KanbanBoard",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Keyboard-accessible workflow lanes with host-owned movement.",
+      "allowedChildren": [],
+      "bindings": [
+        "lanes"
+      ],
+      "events": [
+        "onTaskActivate",
+        "onMove"
+      ],
+      "states": [
+        "data",
+        "interaction",
+        "operation"
+      ],
+      "responsive": "horizontal-scroll-to-stack",
+      "propsSchema": "schemas/components/kanban-board.schema.json"
+    },
+    {
+      "type": "ui.KanbanLane",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "A workflow lane with explicit task limit.",
+      "allowedChildren": [],
+      "bindings": [
+        "lane"
+      ],
+      "events": [
+        "onTaskActivate",
+        "onMove"
+      ],
+      "states": [
+        "data",
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/kanban-lane.schema.json"
+    },
+    {
+      "type": "ui.TaskCard",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Task summary and activation intent.",
+      "allowedChildren": [],
+      "bindings": [
+        "task"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "data",
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/task-card.schema.json"
+    },
+    {
+      "type": "ui.ApprovalCard",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Approval state display with revision-aware host intentions.",
+      "allowedChildren": [],
+      "bindings": [
+        "approval"
+      ],
+      "events": [
+        "onDecision"
+      ],
+      "states": [
+        "approval",
+        "interaction",
+        "freshness"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/approval-card.schema.json"
+    },
+    {
+      "type": "ui.ApprovalQueue",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Queue of host-authorized approval requests.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onDecision"
+      ],
+      "states": [
+        "approval",
+        "data",
+        "freshness"
+      ],
+      "responsive": "stack",
+      "propsSchema": "schemas/components/approval-queue.schema.json"
+    },
+    {
+      "type": "ui.AuditTrail",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Chronological immutable audit presentation.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "data",
+        "freshness"
+      ],
+      "responsive": "stack",
+      "propsSchema": "schemas/components/audit-trail.schema.json"
+    },
+    {
+      "type": "ui.DeploymentPipeline",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Deployment stages with independent operation outcomes.",
+      "allowedChildren": [],
+      "bindings": [
+        "stages"
+      ],
+      "events": [
+        "onStageActivate"
+      ],
+      "states": [
+        "operation",
+        "data",
+        "freshness"
+      ],
+      "responsive": "horizontal-scroll-to-stack",
+      "propsSchema": "schemas/components/deployment-pipeline.schema.json"
+    },
+    {
+      "type": "ui.DeploymentStage",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "One deployment stage and outcome.",
+      "allowedChildren": [],
+      "bindings": [
+        "stage"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "operation",
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/deployment-stage.schema.json"
+    },
+    {
+      "type": "ui.DeploymentTimeline",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Deployment event chronology.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "operation",
+        "data"
+      ],
+      "responsive": "stack",
+      "propsSchema": "schemas/components/deployment-timeline.schema.json"
+    },
+    {
+      "type": "ui.LogViewer",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Safe bounded log presentation with explicit connection state.",
+      "allowedChildren": [],
+      "bindings": [
+        "lines",
+        "connection"
+      ],
+      "events": [
+        "onFollowChange"
+      ],
+      "states": [
+        "connectivity",
+        "freshness",
+        "data"
+      ],
+      "responsive": "scroll",
+      "propsSchema": "schemas/components/log-viewer.schema.json"
+    },
+    {
+      "type": "ui.EventStream",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Ordered event stream with reconnect state.",
+      "allowedChildren": [],
+      "bindings": [
+        "lines",
+        "connection"
+      ],
+      "events": [
+        "onFollowChange"
+      ],
+      "states": [
+        "connectivity",
+        "freshness",
+        "data"
+      ],
+      "responsive": "scroll",
+      "propsSchema": "schemas/components/event-stream.schema.json"
+    },
+    {
+      "type": "ui.EventFilterBar",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Host-owned event filter intentions.",
+      "allowedChildren": [],
+      "bindings": [
+        "query",
+        "severity"
+      ],
+      "events": [
+        "onQueryChange",
+        "onSeverityChange"
+      ],
+      "states": [
+        "interaction"
+      ],
+      "responsive": "wrap",
+      "propsSchema": "schemas/components/event-filter-bar.schema.json"
+    },
+    {
+      "type": "ui.InfrastructureTopology",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Keyboard-addressable infrastructure relationship view.",
+      "allowedChildren": [],
+      "bindings": [
+        "nodes",
+        "edges"
+      ],
+      "events": [
+        "onNodeActivate"
+      ],
+      "states": [
+        "data",
+        "connectivity",
+        "freshness"
+      ],
+      "responsive": "pan-to-stack",
+      "propsSchema": "schemas/components/infrastructure-topology.schema.json"
+    },
+    {
+      "type": "ui.TopologyNode",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Keyboard-addressable topology node.",
+      "allowedChildren": [],
+      "bindings": [
+        "node"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "data",
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/topology-node.schema.json"
+    },
+    {
+      "type": "ui.ServiceHealthGrid",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Service health overview with independent status.",
+      "allowedChildren": [],
+      "bindings": [
+        "services"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "connectivity",
+        "freshness",
+        "data"
+      ],
+      "responsive": "grid",
+      "propsSchema": "schemas/components/service-health-grid.schema.json"
+    },
+    {
+      "type": "ui.StatusPagePanel",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Current aggregate service status.",
+      "allowedChildren": [],
+      "bindings": [
+        "status",
+        "message",
+        "updatedAt"
+      ],
+      "events": [],
+      "states": [
+        "connectivity",
+        "freshness"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/status-page-panel.schema.json"
+    },
+    {
+      "type": "ui.IncidentTimeline",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Incident response chronology.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onActivate"
+      ],
+      "states": [
+        "operation",
+        "data"
+      ],
+      "responsive": "stack",
+      "propsSchema": "schemas/components/incident-timeline.schema.json"
+    },
+    {
+      "type": "ui.IncidentSummary",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Incident severity, status, and summary.",
+      "allowedChildren": [],
+      "bindings": [
+        "incident"
+      ],
+      "events": [
+        "onOpen"
+      ],
+      "states": [
+        "operation",
+        "freshness"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/incident-summary.schema.json"
+    },
+    {
+      "type": "ui.AlertList",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Alert overview and selection.",
+      "allowedChildren": [],
+      "bindings": [
+        "items"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "operation",
+        "data",
+        "freshness"
+      ],
+      "responsive": "stack",
+      "propsSchema": "schemas/components/alert-list.schema.json"
+    },
+    {
+      "type": "ui.AlertDetails",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Alert details with host acknowledgement and resolution intents.",
+      "allowedChildren": [],
+      "bindings": [
+        "alert"
+      ],
+      "events": [
+        "onAcknowledge",
+        "onResolve"
+      ],
+      "states": [
+        "operation",
+        "interaction",
+        "freshness"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/alert-details.schema.json"
+    },
+    {
+      "type": "ui.RunbookPanel",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Runbook steps with host-owned activation.",
+      "allowedChildren": [],
+      "bindings": [
+        "currentStep"
+      ],
+      "events": [
+        "onStepActivate"
+      ],
+      "states": [
+        "operation",
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/runbook-panel.schema.json"
+    },
+    {
+      "type": "ui.MetricTrendPanel",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Current metric with bounded trend presentation.",
+      "allowedChildren": [],
+      "bindings": [
+        "value",
+        "values"
+      ],
+      "events": [],
+      "states": [
+        "data",
+        "freshness"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/metric-trend-panel.schema.json"
+    },
+    {
+      "type": "ui.ResourceTree",
+      "version": "1.0.0",
+      "package": "ui-operations",
+      "purpose": "Hierarchical resource navigation.",
+      "allowedChildren": [],
+      "bindings": [
+        "nodes",
+        "selectedId"
+      ],
+      "events": [
+        "onSelect"
+      ],
+      "states": [
+        "data",
+        "interaction"
+      ],
+      "responsive": "container",
+      "propsSchema": "schemas/components/resource-tree.schema.json"
+    }
+  ]
+}

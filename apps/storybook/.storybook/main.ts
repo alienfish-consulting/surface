@@ -2,7 +2,11 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import { fileURLToPath, URL } from 'node:url';
 
 const config: StorybookConfig = {
-  stories: ['../../../packages/react-core/src/**/*.stories.@(ts|tsx)'],
+  stories: [
+    '../../../packages/react-core/src/**/*.stories.@(ts|tsx)',
+    '../../../packages/react-data/src/**/*.stories.@(ts|tsx)',
+    '../../../packages/react-operations/src/**/*.stories.@(ts|tsx)',
+  ],
   addons: ['@storybook/addon-a11y'],
   framework: {
     name: '@storybook/react-vite',
@@ -18,6 +22,8 @@ const config: StorybookConfig = {
       alias: {
         ...viteConfig.resolve?.alias,
         '@enterprise-ui/react-core': fileURLToPath(new URL('../../../packages/react-core/src/index.tsx', import.meta.url)),
+        '@enterprise-ui/react-data': fileURLToPath(new URL('../../../packages/react-data/src/index.tsx', import.meta.url)),
+        '@enterprise-ui/react-operations': fileURLToPath(new URL('../../../packages/react-operations/src/index.tsx', import.meta.url)),
       },
     },
   }),
