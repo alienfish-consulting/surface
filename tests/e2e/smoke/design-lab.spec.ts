@@ -6,6 +6,7 @@ test('design lab renders the existing POC and exposes local display controls', a
   await expect(page.getByRole('heading', { name: 'Schema-first Design Lab' })).toBeVisible();
   await expect(page.getByText('DECLARATIVE RUNTIME')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Proposal review' })).toBeVisible();
+  await expect(page.getByText('browser fallback (unavailable)',{exact:true})).toBeVisible();
 
   await page.getByLabel('Theme').selectOption('dark');
   await expect(page.locator('[data-ui-theme="dark"]')).toBeVisible();

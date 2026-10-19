@@ -1,9 +1,8 @@
 import * as React from 'react';
-import type {DesignNode,SerializableComponentType,SerializablePropsByComponent} from '@enterprise-ui/contracts';
+import type {DesignNode,Host,HostActionRequest,SerializableComponentType,SerializablePropsByComponent} from '@enterprise-ui/contracts';
 import * as Core from '@enterprise-ui/react-core';
 
-export type HostActionRequest = {actionId:string;nodeId:string;event:string;payload?:unknown};
-export type Host = {data:Record<string,unknown>;requestAction:(request:HostActionRequest)=>void|Promise<void>};
+export type {Host,HostActionRequest};
 type Props=Record<string,unknown>;
 export type Adapter=(props:Props,children:React.ReactNode,node:DesignNode,host:Host)=>React.ReactNode;
 const adapt=<K extends SerializableComponentType>(type:K,render:(props:SerializablePropsByComponent[K]&Props,children:React.ReactNode,node:DesignNode,host:Host)=>React.ReactNode):[string,Adapter]=>[type,render as unknown as Adapter];

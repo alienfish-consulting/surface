@@ -50,6 +50,9 @@ importers:
       '@enterprise-ui/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@enterprise-ui/electron-bridge':
+        specifier: workspace:*
+        version: link:../../packages/electron-bridge
       '@enterprise-ui/react-ai':
         specifier: workspace:*
         version: link:../../packages/react-ai
@@ -123,6 +126,12 @@ importers:
       fast-json-patch:
         specifier: ^3.1.1
         version: 3.1.1
+
+  packages/electron-bridge:
+    dependencies:
+      '@enterprise-ui/contracts':
+        specifier: workspace:*
+        version: link:../contracts
 
   packages/react-ai:
     dependencies:

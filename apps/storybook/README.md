@@ -2,9 +2,9 @@
 
 Private component-development application for the implemented Enterprise UI catalog.
 
-Stories document only working implementations. The M3 core catalog and M4 data catalog use focused individual or grouped stories; proposed later-milestone entries remain excluded until they have meaningful implementations.
+Stories document the implemented 198-unit v1 catalog through focused individual and grouped family scenarios. Grouped stories cover related subcomponents without pretending each internal or parent-owned unit is an independent product surface.
 
-The toolbar exposes light, dark, high-contrast inspection, compact density, and comfortable density. The high-contrast option is an implementation inspection mode, not a WCAG certification. Forced-colors and assistive-technology verification remain later approved work.
+The toolbar exposes light, dark, high-contrast inspection, compact density, and comfortable density. Viewport controls exercise responsive layouts. High contrast is an implementation inspection mode, not WCAG or assistive-technology certification; final forced-colors, keyboard and screen-reader spot checks belong to the M9 acceptance matrix.
 
 From the repository root, the intended commands are:
 

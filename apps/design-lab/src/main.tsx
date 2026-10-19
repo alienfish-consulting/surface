@@ -18,8 +18,10 @@ import {DataGrid,KpiCard} from '@enterprise-ui/react-data';
 import type {GridColumnDefinition} from '@enterprise-ui/react-data';
 import {ActivityFeed,ApprovalCard} from '@enterprise-ui/react-operations';
 import {ApprovalReview,ToolCallCard} from '@enterprise-ui/react-ai';
+import {createBrowserBridge} from '@enterprise-ui/electron-bridge';
 
 const initial=assertDesignDocument(fixture);
+const desktopBridge=createBrowserBridge();
 const customerColumns:GridColumnDefinition[]=[{key:'name',label:'Customer',sortable:true},{key:'region',label:'Region'},{key:'revenue',label:'Revenue',align:'end'}];
 const customerRows=[{id:'acme',name:'Acme Manufacturing',region:'North America',revenue:'$184,200'},{id:'globex',name:'Globex',region:'Europe',revenue:'$121,800'},{id:'initech',name:'Initech',region:'North America',revenue:'$98,400'}];
 function App(){
@@ -97,7 +99,7 @@ function App(){
       <p className="lab-result" role="status">{result}</p>
     </section>
     <section className="lab-events"><h2>Host activity</h2><ul aria-live="polite">{log.map((line,i)=><li key={`${i}-${line}`}>{line}</li>)}</ul></section>
-    <section className="lab-source"><h2>Source of truth</h2><p>Versioned design JSON is shared by renderer and inspector. No additional persisted designer format.</p><details><summary>Current document JSON</summary><pre>{JSON.stringify(doc,null,2)}</pre></details></section>
+    <section className="lab-source"><h2>Source of truth</h2><p>Versioned design JSON is shared by renderer and inspector. No additional persisted designer format.</p><p>Desktop integration: <strong>{desktopBridge.available?'available':'browser fallback (unavailable)'}</strong></p><details><summary>Current document JSON</summary><pre>{JSON.stringify(doc,null,2)}</pre></details></section>
   </aside></div>
  </div>;
 }

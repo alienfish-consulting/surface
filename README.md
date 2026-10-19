@@ -1,82 +1,74 @@
-# Enterprise UI · Schema-first local workspace
+# Enterprise UI · local schema-first design system
 
-**Status:** Private local implementation workspace. M1 is committed; M2 catalog scaffolding and its approved checks are complete but not committed. This is not production-ready, not an npm release, and has no GitHub remote.
+**Status:** Private local v1 implementation workspace. All 198 accepted catalog units are implemented and verified through their owning component milestones. Release acceptance is still pending; this repository has no remote and nothing has been published.
 
-This is the first implementation slice of the approved AI-first React enterprise design-system direction. It preserves the October 18, 2026 design snapshot and ADRs, not a new visual design exercise.
+The workspace evolves the supplied proof of concept into styled React components that share one JSON Schema 2020-12 document model across runtime rendering, visual designers and guarded agent proposals. Applications—not UI components—own authorization, persistence, networking, model/tool execution and privileged desktop behavior.
 
-## What works in this proof
+## Workspace
 
-- Original Draft 2020-12 design schema and 1.0.0 registry snapshot are preserved. Additive 1.1.0 registry supplies `ui.Button` and `ui.TextField`; legacy 1.0.0 fixtures remain valid against their archived registry (the 1.1.0 runtime deliberately rejects unmigrated 1.0.0 documents).
-- **One canonical document** used by the renderer and inspector; direct JSX consumes the same React components.
-- Generated TypeScript serializable prop types from canonical schemas, with drift checking. Unsupported schema shapes fail generation rather than becoming `any`.
-- Lightweight `AppShell`, `Panel`, `Button`, `TextField`, and `KpiCard` components. Theme and density controls use snapshot CSS variables.
-- Validator rejects unknown components, illegal parent-child combinations, invalid props, unknown data sources/actions, dangerous binding keys, duplicates, excessive node count and version mismatch.
-- Property inspector proposes guarded JSON Patch (`test`, `add`, `replace`, `remove`), creates a non-authoritative preview, then hands host authorization/commit to the consumer.
-- A browser-only design lab simulates allowed/denied actions, approval/denial of document edits, changes revision only after simulated host accept; no real network, auth or privileged operations.
-- The accepted 198-unit catalog has explicit classification, export policy, dependency, lifecycle, and artifact tracking. Its 193 non-implemented units have planning scaffolds only; they are not public exports, runtime registrations, or Storybook stories.
+- `packages/tokens` — DTCG source tokens and generated theme CSS.
+- `packages/contracts` — versioned schemas, registry snapshots, generated serialized types, validation and guarded RFC 6902 proposals.
+- `packages/react-core` — layouts, display, controls, forms and overlays.
+- `packages/react-data` — tables, grids, charts, schedules and inspectors.
+- `packages/react-operations` — workflows, deployments, events, topology and incident operations.
+- `packages/react-ai` — conversations, agents, tools, approvals, artifacts and run states.
+- `packages/react-designers` — shared-schema form, dashboard, workflow, query and schema designers.
+- `packages/react-renderer` — explicit allowlisted adapters from validated documents to React.
+- `packages/electron-bridge` — optional typed desktop boundary with a browser fallback; it does not import Electron.
+- `apps/design-lab` and `apps/storybook` — private local development consumers.
 
-## Local commands
+## Local development
+
+The repository is pinned to Node 24 and pnpm 10.18.0.
 
 ```bash
-corepack enable
 corepack pnpm install
 corepack pnpm dev
 ```
 
-Open http://localhost:5173. The root `check` command is intentionally broad and must not be run automatically at early milestone gates.
-
-Storybook is a private workspace app documenting only implemented components:
+Open `http://localhost:5173`. To inspect component states:
 
 ```bash
 corepack pnpm storybook
 corepack pnpm build:storybook
 ```
 
-The opt-in browser smoke remains separate from root `check`:
+The root `pnpm check` is the broad acceptance command. Follow milestone test gates before running it. Playwright browser installation remains a separate resource action.
 
-```bash
-corepack pnpm test:e2e:smoke
+## Consumer example
+
+Import only the packages and CSS used by the application. React remains a peer dependency of React packages.
+
+```tsx
+import '@enterprise-ui/tokens/theme.css';
+import '@enterprise-ui/react-core/styles.css';
+import {Button, Panel} from '@enterprise-ui/react-core';
+
+export function Example() {
+  return <Panel title="Account"><Button label="Save" onPress={() => {/* host intent */}} /></Panel>;
+}
 ```
 
-Catalog scaffolding is dry-run by default and refuses to overwrite differing files:
+Declarative consumers validate a pinned design document and provide a host that resolves data and handles named action intentions:
 
-```bash
-corepack pnpm scaffold:components
-corepack pnpm scaffold:components -- --component ui.AppHeader
-corepack pnpm check:catalog
+```tsx
+import {assertDesignDocument} from '@enterprise-ui/contracts';
+import {DesignRenderer} from '@enterprise-ui/react-renderer';
+
+const document = assertDesignDocument(input);
+<DesignRenderer doc={document} host={{data, requestAction: request => application.review(request)}} />;
 ```
 
-Use `--write` only during an authorized implementation milestone. The focused mode creates type, schema, and story drafts under `scaffolds/`; it never edits production package source or runtime registration.
+See [consumer guide](docs/guides/consumer-guide.md), [desktop integration](docs/guides/electron-integration.md), and [release preparation](docs/release/README.md).
 
-Playwright browser installation is a separate resource action and is not performed by dependency installation.
+## Themes and accessibility
 
-The workspace is pinned to Node 24 and pnpm 10.18.0. The M1 lockfile records the resolved local toolchain. Typechecking, builds, tests, and browser rendering remain milestone-gated and must not be inferred from installation alone.
+Set `data-ui-theme="light|dark"`, optional `data-ui-contrast="high"`, and `data-ui-density="comfortable|compact"` on a containing element. Component CSS uses semantic custom properties and includes forced-colors handling. Storybook exposes these modes for inspection; final assistive-technology and cross-browser acceptance belongs to M9.
 
-## Structure
+## Boundaries
 
-- `packages/tokens` — source DTCG JSON and baseline generated CSS theme snapshot.
-- `packages/contracts` — original Draft 2020-12 schemas, registry, fixtures, TS generation and validation/patch APIs.
-- `packages/react-core` — direct JSX components and styles.
-- `packages/react-renderer` — explicit allowlisted adapters resolving named data sources and action intents.
-- `packages/react-designers` — same document property inspector, no parallel persisted model.
-- `apps/design-lab` — functional React/Vite host fixture and reviewer UI.
-- `apps/storybook` — private React/Vite Storybook for the five implemented POC components.
-- `tests/e2e/smoke` — one opt-in Chromium design-lab smoke path.
-- `catalog` — accepted tracking inventory and generated lifecycle/compatibility ledger.
-- `scaffolds` — non-runtime contract, schema, story, and test plans for accepted units.
-- `docs/architecture`, `docs/design-baseline` — copied source-of-truth decisions and release scope.
-
-## Explicit limitations and next steps
-
-- The original snapshot contains schemas for DataGrid and ActivityFeed; neither is implemented in this proof. The renderer rejects attempts to instantiate them until adapters are registered.
-- The original mockup colors/dimensions remain provisional pending real accessibility/contrast checks.
-- Only property-level JSON Patch is implemented. Structural edits and migrations are explicitly deferred, not silently accepted.
-- Host authorization is simulated; the demo is **not** an authorization or persistence security boundary.
-- Original design-token CSS remains as a baseline specimen; generated runtime CSS is derived from the DTCG JSON token graph.
-- Storybook and the single Chromium smoke harness exist. Electron consumer checks, advanced accessibility tests, and broader responsive/browser coverage remain deferred.
-- The independent project name, npm scope, public license and remote GitHub repository remain undecided. The temporary `@enterprise-ui/*` scope is not an asserted ownership claim.
-- No packages may be published until the complete v1 catalog and release gates specified in `docs/design-baseline/RELEASE-SCOPE.md` are satisfied.
-
-## Repo/bootstrap caution
-
-The root package uses `nx.includedScripts: []` so Nx does not treat the root orchestration scripts as recursive project targets. This is an offline-reviewed safeguard; confirm `pnpm check` in the intended Node 24 environment.
+- Serialized documents contain registered data bindings and action IDs, never executable JavaScript.
+- Designer edits are previewed proposals and remain non-authoritative until the host verifies the base revision and commits.
+- The optional desktop package accepts an application-supplied invoke function and capability allowlist. Consumers implement secure preload/IPC and authorization.
+- The temporary `@enterprise-ui/*` scope, repository name, license and final release version are not ownership or publication decisions.
+- Do not create a remote, push, publish, or introduce cloud resources without explicit user direction.

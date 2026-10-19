@@ -30,6 +30,8 @@ export interface Proposal {
   registryVersion: string; baseRevision: number; rationale: string;
   operations: Operation[];
 }
+export type HostActionRequest = {actionId:string;nodeId:string;event:string;payload?:unknown};
+export type Host = {data:Record<string,unknown>;requestAction:(request:HostActionRequest)=>void|Promise<void>};
 export interface RegistryEntry {
   type: string; version: string; package: string; purpose: string;
   propsSchema: string; allowedChildren: readonly string[]; bindings: readonly string[]; events: readonly string[];

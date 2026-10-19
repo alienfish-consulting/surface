@@ -5,6 +5,6 @@
     "react":"^19.0.0","react-dom":"^19.0.0",
     "@enterprise-ui/contracts":"workspace:*", "@enterprise-ui/tokens":"workspace:*",
     "@enterprise-ui/react-core":"workspace:*", "@enterprise-ui/react-data":"workspace:*", "@enterprise-ui/react-operations":"workspace:*", "@enterprise-ui/react-ai":"workspace:*", "@enterprise-ui/react-renderer":"workspace:*",
-    "@enterprise-ui/react-designers":"workspace:*"
+    "@enterprise-ui/react-designers":"workspace:*", "@enterprise-ui/electron-bridge":"workspace:*"
   }
 }
