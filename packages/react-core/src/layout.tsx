@@ -129,9 +129,9 @@ export function ScrollArea({maxHeight=320,label,className,style,...rest}:ScrollA
 export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<HTMLDivElement>,'children'> {
   items:readonly T[];height:number;rowHeight:number;renderItem:(item:T,index:number)=>React.ReactNode;getKey?:(item:T,index:number)=>React.Key;overscan?:number;label:string;
 }
-export function VirtualList<T>({items,height,rowHeight,renderItem,getKey,overscan=3,label,className,...rest}:VirtualListProps<T>){
+export function VirtualList<T>({items,height,rowHeight,renderItem,getKey,overscan=3,label,className,tabIndex,...rest}:VirtualListProps<T>){
  const [scrollTop,setScrollTop]=React.useState(0);const visible=Math.ceil(height/rowHeight);const start=Math.max(0,Math.floor(scrollTop/rowHeight)-overscan);const end=Math.min(items.length,start+visible+overscan*2);
- return <div {...rest} role="list" aria-label={label} className={classes('ui-virtual-list',className)} style={{height}} onScroll={event=>setScrollTop(event.currentTarget.scrollTop)}>
+ return <div {...rest} role="list" aria-label={label} tabIndex={tabIndex??0} className={classes('ui-virtual-list',className)} style={{height}} onScroll={event=>setScrollTop(event.currentTarget.scrollTop)}>
   <div style={{height:items.length*rowHeight,position:'relative'}}>{items.slice(start,end).map((item,offset)=>{const index=start+offset;return <div role="listitem" key={getKey?.(item,index)??index} className="ui-virtual-row" style={{height:rowHeight,transform:`translateY(${index*rowHeight}px)`}}>{renderItem(item,index)}</div>})}</div>
  </div>;
 }

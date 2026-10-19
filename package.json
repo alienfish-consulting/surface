@@ -21,7 +21,10 @@
     "storybook": "pnpm --filter @enterprise-ui/storybook storybook",
     "build:storybook": "pnpm --filter @enterprise-ui/storybook build-storybook",
     "test:e2e:smoke": "playwright test tests/e2e/smoke/design-lab.spec.ts --project=chromium --workers=1",
-    "check": "pnpm check:generated && pnpm check:catalog && pnpm check:stories && pnpm validate && pnpm typecheck && pnpm test && pnpm build"
+    "test:e2e:storybook": "playwright test --config playwright.storybook.config.ts",
+    "test:e2e": "playwright test && playwright test --config playwright.storybook.config.ts",
+    "check:playwright": "playwright test --list && playwright test --config playwright.storybook.config.ts --list",
+    "check": "pnpm check:generated && pnpm check:catalog && pnpm check:stories && pnpm check:playwright && pnpm validate && pnpm typecheck && pnpm test && pnpm build"
   },
   "devDependencies": {
     "axe-core": "4.14.0",

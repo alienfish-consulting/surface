@@ -8,13 +8,13 @@ This is the release-readiness ledger, not publication authorization.
 | Serializable coverage | registry 1.6.0; 190 schemas and renderer adapters | ready |
 | JSX-only exceptions | 8 named exceptions in the generated contract bundle | ready |
 | Component behavior | focused Vitest suites for contracts, core renderer, data, operations, AI, designers and desktop boundary | ready |
-| Component states/docs | 20 Storybook files; automated ledger accounts for all 198 units with 196 rendered and 2 documented nonvisual definitions | ready |
+| Component states/docs | 20 Storybook files and 67 stories; automated ledger accounts for all 198 units with 196 rendered and 2 documented nonvisual definitions; Chromium mounts and scans every story | ready |
 | Themes/density | Storybook globals plus automated light/comfortable and dark/compact axe scans | ready |
 | High contrast/forced colors | authored high-contrast axe scan in three engines; Chromium forced-colors focus smoke | ready |
 | Responsive behavior | 390 × 844 overflow/focus smoke in Chromium, Firefox and WebKit | ready |
 | Keyboard/focus | foundational combo, dialog focus return, dock toggles and narrow-layout focus tests | ready |
 | Large data/events | bounded 10,000-row grid render and ordered/deduplicated stream reducer tests | ready |
-| Browser consumability | Vite Design Lab build and Playwright shards in Chromium, Firefox and WebKit | ready |
+| Browser consumability | Vite Design Lab build; 16 Design Lab checks plus 12 focused Storybook interaction checks across Chromium, Firefox and WebKit; complete 67-story runtime/axe scan in Chromium | ready |
 | Desktop boundary | no Electron runtime dependency; allowlisted typed bridge and browser fallback tests | ready |
 | Package exports | nine ESM/type export manifests and full workspace package builds | ready |
 | Schema drift | generated artifact and catalog checks | ready |
@@ -33,6 +33,8 @@ This is the release-readiness ledger, not publication authorization.
 | Designers | 28 | shared-shell and specialist catalogs | 26 schemas/adapters, 2 JSX exceptions, proposal/history tests |
 
 Grouped stories intentionally demonstrate coherent parent/subcomponent behavior. They are not inflated into 198 near-identical placeholder stories. `pnpm check:stories` resolves parent-to-subcomponent rendering and checks the two intentional nonvisual definition components recorded in `catalog/storybook-exclusions.json`.
+
+`pnpm test:e2e:storybook` mounts every story in Chromium, rejects page/runtime errors, and rejects serious or critical automated WCAG findings. Four representative catalog interaction flows run in Chromium, Firefox, and WebKit. The complete catalog scan is intentionally not repeated in each engine because its DOM and axe assertions are engine-independent; cross-engine behavior is covered by the focused interaction flows and the Design Lab suite.
 
 ## Manual assistive-technology plan
 

@@ -201,10 +201,12 @@ Planning can begin in `scaffolds/`, but reviewed changes are implemented in the 
 | `corepack pnpm typecheck` | Type-check all workspace projects |
 | `corepack pnpm test` | Run the Vitest suites |
 | `corepack pnpm test:e2e:smoke` | Run the focused Chromium Design Lab smoke test |
+| `corepack pnpm test:e2e:storybook` | Mount and scan the complete Storybook catalog plus focused interactions in three browsers |
+| `corepack pnpm test:e2e` | Run both the Design Lab and Storybook Playwright suites |
 | `corepack pnpm build` | Generate artifacts and build workspace projects |
-| `corepack pnpm check` | Run generated, catalog, and story coverage checks plus schema validation, type checks, tests, and builds |
+| `corepack pnpm check` | Run generated, catalog, story, and Playwright discovery checks plus schema validation, type checks, tests, and builds |
 
-The complete Playwright suite is available through `corepack pnpm exec playwright test` and uses Chromium, Firefox, and WebKit. Its browser binaries are installed separately.
+The complete Design Lab and Storybook Playwright suites are available through `corepack pnpm test:e2e` and use Chromium, Firefox, and WebKit. Browser binaries are installed separately.
 
 ## Verification and accessibility
 

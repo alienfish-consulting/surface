@@ -19,6 +19,9 @@ corepack pnpm check:stories
 # Browser smoke (starts the Design Lab through Playwright configuration)
 corepack pnpm test:e2e:smoke
 
+# Complete Storybook catalog mount/a11y scan and focused three-engine interactions
+corepack pnpm test:e2e:storybook
+
 # A selected browser/spec
 corepack pnpm exec playwright test tests/e2e/foundational-core.spec.ts --project=chromium
 ```
@@ -34,8 +37,8 @@ corepack pnpm check
 # Static Storybook integration
 corepack pnpm build:storybook
 
-# Complete configured Chromium, Firefox, and WebKit suite
-corepack pnpm exec playwright test
+# Complete Design Lab and Storybook suites in Chromium, Firefox, and WebKit
+corepack pnpm test:e2e
 ```
 
 The full browser suite requires installed Playwright browsers. Installing browsers changes the local tool cache and may download large binaries; do it only when it is in task scope.

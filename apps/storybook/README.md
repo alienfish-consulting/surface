@@ -12,6 +12,7 @@ From the repository root, the intended commands are:
 corepack pnpm storybook
 corepack pnpm build:storybook
 corepack pnpm check:stories
+corepack pnpm test:e2e:storybook
 ```
 
-The run and build commands generate the local token CSS first. Story coverage is part of the root `check` script; the static Storybook build remains a separate integration check.
+The run and build commands generate the local token CSS first. Story coverage and Playwright suite discovery are part of the root `check` script; the static build and browser execution remain separate integration checks.

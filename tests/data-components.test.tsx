@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {expect,test} from 'vitest';
-import {Chart,CodeViewer,DataGrid,DataInspector,DiffViewer,FileTree,Heatmap,JsonViewer} from '@enterprise-ui/react-data';
+import {Calendar,Chart,CodeViewer,DataGrid,DataInspector,DiffViewer,FileTree,Heatmap,JsonViewer} from '@enterprise-ui/react-data';
 
 const columns=[{key:'name',label:'Name',sortable:true},{key:'score',label:'Score',align:'end' as const}];
 
@@ -21,6 +21,12 @@ test('data visualizations include accessible text alternatives',()=>{
  expect(chart).toContain('aria-label="Requests. Jan: 12, Feb: 18"');
  expect(heatmap).toContain('<caption>Risk</caption>');
  expect(heatmap).toContain('>4</span>');
+});
+
+test('calendar grid cells are grouped in accessible rows',()=>{
+ const html=renderToStaticMarkup(<Calendar month="2026-10" events={[]}/>);
+ expect(html).toContain('role="grid"');
+ expect(html).toContain('role="row"><div role="gridcell"');
 });
 
 test('inspectors render untrusted values as escaped text',()=>{

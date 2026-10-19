@@ -13,7 +13,7 @@ export function IconButton({label,icon,variant='ghost',className,type='button',.
 export interface ToggleButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>,'onChange'> {pressed?:boolean;defaultPressed?:boolean;onPressedChange?:(pressed:boolean)=>void}
 export function ToggleButton({pressed,defaultPressed=false,onPressedChange,className,children,type='button',...rest}:ToggleButtonProps){const [current,setCurrent]=useControllable(pressed,defaultPressed,onPressedChange);return <button {...rest} type={type} aria-pressed={current} className={classes('ui-toggle-button',className)} onClick={()=>setCurrent(!current)}>{children}</button>}
 export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {label:string;orientation?:'horizontal'|'vertical'}
-export function ButtonGroup({label,orientation='horizontal',className,...rest}:ButtonGroupProps){return <div {...rest} role="group" aria-label={label} aria-orientation={orientation} className={classes('ui-button-group',`ui-button-group-${orientation}`,className)}/>}
+export function ButtonGroup({label,orientation='horizontal',className,...rest}:ButtonGroupProps){return <div {...rest} role="group" aria-label={label} className={classes('ui-button-group',`ui-button-group-${orientation}`,className)}/>}
 
 interface CommonFieldProps {label:string;description?:React.ReactNode;error?:React.ReactNode}
 export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>,'onChange'>,CommonFieldProps {onValueChange?:(value:string)=>void}

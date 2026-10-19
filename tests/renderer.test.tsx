@@ -4,7 +4,7 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {assertDesignDocument,registryVersion} from '@enterprise-ui/contracts';
 import type {DesignDocument} from '@enterprise-ui/contracts';
 import {DesignRenderer,defaultAdapters} from '@enterprise-ui/react-renderer';
-import {Button} from '@enterprise-ui/react-core';
+import {Button,ButtonGroup,VirtualList} from '@enterprise-ui/react-core';
 import fixture from '../packages/contracts/fixtures/vertical-slice.design.json';
 test('renders same versioned fixture from registry',()=>{
  const html=renderToStaticMarkup(<DesignRenderer doc={assertDesignDocument(fixture)} host={{data:{metrics:{activeCustomers:1240,revenue:90000},form:{query:''}},requestAction:()=>{}}}/>);
@@ -12,6 +12,12 @@ test('renders same versioned fixture from registry',()=>{
 });
 test('supports direct JSX on same components',()=>{
  expect(renderToStaticMarkup(<Button label="Direct JSX"/>)).toContain('Direct JSX');
+});
+test('renders grouped and virtualized controls with valid accessibility semantics',()=>{
+ const group=renderToStaticMarkup(<ButtonGroup label="History" orientation="vertical"><Button label="Undo"/></ButtonGroup>);
+ const list=renderToStaticMarkup(<VirtualList label="Results" items={['One']} height={100} rowHeight={32} renderItem={item=>item}/>);
+ expect(group).toContain('role="group"');expect(group).not.toContain('aria-orientation');
+ expect(list).toContain('role="list"');expect(list).toContain('tabindex="0"');
 });
 test('fails closed when a host supplies no adapter for a registered implementation',()=>{
  const schemaOnly=structuredClone(assertDesignDocument(fixture));
