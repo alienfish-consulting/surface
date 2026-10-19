@@ -33,6 +33,10 @@ test('renders serialized operations state without executing host work',()=>{
  const html=renderToStaticMarkup(<DesignRenderer doc={document} host={{data:{},requestAction:()=>{throw Error('unexpected host action')}}}/>);
  expect(html).toContain('Platform status');expect(html).toContain('degraded');expect(html).toContain('Queue latency');
 });
+test('renders provider-neutral serialized AI state',()=>{
+ const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'ai-render',revision:0,kind:'workspace',themeId:'default',density:'comfortable',dataSources:[],actionIds:[],root:{id:'run',type:'ui.RunStatusPanel',props:{title:'Agent run',status:'degraded',message:'Waiting for human review'}}};
+ const html=renderToStaticMarkup(<DesignRenderer doc={document} host={{data:{},requestAction:()=>{throw Error('unexpected execution')}}}/>);expect(html).toContain('Agent run');expect(html).toContain('Waiting for human review');
+});
 test('renders the foundational serialized subset and emits only named host intentions',()=>{
  const requests:unknown[]=[];
  const document:DesignDocument={schemaVersion:'1.0.0',registryVersion,id:'core-render',revision:0,kind:'form',themeId:'default',density:'comfortable',dataSources:[],actionIds:['form.change'],root:{id:'page',type:'ui.PageLayout',props:{},children:[{id:'field',type:'ui.Select',props:{label:'Environment',options:[{value:'prod',label:'Production'}]},intents:{onChange:{actionId:'form.change'}}}]}};

@@ -26,4 +26,7 @@ test('design lab renders the existing POC and exposes local display controls', a
   await expect(operations.getByText('reconnecting')).toBeVisible();
   await operations.getByRole('button', { name: 'Deny' }).click();
   await expect(operations.getByRole('status').last()).toHaveText('deny requested for revision 4');
+  const agentReview = page.getByRole('region', { name: 'Agent review specimen' });
+  await agentReview.getByRole('button', { name: 'Deny' }).click();
+  await expect(agentReview.getByRole('status')).toHaveText('deny intention sent to host');
 });

@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     '../../../packages/react-core/src/**/*.stories.@(ts|tsx)',
     '../../../packages/react-data/src/**/*.stories.@(ts|tsx)',
     '../../../packages/react-operations/src/**/*.stories.@(ts|tsx)',
+    '../../../packages/react-ai/src/**/*.stories.@(ts|tsx)',
   ],
   addons: ['@storybook/addon-a11y'],
   framework: {
@@ -24,6 +25,7 @@ const config: StorybookConfig = {
         '@enterprise-ui/react-core': fileURLToPath(new URL('../../../packages/react-core/src/index.tsx', import.meta.url)),
         '@enterprise-ui/react-data': fileURLToPath(new URL('../../../packages/react-data/src/index.tsx', import.meta.url)),
         '@enterprise-ui/react-operations': fileURLToPath(new URL('../../../packages/react-operations/src/index.tsx', import.meta.url)),
+        '@enterprise-ui/react-ai': fileURLToPath(new URL('../../../packages/react-ai/src/index.tsx', import.meta.url)),
       },
     },
   }),

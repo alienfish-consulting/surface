@@ -727,6 +727,116 @@ export interface ResourceTreeSerializedProps {
   "nodes"?: Array<Record<string, unknown>>;
   "selectedId"?: string;
 }
+export interface ChatWorkspaceSerializedProps {
+  "label"?: string;
+}
+export interface ConversationListSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+  "selectedId"?: string;
+}
+export interface MessageThreadSerializedProps {
+  "label"?: string;
+  "messages"?: Array<Record<string, unknown>>;
+}
+export interface ChatMessageSerializedProps {
+  "message": Record<string, unknown>;
+}
+export interface MessageComposerSerializedProps {
+  "label"?: string;
+  "value"?: string;
+  "disabled"?: boolean;
+}
+export interface StreamingTextSerializedProps {
+  "label"?: string;
+  "text": string;
+  "status"?: "streaming" | "complete" | "cancelled" | "failed";
+}
+export interface AttachmentTraySerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface CitationListSerializedProps {
+  "label"?: string;
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface ToolCallCardSerializedProps {
+  "name": string;
+  "status": string;
+  "input"?: Record<string, unknown> | unknown[] | string | number | boolean | null;
+}
+export interface ToolResultViewerSerializedProps {
+  "label"?: string;
+  "value"?: Record<string, unknown> | unknown[] | string | number | boolean | null;
+  "error"?: string;
+}
+export interface ToolExecutionTimelineSerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface AgentRosterSerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface AgentActivityFeedSerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface AgentTaskCardSerializedProps {
+  "title": string;
+  "status": string;
+  "owner"?: string;
+}
+export interface MultiAgentTimelineSerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface ApprovalRequestSerializedProps {
+  "approval": Record<string, unknown>;
+}
+export interface ApprovalReviewSerializedProps {
+  "title": string;
+  "summary": string;
+  "diff"?: Record<string, unknown>;
+}
+export interface ArtifactViewerSerializedProps {
+  "label": string;
+  "content": string;
+  "language"?: string;
+}
+export interface ArtifactCardSerializedProps {
+  "title": string;
+  "type": string;
+}
+export interface ContextInspectorSerializedProps {
+  "label"?: string;
+  "value": Record<string, unknown> | unknown[] | string | number | boolean | null;
+}
+export interface TokenUsageMeterSerializedProps {
+  "label"?: string;
+  "used": number;
+  "limit": number;
+}
+export interface ModelSelectorSerializedProps {
+  "models": Array<Record<string, unknown>>;
+  "value"?: string;
+}
+export interface PromptTemplateEditorSerializedProps {
+  "value": string;
+}
+export interface PromptVersionDiffSerializedProps {
+  "label"?: string;
+  "before": string;
+  "after": string;
+  "mode"?: "unified" | "split";
+}
+export interface RunStatusPanelSerializedProps {
+  "title": string;
+  "status": "operational" | "degraded" | "outage";
+  "message"?: string;
+}
+export interface RunStepTimelineSerializedProps {
+  "items"?: Array<Record<string, unknown>>;
+}
+export interface ReasoningSummaryPanelSerializedProps {
+  "title"?: string;
+  "summary": string;
+}
 export interface SerializablePropsByComponent {
   "ui.AppShell": AppShellSerializedProps;
   "ui.Panel": PanelSerializedProps;
@@ -865,5 +975,32 @@ export interface SerializablePropsByComponent {
   "ui.RunbookPanel": RunbookPanelSerializedProps;
   "ui.MetricTrendPanel": MetricTrendPanelSerializedProps;
   "ui.ResourceTree": ResourceTreeSerializedProps;
+  "ui.ChatWorkspace": ChatWorkspaceSerializedProps;
+  "ui.ConversationList": ConversationListSerializedProps;
+  "ui.MessageThread": MessageThreadSerializedProps;
+  "ui.ChatMessage": ChatMessageSerializedProps;
+  "ui.MessageComposer": MessageComposerSerializedProps;
+  "ui.StreamingText": StreamingTextSerializedProps;
+  "ui.AttachmentTray": AttachmentTraySerializedProps;
+  "ui.CitationList": CitationListSerializedProps;
+  "ui.ToolCallCard": ToolCallCardSerializedProps;
+  "ui.ToolResultViewer": ToolResultViewerSerializedProps;
+  "ui.ToolExecutionTimeline": ToolExecutionTimelineSerializedProps;
+  "ui.AgentRoster": AgentRosterSerializedProps;
+  "ui.AgentActivityFeed": AgentActivityFeedSerializedProps;
+  "ui.AgentTaskCard": AgentTaskCardSerializedProps;
+  "ui.MultiAgentTimeline": MultiAgentTimelineSerializedProps;
+  "ui.ApprovalRequest": ApprovalRequestSerializedProps;
+  "ui.ApprovalReview": ApprovalReviewSerializedProps;
+  "ui.ArtifactViewer": ArtifactViewerSerializedProps;
+  "ui.ArtifactCard": ArtifactCardSerializedProps;
+  "ui.ContextInspector": ContextInspectorSerializedProps;
+  "ui.TokenUsageMeter": TokenUsageMeterSerializedProps;
+  "ui.ModelSelector": ModelSelectorSerializedProps;
+  "ui.PromptTemplateEditor": PromptTemplateEditorSerializedProps;
+  "ui.PromptVersionDiff": PromptVersionDiffSerializedProps;
+  "ui.RunStatusPanel": RunStatusPanelSerializedProps;
+  "ui.RunStepTimeline": RunStepTimelineSerializedProps;
+  "ui.ReasoningSummaryPanel": ReasoningSummaryPanelSerializedProps;
 }
 export type SerializableComponentType = keyof SerializablePropsByComponent;

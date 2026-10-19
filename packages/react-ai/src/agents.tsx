@@ -1,0 +1,24 @@
+import * as React from 'react';
+import {Badge,Button,Inline,Progress,Select,Stack,TextArea} from '@enterprise-ui/react-core';
+import {CodeViewer,DiffViewer,JsonViewer,Timeline} from '@enterprise-ui/react-data';
+import {ApprovalCard,StatusPagePanel} from '@enterprise-ui/react-operations';
+export interface AgentItem {id:string;name:string;status:string;detail?:string}
+export function AgentRoster({items,onSelect}:{items:readonly AgentItem[];onSelect?:(id:string)=>void}){return <ul className="ui-agent-roster">{items.map(x=><li key={x.id}><button type="button" onClick={()=>onSelect?.(x.id)}><strong>{x.name}</strong><Badge>{x.status}</Badge>{x.detail&&<span>{x.detail}</span>}</button></li>)}</ul>}
+export function AgentActivityFeed({items}:{items:readonly {id:string;time:string;title:string;description?:string}[]}){return <Timeline label="Agent activity" items={items}/>}
+export function AgentTaskCard({title,status,owner,onOpen}:{title:string;status:string;owner?:string;onOpen?:()=>void}){return <article className="ui-agent-card"><h3>{title}</h3><Inline><Badge>{status}</Badge>{owner&&<span>{owner}</span>}</Inline>{onOpen&&<Button label="Open task" variant="secondary" onPress={onOpen}/>}</article>}
+export function MultiAgentTimeline({items}:{items:readonly {id:string;time:string;title:string;description?:string}[]}){return <Timeline label="Multi-agent timeline" items={items}/>}
+export function ToolCallCard({name,status,input,onCancel}:{name:string;status:string;input?:unknown;onCancel?:()=>void}){return <article className="ui-tool-card"><Inline><h3>{name}</h3><Badge>{status}</Badge></Inline>{input!==undefined&&<JsonViewer label="Tool input" value={input}/>} {status==='running'&&onCancel&&<Button label="Cancel tool" variant="secondary" onPress={onCancel}/>}</article>}
+export function ToolResultViewer({label='Tool result',value,error}:{label?:string;value?:unknown;error?:string}){return error?<StatusPagePanel title={label} status="outage" message={error}/>:<JsonViewer label={label} value={value}/>}
+export function ToolExecutionTimeline({items}:{items:readonly {id:string;time:string;title:string;description?:string}[]}){return <Timeline label="Tool execution" items={items}/>}
+export function ApprovalRequest({approval,onDecision}:React.ComponentProps<typeof ApprovalCard>){return <ApprovalCard approval={approval} onDecision={onDecision}/>}
+export function ApprovalReview({title,summary,diff,onApprove,onDeny}:{title:string;summary:string;diff?:{before:string;after:string};onApprove?:()=>void;onDeny?:()=>void}){return <section className="ui-approval-review"><h2>{title}</h2><p>{summary}</p>{diff&&<DiffViewer before={diff.before} after={diff.after}/>}<Inline>{onApprove&&<Button label="Approve" onPress={onApprove}/>} {onDeny&&<Button label="Deny" variant="secondary" onPress={onDeny}/>}</Inline></section>}
+export function ArtifactCard({title,type,onOpen}:{title:string;type:string;onOpen?:()=>void}){return <article className="ui-agent-card"><h3>{title}</h3><Badge>{type}</Badge>{onOpen&&<Button label="Open artifact" variant="secondary" onPress={onOpen}/>}</article>}
+export function ArtifactViewer({label,content,language='text'}:{label:string;content:string;language?:string}){return <CodeViewer label={label} code={content} language={language}/>}
+export function ContextInspector({label='Context',value}:{label?:string;value:unknown}){return <JsonViewer label={label} value={value}/>}
+export function TokenUsageMeter({used,limit,label='Token usage'}:{used:number;limit:number;label?:string}){return <Progress label={label} value={used} max={Math.max(1,limit)} showValue/>}
+export function ModelSelector({models,value,onChange}:{models:readonly {value:string;label:string}[];value?:string;onChange?:(value:string)=>void}){return <Select label="Model" options={models} value={value} onValueChange={onChange}/>}
+export function PromptTemplateEditor({value,onChange,onSave}:{value:string;onChange?:(value:string)=>void;onSave?:(value:string)=>void}){return <Stack><TextArea label="Prompt template" value={value} onValueChange={onChange}/>{onSave&&<Button label="Save template" onPress={()=>onSave(value)}/>}</Stack>}
+export function PromptVersionDiff(props:React.ComponentProps<typeof DiffViewer>){return <DiffViewer {...props}/>}
+export function RunStatusPanel({title,status,message}:{title:string;status:'operational'|'degraded'|'outage';message?:string}){return <StatusPagePanel title={title} status={status} message={message}/>}
+export function RunStepTimeline({items}:{items:readonly {id:string;time:string;title:string;description?:string}[]}){return <Timeline label="Run steps" items={items}/>}
+export function ReasoningSummaryPanel({title='Reasoning summary',summary}:{title?:string;summary:string}){return <section className="ui-reasoning-summary"><h2>{title}</h2><p>{summary}</p></section>}

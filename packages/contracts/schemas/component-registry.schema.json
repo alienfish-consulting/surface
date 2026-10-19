@@ -43,6 +43,7 @@
               "ui-data",
               "ui-ai",
               "ui-operations",
+              "ui-ai",
               "ui-designers"
             ]
           },

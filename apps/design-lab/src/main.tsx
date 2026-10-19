@@ -4,6 +4,7 @@ import '@enterprise-ui/tokens/theme.css';
 import '../../../packages/react-core/src/styles.css';
 import '../../../packages/react-data/src/styles.css';
 import '../../../packages/react-operations/src/styles.css';
+import '../../../packages/react-ai/src/styles.css';
 import './styles.css';
 import fixture from '../../../packages/contracts/fixtures/vertical-slice.design.json';
 import {assertDesignDocument,previewProposal} from '@enterprise-ui/contracts';
@@ -15,6 +16,7 @@ import {AppShell,Panel,Button,ComboBox,Dialog,DockWorkspace} from '@enterprise-u
 import {DataGrid,KpiCard} from '@enterprise-ui/react-data';
 import type {GridColumnDefinition} from '@enterprise-ui/react-data';
 import {ActivityFeed,ApprovalCard} from '@enterprise-ui/react-operations';
+import {ApprovalReview,ToolCallCard} from '@enterprise-ui/react-ai';
 
 const initial=assertDesignDocument(fixture);
 const customerColumns:GridColumnDefinition[]=[{key:'name',label:'Customer',sortable:true},{key:'region',label:'Region'},{key:'revenue',label:'Revenue',align:'end'}];
@@ -32,6 +34,7 @@ function App(){
  const [gridQuery,setGridQuery]=React.useState('');
  const [gridSort,setGridSort]=React.useState<{key:string;direction:'ascending'|'descending'}>({key:'name',direction:'ascending'});
  const [approvalResult,setApprovalResult]=React.useState('Pending host decision');
+ const [agentReview,setAgentReview]=React.useState('Awaiting human review');
  const addLog=(message:string)=>setLog(prev=>[message,...prev].slice(0,8));
  const host:Host={data:hostData,requestAction:({actionId,nodeId,event,payload}:HostActionRequest)=>{
    if(!allowed){addLog(`DENIED by host: ${actionId} from ${nodeId}`);return;}
@@ -72,6 +75,10 @@ function App(){
       <ActivityFeed title="Deployment activity" connection="reconnecting" items={[{id:'2',sequence:2,timestamp:'10:02',message:'Retry scheduled',tone:'warning'},{id:'1',sequence:1,timestamp:'10:01',message:'Connection interrupted'}]}/>
       <ApprovalCard approval={{id:'deploy-42',title:'Resume production rollout',description:'Host authorization is required.',requester:'Release manager',status:'pending',revision:4}} onDecision={(_id,decision,revision)=>setApprovalResult(`${decision} requested for revision ${revision}`)}/>
       <p role="status">{approvalResult}</p>
+     </section>
+     <section aria-label="Agent review specimen">
+      <h2>Agent review specimen</h2><ToolCallCard name="Inspect proposed patch" status="complete" input={{revision:4,scope:'local only'}}/>
+      <ApprovalReview title="Apply agent proposal" summary="Visual approval requests do not execute host actions." onApprove={()=>setAgentReview('approve intention sent to host')} onDeny={()=>setAgentReview('deny intention sent to host')}/><p role="status">{agentReview}</p>
      </section>
     </div>
   </div>

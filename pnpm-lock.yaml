@@ -50,6 +50,9 @@ importers:
       '@enterprise-ui/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@enterprise-ui/react-ai':
+        specifier: workspace:*
+        version: link:../../packages/react-ai
       '@enterprise-ui/react-core':
         specifier: workspace:*
         version: link:../../packages/react-core
@@ -77,6 +80,9 @@ importers:
 
   apps/storybook:
     dependencies:
+      '@enterprise-ui/react-ai':
+        specifier: workspace:*
+        version: link:../../packages/react-ai
       '@enterprise-ui/react-core':
         specifier: workspace:*
         version: link:../../packages/react-core
@@ -114,6 +120,28 @@ importers:
       fast-json-patch:
         specifier: ^3.1.1
         version: 3.1.1
+
+  packages/react-ai:
+    dependencies:
+      '@enterprise-ui/react-core':
+        specifier: workspace:*
+        version: link:../react-core
+      '@enterprise-ui/react-data':
+        specifier: workspace:*
+        version: link:../react-data
+      '@enterprise-ui/react-operations':
+        specifier: workspace:*
+        version: link:../react-operations
+      '@enterprise-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      react:
+        specifier: ^19.0.0
+        version: 19.3.1
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 10.6.2
+        version: 10.6.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.64.10)(storybook@10.6.2(@types/react@19.3.0)(react@19.3.1))(typescript@5.9.3)(vite@7.3.7(@types/node@24.19.2)(yaml@2.9.0))
 
   packages/react-core:
     dependencies:
@@ -180,6 +208,9 @@ importers:
       '@enterprise-ui/contracts':
         specifier: workspace:*
         version: link:../contracts
+      '@enterprise-ui/react-ai':
+        specifier: workspace:*
+        version: link:../react-ai
       '@enterprise-ui/react-core':
         specifier: workspace:*
         version: link:../react-core

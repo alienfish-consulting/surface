@@ -6,9 +6,9 @@
     "total": 198,
     "byStatus": {
       "planned": 0,
-      "scaffolded": 55,
+      "scaffolded": 28,
       "implemented": 0,
-      "verified": 143,
+      "verified": 170,
       "released": 0
     },
     "byClassification": {
@@ -30,7 +30,7 @@
       ]
     },
     "active": {
-      "version": "1.4.0",
+      "version": "1.5.0",
       "componentIds": [
         "ui.AppShell",
         "ui.Panel",
@@ -168,7 +168,34 @@
         "ui.AlertDetails",
         "ui.RunbookPanel",
         "ui.MetricTrendPanel",
-        "ui.ResourceTree"
+        "ui.ResourceTree",
+        "ui.ChatWorkspace",
+        "ui.ConversationList",
+        "ui.MessageThread",
+        "ui.ChatMessage",
+        "ui.MessageComposer",
+        "ui.StreamingText",
+        "ui.AttachmentTray",
+        "ui.CitationList",
+        "ui.ToolCallCard",
+        "ui.ToolResultViewer",
+        "ui.ToolExecutionTimeline",
+        "ui.AgentRoster",
+        "ui.AgentActivityFeed",
+        "ui.AgentTaskCard",
+        "ui.MultiAgentTimeline",
+        "ui.ApprovalRequest",
+        "ui.ApprovalReview",
+        "ui.ArtifactViewer",
+        "ui.ArtifactCard",
+        "ui.ContextInspector",
+        "ui.TokenUsageMeter",
+        "ui.ModelSelector",
+        "ui.PromptTemplateEditor",
+        "ui.PromptVersionDiff",
+        "ui.RunStatusPanel",
+        "ui.RunStepTimeline",
+        "ui.ReasoningSummaryPanel"
       ]
     },
     "implementedAdapterIds": [
@@ -308,7 +335,34 @@
       "ui.AlertDetails",
       "ui.RunbookPanel",
       "ui.MetricTrendPanel",
-      "ui.ResourceTree"
+      "ui.ResourceTree",
+      "ui.ChatWorkspace",
+      "ui.ConversationList",
+      "ui.MessageThread",
+      "ui.ChatMessage",
+      "ui.MessageComposer",
+      "ui.StreamingText",
+      "ui.AttachmentTray",
+      "ui.CitationList",
+      "ui.ToolCallCard",
+      "ui.ToolResultViewer",
+      "ui.ToolExecutionTimeline",
+      "ui.AgentRoster",
+      "ui.AgentActivityFeed",
+      "ui.AgentTaskCard",
+      "ui.MultiAgentTimeline",
+      "ui.ApprovalRequest",
+      "ui.ApprovalReview",
+      "ui.ArtifactViewer",
+      "ui.ArtifactCard",
+      "ui.ContextInspector",
+      "ui.TokenUsageMeter",
+      "ui.ModelSelector",
+      "ui.PromptTemplateEditor",
+      "ui.PromptVersionDiff",
+      "ui.RunStatusPanel",
+      "ui.RunStepTimeline",
+      "ui.ReasoningSummaryPanel"
     ],
     "note": "Schema-only registry entries remain compatibility fixtures and have no renderer adapter."
   },
@@ -2898,7 +2952,7 @@
       "package": "react-ai",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.MessageThread",
         "ui.MessageComposer"
@@ -2909,8 +2963,8 @@
         "stories.plan.json": "scaffolds/react-ai/ChatWorkspace/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ChatWorkspace/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ConversationList",
@@ -2918,7 +2972,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -2929,8 +2983,8 @@
         "stories.plan.json": "scaffolds/react-ai/ConversationList/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ConversationList/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.MessageThread",
@@ -2938,7 +2992,7 @@
       "package": "react-ai",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.ChatMessage"
       ],
@@ -2948,8 +3002,8 @@
         "stories.plan.json": "scaffolds/react-ai/MessageThread/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/MessageThread/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ChatMessage",
@@ -2957,7 +3011,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -2968,8 +3022,8 @@
         "stories.plan.json": "scaffolds/react-ai/ChatMessage/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ChatMessage/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.MessageComposer",
@@ -2977,7 +3031,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -2988,8 +3042,8 @@
         "stories.plan.json": "scaffolds/react-ai/MessageComposer/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/MessageComposer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.StreamingText",
@@ -2997,7 +3051,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3008,8 +3062,8 @@
         "stories.plan.json": "scaffolds/react-ai/StreamingText/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/StreamingText/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.AttachmentTray",
@@ -3017,7 +3071,7 @@
       "package": "react-ai",
       "classification": "compositional-subcomponent",
       "exportPolicy": "parent-owned-or-namespaced",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3028,8 +3082,8 @@
         "stories.plan.json": "scaffolds/react-ai/AttachmentTray/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/AttachmentTray/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.CitationList",
@@ -3037,7 +3091,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3048,8 +3102,8 @@
         "stories.plan.json": "scaffolds/react-ai/CitationList/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/CitationList/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ToolCallCard",
@@ -3057,7 +3111,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3068,8 +3122,8 @@
         "stories.plan.json": "scaffolds/react-ai/ToolCallCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ToolCallCard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ToolResultViewer",
@@ -3077,7 +3131,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3088,8 +3142,8 @@
         "stories.plan.json": "scaffolds/react-ai/ToolResultViewer/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ToolResultViewer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ToolExecutionTimeline",
@@ -3097,7 +3151,7 @@
       "package": "react-ai",
       "classification": "feature/workstream",
       "exportPolicy": "top-level-export-subject-to-api-review",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3108,8 +3162,8 @@
         "stories.plan.json": "scaffolds/react-ai/ToolExecutionTimeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ToolExecutionTimeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.AgentRoster",
@@ -3117,7 +3171,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3128,8 +3182,8 @@
         "stories.plan.json": "scaffolds/react-ai/AgentRoster/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/AgentRoster/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.AgentActivityFeed",
@@ -3137,7 +3191,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3148,8 +3202,8 @@
         "stories.plan.json": "scaffolds/react-ai/AgentActivityFeed/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/AgentActivityFeed/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.AgentTaskCard",
@@ -3157,7 +3211,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3168,8 +3222,8 @@
         "stories.plan.json": "scaffolds/react-ai/AgentTaskCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/AgentTaskCard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.MultiAgentTimeline",
@@ -3177,7 +3231,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3188,8 +3242,8 @@
         "stories.plan.json": "scaffolds/react-ai/MultiAgentTimeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/MultiAgentTimeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ApprovalRequest",
@@ -3197,7 +3251,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3208,8 +3262,8 @@
         "stories.plan.json": "scaffolds/react-ai/ApprovalRequest/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ApprovalRequest/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ApprovalReview",
@@ -3217,7 +3271,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3228,8 +3282,8 @@
         "stories.plan.json": "scaffolds/react-ai/ApprovalReview/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ApprovalReview/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ArtifactViewer",
@@ -3237,7 +3291,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3248,8 +3302,8 @@
         "stories.plan.json": "scaffolds/react-ai/ArtifactViewer/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ArtifactViewer/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ArtifactCard",
@@ -3257,7 +3311,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3268,8 +3322,8 @@
         "stories.plan.json": "scaffolds/react-ai/ArtifactCard/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ArtifactCard/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ContextInspector",
@@ -3277,7 +3331,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3288,8 +3342,8 @@
         "stories.plan.json": "scaffolds/react-ai/ContextInspector/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ContextInspector/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.TokenUsageMeter",
@@ -3297,7 +3351,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3308,8 +3362,8 @@
         "stories.plan.json": "scaffolds/react-ai/TokenUsageMeter/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/TokenUsageMeter/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ModelSelector",
@@ -3317,7 +3371,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3328,8 +3382,8 @@
         "stories.plan.json": "scaffolds/react-ai/ModelSelector/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ModelSelector/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.PromptTemplateEditor",
@@ -3337,7 +3391,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3348,8 +3402,8 @@
         "stories.plan.json": "scaffolds/react-ai/PromptTemplateEditor/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/PromptTemplateEditor/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.PromptVersionDiff",
@@ -3357,7 +3411,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3368,8 +3422,8 @@
         "stories.plan.json": "scaffolds/react-ai/PromptVersionDiff/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/PromptVersionDiff/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.RunStatusPanel",
@@ -3377,7 +3431,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3388,8 +3442,8 @@
         "stories.plan.json": "scaffolds/react-ai/RunStatusPanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/RunStatusPanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.RunStepTimeline",
@@ -3397,7 +3451,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3408,8 +3462,8 @@
         "stories.plan.json": "scaffolds/react-ai/RunStepTimeline/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/RunStepTimeline/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.ReasoningSummaryPanel",
@@ -3417,7 +3471,7 @@
       "package": "react-ai",
       "classification": "public-component",
       "exportPolicy": "named-export-after-implementation",
-      "status": "scaffolded",
+      "status": "verified",
       "dependencies": [
         "ui.Panel",
         "ui.Button"
@@ -3428,8 +3482,8 @@
         "stories.plan.json": "scaffolds/react-ai/ReasoningSummaryPanel/stories.plan.json",
         "test.plan.md": "scaffolds/react-ai/ReasoningSummaryPanel/test.plan.md"
       },
-      "implementationEvidence": "none",
-      "implementationPackage": null
+      "implementationEvidence": "react-ai source, grouped Storybook stories, registry 1.5.0 contract and renderer adapter, and M6 scoped verification",
+      "implementationPackage": "react-ai"
     },
     {
       "id": "ui.DesignerShell",

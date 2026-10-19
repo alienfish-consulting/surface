@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "streaming",
+        "complete",
+        "cancelled",
+        "failed"
+      ]
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "additionalProperties": false
+}
