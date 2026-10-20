@@ -107,7 +107,13 @@ jobs:
       - name: Publish packages with provenance
         run: |
           for package in tokens contracts react-core react-data react-operations react-ai react-designers react-renderer electron-bridge; do
-            npm publish ".release/alienfishconsulting-surface-${package}-${GITHUB_REF_NAME#v}.tgz" --access public --provenance
+            package_name="@alienfishconsulting/surface-${package}"
+            version="${GITHUB_REF_NAME#v}"
+            if npm view "${package_name}@${version}" version >/dev/null 2>&1; then
+              echo "${package_name}@${version} is already published; skipping"
+            else
+              npm publish ".release/alienfishconsulting-surface-${package}-${version}.tgz" --access public --provenance
+            fi
           done
 
       - name: Create GitHub release

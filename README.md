@@ -23,7 +23,7 @@
 
 Surface combines a broad component system with a versioned JSON design contract, guarded visual editing, and explicit application-owned security boundaries.
 
-The source is publicly visible but remains proprietary: availability does not grant open-source rights. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. The coordinated `1.0.0` package family is prepared under the `@alienfishconsulting/surface-*` namespace but has not yet been published.
+The source is publicly visible but remains proprietary: availability does not grant open-source rights. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. The coordinated `1.0.0` package family is published under the `@alienfishconsulting/surface-*` namespace.
 
 ## What the framework provides
 
@@ -84,7 +84,7 @@ Storybook runs at `http://localhost:6006` by default.
 
 ## Installing the packages
 
-Surface packages will be distributed publicly from npm under a proprietary license. After publication, install only the families an application needs, together with a supported React runtime:
+Surface packages are distributed publicly from npm under a proprietary license. Install only the families an application needs, together with a supported React runtime:
 
 ```bash
 npm install react@^19 react-dom@^19 \
@@ -288,4 +288,4 @@ Copyright (c) 2026 AlienFish Consulting. All rights reserved. Surface is proprie
 
 ## Release status
 
-The implementation and technical acceptance milestones are complete. The first release is fixed at version `1.0.0` under the public `@alienfishconsulting/surface-*` package namespace and remains proprietary under [LICENSE.md](LICENSE.md). Packed-package verification, React 18/19 consumer checks, manual assistive-technology checks, npm organization and trusted-publisher setup, and final publication approval remain before the `v1.0.0` tag is created. See [release preparation](docs/release/README.md) and the [changelog](CHANGELOG.md).
+The implementation and technical acceptance milestones are complete. Version `1.0.0` is available from npm under the public `@alienfishconsulting/surface-*` package namespace and remains proprietary under [LICENSE.md](LICENSE.md). The packages passed packed-package verification and isolated React 18.2 and React 19 consumer checks before publication. The `v1.0.0` repository tag and GitHub release remain separate release-record actions. See [release preparation](docs/release/README.md) and the [changelog](CHANGELOG.md).
