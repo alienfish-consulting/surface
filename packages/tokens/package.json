@@ -1,12 +1,13 @@
 {
-  "name": "@enterprise-ui/tokens",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "name": "@alienfishconsulting/surface-tokens",
+  "version": "1.0.0",
+  "description": "Semantic theme, density, contrast, layout, and motion tokens for AlienFish Surface.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "sideEffects": [
     "./dist/*.css"
   ],
+  "files": ["dist", "source/design-tokens.json", "README.md", "LICENSE.md"],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -14,10 +15,17 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./theme.css": "./dist/theme.css"
+    "./theme.css": "./dist/theme.css",
+    "./design-tokens.json": "./source/design-tokens.json"
   },
+  "repository": {"type":"git","url":"git+https://github.com/alienfish-consulting/surface.git","directory":"packages/tokens"},
+  "homepage": "https://github.com/alienfish-consulting/surface#readme",
+  "bugs": {"url":"https://github.com/alienfish-consulting/surface/issues"},
+  "keywords": ["surface", "design-tokens", "css", "design-system"],
+  "engines": {"node": ">=20"},
+  "publishConfig": {"access":"public","registry":"https://registry.npmjs.org/"},
   "scripts": {
-    "build": "node ../../tools/generate.mjs && tsc -p tsconfig.json",
+    "build": "node ../../tools/clean-package-dist.mjs tokens && node ../../tools/generate.mjs && tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {}

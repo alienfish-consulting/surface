@@ -1,8 +1,9 @@
 # Developing the framework repository
 
 Follow the repository-wide [`CONTRIBUTING.md`](../../CONTRIBUTING.md) and
-[`CODING_STANDARDS.md`](../../CODING_STANDARDS.md). All packages remain private
-and `UNLICENSED` under the proprietary [`LICENSE.md`](../../LICENSE.md).
+[`CODING_STANDARDS.md`](../../CODING_STANDARDS.md). Publishable packages are
+publicly distributed under the proprietary [`LICENSE.md`](../../LICENSE.md);
+the root workspace and applications remain private and non-publishable.
 
 ## Locate ownership before editing
 

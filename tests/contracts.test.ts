@@ -1,6 +1,6 @@
 import {test,expect} from 'vitest';
-import {assertDesignDocument,declarativeExceptions,registryVersion,validateDocument,previewProposal,readPointer} from '@enterprise-ui/contracts';
-import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
+import {assertDesignDocument,declarativeExceptions,registryVersion,validateDocument,previewProposal,readPointer} from '@alienfishconsulting/surface-contracts';
+import type {DesignDocument,Proposal} from '@alienfishconsulting/surface-contracts';
 import fixture from '../packages/contracts/fixtures/vertical-slice.design.json';
 import legacyFixture from '../packages/contracts/fixtures/customer-operations.design.json';
 const source=assertDesignDocument(fixture);

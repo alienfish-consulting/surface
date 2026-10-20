@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type {Meta,StoryObj} from '@storybook/react-vite';
-import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
+import type {DesignDocument,Proposal} from '@alienfishconsulting/surface-contracts';
 import {ActionEditor,BreakpointSwitcher,ComponentPalette,ConflictResolver,DesignCanvas,DesignerShell,DesignerValidationPanel,PatchReviewPanel,PreviewModeToggle,ResponsivePreview,UndoRedoToolbar,VersionHistory} from '../index.js';
 const document:DesignDocument={schemaVersion:'1.0.0',registryVersion:'1.6.0',id:'story',revision:2,kind:'form',themeId:'default',density:'comfortable',dataSources:[],actionIds:['save'],root:{id:'page',type:'ui.PageLayout',props:{},children:[{id:'name',type:'ui.TextField',props:{label:'Name'}}]}};
 const proposal:Proposal={proposalId:'p1',documentId:'story',schemaVersion:'1.0.0',registryVersion:'1.6.0',baseRevision:2,rationale:'Change field label',operations:[{op:'test',path:'/revision',value:2},{op:'replace',path:'/root/children/0/props/label',value:'Full name'}]};

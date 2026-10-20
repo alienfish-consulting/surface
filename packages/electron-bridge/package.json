@@ -1,13 +1,20 @@
 {
-  "name": "@enterprise-ui/electron-bridge",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "name": "@alienfishconsulting/surface-electron-bridge",
+  "version": "1.0.0",
+  "description": "Transport-neutral, allowlisted desktop capability boundary for AlienFish Surface browser and Electron hosts.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "sideEffects": false,
+  "files": ["dist", "README.md", "LICENSE.md"],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}},
-  "scripts": {"build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit"},
-  "dependencies": {"@enterprise-ui/contracts": "workspace:*"}
+  "repository": {"type":"git","url":"git+https://github.com/alienfish-consulting/surface.git","directory":"packages/electron-bridge"},
+  "homepage": "https://github.com/alienfish-consulting/surface#readme",
+  "bugs": {"url":"https://github.com/alienfish-consulting/surface/issues"},
+  "keywords": ["surface", "electron", "bridge", "security"],
+  "engines": {"node": ">=20"},
+  "publishConfig": {"access":"public","registry":"https://registry.npmjs.org/"},
+  "scripts": {"build": "node ../../tools/clean-package-dist.mjs electron-bridge && tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit"},
+  "dependencies": {"@alienfishconsulting/surface-contracts": "workspace:*"}
 }

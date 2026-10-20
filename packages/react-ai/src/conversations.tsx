@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Badge,Button,EmptyState,Inline,Stack,TextArea} from '@enterprise-ui/react-core';
+import {Badge,Button,EmptyState,Inline,Stack,TextArea} from '@alienfishconsulting/surface-react-core';
 export interface Conversation {id:string;title:string;preview?:string;updatedAt?:string;unread?:boolean}
 export function ConversationList({label='Conversations',items,selectedId,onSelect}:{label?:string;items:readonly Conversation[];selectedId?:string;onSelect?:(id:string)=>void}){return <nav aria-label={label} className="ui-conversation-list">{items.length?<ul>{items.map(item=><li key={item.id}><button type="button" aria-current={item.id===selectedId?'page':undefined} onClick={()=>onSelect?.(item.id)}><strong>{item.title}</strong>{item.preview&&<span>{item.preview}</span>}{item.unread&&<Badge>Unread</Badge>}</button></li>)}</ul>:<EmptyState title="No conversations"/>}</nav>}
 export interface ChatMessageData {id:string;role:'user'|'assistant'|'system'|'tool';content:string;author?:string;timestamp?:string;status?:'streaming'|'complete'|'cancelled'|'failed'}

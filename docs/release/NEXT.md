@@ -2,10 +2,10 @@
 
 The implementation milestones are complete. These items deliberately remain outside autonomous local work:
 
-1. Accept the M9 release-readiness report and any documented manual release steps.
-2. Choose the final npm scope/package names, commercial distribution terms and coordinated version. The repository remains proprietary and unpublished meanwhile.
+1. Accept the M9 release-readiness report and documented manual release steps.
+2. Confirm the `alienfishconsulting` npm organization, package-name availability, publisher permissions, trusted-publisher connection, and protected `npm-production` GitHub environment.
 3. Perform the documented manual screen-reader spot checks and optional separate-repository packed-package install.
-4. Authorize remote creation and push separately if desired.
-5. Authorize npm publication separately after reviewing packed artifacts and third-party notices.
+4. Review the `1.0.0` tarballs, checksums, dependency-license report, and changelog produced by the release preparation flow.
+5. Explicitly authorize the `v1.0.0` tag push, which triggers npm publication and GitHub release creation.
 
-No publication, cloud resource, public license, or distribution permission is implied by the completed workspace or its remote repository.
+Public source visibility and package downloadability do not create an open-source license or broader distribution permission. Publication remains an explicit release action.

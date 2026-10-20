@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {assertDesignDocument,isImplementedComponentType,readPointer,registry} from '@enterprise-ui/contracts';
-import type {DesignDocument,DesignNode} from '@enterprise-ui/contracts';
+import {assertDesignDocument,isImplementedComponentType,readPointer,registry} from '@alienfishconsulting/surface-contracts';
+import type {DesignDocument,DesignNode} from '@alienfishconsulting/surface-contracts';
 import {defaultAdapters} from './registry.js';
 import type {Adapter,Host} from './core-adapters.js';
 

@@ -1,8 +1,8 @@
-# `@enterprise-ui/electron-bridge`
+# `@alienfishconsulting/surface-electron-bridge`
 
 A transport-neutral, allowlisted boundary between browser-capable React code and an Electron host. The package defines request/result types, validates renderer requests, exposes a safe browser fallback, and adapts UI intentions to host callbacks without importing Electron.
 
-This package is private and version `0.0.0`.
+This public package is proprietary and version `1.0.0`.
 
 ## Usage
 
@@ -10,7 +10,7 @@ This package is private and version `0.0.0`.
 import {
   createBrowserBridge,
   createDesktopBridge,
-} from '@enterprise-ui/electron-bridge';
+} from '@alienfishconsulting/surface-electron-bridge';
 
 const desktop = window.applicationDesktop
   ? createDesktopBridge({
@@ -30,7 +30,7 @@ const desktop = window.applicationDesktop
 ## Development
 
 ```bash
-corepack pnpm --filter @enterprise-ui/electron-bridge typecheck
+corepack pnpm --filter @alienfishconsulting/surface-electron-bridge typecheck
 corepack pnpm exec vitest run tests/electron-bridge.test.ts
 ```
 

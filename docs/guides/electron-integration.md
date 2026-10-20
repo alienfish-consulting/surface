@@ -1,11 +1,11 @@
 # Optional Electron integration
 
-`@enterprise-ui/electron-bridge` is a transport-neutral contract. It never imports Electron, opens IPC channels or grants a capability. The consuming application owns context isolation, preload exposure, channel validation, authorization and native API calls.
+`@alienfishconsulting/surface-electron-bridge` is a transport-neutral contract. It never imports Electron, opens IPC channels or grants a capability. The consuming application owns context isolation, preload exposure, channel validation, authorization and native API calls.
 
 In a browser, use the fail-closed fallback:
 
 ```ts
-import {createBrowserBridge} from '@enterprise-ui/electron-bridge';
+import {createBrowserBridge} from '@alienfishconsulting/surface-electron-bridge';
 const desktop = createBrowserBridge();
 await desktop.request({capability:'notification', action:'show'}); // unavailable result
 ```

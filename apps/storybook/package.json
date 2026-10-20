@@ -1,8 +1,8 @@
 {
-  "name": "@enterprise-ui/storybook",
-  "version": "0.0.0",
+  "name": "@alienfishconsulting/surface-storybook",
+  "version": "1.0.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "scripts": {
     "storybook": "pnpm --dir ../.. generate && storybook dev -p 6006 --no-open --disable-telemetry",
@@ -10,12 +10,12 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@enterprise-ui/react-core": "workspace:*",
-    "@enterprise-ui/react-data": "workspace:*",
-    "@enterprise-ui/react-operations": "workspace:*",
-    "@enterprise-ui/react-ai": "workspace:*",
-    "@enterprise-ui/react-designers": "workspace:*",
-    "@enterprise-ui/tokens": "workspace:*",
+    "@alienfishconsulting/surface-react-core": "workspace:*",
+    "@alienfishconsulting/surface-react-data": "workspace:*",
+    "@alienfishconsulting/surface-react-operations": "workspace:*",
+    "@alienfishconsulting/surface-react-ai": "workspace:*",
+    "@alienfishconsulting/surface-react-designers": "workspace:*",
+    "@alienfishconsulting/surface-tokens": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

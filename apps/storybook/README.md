@@ -1,18 +1,26 @@
 # Surface Storybook
 
-Private component-development application for the implemented Surface catalog.
+The private, non-publishable component explorer for the Surface package family. It collects grouped stories from the React packages and is the browser-test target for catalog coverage, interaction, accessibility, theme, density, responsive, and forced-colors checks.
 
-Stories document the implemented 198-unit v1 catalog through focused individual and grouped family scenarios. Grouped stories cover related subcomponents without pretending each internal or parent-owned unit is an independent product surface. `pnpm check:stories` verifies that every catalog unit is rendered directly, rendered through a parent, or named in the documented nonvisual exclusion ledger.
+## Run locally
 
-The toolbar exposes light, dark, high-contrast inspection, compact density, and comfortable density. Viewport controls exercise responsive layouts. High contrast is an implementation inspection mode, not WCAG or assistive-technology certification; final forced-colors, keyboard and screen-reader spot checks belong to the M9 acceptance matrix.
+From the repository root:
 
-From the repository root, the intended commands are:
-
-```sh
+```bash
 corepack pnpm storybook
+```
+
+Storybook is available at `http://localhost:6006` by default. Build the static integration artifact with:
+
+```bash
 corepack pnpm build:storybook
+```
+
+## Verification
+
+```bash
 corepack pnpm check:stories
 corepack pnpm test:e2e:storybook
 ```
 
-The run and build commands generate the local token CSS first. Story coverage and Playwright suite discovery are part of the root `check` script; the static build and browser execution remain separate integration checks.
+Stories are development and acceptance assets. They are excluded from public package tarballs.

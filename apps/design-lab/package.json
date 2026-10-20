@@ -1,10 +1,10 @@
 {
-  "name":"@enterprise-ui/design-lab", "version":"0.0.0", "private":true, "license":"UNLICENSED", "type":"module",
+  "name":"@alienfishconsulting/surface-design-lab", "version":"1.0.0", "private":true, "license":"SEE LICENSE IN LICENSE.md", "type":"module",
   "scripts":{"dev":"vite --host 0.0.0.0", "build":"vite build", "typecheck":"tsc -p tsconfig.json --noEmit"},
   "dependencies":{
     "react":"^19.0.0","react-dom":"^19.0.0",
-    "@enterprise-ui/contracts":"workspace:*", "@enterprise-ui/tokens":"workspace:*",
-    "@enterprise-ui/react-core":"workspace:*", "@enterprise-ui/react-data":"workspace:*", "@enterprise-ui/react-operations":"workspace:*", "@enterprise-ui/react-ai":"workspace:*", "@enterprise-ui/react-renderer":"workspace:*",
-    "@enterprise-ui/react-designers":"workspace:*", "@enterprise-ui/electron-bridge":"workspace:*"
+    "@alienfishconsulting/surface-contracts":"workspace:*", "@alienfishconsulting/surface-tokens":"workspace:*",
+    "@alienfishconsulting/surface-react-core":"workspace:*", "@alienfishconsulting/surface-react-data":"workspace:*", "@alienfishconsulting/surface-react-operations":"workspace:*", "@alienfishconsulting/surface-react-ai":"workspace:*", "@alienfishconsulting/surface-react-renderer":"workspace:*",
+    "@alienfishconsulting/surface-react-designers":"workspace:*", "@alienfishconsulting/surface-electron-bridge":"workspace:*"
   }
 }

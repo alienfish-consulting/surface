@@ -1,18 +1,18 @@
-# `@enterprise-ui/react-ai`
+# `@alienfishconsulting/surface-react-ai`
 
 Provider-neutral React components for conversations, messages, agents, tool activity, approvals, artifacts, prompts, model selection, token usage, and run-state inspection.
 
-This package is private and version `0.0.0`; React 19 is a peer dependency.
+This public package is proprietary and version `1.0.0`; React `^18.2.0 || ^19.0.0` is a peer dependency.
 
 ## Usage
 
 ```tsx
-import '@enterprise-ui/tokens/theme.css';
-import '@enterprise-ui/react-core/styles.css';
-import '@enterprise-ui/react-data/styles.css';
-import '@enterprise-ui/react-operations/styles.css';
-import '@enterprise-ui/react-ai/styles.css';
-import {ApprovalReview} from '@enterprise-ui/react-ai';
+import '@alienfishconsulting/surface-tokens/theme.css';
+import '@alienfishconsulting/surface-react-core/styles.css';
+import '@alienfishconsulting/surface-react-data/styles.css';
+import '@alienfishconsulting/surface-react-operations/styles.css';
+import '@alienfishconsulting/surface-react-ai/styles.css';
+import {ApprovalReview} from '@alienfishconsulting/surface-react-ai';
 
 <ApprovalReview
   title="Apply proposed change"
@@ -33,7 +33,7 @@ The package does not call model providers, execute tools, grant permissions, or 
 ## Development
 
 ```bash
-corepack pnpm --filter @enterprise-ui/react-ai typecheck
+corepack pnpm --filter @alienfishconsulting/surface-react-ai typecheck
 corepack pnpm exec vitest run tests/ai-components.test.tsx
 corepack pnpm check:stories
 corepack pnpm test:e2e:storybook

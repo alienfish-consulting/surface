@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Badge,Button,Code,EmptyState,Inline,SearchField,Stack} from '@enterprise-ui/react-core';
+import {Badge,Button,Code,EmptyState,Inline,SearchField,Stack} from '@alienfishconsulting/surface-react-core';
 
 export interface DataInspectorProps {label?:string;value:unknown;path?:string;onPathChange?:(path:string)=>void}
 export function DataInspector({label='Data inspector',value,path='',onPathChange}:DataInspectorProps){const selected=path.split('.').filter(Boolean).reduce<unknown>((current,key)=>current&&typeof current==='object'&&!Array.isArray(current)?(current as Record<string,unknown>)[key]:undefined,value);return <section aria-label={label} className="ui-inspector"><SearchField label="Property path" value={path} placeholder="customer.address.city" onValueChange={onPathChange}/><dl><dt>Type</dt><dd><Badge>{Array.isArray(selected)?'array':selected===null?'null':typeof selected}</Badge></dd><dt>Value</dt><dd><Code block>{safeJson(selected)}</Code></dd></dl></section>}

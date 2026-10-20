@@ -11,9 +11,9 @@ Do not convert ordinary application state into a design document merely to use t
 Use only the packages the application needs. Load tokens first, then each family stylesheet:
 
 ```tsx
-import '@enterprise-ui/tokens/theme.css';
-import '@enterprise-ui/react-core/styles.css';
-import '@enterprise-ui/react-data/styles.css';
+import '@alienfishconsulting/surface-tokens/theme.css';
+import '@alienfishconsulting/surface-react-core/styles.css';
+import '@alienfishconsulting/surface-react-data/styles.css';
 ```
 
 Scope the selected modes on the application root:
@@ -40,8 +40,8 @@ Avoid reaching into package internals or depending on `ui-*` DOM structure. Publ
 Validate external data before render and provide application-owned binding data and an action handler:
 
 ```tsx
-import {assertDesignDocument} from '@enterprise-ui/contracts';
-import {DesignRenderer} from '@enterprise-ui/react-renderer';
+import {assertDesignDocument} from '@alienfishconsulting/surface-contracts';
+import {DesignRenderer} from '@alienfishconsulting/surface-react-renderer';
 
 const document = assertDesignDocument(untrustedInput);
 

@@ -3,9 +3,9 @@ import * as React from 'react';
 const classes = (...values: Array<string | false | null | undefined>) => values.filter(Boolean).join(' ');
 
 export interface TextProps extends React.HTMLAttributes<HTMLElement> {as?:'span'|'p'|'div';tone?:'primary'|'secondary'|'tertiary'}
-export function Text({as='span',tone='primary',className,...rest}:TextProps){return React.createElement(as,{...rest,className:classes('ui-text',`ui-text-${tone}`,className)})}
+export function Text({as='span',tone='primary',className,...rest}:TextProps):React.ReactElement{return React.createElement(as,{...rest,className:classes('ui-text',`ui-text-${tone}`,className)})}
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {level?:1|2|3|4|5|6}
-export function Heading({level=2,className,...rest}:HeadingProps){return React.createElement(`h${level}`,{...rest,className:classes('ui-heading',className)})}
+export function Heading({level=2,className,...rest}:HeadingProps):React.ReactElement{return React.createElement(`h${level}`,{...rest,className:classes('ui-heading',className)})}
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {required?:boolean}
 export function Label({required,children,className,...rest}:LabelProps){return <label {...rest} className={classes('ui-label',className)}>{children}{required&&<span aria-hidden="true"> *</span>}</label>}
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {external?:boolean}

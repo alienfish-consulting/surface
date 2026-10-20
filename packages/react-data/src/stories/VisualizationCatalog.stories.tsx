@@ -1,6 +1,6 @@
 import type {Meta,StoryObj} from '@storybook/react-vite';
 import * as React from 'react';
-import {Stack} from '@enterprise-ui/react-core';
+import {Stack} from '@alienfishconsulting/surface-react-core';
 import {Calendar,Chart,ChartLegend,FacetedFilter,GanttChart,GanttTaskEditor,Heatmap,KpiCard,QueryBuilder,Scheduler,Sparkline,StatGroup,Timeline} from '../index.js';
 const meta={title:'Data/Visualization',component:Chart,parameters:{layout:'padded'}} satisfies Meta<typeof Chart>;export default meta;type Story=StoryObj;
 const chartData=[{x:'Jan',y:28},{x:'Feb',y:42},{x:'Mar',y:36},{x:'Apr',y:58}];

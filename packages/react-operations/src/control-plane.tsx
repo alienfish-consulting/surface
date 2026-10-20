@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Badge,Button,EmptyState,Inline,SearchField,Select,Stack,StatusIndicator} from '@enterprise-ui/react-core';
-import {FileTree,Sparkline,Timeline} from '@enterprise-ui/react-data';
-import type {FileTreeNode,TimelineItem} from '@enterprise-ui/react-data';
+import {Badge,Button,EmptyState,Inline,SearchField,Select,Stack,StatusIndicator} from '@alienfishconsulting/surface-react-core';
+import {FileTree,Sparkline,Timeline} from '@alienfishconsulting/surface-react-data';
+import type {FileTreeNode,TimelineItem} from '@alienfishconsulting/surface-react-data';
 import type {ConnectionState,StreamItem} from './stream-state.js';
 
 export interface DeploymentStageDefinition {id:string;label:string;status:'pending'|'running'|'succeeded'|'failed'|'paused';description?:string}

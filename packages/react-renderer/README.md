@@ -1,14 +1,14 @@
-# `@enterprise-ui/react-renderer`
+# `@alienfishconsulting/surface-react-renderer`
 
 The fail-closed React runtime for validated Surface design documents. It maps registered `ui.*` component types to explicit adapters and connects bindings and named action intentions to an application-owned host.
 
-This package is private and version `0.0.0`; React 19 is a peer dependency.
+This public package is proprietary and version `1.0.0`; React `^18.2.0 || ^19.0.0` is a peer dependency.
 
 ## Usage
 
 ```tsx
-import {assertDesignDocument} from '@enterprise-ui/contracts';
-import {DesignRenderer} from '@enterprise-ui/react-renderer';
+import {assertDesignDocument} from '@alienfishconsulting/surface-contracts';
+import {DesignRenderer} from '@alienfishconsulting/surface-react-renderer';
 
 const document = assertDesignDocument(input);
 
@@ -33,7 +33,7 @@ Consumers must load token CSS followed by the stylesheets for every component fa
 ## Development
 
 ```bash
-corepack pnpm --filter @enterprise-ui/react-renderer typecheck
+corepack pnpm --filter @alienfishconsulting/surface-react-renderer typecheck
 corepack pnpm exec vitest run tests/renderer.test.tsx tests/contracts.test.ts
 corepack pnpm check:generated
 corepack pnpm validate

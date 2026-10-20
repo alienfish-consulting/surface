@@ -20,9 +20,9 @@ These instructions are vendor agnostic. They apply to any coding agent working i
 - Preserve accessible names, keyboard operation, focus behavior, semantic structure, responsive behavior, theme, density, authored high contrast, and forced-colors support.
 - Import token CSS before family CSS. Reuse semantic tokens and existing `ui-*` conventions instead of introducing a parallel styling system.
 - Do not expose scaffolds, incomplete components, or generated drafts as production exports. Do not hand-edit generated files.
-- Preserve the proprietary licensing boundary. Keep packages private and marked `UNLICENSED`; do not copy, publish, sublicense, relicense, or add third-party material with incompatible terms without explicit written authorization.
+- Preserve the proprietary licensing boundary. Public visibility and public npm distribution do not grant open-source rights. Publishable packages use `SEE LICENSE IN LICENSE.md`; the workspace and applications remain private. Do not copy, sublicense, relicense, or add third-party material with incompatible terms without explicit written authorization.
 - Keep public APIs compatible unless the task explicitly authorizes a breaking change. Add or update tests and stories with behavior changes.
-- Do not publish, push, create remotes or cloud resources, choose a license/package identity, or perform destructive Git operations unless explicitly requested.
+- The authorized package identity is `@alienfishconsulting/surface-*` with coordinated versions and React `^18.2.0 || ^19.0.0` peers. Do not publish, push, create tags/releases, create remotes or cloud resources, change that identity/license, or perform destructive Git operations unless explicitly requested.
 
 ## Repository mechanics
 

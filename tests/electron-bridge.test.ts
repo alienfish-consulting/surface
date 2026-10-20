@@ -1,5 +1,5 @@
 import {describe,expect,test,vi} from 'vitest';
-import {createBrowserBridge,createDesktopBridge,createRendererHost,isDesktopRequest} from '@enterprise-ui/electron-bridge';
+import {createBrowserBridge,createDesktopBridge,createRendererHost,isDesktopRequest} from '@alienfishconsulting/surface-electron-bridge';
 
 describe('optional desktop bridge',()=>{
   test('browser fallback fails closed without importing Electron',async()=>{

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type {Meta,StoryObj} from '@storybook/react-vite';
-import {Stack} from '@enterprise-ui/react-core';
+import {Stack} from '@alienfishconsulting/surface-react-core';
 import {
   AlertList,DeploymentTimeline,EventFilterBar,EventStream,IncidentSummary,IncidentTimeline,
   MetricTrendPanel,ResourceTree,RunbookPanel,StatusPagePanel,

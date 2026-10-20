@@ -14,6 +14,9 @@ const output=(file,content)=>{
   mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,content);
   console.log('generated:',file);
 };
+const publishablePackages=['tokens','contracts','react-core','react-data','react-operations','react-ai','react-designers','react-renderer','electron-bridge'];
+const license=readFileSync(resolve(root,'LICENSE.md'),'utf8');
+for(const packageName of publishablePackages)output(`packages/${packageName}/LICENSE.md`,license);
 const previousRegistry=read('packages/contracts/fixtures/component-registry.json');
 const coreContracts=read('packages/contracts/source/core-component-contracts.json');
 const dataContracts=read('packages/contracts/source/data-component-contracts.json');

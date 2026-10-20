@@ -1,11 +1,16 @@
 {
-  "name": "@enterprise-ui/contracts",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "name": "@alienfishconsulting/surface-contracts",
+  "version": "1.0.0",
+  "description": "Versioned schemas, registry, validation, bindings, intentions, and guarded proposals for AlienFish Surface.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
-  "sideEffects": [
-    "./dist/*.css"
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "schemas",
+    "fixtures/component-registry*.json",
+    "README.md",
+    "LICENSE.md"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,10 +18,18 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./schemas/*": "./schemas/*",
+    "./registries/*": "./fixtures/*"
   },
+  "repository": {"type":"git","url":"git+https://github.com/alienfish-consulting/surface.git","directory":"packages/contracts"},
+  "homepage": "https://github.com/alienfish-consulting/surface#readme",
+  "bugs": {"url":"https://github.com/alienfish-consulting/surface/issues"},
+  "keywords": ["surface", "design-system", "json-schema", "react"],
+  "engines": {"node": ">=20"},
+  "publishConfig": {"access":"public","registry":"https://registry.npmjs.org/"},
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node ../../tools/clean-package-dist.mjs contracts && tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {

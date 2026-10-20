@@ -1,0 +1,116 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify and pack
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: corepack pnpm install --frozen-lockfile
+
+      - name: Check coordinated version
+        run: |
+          if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+            node tools/check-release-version.mjs "$GITHUB_REF_NAME"
+          else
+            node tools/check-release-version.mjs
+          fi
+
+      - name: Run repository checks
+        run: corepack pnpm check
+
+      - name: Build Storybook
+        run: corepack pnpm build:storybook
+
+      - name: Install Playwright browsers
+        run: corepack pnpm exec playwright install --with-deps chromium firefox webkit
+
+      - name: Run browser suites
+        run: corepack pnpm test:e2e
+
+      - name: Pack public packages
+        run: corepack pnpm release:pack
+
+      - name: Verify React 18 consumer
+        run: corepack pnpm test:react-compat 18.2.0
+
+      - name: Verify React 19 consumer
+        run: corepack pnpm test:react-compat 19.0.0
+
+      - name: Create release evidence
+        run: |
+          sha256sum .release/*.tgz > .release/SHA256SUMS.txt
+          corepack pnpm licenses list --prod --json > .release/dependency-licenses.json
+
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: surface-${{ github.ref_name }}
+          path: .release/
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    name: Publish and create GitHub release
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: npm-production
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Download release artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: surface-${{ github.ref_name }}
+          path: .release
+
+      - name: Publish packages with provenance
+        run: |
+          for package in tokens contracts react-core react-data react-operations react-ai react-designers react-renderer electron-bridge; do
+            npm publish ".release/alienfishconsulting-surface-${package}-${GITHUB_REF_NAME#v}.tgz" --access public --provenance
+          done
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" .release/* --verify-tag --generate-notes --title "Surface ${GITHUB_REF_NAME#v}"

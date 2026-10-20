@@ -1,6 +1,6 @@
 # Building Electron applications
 
-An Electron renderer is a web application with an additional trust boundary. Follow [`web-applications.md`](web-applications.md) for UI composition, then add desktop capabilities through `@enterprise-ui/electron-bridge`.
+An Electron renderer is a web application with an additional trust boundary. Follow [`web-applications.md`](web-applications.md) for UI composition, then add desktop capabilities through `@alienfishconsulting/surface-electron-bridge`.
 
 ## Required process boundary
 
@@ -25,7 +25,7 @@ import {
   createBrowserBridge,
   createDesktopBridge,
   type DesktopBridge,
-} from '@enterprise-ui/electron-bridge';
+} from '@alienfishconsulting/surface-electron-bridge';
 
 export const desktop: DesktopBridge = window.applicationDesktop
   ? createDesktopBridge({

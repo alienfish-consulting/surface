@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type {DesignNode,Host,HostActionRequest,SerializableComponentType,SerializablePropsByComponent} from '@enterprise-ui/contracts';
-import * as Core from '@enterprise-ui/react-core';
+import type {DesignNode,Host,HostActionRequest,SerializableComponentType,SerializablePropsByComponent} from '@alienfishconsulting/surface-contracts';
+import * as Core from '@alienfishconsulting/surface-react-core';
 
 export type {Host,HostActionRequest};
 type Props=Record<string,unknown>;

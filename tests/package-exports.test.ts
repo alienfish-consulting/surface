@@ -1,4 +1,4 @@
-import {readFileSync} from 'node:fs';
+import {existsSync,readFileSync,readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {describe,expect,test} from 'vitest';
 
@@ -13,6 +13,10 @@ describe('package exports',()=>{
     expect(manifest.exports['.']).toBeTruthy();
     expect(manifest.main).toBe('./dist/index.js');
     expect(manifest.types).toBe('./dist/index.d.ts');
+    expect(existsSync(resolve(directory,'dist/index.js'))).toBe(true);
+    expect(existsSync(resolve(directory,'dist/index.d.ts'))).toBe(true);
+    expect(existsSync(resolve(directory,'LICENSE.md'))).toBe(true);
+    expect(readdirSync(resolve(directory,'dist'),{recursive:true}).map(String).some(path=>path.includes('stories/'))).toBe(false);
   });
 
   test('browser package manifests do not depend on Electron',()=>{

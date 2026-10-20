@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type {Meta,StoryObj} from '@storybook/react-vite';
-import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
-import {Stack,Surface} from '@enterprise-ui/react-core';
+import type {DesignDocument,Proposal} from '@alienfishconsulting/surface-contracts';
+import {Stack,Surface} from '@alienfishconsulting/surface-react-core';
 import {
   BindingEditor,DashboardDesigner,DashboardGrid,FormDesigner,FormFieldPalette,LayersPanel,
   PropertyInspector,QueryDesigner,ResizeHandles,SchemaDesigner,SchemaInspector,SelectionOutline,

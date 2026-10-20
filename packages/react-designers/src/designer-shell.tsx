@@ -1,7 +1,7 @@
 import * as React from 'react';
-import type {Binding,DesignDocument,DesignNode} from '@enterprise-ui/contracts';
-import {implementedComponentTypes,registry} from '@enterprise-ui/contracts';
-import {Badge,Button,ButtonGroup,EmptyState,Inline,Select,Stack,TextField,TreeView} from '@enterprise-ui/react-core';
+import type {Binding,DesignDocument,DesignNode} from '@alienfishconsulting/surface-contracts';
+import {implementedComponentTypes,registry} from '@alienfishconsulting/surface-contracts';
+import {Badge,Button,ButtonGroup,EmptyState,Inline,Select,Stack,TextField,TreeView} from '@alienfishconsulting/surface-react-core';
 export function DesignerShell({label='Visual designer',palette,canvas,inspector,toolbar}:{label?:string;palette?:React.ReactNode;canvas:React.ReactNode;inspector?:React.ReactNode;toolbar?:React.ReactNode}){return <section aria-label={label} className="ui-designer-shell">{toolbar&&<header>{toolbar}</header>}<aside>{palette}</aside><main>{canvas}</main><aside>{inspector}</aside></section>}
 export function ComponentPalette({label='Components',types=implementedComponentTypes,onInsert}:{label?:string;types?:readonly string[];onInsert?:(type:string)=>void}){return <section aria-label={label}><h2>{label}</h2><ul className="ui-component-palette">{types.map(type=><li key={type}><button type="button" onClick={()=>onInsert?.(type)}>{type.slice(3)}</button></li>)}</ul></section>}
 export function DesignCanvas({document,preview,selectedId,onSelect}:{document:DesignDocument;preview?:React.ReactNode;selectedId?:string;onSelect?:(id:string)=>void}){const wrap=(node:DesignNode):React.ReactNode=><div key={node.id} className="ui-canvas-node" data-selected={node.id===selectedId||undefined}><button type="button" className="ui-canvas-select" onClick={()=>onSelect?.(node.id)}>Select {node.id}</button>{node.children?.map(wrap)}</div>;return <section aria-label="Design canvas" className="ui-design-canvas">{preview}<div className="ui-canvas-outline">{wrap(document.root)}</div></section>}

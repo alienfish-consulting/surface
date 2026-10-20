@@ -6,7 +6,7 @@ Choose checks by risk. Start focused for fast feedback; broaden when a change cr
 
 ```bash
 # One package typecheck
-corepack pnpm --filter @enterprise-ui/react-core typecheck
+corepack pnpm --filter @alienfishconsulting/surface-react-core typecheck
 
 # One or more Vitest files
 corepack pnpm exec vitest run tests/contracts.test.ts tests/renderer.test.tsx

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {expect,test} from 'vitest';
-import {ActivityFeed,ApprovalCard,InfrastructureTopology,reduceStream} from '@enterprise-ui/react-operations';
+import {ActivityFeed,ApprovalCard,InfrastructureTopology,reduceStream} from '@alienfishconsulting/surface-react-operations';
 
 test('stream reducer orders bursts, deduplicates retransmission, and preserves orthogonal connection state',()=>{
  const initial={connection:'loading' as const,items:[],lastSequence:0};

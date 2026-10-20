@@ -1,12 +1,13 @@
 {
-  "name": "@enterprise-ui/react-designers",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "name": "@alienfishconsulting/surface-react-designers",
+  "version": "1.0.0",
+  "description": "Shared-contract form, dashboard, workflow, query, and schema designers for AlienFish Surface.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "sideEffects": [
     "./dist/*.css"
   ],
+  "files": ["dist", "README.md", "LICENSE.md"],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -16,19 +17,25 @@
     },
     "./styles.css": "./dist/styles.css"
   },
+  "repository": {"type":"git","url":"git+https://github.com/alienfish-consulting/surface.git","directory":"packages/react-designers"},
+  "homepage": "https://github.com/alienfish-consulting/surface#readme",
+  "bugs": {"url":"https://github.com/alienfish-consulting/surface/issues"},
+  "keywords": ["surface", "react", "designer", "schema", "design-system"],
+  "engines": {"node": ">=20"},
+  "publishConfig": {"access":"public","registry":"https://registry.npmjs.org/"},
   "scripts": {
-    "build": "tsc -p tsconfig.json && node ../../tools/copy-package-css.mjs react-designers",
+    "build": "node ../../tools/clean-package-dist.mjs react-designers && tsc -p tsconfig.json && node ../../tools/copy-package-css.mjs react-designers",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@enterprise-ui/contracts": "workspace:*",
-    "@enterprise-ui/react-core": "workspace:*",
-    "@enterprise-ui/react-data": "workspace:*"
+    "@alienfishconsulting/surface-contracts": "workspace:*",
+    "@alienfishconsulting/surface-react-core": "workspace:*",
+    "@alienfishconsulting/surface-react-data": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "10.6.2"
   },
   "peerDependencies": {
-    "react": "^19.0.0"
+    "react": "^18.2.0 || ^19.0.0"
   }
 }

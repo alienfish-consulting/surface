@@ -1,0 +1,25 @@
+{
+  "proposalId": "proposal-041",
+  "documentId": "customer-operations",
+  "schemaVersion": "1.0.0",
+  "registryVersion": "1.0.0",
+  "baseRevision": 7,
+  "rationale": "Make the customer grid non-selectable while retaining row activation and semantic row identity.",
+  "operations": [
+    {
+      "op": "test",
+      "path": "/revision",
+      "value": 7
+    },
+    {
+      "op": "test",
+      "path": "/root/children/0/children/1/id",
+      "value": "customer-grid"
+    },
+    {
+      "op": "replace",
+      "path": "/root/children/0/children/1/props/selectable",
+      "value": false
+    }
+  ]
+}

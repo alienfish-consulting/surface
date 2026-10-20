@@ -1,7 +1,7 @@
 import * as React from 'react';
-import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
-import {registry} from '@enterprise-ui/contracts';
-import {Button,TextField} from '@enterprise-ui/react-core';
+import type {DesignDocument,Proposal} from '@alienfishconsulting/surface-contracts';
+import {registry} from '@alienfishconsulting/surface-contracts';
+import {Button,TextField} from '@alienfishconsulting/surface-react-core';
 import {flattenNodes} from './designer-helpers.js';
 export function PropertyInspector({document, onPropose}:{document:DesignDocument;onPropose:(proposal:Proposal)=>void}){
  const nodes=flattenNodes(document.root);

@@ -1,12 +1,11 @@
 {
-  "name": "@enterprise-ui/react-renderer",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
+  "name": "@alienfishconsulting/surface-react-renderer",
+  "version": "1.0.0",
+  "description": "Explicit adapters that render validated AlienFish Surface design documents with React.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
-  "sideEffects": [
-    "./dist/*.css"
-  ],
+  "sideEffects": false,
+  "files": ["dist", "README.md", "LICENSE.md"],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -15,19 +14,25 @@
       "import": "./dist/index.js"
     }
   },
+  "repository": {"type":"git","url":"git+https://github.com/alienfish-consulting/surface.git","directory":"packages/react-renderer"},
+  "homepage": "https://github.com/alienfish-consulting/surface#readme",
+  "bugs": {"url":"https://github.com/alienfish-consulting/surface/issues"},
+  "keywords": ["surface", "react", "renderer", "json-schema", "design-system"],
+  "engines": {"node": ">=20"},
+  "publishConfig": {"access":"public","registry":"https://registry.npmjs.org/"},
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node ../../tools/clean-package-dist.mjs react-renderer && tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@enterprise-ui/contracts": "workspace:*",
-    "@enterprise-ui/react-core": "workspace:*",
-    "@enterprise-ui/react-data": "workspace:*",
-    "@enterprise-ui/react-operations": "workspace:*",
-    "@enterprise-ui/react-ai": "workspace:*",
-    "@enterprise-ui/react-designers": "workspace:*"
+    "@alienfishconsulting/surface-contracts": "workspace:*",
+    "@alienfishconsulting/surface-react-core": "workspace:*",
+    "@alienfishconsulting/surface-react-data": "workspace:*",
+    "@alienfishconsulting/surface-react-operations": "workspace:*",
+    "@alienfishconsulting/surface-react-ai": "workspace:*",
+    "@alienfishconsulting/surface-react-designers": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^19.0.0"
+    "react": "^18.2.0 || ^19.0.0"
   }
 }

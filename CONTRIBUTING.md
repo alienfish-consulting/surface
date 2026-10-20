@@ -1,9 +1,9 @@
 # Contributing to Surface
 
-Surface is currently proprietary, private, and unpublished. Contributions are
-accepted only from people who are authorized to access and work on the
-repository. Read [`LICENSE.md`](LICENSE.md) before using or contributing to the
-project.
+Surface is proprietary even though its source and npm packages are publicly
+available. Contributions are accepted only under the terms below. Public
+visibility does not grant permission to use, modify, or redistribute the
+project. Read [`LICENSE.md`](LICENSE.md) before using or contributing.
 
 ## Before starting
 

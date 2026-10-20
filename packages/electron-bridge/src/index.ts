@@ -1,4 +1,4 @@
-import type {Host,HostActionRequest} from '@enterprise-ui/contracts';
+import type {Host,HostActionRequest} from '@alienfishconsulting/surface-contracts';
 
 export type DesktopCapability='menu'|'file-dialog'|'notification'|'shortcut'|'window';
 export type DesktopRequest={capability:DesktopCapability;action:string;payload?:unknown};

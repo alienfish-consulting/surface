@@ -53,31 +53,31 @@ importers:
 
   apps/design-lab:
     dependencies:
-      '@enterprise-ui/contracts':
+      '@alienfishconsulting/surface-contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
-      '@enterprise-ui/electron-bridge':
+      '@alienfishconsulting/surface-electron-bridge':
         specifier: workspace:*
         version: link:../../packages/electron-bridge
-      '@enterprise-ui/react-ai':
+      '@alienfishconsulting/surface-react-ai':
         specifier: workspace:*
         version: link:../../packages/react-ai
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../../packages/react-core
-      '@enterprise-ui/react-data':
+      '@alienfishconsulting/surface-react-data':
         specifier: workspace:*
         version: link:../../packages/react-data
-      '@enterprise-ui/react-designers':
+      '@alienfishconsulting/surface-react-designers':
         specifier: workspace:*
         version: link:../../packages/react-designers
-      '@enterprise-ui/react-operations':
+      '@alienfishconsulting/surface-react-operations':
         specifier: workspace:*
         version: link:../../packages/react-operations
-      '@enterprise-ui/react-renderer':
+      '@alienfishconsulting/surface-react-renderer':
         specifier: workspace:*
         version: link:../../packages/react-renderer
-      '@enterprise-ui/tokens':
+      '@alienfishconsulting/surface-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -89,22 +89,22 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@enterprise-ui/react-ai':
+      '@alienfishconsulting/surface-react-ai':
         specifier: workspace:*
         version: link:../../packages/react-ai
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../../packages/react-core
-      '@enterprise-ui/react-data':
+      '@alienfishconsulting/surface-react-data':
         specifier: workspace:*
         version: link:../../packages/react-data
-      '@enterprise-ui/react-designers':
+      '@alienfishconsulting/surface-react-designers':
         specifier: workspace:*
         version: link:../../packages/react-designers
-      '@enterprise-ui/react-operations':
+      '@alienfishconsulting/surface-react-operations':
         specifier: workspace:*
         version: link:../../packages/react-operations
-      '@enterprise-ui/tokens':
+      '@alienfishconsulting/surface-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -135,26 +135,26 @@ importers:
 
   packages/electron-bridge:
     dependencies:
-      '@enterprise-ui/contracts':
+      '@alienfishconsulting/surface-contracts':
         specifier: workspace:*
         version: link:../contracts
 
   packages/react-ai:
     dependencies:
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../react-core
-      '@enterprise-ui/react-data':
+      '@alienfishconsulting/surface-react-data':
         specifier: workspace:*
         version: link:../react-data
-      '@enterprise-ui/react-operations':
+      '@alienfishconsulting/surface-react-operations':
         specifier: workspace:*
         version: link:../react-operations
-      '@enterprise-ui/tokens':
+      '@alienfishconsulting/surface-tokens':
         specifier: workspace:*
         version: link:../tokens
       react:
-        specifier: ^19.0.0
+        specifier: ^18.2.0 || ^19.0.0
         version: 19.3.1
     devDependencies:
       '@storybook/react-vite':
@@ -163,11 +163,11 @@ importers:
 
   packages/react-core:
     dependencies:
-      '@enterprise-ui/tokens':
+      '@alienfishconsulting/surface-tokens':
         specifier: workspace:*
         version: link:../tokens
       react:
-        specifier: ^19.0.0
+        specifier: ^18.2.0 || ^19.0.0
         version: 19.3.1
     devDependencies:
       '@storybook/react-vite':
@@ -176,14 +176,14 @@ importers:
 
   packages/react-data:
     dependencies:
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../react-core
-      '@enterprise-ui/tokens':
+      '@alienfishconsulting/surface-tokens':
         specifier: workspace:*
         version: link:../tokens
       react:
-        specifier: ^19.0.0
+        specifier: ^18.2.0 || ^19.0.0
         version: 19.3.1
     devDependencies:
       '@storybook/react-vite':
@@ -192,17 +192,17 @@ importers:
 
   packages/react-designers:
     dependencies:
-      '@enterprise-ui/contracts':
+      '@alienfishconsulting/surface-contracts':
         specifier: workspace:*
         version: link:../contracts
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../react-core
-      '@enterprise-ui/react-data':
+      '@alienfishconsulting/surface-react-data':
         specifier: workspace:*
         version: link:../react-data
       react:
-        specifier: ^19.0.0
+        specifier: ^18.2.0 || ^19.0.0
         version: 19.3.1
     devDependencies:
       '@storybook/react-vite':
@@ -211,17 +211,17 @@ importers:
 
   packages/react-operations:
     dependencies:
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../react-core
-      '@enterprise-ui/react-data':
+      '@alienfishconsulting/surface-react-data':
         specifier: workspace:*
         version: link:../react-data
-      '@enterprise-ui/tokens':
+      '@alienfishconsulting/surface-tokens':
         specifier: workspace:*
         version: link:../tokens
       react:
-        specifier: ^19.0.0
+        specifier: ^18.2.0 || ^19.0.0
         version: 19.3.1
     devDependencies:
       '@storybook/react-vite':
@@ -230,26 +230,26 @@ importers:
 
   packages/react-renderer:
     dependencies:
-      '@enterprise-ui/contracts':
+      '@alienfishconsulting/surface-contracts':
         specifier: workspace:*
         version: link:../contracts
-      '@enterprise-ui/react-ai':
+      '@alienfishconsulting/surface-react-ai':
         specifier: workspace:*
         version: link:../react-ai
-      '@enterprise-ui/react-core':
+      '@alienfishconsulting/surface-react-core':
         specifier: workspace:*
         version: link:../react-core
-      '@enterprise-ui/react-data':
+      '@alienfishconsulting/surface-react-data':
         specifier: workspace:*
         version: link:../react-data
-      '@enterprise-ui/react-designers':
+      '@alienfishconsulting/surface-react-designers':
         specifier: workspace:*
         version: link:../react-designers
-      '@enterprise-ui/react-operations':
+      '@alienfishconsulting/surface-react-operations':
         specifier: workspace:*
         version: link:../react-operations
       react:
-        specifier: ^19.0.0
+        specifier: ^18.2.0 || ^19.0.0
         version: 19.3.1
 
   packages/tokens: {}

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {test,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {assertDesignDocument,registryVersion} from '@enterprise-ui/contracts';
-import type {DesignDocument} from '@enterprise-ui/contracts';
-import {DesignRenderer,defaultAdapters} from '@enterprise-ui/react-renderer';
-import {Button,ButtonGroup,VirtualList} from '@enterprise-ui/react-core';
+import {assertDesignDocument,registryVersion} from '@alienfishconsulting/surface-contracts';
+import type {DesignDocument} from '@alienfishconsulting/surface-contracts';
+import {DesignRenderer,defaultAdapters} from '@alienfishconsulting/surface-react-renderer';
+import {Button,ButtonGroup,VirtualList} from '@alienfishconsulting/surface-react-core';
 import fixture from '../packages/contracts/fixtures/vertical-slice.design.json';
 test('renders same versioned fixture from registry',()=>{
  const html=renderToStaticMarkup(<DesignRenderer doc={assertDesignDocument(fixture)} host={{data:{metrics:{activeCustomers:1240,revenue:90000},form:{query:''}},requestAction:()=>{}}}/>);

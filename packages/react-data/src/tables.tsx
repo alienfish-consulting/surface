@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button,Checkbox,EmptyState,Inline,SearchField,Select,Stack} from '@enterprise-ui/react-core';
+import {Button,Checkbox,EmptyState,Inline,SearchField,Select,Stack} from '@alienfishconsulting/surface-react-core';
 
 const classes=(...values:Array<string|false|null|undefined>)=>values.filter(Boolean).join(' ');
 export type DataRecord=Record<string,unknown>;

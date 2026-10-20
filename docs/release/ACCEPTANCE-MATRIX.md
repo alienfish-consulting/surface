@@ -20,7 +20,7 @@ This is the release-readiness ledger, not publication authorization.
 | Schema drift | generated artifact and catalog checks | ready |
 | Dependency licenses | production: MIT and BSD-3-Clause; full development tree enumerated by pnpm | reviewed |
 | Manual screen reader | documented spot-check plan; not represented as automated certification | manual release step |
-| Separate-repository install | retained as manual release policy after final package identity/version decisions | manual release step |
+| Separate-repository install | optional production browser/Electron integration check after local tarball and React 18/19 consumer verification | manual release step |
 
 ## Story and contract ownership
 

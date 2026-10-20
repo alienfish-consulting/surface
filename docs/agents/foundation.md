@@ -10,15 +10,15 @@ The central rule is: **one versioned serialized design contract, multiple author
 
 | Package | Responsibility |
 | --- | --- |
-| `@enterprise-ui/tokens` | Semantic theme, density, contrast, and layout tokens |
-| `@enterprise-ui/contracts` | Schemas, registry, validation, bindings, named intentions, and guarded proposals |
-| `@enterprise-ui/react-core` | Foundational layout, display, form, and overlay components |
-| `@enterprise-ui/react-data` | Tables, grids, visualizations, schedules, and inspectors |
-| `@enterprise-ui/react-operations` | Workflow, deployment, event, topology, and incident interfaces |
-| `@enterprise-ui/react-ai` | Conversation, agent, tool, approval, artifact, and run-state interfaces |
-| `@enterprise-ui/react-designers` | Shared-schema designer shells and specialist editors |
-| `@enterprise-ui/react-renderer` | Explicit adapters from validated documents to React |
-| `@enterprise-ui/electron-bridge` | Transport-neutral, allowlisted desktop request boundary and browser fallback |
+| `@alienfishconsulting/surface-tokens` | Semantic theme, density, contrast, and layout tokens |
+| `@alienfishconsulting/surface-contracts` | Schemas, registry, validation, bindings, named intentions, and guarded proposals |
+| `@alienfishconsulting/surface-react-core` | Foundational layout, display, form, and overlay components |
+| `@alienfishconsulting/surface-react-data` | Tables, grids, visualizations, schedules, and inspectors |
+| `@alienfishconsulting/surface-react-operations` | Workflow, deployment, event, topology, and incident interfaces |
+| `@alienfishconsulting/surface-react-ai` | Conversation, agent, tool, approval, artifact, and run-state interfaces |
+| `@alienfishconsulting/surface-react-designers` | Shared-schema designer shells and specialist editors |
+| `@alienfishconsulting/surface-react-renderer` | Explicit adapters from validated documents to React |
+| `@alienfishconsulting/surface-electron-bridge` | Transport-neutral, allowlisted desktop request boundary and browser fallback |
 
 `apps/design-lab` is the integrated development consumer. `apps/storybook` discovers the package stories.
 

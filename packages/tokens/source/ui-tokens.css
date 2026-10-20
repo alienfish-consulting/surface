@@ -1,6 +1,6 @@
 /* PROVISIONAL SPECIMEN CSS: generated snapshot of Foundations v0.1.
  * Design-token JSON is the authoring source; CSS variables are the runtime contract.
- * This is not yet a published React component library.
+ * Surface tokens are framework-neutral and distributed separately from React components.
  */
 @layer ui.tokens, ui.components, ui.utilities;
 

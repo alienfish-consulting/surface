@@ -87,8 +87,11 @@ when they are more specific and do not conflict with the rules below.
   browser, Electron, and lock-in costs before adding one.
 - Treat exported symbols, prop behavior, CSS entry points, schema shapes,
   registry IDs, serialized intentions, and error behavior as public contracts.
-- Keep packages private and marked `UNLICENSED` until a separately authorized
-  publication and commercial licensing decision is made.
+- Keep public package metadata aligned with the proprietary license: coordinated
+  versions, `SEE LICENSE IN LICENSE.md`, explicit `files`, and public npm access.
+  The root workspace and applications remain private and are never published.
+- React library packages support both React 18.2 and React 19 through the
+  `^18.2.0 || ^19.0.0` peer range. Do not bundle React or React DOM.
 
 ## Generated files and scaffolds
 

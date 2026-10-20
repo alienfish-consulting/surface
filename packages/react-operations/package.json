@@ -1,8 +1,11 @@
 {
-  "name":"@enterprise-ui/react-operations","version":"0.0.0","private":true,"license":"UNLICENSED","type":"module",
+  "name":"@alienfishconsulting/surface-react-operations","version":"1.0.0","description":"Workflow, deployment, event, topology, service-health, and incident components for AlienFish Surface.","license":"SEE LICENSE IN LICENSE.md","type":"module",
   "sideEffects":["./dist/*.css"],"main":"./dist/index.js","types":"./dist/index.d.ts",
+  "files":["dist","README.md","LICENSE.md"],
   "exports":{".":{"types":"./dist/index.d.ts","import":"./dist/index.js"},"./styles.css":"./dist/styles.css"},
-  "scripts":{"build":"tsc -p tsconfig.json && node ../../tools/copy-package-css.mjs react-operations","typecheck":"tsc -p tsconfig.json --noEmit"},
-  "dependencies":{"@enterprise-ui/react-core":"workspace:*","@enterprise-ui/react-data":"workspace:*","@enterprise-ui/tokens":"workspace:*"},
-  "devDependencies":{"@storybook/react-vite":"10.6.2"},"peerDependencies":{"react":"^19.0.0"}
+  "repository":{"type":"git","url":"git+https://github.com/alienfish-consulting/surface.git","directory":"packages/react-operations"},"homepage":"https://github.com/alienfish-consulting/surface#readme","bugs":{"url":"https://github.com/alienfish-consulting/surface/issues"},
+  "keywords":["surface","react","operations","workflow","design-system"],"engines":{"node":">=20"},"publishConfig":{"access":"public","registry":"https://registry.npmjs.org/"},
+  "scripts":{"build":"node ../../tools/clean-package-dist.mjs react-operations && tsc -p tsconfig.json && node ../../tools/copy-package-css.mjs react-operations","typecheck":"tsc -p tsconfig.json --noEmit"},
+  "dependencies":{"@alienfishconsulting/surface-react-core":"workspace:*","@alienfishconsulting/surface-react-data":"workspace:*","@alienfishconsulting/surface-tokens":"workspace:*"},
+  "devDependencies":{"@storybook/react-vite":"10.6.2"},"peerDependencies":{"react":"^18.2.0 || ^19.0.0"}
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type {DesignNode,SerializableComponentType,SerializablePropsByComponent} from '@enterprise-ui/contracts';
-import * as Data from '@enterprise-ui/react-data';
+import type {DesignNode,SerializableComponentType,SerializablePropsByComponent} from '@alienfishconsulting/surface-contracts';
+import * as Data from '@alienfishconsulting/surface-react-data';
 import type {Adapter,Host} from './core-adapters.js';
 
 type Props=Record<string,unknown>;

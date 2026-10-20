@@ -1,5 +1,5 @@
 import type {Meta,StoryObj} from '@storybook/react-vite';
-import {Stack} from '@enterprise-ui/react-core';
+import {Stack} from '@alienfishconsulting/surface-react-core';
 import {CodeViewer,DataInspector,DiffViewer,FileTree,JsonViewer} from '../index.js';
 const meta={title:'Data/Inspectors',component:DataInspector,parameters:{layout:'padded'}} satisfies Meta<typeof DataInspector>;export default meta;type Story=StoryObj;
 const value={customer:{id:'cust-42',name:'Aperture Labs',status:'active'},totals:[12,18,24]};

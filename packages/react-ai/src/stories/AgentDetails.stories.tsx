@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type {Meta,StoryObj} from '@storybook/react-vite';
-import {Stack} from '@enterprise-ui/react-core';
+import {Stack} from '@alienfishconsulting/surface-react-core';
 import {
   AgentActivityFeed,AgentTaskCard,ApprovalRequest,ArtifactViewer,ContextInspector,MultiAgentTimeline,
   PromptTemplateEditor,PromptVersionDiff,ReasoningSummaryPanel,RunStepTimeline,ToolExecutionTimeline,

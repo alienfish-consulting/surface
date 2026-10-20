@@ -1,15 +1,15 @@
-# `@enterprise-ui/react-core`
+# `@alienfishconsulting/surface-react-core`
 
 Foundational React components for application layout, display, forms, navigation, feedback, and overlays. Specialized component families build on this package.
 
-This package is private and version `0.0.0`; React 19 is a peer dependency.
+This public package is proprietary and version `1.0.0`; React `^18.2.0 || ^19.0.0` is a peer dependency.
 
 ## Usage
 
 ```tsx
-import '@enterprise-ui/tokens/theme.css';
-import '@enterprise-ui/react-core/styles.css';
-import {Button, Panel, Stack, TextField} from '@enterprise-ui/react-core';
+import '@alienfishconsulting/surface-tokens/theme.css';
+import '@alienfishconsulting/surface-react-core/styles.css';
+import {Button, Panel, Stack, TextField} from '@alienfishconsulting/surface-react-core';
 
 export function AccountPanel() {
   return (
@@ -37,7 +37,7 @@ Browse the grouped core stories in `src/stories/` for supported states and compo
 ## Development
 
 ```bash
-corepack pnpm --filter @enterprise-ui/react-core typecheck
+corepack pnpm --filter @alienfishconsulting/surface-react-core typecheck
 corepack pnpm exec vitest run tests/renderer.test.tsx
 corepack pnpm check:stories
 corepack pnpm test:e2e:storybook

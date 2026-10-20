@@ -1,7 +1,7 @@
 import * as React from 'react';
-import type {DesignDocument,Proposal} from '@enterprise-ui/contracts';
-import {Badge,Button,EmptyState,Inline,Select,Stack,StatusIndicator} from '@enterprise-ui/react-core';
-import {DiffViewer,JsonViewer} from '@enterprise-ui/react-data';
+import type {DesignDocument,Proposal} from '@alienfishconsulting/surface-contracts';
+import {Badge,Button,EmptyState,Inline,Select,Stack,StatusIndicator} from '@alienfishconsulting/surface-react-core';
+import {DiffViewer,JsonViewer} from '@alienfishconsulting/surface-react-data';
 export function FormDesigner({children}:{children:React.ReactNode}){return <section aria-label="Form designer" className="ui-specialist-designer">{children}</section>}
 export function FormFieldPalette({fields,onInsert}:{fields:readonly string[];onInsert?:(field:string)=>void}){return <Palette label="Form fields" items={fields} onInsert={onInsert}/>}
 export function DashboardDesigner({children}:{children:React.ReactNode}){return <section aria-label="Dashboard designer" className="ui-specialist-designer">{children}</section>}

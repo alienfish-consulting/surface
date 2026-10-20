@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type {DesignNode,SerializableComponentType,SerializablePropsByComponent} from '@enterprise-ui/contracts';
-import * as Ops from '@enterprise-ui/react-operations';
+import type {DesignNode,SerializableComponentType,SerializablePropsByComponent} from '@alienfishconsulting/surface-contracts';
+import * as Ops from '@alienfishconsulting/surface-react-operations';
 import type {Adapter,Host} from './core-adapters.js';
 type Props=Record<string,unknown>;
 const adapt=<K extends SerializableComponentType>(type:K,render:(props:SerializablePropsByComponent[K]&Props,children:React.ReactNode,node:DesignNode,host:Host)=>React.ReactNode):[string,Adapter]=>[type,render as unknown as Adapter];

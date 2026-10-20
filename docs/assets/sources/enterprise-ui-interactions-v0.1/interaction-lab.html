@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-ui-theme="light" data-ui-density="comfortable">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enterprise UI · Interaction Lab v0.1</title>
+<style>
+/* Frozen snapshot from Foundations v0.1; for standalone design review. */
+/* PROVISIONAL SPECIMEN CSS: generated snapshot of Foundations v0.1.
+ * Design-token JSON is the authoring source; CSS variables are the runtime contract.
+ * This is not yet a published React component library.
+ */
+@layer ui.tokens, ui.components, ui.utilities;
+
+@layer ui.tokens {
+  :root {
+    --ui-space-0: 0px;
+    --ui-space-1: 4px;
+    --ui-space-2: 8px;
+    --ui-space-3: 12px;
+    --ui-space-4: 16px;
+    --ui-space-5: 20px;
+    --ui-space-6: 24px;
+    --ui-space-8: 32px;
+    --ui-space-10: 40px;
+    --ui-space-12: 48px;
+    --ui-space-16: 64px;
+    --ui-radius-none: 0px;
+    --ui-radius-sm: 4px;
+    --ui-radius-md: 6px;
+    --ui-radius-lg: 8px;
+    --ui-radius-xl: 12px;
+    --ui-font-size-xs: 12px;
+    --ui-font-size-sm: 13px;
+    --ui-font-size-body: 14px;
+    --ui-font-size-md: 16px;
+    --ui-font-size-lg: 18px;
+    --ui-font-size-xl: 20px;
+    --ui-font-size-heading: 24px;
+    --ui-motion-fast: 120ms;
+    --ui-motion-normal: 180ms;
+    --ui-motion-slow: 240ms;
+    --ui-font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ui-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --ui-line-height-body: 1.5;
+    --ui-line-height-dense: 1.35;
+    --ui-line-height-heading: 1.25;
+    --ui-shadow-raised: 0 2px 8px rgb(15 23 42 / 0.08);
+    --ui-shadow-overlay: 0 10px 28px rgb(15 23 42 / 0.14);
+    --ui-z-dropdown: 100;
+    --ui-z-popover: 200;
+    --ui-z-dialog: 300;
+    --ui-z-toast: 400;
+  }
+
+  :root, [data-ui-theme="light"] {
+    color-scheme: light;
+    --ui-color-bg-canvas: #F8FAFC;
+    --ui-color-bg-surface: #FFFFFF;
+    --ui-color-bg-raised: #FFFFFF;
+    --ui-color-bg-inset: #F1F5F9;
+    --ui-color-text-primary: #0F172A;
+    --ui-color-text-secondary: #475569;
+    --ui-color-text-tertiary: #64748B;
+    --ui-color-border-default: #E2E8F0;
+    --ui-color-border-strong: #CBD5E1;
+    --ui-color-action-primary: #2563EB;
+    --ui-color-action-primary-hover: #1D4ED8;
+    --ui-color-action-on-primary: #FFFFFF;
+    --ui-color-action-selected-bg: #DBEAFE;
+    --ui-color-action-selected-text: #1E40AF;
+    --ui-color-focus-ring: #2563EB;
+    --ui-color-status-success-bg: #F0FDF4;
+    --ui-color-status-success-border: #BBF7D0;
+    --ui-color-status-success-text: #166534;
+    --ui-color-status-warning-bg: #FFFBEB;
+    --ui-color-status-warning-border: #FDE68A;
+    --ui-color-status-warning-text: #92400E;
+    --ui-color-status-danger-bg: #FEF2F2;
+    --ui-color-status-danger-border: #FECACA;
+    --ui-color-status-danger-text: #991B1B;
+    --ui-color-status-info-bg: #F0F9FF;
+    --ui-color-status-info-border: #BAE6FD;
+    --ui-color-status-info-text: #075985;
+  }
+
+  [data-ui-theme="dark"] {
+    color-scheme: dark;
+    --ui-color-bg-canvas: #0B1220;
+    --ui-color-bg-surface: #111827;
+    --ui-color-bg-raised: #1E293B;
+    --ui-color-bg-inset: #0B1220;
+    --ui-color-text-primary: #F1F5F9;
+    --ui-color-text-secondary: #CBD5E1;
+    --ui-color-text-tertiary: #94A3B8;
+    --ui-color-border-default: #334155;
+    --ui-color-border-strong: #64748B;
+    --ui-color-action-primary: #60A5FA;
+    --ui-color-action-primary-hover: #93C5FD;
+    --ui-color-action-on-primary: #0B1220;
+    --ui-color-action-selected-bg: #1E293B;
+    --ui-color-action-selected-text: #93C5FD;
+    --ui-color-focus-ring: #93C5FD;
+    --ui-color-status-success-bg: #052E16;
+    --ui-color-status-success-border: #166534;
+    --ui-color-status-success-text: #86EFAC;
+    --ui-color-status-warning-bg: #451A03;
+    --ui-color-status-warning-border: #92400E;
+    --ui-color-status-warning-text: #FCD34D;
+    --ui-color-status-danger-bg: #450A0A;
+    --ui-color-status-danger-border: #991B1B;
+    --ui-color-status-danger-text: #FCA5A5;
+    --ui-color-status-info-bg: #082F49;
+    --ui-color-status-info-border: #075985;
+    --ui-color-status-info-text: #7DD3FC;
+  }
+
+  :root, [data-ui-density="comfortable"] {
+    --ui-size-control: 36px;
+    --ui-size-toolbar: 48px;
+    --ui-size-table-row: 44px;
+    --ui-size-nav-item: 40px;
+    --ui-size-tab: 40px;
+    --ui-size-page-gutter: 24px;
+  }
+
+  [data-ui-density="compact"] {
+    --ui-size-control: 28px;
+    --ui-size-toolbar: 40px;
+    --ui-size-table-row: 32px;
+    --ui-size-nav-item: 32px;
+    --ui-size-tab: 32px;
+    --ui-size-page-gutter: 16px;
+  }
+
+  /* A coarse pointer calls for larger actionable controls regardless of visual density. */
+  @media (pointer: coarse) {
+    :root, [data-ui-density="comfortable"], [data-ui-density="compact"] {
+      --ui-size-control: 44px;
+      --ui-size-table-row: 48px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --ui-motion-fast: 0ms;
+      --ui-motion-normal: 0ms;
+      --ui-motion-slow: 0ms;
+    }
+  }
+}
+
+/* Illustration of component-level aliases; component CSS Modules would consume these. */
+@layer ui.components {
+  .ui-specimen-button {
+    --ui-button-background: var(--ui-color-action-primary);
+    --ui-button-foreground: var(--ui-color-action-on-primary);
+    background: var(--ui-button-background);
+    color: var(--ui-button-foreground);
+    border: 1px solid transparent;
+    border-radius: var(--ui-radius-md);
+    min-height: var(--ui-size-control);
+    padding-inline: var(--ui-space-3);
+    font: 500 var(--ui-font-size-body) / var(--ui-line-height-body) var(--ui-font-body);
+    cursor: pointer;
+  }
+  .ui-specimen-button:hover { --ui-button-background: var(--ui-color-action-primary-hover); }
+  .ui-specimen-button:focus-visible {
+    outline: 2px solid var(--ui-color-focus-ring);
+    outline-offset: 2px;
+  }
+  .ui-specimen-button:disabled { opacity: 0.55; cursor: not-allowed; }
+}
+
+
+@layer tokens, base, components, responsive;
+@layer tokens {
+:root{color-scheme:light;--canvas:var(--ui-color-bg-canvas);--surface:var(--ui-color-bg-surface);--inset:var(--ui-color-bg-inset);--raised:var(--ui-color-bg-raised);--text:var(--ui-color-text-primary);--muted:var(--ui-color-text-secondary);--subtle:var(--ui-color-text-tertiary);--border:var(--ui-color-border-default);--strong:var(--ui-color-border-strong);--action:var(--ui-color-action-primary);--on-action:var(--ui-color-action-on-primary);--select:var(--ui-color-action-selected-bg);--select-text:var(--ui-color-action-selected-text);--focus:var(--ui-color-focus-ring);--ok:var(--ui-color-status-success-text);--ok-bg:var(--ui-color-status-success-bg);--ok-border:var(--ui-color-status-success-border);--warn:var(--ui-color-status-warning-text);--warn-bg:var(--ui-color-status-warning-bg);--warn-border:var(--ui-color-status-warning-border);--danger:var(--ui-color-status-danger-text);--danger-bg:var(--ui-color-status-danger-bg);--danger-border:var(--ui-color-status-danger-border);--info:var(--ui-color-status-info-text);--info-bg:var(--ui-color-status-info-bg);--info-border:var(--ui-color-status-info-border);--radius:var(--ui-radius-lg);--control:var(--ui-size-control);--space:var(--ui-space-3);--shadow:var(--ui-shadow-raised)}
+html[data-ui-theme="dark"]{--shadow:var(--ui-shadow-overlay)}
+html[data-ui-density="compact"]{--space:var(--ui-space-2)}
+}
+@layer base {
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--canvas);color:var(--text);font:14px/1.45 Inter,system-ui,-apple-system,'Segoe UI',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.6}a{color:var(--action)}:focus-visible{outline:2px solid var(--focus);outline-offset:3px}h1,h2,h3,p{margin:0}h1{font-size:22px;letter-spacing:-.035em}h2{font-size:17px;letter-spacing:-.02em}h3{font-size:13px}small{font-size:11px;color:var(--subtle)}svg{display:inline-block;flex-shrink:0;vertical-align:middle}code,pre,.mono{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace}pre{white-space:pre-wrap;overflow-wrap:anywhere}
+}
+@layer components {
+.app{max-width:1600px;margin:0 auto;padding:24px;display:grid;gap:18px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;background:var(--action);color:var(--on-action);border-radius:8px;width:36px;height:36px;font-weight:800;font-size:18px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--subtle)}.hint{color:var(--muted);font-size:12px}.controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.btn{min-height:var(--control);border:1px solid var(--strong);color:var(--text);background:var(--surface);border-radius:6px;padding:6px 12px;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-weight:600;font-size:12px}.btn.primary{background:var(--action);color:var(--on-action);border-color:transparent}.btn.ghost{background:transparent;border-color:transparent;color:var(--muted)}.btn.danger{color:var(--danger);border-color:var(--danger-border)}.btn:hover:not(:disabled){filter:brightness(.97)}.btn[aria-pressed=true]{border-color:var(--action);color:var(--action);background:var(--select)}.btn.primary:hover{filter:brightness(.94)}.tag,.pill{font-size:11px;font-weight:700;display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:5px;background:var(--inset);color:var(--muted);white-space:nowrap}.pill.ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-border)}.pill.warn{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-border)}.pill.danger{background:var(--danger-bg);color:var(--danger);border:1px solid var(--danger-border)}.pill.info{background:var(--info-bg);color:var(--info);border:1px solid var(--info-border)}.dot{height:7px;width:7px;border-radius:50%;background:currentColor;display:inline-block}.navtabs{display:flex;gap:3px;padding:4px;border:1px solid var(--border);background:var(--surface);border-radius:9px;width:max-content;max-width:100%;overflow:auto}.navtabs button{background:transparent;color:var(--muted);border:0;padding:9px 13px;white-space:nowrap;border-radius:5px;font-size:12px;font-weight:600}.navtabs button[aria-selected="true"]{background:var(--select);color:var(--select-text)}.specimen{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(265px,.7fr);gap:14px}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);min-width:0;overflow:hidden}.cardhead{padding:17px 19px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}.cardbody{padding:18px 19px}.cardhead p{font-size:12px;color:var(--muted);margin-top:3px}.scenarios{display:flex;gap:6px;flex-wrap:wrap}.scenarios button{padding:6px 9px;min-height:28px}.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px;background:var(--inset);border:1px solid var(--border);border-radius:6px;margin-bottom:14px}.metalabel{font-size:10px;color:var(--subtle);text-transform:uppercase;letter-spacing:.05em;font-weight:700}.metavalue{font-weight:700;font-size:12px;margin-top:3px}.sectionhead{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:10px}.toolbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.field{height:var(--control);padding:7px 10px;min-width:0;background:var(--surface);color:var(--text);border:1px solid var(--strong);border-radius:6px;font-size:12px}.field.wide{width:220px}.alert{border:1px solid var(--warn-border);border-left:3px solid var(--warn);border-radius:6px;padding:11px 13px;margin:10px 0;background:var(--warn-bg);color:var(--warn);font-size:12px;display:flex;justify-content:space-between;align-items:center;gap:10px}.alert.danger{border-color:var(--danger-border);border-left-color:var(--danger);background:var(--danger-bg);color:var(--danger)}.alert.info{border-color:var(--info-border);border-left-color:var(--info);background:var(--info-bg);color:var(--info)}.alert.ok{border-color:var(--ok-border);border-left-color:var(--ok);background:var(--ok-bg);color:var(--ok)}table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;background:var(--inset);font-size:11px;color:var(--muted);font-weight:700}td,th{padding:11px;border-bottom:1px solid var(--border)}tr.selected{background:var(--select)}tr:last-child td{border-bottom:0}td:first-child,th:first-child{width:34px}td:last-child,th:last-child{text-align:right}.thinline{display:flex;align-items:center;gap:5px}.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:6px}label{font-size:12px}.inspector{padding:16px 18px}.inspector p{font-size:12px;color:var(--muted);margin:8px 0 14px}.facts{display:grid;gap:8px}.fact{display:flex;align-items:start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border);padding-bottom:9px;font-size:12px}.fact span{color:var(--subtle)}.fact strong{text-align:right}.callout{margin-top:16px;background:var(--inset);padding:12px;border-radius:7px;font-size:12px;color:var(--muted);line-height:1.55}.callout strong{color:var(--text)}.foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 18px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle)}.progress{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:18px 0 12px}.step{padding:12px 8px;border:1px solid var(--border);border-radius:6px;text-align:center;background:var(--inset);font-size:11px;min-height:92px}.step .symbol{font-size:17px;margin-bottom:7px}.step.done{border-color:var(--ok-border);color:var(--ok);background:var(--ok-bg)}.step.active{border-color:var(--action);color:var(--text);background:var(--select)}.step.error{border-color:var(--danger-border);color:var(--danger);background:var(--danger-bg)}.step small{display:block;margin-top:4px}.events{display:grid;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:12px}.event{display:grid;grid-template-columns:65px 12px 1fr auto;align-items:center;gap:12px;border-bottom:1px solid var(--border);padding:11px 12px;font-size:12px}.event:last-child{border-bottom:0}.event time{color:var(--subtle);font:11px ui-monospace,monospace}.event .em{background:var(--ok);width:8px;height:8px;border-radius:50%}.event .em.pending{background:var(--warn)}.event .em.bad{background:var(--danger)}.chat{display:grid;gap:12px}.message{padding:13px 15px;border:1px solid var(--border);border-radius:8px;background:var(--inset);font-size:13px;max-width:95%}.message.user{background:var(--select);margin-left:auto;max-width:85%}.message h3{margin-bottom:5px}.tool{border:1px solid var(--border);border-radius:7px;padding:12px;margin:12px 0}.tooltop{display:flex;justify-content:space-between;gap:7px;align-items:center}.tool pre{border-radius:5px;margin:10px 0 0;padding:12px;background:var(--inset);font-size:11px}.mono.diff{background:var(--inset);border:1px solid var(--border);padding:13px;border-radius:7px;font-size:11px}.del{color:var(--danger)}.add{color:var(--ok)}.approvalrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.lastline{margin-top:14px;display:flex;gap:7px;flex-wrap:wrap;align-items:center}.muted{color:var(--subtle)}.progressbar{height:5px;width:100%;background:var(--border);border-radius:5px;overflow:hidden;margin-top:8px}.progressbar b{display:block;height:100%;background:var(--action);width:60%}.hidden{display:none!important}.viewportlabel{color:var(--subtle);font-size:11px}
+}
+@layer responsive {
+@media (max-width:950px){.specimen{grid-template-columns:minmax(0,1fr)}.inspector{display:grid;grid-template-columns:1fr 1fr;gap:12px}.inspector h3,.inspector p,.inspector .callout{grid-column:1/-1}.app{padding:14px}}@media (max-width:640px){.app{padding:10px;gap:12px}.topbar h1{font-size:18px}.cardhead,.cardbody{padding:13px}.navtabs{width:100%;justify-content:space-between}.navtabs button{padding:8px}.meta{grid-template-columns:1fr 1fr}.progress{grid-template-columns:repeat(3,minmax(0,1fr))}.step{min-height:80px}.event{grid-template-columns:48px 9px 1fr;gap:8px}.event .pill{display:none}.inspector{display:block}.field.wide{width:100%;flex:1}.callout{margin-top:12px}.controls .viewportlabel{display:none}}
+@media (prefers-reduced-motion:no-preference){.btn,.navtabs button{transition:background-color 120ms,border-color 120ms,color 120ms}}
+@media (forced-colors:active){.btn:focus-visible,.field:focus-visible{outline:2px solid Highlight}.pill,.tag,.step,.alert{border:1px solid CanvasText}}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar"><div class="brand"><div class="mark" aria-hidden="true">▣</div><div><div class="eyebrow">Enterprise UI · Design reference</div><h1>Interaction Lab <span class="tag">v0.1 · proposal</span></h1></div></div><div class="controls"><span class="viewportlabel">Standalone CSS/SVG specimen</span><button class="btn" id="themeToggle" aria-pressed="false" type="button">◐ Dark theme</button><button class="btn" id="densityToggle" aria-pressed="false" type="button">≡ Compact density</button></div></header>
+<p class="hint">Review how the same design system renders orthogonal data, connectivity, execution, validation, and decision states. All controls below are local demo interactions; no backend mutation or authorization occurs.</p>
+<nav class="navtabs" role="tablist" aria-label="Interaction scenarios"><button id="tab-grid" role="tab" aria-controls="panel-grid" aria-selected="true" tabindex="0" data-tab="grid">Data & editing</button><button id="tab-live" role="tab" aria-controls="panel-live" aria-selected="false" tabindex="-1" data-tab="live">Live operations</button><button id="tab-ai" role="tab" aria-controls="panel-ai" aria-selected="false" tabindex="-1" data-tab="ai">AI streaming</button><button id="tab-approval" role="tab" aria-controls="panel-approval" aria-selected="false" tabindex="-1" data-tab="approval">Human approval</button></nav>
+<main>
+<section id="panel-grid" role="tabpanel" aria-labelledby="tab-grid" class="specimen" data-panel="grid"><article class="card"><header class="cardhead"><div><h2>Customer Accounts <span class="pill info">DataGrid</span></h2><p>Preserve row identity, selection, and unsaved edits through refreshes and conflicts.</p></div><div class="scenarios" aria-label="Choose grid scenario"><button class="btn" aria-pressed="true" data-scenario="grid:ready">Ready</button><button class="btn" aria-pressed="false" data-scenario="grid:refresh">Refreshing</button><button class="btn" aria-pressed="false" data-scenario="grid:conflict">Edit conflict</button><button class="btn" aria-pressed="false" data-scenario="grid:error">Error</button></div></header><div class="cardbody"><div id="gridNotice" role="status" aria-live="polite" aria-atomic="true"></div><div class="toolbar"><input class="field wide" placeholder="Search customers…" aria-label="Search customers"><button class="btn">☷ Filters <span class="pill info">2</span></button><button class="btn">▤ Columns</button><button class="btn">⇩ Export</button><span class="tag">1,284 customers</span></div><div class="tablewrap"><table><thead><tr><th><input type="checkbox" aria-label="Select all rows"></th><th>Name</th><th>Status</th><th>Industry</th><th>Revenue</th><th>Updated</th></tr></thead><tbody><tr><td><input type="checkbox" aria-label="Select Acme Corporation"></td><td><strong>Acme Corporation</strong></td><td><span class="pill ok">Active</span></td><td>Manufacturing</td><td class="mono">$1,240,000</td><td>2 min ago</td></tr><tr class="selected"><td><input type="checkbox" checked aria-label="Select Blue Ridge Systems"></td><td><strong>Blue Ridge Systems</strong></td><td><span class="pill ok">Active</span></td><td>Technology</td><td class="mono">$892,400</td><td>5 min ago</td></tr><tr><td><input type="checkbox" aria-label="Select Cedar Medical"></td><td><strong>Cedar Medical</strong></td><td><span class="pill warn">At risk</span></td><td>Healthcare</td><td class="mono">$2,184,000</td><td>1 day ago</td></tr><tr><td><input type="checkbox" aria-label="Select Delta Construction"></td><td><strong>Delta Construction</strong></td><td><span class="pill ok">Active</span></td><td>Construction</td><td class="mono">$743,200</td><td>2 days ago</td></tr></tbody></table></div><div class="lastline"><span class="tag">Selected: Blue Ridge Systems</span><label for="accountNote">Draft note</label><input id="accountNote" class="field" value="Follow up next week"/><span id="dirtyTag" class="pill warn">Unsaved draft</span></div></div><footer class="foot"><span>Visual specimen: semantic table; full interactive DataGrid will follow APG-managed grid navigation.</span><span>Compact · Comfortable · Light · Dark</span></footer></article><aside class="card inspector"><h3>State inspector</h3><p>State dimensions remain independent. A refresh does not clear a selected row; a conflict never silently overwrites edits.</p><div class="facts" id="gridFacts"></div><div class="callout"><strong>Keyboard contract</strong><div>Arrow keys navigate interactive grid cells; Enter/F2 enters edit mode; Escape returns to cell navigation. Native table semantics remain preferable for non-interactive data.</div></div></aside></section>
+<section id="panel-live" role="tabpanel" aria-labelledby="tab-live" class="specimen hidden" data-panel="live"><article class="card"><header class="cardhead"><div><h2>Customer Portal · Production <span class="pill info">DeploymentMonitor</span></h2><p>Authoritative progress with independently reported connectivity and freshness.</p></div><div class="scenarios"><button class="btn" aria-pressed="true" data-scenario="live:running">Running</button><button class="btn" aria-pressed="false" data-scenario="live:reconnect">Reconnecting</button><button class="btn" aria-pressed="false" data-scenario="live:failed">Failed</button><button class="btn" aria-pressed="false" data-scenario="live:complete">Succeeded</button></div></header><div class="cardbody"><div id="liveNotice" role="status" aria-live="polite" aria-atomic="true"></div><div class="meta"><div><div class="metalabel">Deployment</div><div class="metavalue mono">dep-8421 · production</div></div><div><div class="metalabel">Last verified</div><div class="metavalue">10:24:31 · host supplied</div></div><div><div class="metalabel">Execution status</div><div class="metavalue" id="liveExecution">Running</div></div><div><div class="metalabel">Connection</div><div class="metavalue" id="liveConnection">Connected</div></div></div><div class="sectionhead"><h3>Deployment pipeline</h3><span class="pill" id="livePill">3 of 5 stages</span></div><div class="progress" id="liveSteps"><div class="step done"><div class="symbol">✓</div>Queued<small>Complete</small></div><div class="step done"><div class="symbol">✓</div>Build<small>Complete</small></div><div class="step done"><div class="symbol">✓</div>Tests<small>Complete</small></div><div class="step active"><div class="symbol">↻</div>Deploy<small>Running</small></div><div class="step"><div class="symbol">○</div>Verify<small>Pending</small></div></div><div class="sectionhead"><h3>Live event stream</h3><div class="controls"><span class="tag" id="tailState">Following live tail</span><button id="tailToggle" class="btn" type="button">Pause tail</button><button id="newEvents" class="btn hidden" type="button">3 new events · Resume live</button></div></div><div class="events" id="eventList"><div class="event"><time>10:24:31</time><span class="em"></span><span>Health check passed <small>3/3 instances</small></span><span class="pill ok">production</span></div><div class="event"><time>10:24:19</time><span class="em"></span><span>Container image pushed <small>v4.1.2</small></span><span class="pill info">release</span></div><div class="event"><time>10:24:03</time><span class="em pending"></span><span>Scaling to three replicas</span><span class="pill warn">in progress</span></div><div class="event"><time>10:23:42</time><span class="em"></span><span>Deployment started</span><span class="pill info">production</span></div></div></div><footer class="foot"><span>Connection loss never infers deployment success or failure.</span><span>Host is responsible for ordering and reconciliation.</span></footer></article><aside class="card inspector"><h3>State inspector</h3><p>Show the last observed operation state alongside connection and freshness. Only the host confirms terminal outcomes.</p><div class="facts" id="liveFacts"></div><div class="callout"><strong>Event-stream contract</strong><div>When readers leave the live tail, new events accumulate without stealing scroll position. “Resume live” is explicit and user-controlled.</div></div></aside></section>
+<section id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" class="specimen hidden" data-panel="ai"><article class="card"><header class="cardhead"><div><h2>Customer Churn Analysis <span class="pill info">ChatStream</span></h2><p>Streaming message presentation is distinct from agent and tool execution state.</p></div><div class="scenarios"><button class="btn" aria-pressed="true" data-scenario="ai:streaming">Streaming</button><button class="btn" aria-pressed="false" data-scenario="ai:interrupted">Interrupted</button><button class="btn" aria-pressed="false" data-scenario="ai:failed">Failed</button><button class="btn" aria-pressed="false" data-scenario="ai:complete">Completed</button></div></header><div class="cardbody"><div id="aiNotice" role="status" aria-live="polite" aria-atomic="true"></div><div class="chat"><div class="message user"><h3>You · 10:24</h3>Analyze customer churn over the past 12 months and identify key risk factors.</div><div class="message"><div class="sectionhead"><h3>Data Analysis Agent</h3><span class="pill info" id="aiPill">Streaming</span></div><div id="aiMessage">I’m analyzing usage patterns and support activity. Initial signals indicate reduced product engagement and unresolved support requests as important factors.</div><div class="tool"><div class="tooltop"><strong>Tool execution · query_customers</strong><span class="pill ok">Succeeded</span></div><pre>SELECT cohort, churn_rate, support_tickets
+FROM customer_analytics WHERE months = 12;
+-- results redacted and summarized by host</pre></div><div class="sectionhead"><span class="hint" id="aiFoot">New analysis is arriving · content remains readable</span><button class="btn" id="aiAdvance" type="button">Show next chunk</button></div></div></div></div><footer class="foot"><span>Nonurgent token updates are not announced individually to screen readers.</span><span>Tool data must be redacted by the host.</span></footer></article><aside class="card inspector"><h3>State inspector</h3><p>The UI may continue displaying partial results even if the transport disconnects. Agent status is not inferred from transport.</p><div class="facts" id="aiFacts"></div><div class="callout"><strong>Accessibility contract</strong><div>Coalesce announcements; announce meaningful transitions rather than every streamed token. Never force-scroll readers away from earlier content.</div></div></aside></section>
+<section id="panel-approval" role="tabpanel" aria-labelledby="tab-approval" class="specimen hidden" data-panel="approval"><article class="card"><header class="cardhead"><div><h2>Proposed Configuration Change <span class="pill warn" id="approvalBadge">Pending</span></h2><p>Review actor, target, impact, versioned diff, and decision intent.</p></div><div class="scenarios"><button class="btn" aria-pressed="true" data-scenario="approval:pending">Pending</button><button class="btn" aria-pressed="false" data-scenario="approval:submitting">Submitting</button><button class="btn" aria-pressed="false" data-scenario="approval:conflict">Revision conflict</button><button class="btn" aria-pressed="false" data-scenario="approval:expired">Expired</button></div></header><div class="cardbody"><div id="approvalNotice" role="status" aria-live="polite" aria-atomic="true"></div><div class="meta"><div><div class="metalabel">Requested by</div><div class="metavalue">Orchestrator Agent</div></div><div><div class="metalabel">Target environment</div><div class="metavalue">Customer Portal · Production</div></div><div><div class="metalabel">Request / base revision</div><div class="metavalue mono">apr-1049 / rev-12</div></div><div><div class="metalabel">Risk level</div><div class="metavalue"><span class="pill warn">High · production changes</span></div></div></div><div class="sectionhead"><h3>Proposed diff · API rate limits</h3><span class="tag">Validated patch · awaiting decision</span></div><pre class="mono diff">rateLimits:
+<span class="del">- requestsPerMinute: 1000</span>
+<span class="add">+ requestsPerMinute: 2000</span>
+<span class="del">- burstLimit: 2000</span>
+<span class="add">+ burstLimit: 5000</span></pre><div class="lastline"><label for="approvalComment">Decision comment (optional)</label><input class="field wide" id="approvalComment" placeholder="Reason or conditions…"></div><div class="lastline"><button id="rejectIntent" type="button" class="btn danger">Reject</button><button id="approveIntent" type="button" class="btn primary">Approve request</button><span class="hint">Only a typed intent is emitted. No configuration is applied here.</span></div></div><footer class="foot"><span>Request ID and expected revision accompany every decision.</span><span>The app authorizes and executes separately.</span></footer></article><aside class="card inspector"><h3>State inspector</h3><p>Button activation alone cannot mean an action was authorized, executed, or applied. Expired or changed requests are non-actionable.</p><div class="facts" id="approvalFacts"></div><div class="callout"><strong>Agentic design compatibility</strong><div>The same review pattern supports validated JSON Patch proposals, before/after schema preview, revision checks and reversible human-approved transactions.</div></div></aside></section>
+</main>
+<div class="hint">Design review prototype • No network requests • No persistence • No privileged action execution • Proposed behavior, not production library code.</div>
+</div>
+<script>
+const root=document.documentElement;
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const scenarios={grid:'ready',live:'running',ai:'streaming',approval:'pending'};
+const snapshot={
+ grid:{ready:{phase:'ready',fresh:'current',edit:'dirty',notice:''},refresh:{phase:'refreshing',fresh:'current',edit:'dirty',notice:'Refreshing customers… Existing rows and your draft remain available.'},conflict:{phase:'ready',fresh:'stale',edit:'conflict',notice:'A colleague changed the selected record. Your draft is preserved; review differences before saving.'},error:{phase:'error',fresh:'stale',edit:'dirty',notice:'Refresh failed. Showing last verified records; retry is managed by the application.'}},
+ live:{running:{phase:'running',connection:'connected',fresh:'current',notice:''},reconnect:{phase:'running',connection:'reconnecting',fresh:'stale',notice:'Connection lost; latest verified deployment state was Running. New status has not been confirmed.'},failed:{phase:'failed',connection:'connected',fresh:'current',notice:'Deployment failed: readiness checks did not pass. Open details for the host-provided error.'},complete:{phase:'succeeded',connection:'connected',fresh:'current',notice:'Deployment succeeded. The host confirmed all verification stages completed.'}},
+ ai:{streaming:{phase:'streaming',execution:'running',connection:'connected',notice:''},interrupted:{phase:'interrupted',execution:'running',connection:'disconnected',notice:'Stream interrupted. Partial results remain visible; agent outcome has not been confirmed.'},failed:{phase:'failed',execution:'failed',connection:'connected',notice:'The host reported that analysis failed. Partial output remains available for review.'},complete:{phase:'finished',execution:'succeeded',connection:'connected',notice:'Analysis completed and was confirmed by the host.'}},
+ approval:{pending:{phase:'pending',transport:'idle',revision:'rev-12',notice:''},submitting:{phase:'pending',transport:'submitting',revision:'rev-12',notice:'Decision intent submitted in this demo. Await authoritative confirmation before reporting an outcome.'},conflict:{phase:'pending',transport:'conflict',revision:'rev-13',notice:'The approval changed to revision 13. Review the updated request before deciding.'},expired:{phase:'expired',transport:'idle',revision:'rev-12',notice:'This request has expired. Approval and rejection are unavailable.'}}
+};
+function facts(id,items){$('#'+id+'Facts').innerHTML=Object.entries(items).map(([k,v])=>`<div class="fact"><span>${k}</span><strong>${v}</strong></div>`).join('')}
+function notice(id,text,type='warn'){const el=$('#'+id+'Notice');el.innerHTML=text?`<div class="alert ${type}" role="status"><span>${text}</span></div>`:''}
+function render(id){const s=snapshot[id][scenarios[id]];
+ $$("[data-scenario^='"+id+":']").forEach(b=>b.setAttribute('aria-pressed',b.dataset.scenario.split(':')[1]===scenarios[id]?'true':'false'));
+ if(id==='grid'){notice(id,s.notice,s.edit==='conflict'?'danger':s.phase==='error'?'danger':'info');facts(id,{'Data phase':s.phase,'Freshness':s.fresh,'Selected row':'Blue Ridge Systems','Editing':s.edit,'User draft':'Preserved'});$('#dirtyTag').textContent=s.edit==='conflict'?'Conflict · draft preserved':'Unsaved draft'}
+ if(id==='live'){notice(id,s.notice,s.phase==='failed'?'danger':s.phase==='succeeded'?'ok':'warn');$('#liveExecution').textContent=s.phase[0].toUpperCase()+s.phase.slice(1);$('#liveConnection').textContent=s.connection[0].toUpperCase()+s.connection.slice(1);$('#livePill').textContent=s.phase==='succeeded'?'5 of 5 stages':s.phase==='failed'?'Stage 4 failed':'3 of 5 stages';facts(id,{'Execution':s.phase,'Connection':s.connection,'Freshness':s.fresh,'Last verified':'Host supplied','Outcome inferred from transport?':'Never'});const steps=$$('#liveSteps .step');steps.forEach((el,i)=>{el.className='step '+(i<3?'done':i===3?(s.phase==='failed'?'error':s.phase==='succeeded'?'done':'active'):s.phase==='succeeded'?'done':'');el.querySelector('.symbol').textContent=i<3||s.phase==='succeeded'?'✓':i===3?s.phase==='failed'?'!':'↻':'○';el.querySelector('small').textContent=i<3||s.phase==='succeeded'?'Complete':i===3?s.phase==='failed'?'Failed':'Running':'Pending'})}
+ if(id==='ai'){notice(id,s.notice,s.phase==='failed'?'danger':'warn');$('#aiPill').textContent=s.phase;$('#aiFoot').textContent=s.phase==='streaming'?'New analysis is arriving · content remains readable':s.phase==='finished'?'Final analysis available':'Partial analysis preserved';facts(id,{'Message presentation':s.phase,'Agent execution':s.execution,'Connection':s.connection,'Partial content':'Retained','Tool result':'Host redacted'});$('#aiAdvance').disabled=s.phase!=='streaming'}
+ if(id==='approval'){notice(id,s.notice,s.transport==='conflict'?'danger':'warn');$('#approvalBadge').textContent=s.phase==='expired'?'Expired':s.transport==='submitting'?'Sending intent':s.transport==='conflict'?'Revision changed':'Pending';const disable=s.transport!=='idle'||s.phase!=='pending';$('#approveIntent').disabled=disable;$('#rejectIntent').disabled=disable;facts(id,{'Approval phase':s.phase,'Decision transport':s.transport,'Current revision':s.revision,'Authorization':'Host application only','Execution':'Not triggered by UI'});}
+}
+$$('[data-scenario]').forEach(b=>b.addEventListener('click',()=>{const[id,state]=b.dataset.scenario.split(':');scenarios[id]=state;render(id)}));
+function activateTab(id){$$('[data-tab]').forEach(b=>{let yes=b.dataset.tab===id;b.setAttribute('aria-selected',yes?'true':'false');b.tabIndex=yes?0:-1});$$('[data-panel]').forEach(p=>p.classList.toggle('hidden',p.dataset.panel!==id))}
+$$('[data-tab]').forEach((b,i,all)=>{b.addEventListener('click',()=>activateTab(b.dataset.tab));b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();let next=e.key==='Home'?0:e.key==='End'?all.length-1:(i+(e.key==='ArrowRight'?1:-1)+all.length)%all.length;activateTab(all[next].dataset.tab);all[next].focus()})});
+$('#themeToggle').addEventListener('click',e=>{const dark=root.dataset.uiTheme==='dark';root.dataset.uiTheme=dark?'light':'dark';e.currentTarget.textContent=dark?'◐ Dark theme':'☀ Light theme';e.currentTarget.setAttribute('aria-pressed',String(!dark))});
+$('#densityToggle').addEventListener('click',e=>{const compact=root.dataset.uiDensity==='compact';root.dataset.uiDensity=compact?'comfortable':'compact';e.currentTarget.textContent=compact?'≡ Compact density':'▤ Comfortable density';e.currentTarget.setAttribute('aria-pressed',String(!compact))});
+let tailPaused=false;$('#tailToggle').addEventListener('click',()=>{tailPaused=!tailPaused;$('#tailToggle').textContent=tailPaused?'Resume tail':'Pause tail';$('#tailState').textContent=tailPaused?'Tail paused · reading history':'Following live tail';$('#newEvents').classList.toggle('hidden',!tailPaused)});$('#newEvents').addEventListener('click',()=>{$('#tailToggle').click()});
+$('#aiAdvance').addEventListener('click',()=>{if(scenarios.ai!=='streaming')return;$('#aiMessage').textContent+=' The next available segment highlights a higher relative risk among new accounts with multiple unresolved support interactions.'});
+['approveIntent','rejectIntent'].forEach(id=>$('#'+id).addEventListener('click',()=>{scenarios.approval='submitting';render('approval');$('#approvalNotice .alert span').textContent=`${id==='approveIntent'?'Approve':'Reject'} intent issued for request apr-1049 at rev-12. No authoritative response or execution in this design prototype.`}));
+$('#accountNote').addEventListener('input',()=>{const el=$('#dirtyTag');el.textContent=scenarios.grid==='conflict'?'Conflict · draft preserved':'Unsaved draft'});
+Object.keys(scenarios).forEach(render)
+</script>
+</body></html>

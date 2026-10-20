@@ -5,7 +5,7 @@ export * from './forms.js';
 export * from './overlays.js';
 export interface AppShellProps extends React.HTMLAttributes<HTMLDivElement> { title: string; children?: React.ReactNode }
 export function AppShell({title,children,className='',...rest}:AppShellProps){
-  return <div {...rest} className={`ui-shell ${className}`}><header className="ui-shell-header"><span className="ui-logo-mark" aria-hidden="true">◈</span><strong>{title}</strong><span className="ui-version">POC v0.1</span></header><main className="ui-workspace">{children}</main></div>;
+ return <div {...rest} className={`ui-shell ${className}`}><header className="ui-shell-header"><span className="ui-logo-mark" aria-hidden="true">◈</span><strong>{title}</strong><span className="ui-version">Surface v1.0</span></header><main className="ui-workspace">{children}</main></div>;
 }
 export interface PanelProps extends React.HTMLAttributes<HTMLElement> {title:string;collapsible?:boolean;children?:React.ReactNode}
 export function Panel({title,collapsible=false,children,className='',...rest}:PanelProps){

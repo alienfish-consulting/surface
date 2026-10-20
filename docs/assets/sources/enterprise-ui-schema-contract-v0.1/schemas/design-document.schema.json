@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ui.example.invalid/schemas/design-document/1.0.0",
+  "title": "Declarative UI design document v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryVersion",
+    "id",
+    "revision",
+    "kind",
+    "themeId",
+    "density",
+    "dataSources",
+    "actionIds",
+    "root"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "registryVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "kind": {
+      "enum": [
+        "dashboard",
+        "form",
+        "workflow",
+        "workspace",
+        "query"
+      ]
+    },
+    "themeId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "density": {
+      "enum": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "dataSources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/identifier"
+      },
+      "uniqueItems": true
+    },
+    "actionIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-z][a-zA-Z0-9]*)+$"
+      },
+      "uniqueItems": true
+    },
+    "root": {
+      "$ref": "#/$defs/node"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._-]*$",
+      "maxLength": 128
+    },
+    "binding": {
+      "type": "object",
+      "required": [
+        "sourceId",
+        "pointer"
+      ],
+      "properties": {
+        "sourceId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "pointer": {
+          "type": "string",
+          "pattern": "^(?:/(?:[^~/]|~[01])*)*$",
+          "maxLength": 500
+        }
+      },
+      "additionalProperties": false
+    },
+    "intent": {
+      "type": "object",
+      "required": [
+        "actionId"
+      ],
+      "properties": {
+        "actionId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "props"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "^ui\\.[A-Za-z][A-Za-z0-9]*$"
+        },
+        "props": {
+          "type": "object"
+        },
+        "bindings": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9]*$": {
+              "$ref": "#/$defs/binding"
+            }
+          },
+          "additionalProperties": false
+        },
+        "intents": {
+          "type": "object",
+          "patternProperties": {
+            "^on[A-Z][A-Za-z0-9]*$": {
+              "$ref": "#/$defs/intent"
+            }
+          },
+          "additionalProperties": false
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          },
+          "maxItems": 1000
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

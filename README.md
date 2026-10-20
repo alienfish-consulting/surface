@@ -1,7 +1,7 @@
 <table align="center">
   <tr>
     <td align="center" bgcolor="#0B1220">
-      <img src="docs/assets/AlienFishLogo/alienfish-logo-animation-master.svg" alt="AlienFish Consulting" width="180">
+      <img src="docs/assets/alienfish-logo-animation-master.svg" alt="AlienFish Consulting" width="180">
     </td>
   </tr>
 </table>
@@ -15,7 +15,7 @@
 <p align="center">
   <a href="https://github.com/alienfish-consulting/surface/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/alienfish-consulting/surface/actions/workflows/ci.yml/badge.svg?branch=main"></a>
   <img alt="Node.js 24" src="https://img.shields.io/badge/Node.js-24-339933?logo=nodedotjs&logoColor=white">
-  <img alt="React 19" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=1f2937">
+  <img alt="React 18.2 and 19" src="https://img.shields.io/badge/React-18.2%20%7C%2019-61DAFB?logo=react&logoColor=1f2937">
   <img alt="TypeScript 5.9" src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white">
   <img alt="Storybook 10.6" src="https://img.shields.io/badge/Storybook-10.6-FF4785?logo=storybook&logoColor=white">
   <a href="LICENSE.md"><img alt="License: Proprietary" src="https://img.shields.io/badge/license-proprietary-7A1F1F"></a>
@@ -23,7 +23,7 @@
 
 Surface combines a broad component system with a versioned JSON design contract, guarded visual editing, and explicit application-owned security boundaries.
 
-The repository is a private, proprietary v1 workspace. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. Package names and versions are provisional, and nothing has been published.
+The source is publicly visible but remains proprietary: availability does not grant open-source rights. All 198 accepted catalog units and the M9 technical acceptance matrix are complete. The coordinated `1.0.0` package family is prepared under the `@alienfishconsulting/surface-*` namespace but has not yet been published.
 
 ## What the framework provides
 
@@ -82,14 +82,28 @@ corepack pnpm storybook
 
 Storybook runs at `http://localhost:6006` by default.
 
+## Installing the packages
+
+Surface packages will be distributed publicly from npm under a proprietary license. After publication, install only the families an application needs, together with a supported React runtime:
+
+```bash
+npm install react@^19 react-dom@^19 \
+  @alienfishconsulting/surface-tokens \
+  @alienfishconsulting/surface-react-core
+```
+
+React 18.2 is also supported. Every React package declares `react` as `^18.2.0 || ^19.0.0`; applications own the React and React DOM versions. Package JavaScript is unbundled ESM, declarations and source maps are included, styles are explicit exports, and framework/runtime dependencies are not bundled into the library output.
+
+Public npm availability does not change the license. Review [LICENSE.md](LICENSE.md) before using or redistributing any package.
+
 ## Building a web interface
 
 Import only the component families used by the application. Load the token stylesheet before family stylesheets:
 
 ```tsx
-import '@enterprise-ui/tokens/theme.css';
-import '@enterprise-ui/react-core/styles.css';
-import {Button, Panel, TextField} from '@enterprise-ui/react-core';
+import '@alienfishconsulting/surface-tokens/theme.css';
+import '@alienfishconsulting/surface-react-core/styles.css';
+import {Button, Panel, TextField} from '@alienfishconsulting/surface-react-core';
 
 export function AccountPanel() {
   return (
@@ -130,8 +144,8 @@ Detached portal roots need the same attributes. Operating-system forced colors a
 Use the declarative renderer when interface structure must be stored, governed, exchanged, or edited as data. Validate untrusted input before rendering and provide application-owned data and action handling:
 
 ```tsx
-import {assertDesignDocument} from '@enterprise-ui/contracts';
-import {DesignRenderer} from '@enterprise-ui/react-renderer';
+import {assertDesignDocument} from '@alienfishconsulting/surface-contracts';
+import {DesignRenderer} from '@alienfishconsulting/surface-react-renderer';
 
 const document = assertDesignDocument(untrustedInput);
 
@@ -154,13 +168,13 @@ Design changes use guarded RFC 6902 proposals tied to the document ID, schema ve
 
 ## Electron applications
 
-`@enterprise-ui/electron-bridge` defines a small desktop request contract without importing Electron. The same interface can fail safely in a browser:
+`@alienfishconsulting/surface-electron-bridge` defines a small desktop request contract without importing Electron. The same interface can fail safely in a browser:
 
 ```ts
 import {
   createBrowserBridge,
   createDesktopBridge,
-} from '@enterprise-ui/electron-bridge';
+} from '@alienfishconsulting/surface-electron-bridge';
 
 const desktop = window.applicationDesktop
   ? createDesktopBridge({
@@ -226,6 +240,9 @@ Planning can begin in `scaffolds/`, but reviewed changes are implemented in the 
 | `corepack pnpm test:e2e` | Run both the Design Lab and Storybook Playwright suites |
 | `corepack pnpm build` | Generate artifacts and build workspace projects |
 | `corepack pnpm check` | Run generated, catalog, story, and Playwright discovery checks plus schema validation, type checks, tests, and builds |
+| `corepack pnpm release:pack` | Build local release tarballs in `.release/` after the packages have been built |
+| `corepack pnpm test:react-compat 18.2.0` | Install the packed packages in an isolated React 18 consumer and render representative APIs |
+| `corepack pnpm test:react-compat 19.0.0` | Install the packed packages in an isolated React 19 consumer and render representative APIs |
 
 The complete Design Lab and Storybook Playwright suites are available through `corepack pnpm test:e2e` and use Chromium, Firefox, and WebKit. Browser binaries are installed separately.
 
@@ -271,4 +288,4 @@ Copyright (c) 2026 AlienFish Consulting. All rights reserved. Surface is proprie
 
 ## Release status
 
-The implementation and technical acceptance milestones are complete, but this workspace is not a published product. Final npm scope and package names, commercial distribution terms, coordinated version, packed-package verification, manual assistive-technology checks, and publication remain explicit release decisions. The current source remains proprietary under [LICENSE.md](LICENSE.md).
+The implementation and technical acceptance milestones are complete. The first release is fixed at version `1.0.0` under the public `@alienfishconsulting/surface-*` package namespace and remains proprietary under [LICENSE.md](LICENSE.md). Packed-package verification, React 18/19 consumer checks, manual assistive-technology checks, npm organization and trusted-publisher setup, and final publication approval remain before the `v1.0.0` tag is created. See [release preparation](docs/release/README.md) and the [changelog](CHANGELOG.md).

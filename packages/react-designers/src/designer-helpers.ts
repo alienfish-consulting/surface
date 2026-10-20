@@ -1,4 +1,4 @@
-import type {DesignDocument,DesignNode,Proposal} from '@enterprise-ui/contracts';
+import type {DesignDocument,DesignNode,Proposal} from '@alienfishconsulting/surface-contracts';
 
 export interface HistoryState {past:DesignDocument[];present:DesignDocument;future:DesignDocument[]}
 export const pushHistory=(state:HistoryState,next:DesignDocument):HistoryState=>({past:[...state.past,state.present],present:next,future:[]});

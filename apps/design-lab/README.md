@@ -37,7 +37,7 @@ Open `http://localhost:5173`.
 The application can also be started directly:
 
 ```bash
-corepack pnpm --filter @enterprise-ui/design-lab dev
+corepack pnpm --filter @alienfishconsulting/surface-design-lab dev
 ```
 
 ## Implementation map

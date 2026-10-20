@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Badge,Button,EmptyState,Inline,Stack,StatusIndicator} from '@enterprise-ui/react-core';
+import {Badge,Button,EmptyState,Inline,Stack,StatusIndicator} from '@alienfishconsulting/surface-react-core';
 import type {ConnectionState,StreamItem} from './stream-state.js';
 
 export interface Task {id:string;title:string;description?:string;assignee?:string;status?:string;priority?:'low'|'medium'|'high'}

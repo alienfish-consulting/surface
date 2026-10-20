@@ -1,6 +1,6 @@
 import type {Meta,StoryObj} from '@storybook/react-vite';
 import * as React from 'react';
-import {Button,Stack} from '@enterprise-ui/react-core';
+import {Button,Stack} from '@alienfishconsulting/surface-react-core';
 import {ColumnChooser,DataGrid,DataList,DataTable,FilterBuilder,GridCellEditor,GridToolbar,GroupPanel,PivotFieldWell,PivotTable,SavedViewSelector,SortBuilder,TreeGrid} from '../index.js';
 import type {FilterRule} from '../index.js';
 

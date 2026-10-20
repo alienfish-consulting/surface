@@ -1,8 +1,8 @@
 {
-  "name": "enterprise-ui-poc",
-  "version": "0.0.0-private",
+  "name": "@alienfishconsulting/surface-workspace",
+  "version": "1.0.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "packageManager": "pnpm@10.18.0",
   "engines": {
@@ -18,13 +18,16 @@
     "build": "pnpm generate && nx run-many -t build",
     "typecheck": "nx run-many -t typecheck",
     "test": "vitest run",
-    "dev": "pnpm generate && node tools/copy-core-css.mjs && pnpm --filter @enterprise-ui/design-lab dev",
-    "storybook": "pnpm --filter @enterprise-ui/storybook storybook",
-    "build:storybook": "pnpm --filter @enterprise-ui/storybook build-storybook",
+    "dev": "pnpm generate && node tools/copy-core-css.mjs && pnpm --filter @alienfishconsulting/surface-design-lab dev",
+    "storybook": "pnpm --filter @alienfishconsulting/surface-storybook storybook",
+    "build:storybook": "pnpm --filter @alienfishconsulting/surface-storybook build-storybook",
     "test:e2e:smoke": "playwright test tests/e2e/smoke/design-lab.spec.ts --project=chromium --workers=1",
     "test:e2e:storybook": "playwright test --config playwright.storybook.config.ts",
     "test:e2e": "playwright test && playwright test --config playwright.storybook.config.ts",
     "check:playwright": "playwright test --list && playwright test --config playwright.storybook.config.ts --list",
+    "release:pack": "node tools/pack-release.mjs",
+    "test:react-compat": "node tools/check-react-compatibility.mjs",
+    "release:prepare": "pnpm check && pnpm build:storybook && pnpm release:pack && pnpm test:react-compat 18.2.0 && pnpm test:react-compat 19.0.0",
     "check": "pnpm check:generated && pnpm check:catalog && pnpm check:stories && pnpm check:playwright && pnpm validate && pnpm typecheck && pnpm test && pnpm build"
   },
   "devDependencies": {

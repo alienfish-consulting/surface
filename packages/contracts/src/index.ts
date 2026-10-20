@@ -1,6 +1,6 @@
 import Ajv2020 from 'ajv/dist/2020.js';
 import type { ErrorObject, ValidateFunction } from 'ajv';
-import { applyPatch, type Operation } from 'fast-json-patch';
+import jsonPatch, {type Operation} from 'fast-json-patch';
 import {registryDocument,registryDocuments,declarativeExceptions,documentSchema,registrySchema,proposalSchema,componentSchemas} from './generated/schema-bundle.js';
 export type * from './generated/serialized-props.js';
 export {
@@ -138,7 +138,7 @@ export function previewProposal(original:DesignDocument,input:unknown):{candidat
   }
   const cloned=JSON.parse(JSON.stringify(original)) as DesignDocument;
   let patched: DesignDocument;
-  try { patched=applyPatch(cloned,proposal.operations,true,false,true).newDocument; }
+  try { patched=jsonPatch.applyPatch(cloned,proposal.operations,true,false,true).newDocument; }
   catch(err){throw Error('Invalid patch: '+String(err));}
   patched.revision=original.revision+1; // candidate only; only the host may commit
   return {candidate:assertDesignDocument(patched),summary:`${proposal.operations.length-1} proposed property operation(s); awaiting host authorization`};

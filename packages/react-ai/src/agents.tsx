@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Badge,Button,Inline,Progress,Select,Stack,TextArea} from '@enterprise-ui/react-core';
-import {CodeViewer,DiffViewer,JsonViewer,Timeline} from '@enterprise-ui/react-data';
-import {ApprovalCard,StatusPagePanel} from '@enterprise-ui/react-operations';
+import {Badge,Button,Inline,Progress,Select,Stack,TextArea} from '@alienfishconsulting/surface-react-core';
+import {CodeViewer,DiffViewer,JsonViewer,Timeline} from '@alienfishconsulting/surface-react-data';
+import {ApprovalCard,StatusPagePanel} from '@alienfishconsulting/surface-react-operations';
 export interface AgentItem {id:string;name:string;status:string;detail?:string}
 export function AgentRoster({items,onSelect}:{items:readonly AgentItem[];onSelect?:(id:string)=>void}){return <ul className="ui-agent-roster">{items.map(x=><li key={x.id}><button type="button" onClick={()=>onSelect?.(x.id)}><strong>{x.name}</strong><Badge>{x.status}</Badge>{x.detail&&<span>{x.detail}</span>}</button></li>)}</ul>}
 export function AgentActivityFeed({items}:{items:readonly {id:string;time:string;title:string;description?:string}[]}){return <Timeline label="Agent activity" items={items}/>}
